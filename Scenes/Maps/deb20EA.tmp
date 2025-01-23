@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://bv7jahf4uj8v0"]
+[gd_scene load_steps=23 format=3 uid="uid://bv7jahf4uj8v0"]
 
 [ext_resource type="PackedScene" uid="uid://cma8bt0crjux0" path="res://Scenes/Player/player.tscn" id="1_4hn0q"]
 [ext_resource type="Texture2D" uid="uid://b0ddcd68fgmkb" path="res://icon.svg" id="2_28i80"]
-[ext_resource type="Shader" path="res://Graphics/shaders/outline.gdshader" id="3_20c3f"]
 [ext_resource type="Texture2D" uid="uid://2t1h8e55htyl" path="res://Graphics/animatedSpritesheets/animated_bathtub.png" id="4_irtdd"]
 [ext_resource type="Texture2D" uid="uid://dekyp0soam3k3" path="res://Graphics/animatedSpritesheets/animated_radiator.png" id="4_rb5jm"]
 [ext_resource type="Script" path="res://Scripts/Props/baignoire.gd" id="4_wu5qp"]
@@ -22,11 +21,6 @@ func _init() -> void:
 func _onRadiatorInteract() :
 	print(\"je suis un radiateur :D\")
 "
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcvdf"]
-shader = ExtResource("3_20c3f")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nnj1"]
 atlas = ExtResource("4_rb5jm")
@@ -88,11 +82,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq52r"]
 size = Vector2(23, 12)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8syqh"]
-shader = ExtResource("3_20c3f")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvi2p"]
 atlas = ExtResource("4_irtdd")
 region = Rect2(0, 0, 32, 64)
@@ -151,7 +140,6 @@ position = Vector2(51, 90)
 script = SubResource("GDScript_v47qu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Radiateur"]
-material = SubResource("ShaderMaterial_lcvdf")
 sprite_frames = SubResource("SpriteFrames_1kcid")
 
 [node name="Area2D" type="Area2D" parent="Radiateur"]
@@ -165,7 +153,6 @@ position = Vector2(81, 53)
 script = ExtResource("4_wu5qp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Baignoire"]
-material = SubResource("ShaderMaterial_8syqh")
 sprite_frames = SubResource("SpriteFrames_te7gt")
 
 [node name="Area2D" type="Area2D" parent="Baignoire"]
