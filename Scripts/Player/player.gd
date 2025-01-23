@@ -6,46 +6,38 @@ const SPEED: float = 50
 @onready var skin: PlayerSkin = $Skin
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
-var propsAround : Array[GenericProp]
-var propCurrentlyInteractingWith : GenericProp
-
-var canMove : bool = true
+var props_around: Array[GenericProp]
 
 var input_direction: Vector2
+var input_interact: bool
 
 func _ready() -> void:
 	initialize_state_machine()
 
 func _physics_process(delta: float) -> void:
-	handle_input()
 	handle_state_update(delta)
 	handle_state_animation(delta)
 
-func initialize_state_machine():
+func initialize_state_machine() -> void:
 	state_machine.initialize()
 
-func handle_input():
-	if (canMove):
-		var horizontal: float = Input.get_axis("left", "right")
-		var vertical: float = Input.get_axis("up", "down")
-		input_direction = Vector2(horizontal, vertical)
-	else:
-		input_direction = Vector2(0, 0)
+func handle_input() -> void:
+	var horizontal: float = Input.get_axis("left", "right")
+	var vertical: float = Input.get_axis("up", "down")
+	input_direction = Vector2(horizontal, vertical)
 
-func handle_state_update(delta: float):
+func handle_interact() -> void:
+	if (Input.is_action_just_pressed("interact")):
+		if (props_around):
+			props_around[props_around.size()-1].on_interact(self)
+	
+	# Temporaire
+	if (Input.is_action_just_pressed("leave_interact")):
+		if (state_machine.current_state == "Interacting"):
+			state_machine.change_state("Regular")
+
+func handle_state_update(delta: float) -> void:
 	state_machine.update_state(delta)
 
-func handle_state_animation(delta):
+func handle_state_animation(delta) -> void:
 	state_machine.animate_state(delta)
-	
-func _input(event):
-	if event.is_action_pressed("interact") :
-		if(propsAround.size() != 0) :
-			propCurrentlyInteractingWith = propsAround[0]
-			propCurrentlyInteractingWith.onInteract.emit()
-			canMove = false
-	if event.is_action_pressed("leave_interact") :
-		if (propCurrentlyInteractingWith != null) :
-			propCurrentlyInteractingWith._onGenericPropLeave()
-			propCurrentlyInteractingWith = null
-			canMove = true

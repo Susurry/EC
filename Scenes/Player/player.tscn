@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://cma8bt0crjux0"]
+[gd_scene load_steps=35 format=3 uid="uid://cma8bt0crjux0"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_kwswl"]
 [ext_resource type="Script" path="res://Scripts/Player/player_statemachine.gd" id="2_bd34b"]
 [ext_resource type="Script" path="res://Scripts/Player/States/state_regular.gd" id="3_31thm"]
 [ext_resource type="Texture2D" uid="uid://dmh3spjg6ychw" path="res://Graphics/Characters/character_m_1.png" id="4_vdxrv"]
+[ext_resource type="Script" path="res://Scripts/Player/States/state_interacting.gd" id="4_woepn"]
 [ext_resource type="Script" path="res://Scripts/Player/player_skin.gd" id="5_hytlb"]
 
 [sub_resource type="Animation" id="Animation_l2uah"]
@@ -273,6 +274,9 @@ script = ExtResource("2_bd34b")
 
 [node name="Regular" type="Node2D" parent="StateMachine"]
 script = ExtResource("3_31thm")
+
+[node name="Interacting" type="Node2D" parent="StateMachine"]
+script = ExtResource("4_woepn")
 
 [node name="Skin" type="Sprite2D" parent="."]
 texture = ExtResource("4_vdxrv")

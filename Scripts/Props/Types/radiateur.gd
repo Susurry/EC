@@ -1,8 +1,5 @@
 extends GenericProp
 
-func _ready() -> void:
-	onInteract.connect(onGenericPropInteract)
-	onInteract.connect(_onRadiatorInteract)
-
-func _onRadiatorInteract() :
+func on_interact(player: Player) -> void:
+	player.state_machine.change_state("Interacting")
 	print("je suis un radiateur :D")

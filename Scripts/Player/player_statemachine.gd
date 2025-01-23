@@ -7,6 +7,7 @@ class_name PlayerStateMachine
 
 @onready var states: Dictionary = {
 	"Regular": $Regular,
+	"Interacting": $Interacting,
 }
 
 var current_state: String

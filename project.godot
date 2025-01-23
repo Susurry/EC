@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Threadload="*res://Scripts/Autoload/threadload.gd"
+ThreadLoad="*res://Scripts/Autoload/threadload.gd"
+SaveManager="*res://Scripts/Autoload/savemanager.gd"
 
 [display]
 
