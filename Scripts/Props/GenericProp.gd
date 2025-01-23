@@ -1,6 +1,8 @@
 extends Node2D
 class_name GenericProp
 
+signal onInteract
+
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
 func onGenericPropInteract() -> void:
