@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/States/state_regular.gd" id="3_31thm"]
 [ext_resource type="Texture2D" uid="uid://dmh3spjg6ychw" path="res://Graphics/Characters/character_m_1.png" id="4_vdxrv"]
 [ext_resource type="Script" path="res://Scripts/Player/States/state_interacting.gd" id="4_woepn"]
-[ext_resource type="Script" path="res://Scripts/Player/player_skin.gd" id="5_hytlb"]
+[ext_resource type="Script" path="res://Scripts/Player/player_anim.gd" id="5_hytlb"]
 
 [sub_resource type="Animation" id="Animation_l2uah"]
 length = 0.001

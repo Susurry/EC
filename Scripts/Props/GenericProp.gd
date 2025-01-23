@@ -7,7 +7,7 @@ signal onInteract
 
 func onGenericPropInteract() -> void:
 	animatedSprite.material.set_shader_parameter("width",1.0)
-	
+
 func _onGenericPropLeave() -> void:
 	animatedSprite.material.set_shader_parameter("width",0)
 

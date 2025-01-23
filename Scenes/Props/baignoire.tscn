@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1vb7txwbkq24"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Types/baignoire.gd" id="1_lfh3d"]
+[ext_resource type="Shader" path="res://Graphics/shaders/outline.gdshader" id="2_vcscp"]
+[ext_resource type="Texture2D" uid="uid://2t1h8e55htyl" path="res://Graphics/animatedSpritesheets/animated_bathtub.png" id="3_1fjql"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8syqh"]
+shader = ExtResource("2_vcscp")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvi2p"]
+atlas = ExtResource("3_1fjql")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxgsn"]
+atlas = ExtResource("3_1fjql")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c028n"]
+atlas = ExtResource("3_1fjql")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gipgy"]
+atlas = ExtResource("3_1fjql")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_te7gt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvi2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxgsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c028n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gipgy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(20, 55)
+
+[node name="Baignoire" type="Node2D"]
+position = Vector2(81, 53)
+script = ExtResource("1_lfh3d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_8syqh")
+sprite_frames = SubResource("SpriteFrames_te7gt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,124 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://bv7jahf4uj8v0"]
+[gd_scene load_steps=6 format=3 uid="uid://bv7jahf4uj8v0"]
 
 [ext_resource type="PackedScene" uid="uid://cma8bt0crjux0" path="res://Scenes/Player/player.tscn" id="1_4hn0q"]
 [ext_resource type="Texture2D" uid="uid://b0ddcd68fgmkb" path="res://icon.svg" id="2_28i80"]
-[ext_resource type="Shader" path="res://Graphics/shaders/outline.gdshader" id="3_20c3f"]
-[ext_resource type="Script" path="res://Scripts/Props/Types/radiateur.gd" id="3_rh2u7"]
-[ext_resource type="Texture2D" uid="uid://2t1h8e55htyl" path="res://Graphics/animatedSpritesheets/animated_bathtub.png" id="4_irtdd"]
-[ext_resource type="Texture2D" uid="uid://dekyp0soam3k3" path="res://Graphics/animatedSpritesheets/animated_radiator.png" id="4_rb5jm"]
-[ext_resource type="Script" path="res://Scripts/Props/Types/baignoire.gd" id="4_wu5qp"]
+[ext_resource type="PackedScene" uid="uid://bgqgj7765vbkd" path="res://Scenes/Props/radiateur.tscn" id="3_h3mln"]
+[ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/baignoire.tscn" id="4_skoci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm888"]
 size = Vector2(128, 128)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcvdf"]
-shader = ExtResource("3_20c3f")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0nnj1"]
-atlas = ExtResource("4_rb5jm")
-region = Rect2(0, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bchu"]
-atlas = ExtResource("4_rb5jm")
-region = Rect2(29, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8qlq"]
-atlas = ExtResource("4_rb5jm")
-region = Rect2(58, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxi82"]
-atlas = ExtResource("4_rb5jm")
-region = Rect2(87, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivjyo"]
-atlas = ExtResource("4_rb5jm")
-region = Rect2(116, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pkssv"]
-atlas = ExtResource("4_rb5jm")
-region = Rect2(145, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_avwmd"]
-atlas = ExtResource("4_rb5jm")
-region = Rect2(174, 0, 29, 30)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1kcid"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0nnj1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3bchu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q8qlq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nxi82")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ivjyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pkssv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_avwmd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq52r"]
-size = Vector2(23, 12)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8syqh"]
-shader = ExtResource("3_20c3f")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvi2p"]
-atlas = ExtResource("4_irtdd")
-region = Rect2(0, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lxgsn"]
-atlas = ExtResource("4_irtdd")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c028n"]
-atlas = ExtResource("4_irtdd")
-region = Rect2(64, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gipgy"]
-atlas = ExtResource("4_irtdd")
-region = Rect2(96, 0, 32, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_te7gt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nvi2p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lxgsn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c028n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gipgy")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
-size = Vector2(20, 55)
 
 [node name="Debug" type="Node2D"]
 
@@ -134,35 +22,6 @@ texture = ExtResource("2_28i80")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 shape = SubResource("RectangleShape2D_fm888")
 
-[node name="Radiateur" type="Node2D" parent="."]
-position = Vector2(51, 90)
-script = ExtResource("3_rh2u7")
+[node name="Radiateur" parent="." instance=ExtResource("3_h3mln")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Radiateur"]
-material = SubResource("ShaderMaterial_lcvdf")
-sprite_frames = SubResource("SpriteFrames_1kcid")
-
-[node name="Area2D" type="Area2D" parent="Radiateur"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Radiateur/Area2D"]
-position = Vector2(1.5, 6)
-shape = SubResource("RectangleShape2D_vq52r")
-
-[node name="Baignoire" type="Node2D" parent="."]
-position = Vector2(81, 53)
-script = ExtResource("4_wu5qp")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Baignoire"]
-material = SubResource("ShaderMaterial_8syqh")
-sprite_frames = SubResource("SpriteFrames_te7gt")
-
-[node name="Area2D" type="Area2D" parent="Baignoire"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Baignoire/Area2D"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_rxyj1")
-
-[connection signal="body_entered" from="Radiateur/Area2D" to="Radiateur" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Radiateur/Area2D" to="Radiateur" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Baignoire/Area2D" to="Baignoire" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Baignoire/Area2D" to="Baignoire" method="_on_area_2d_body_exited"]
+[node name="Baignoire" parent="." instance=ExtResource("4_skoci")]
