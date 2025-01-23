@@ -5,7 +5,7 @@
 [ext_resource type="Shader" path="res://Graphics/shaders/outline.gdshader" id="3_20c3f"]
 [ext_resource type="Texture2D" uid="uid://2t1h8e55htyl" path="res://Graphics/animatedSpritesheets/animated_bathtub.png" id="4_irtdd"]
 [ext_resource type="Texture2D" uid="uid://dekyp0soam3k3" path="res://Graphics/animatedSpritesheets/animated_radiator.png" id="4_rb5jm"]
-[ext_resource type="Script" path="res://Scripts/Props/baignoire.gd" id="4_wu5qp"]
+[ext_resource type="Script" path="res://Scripts/Props/Types/baignoire.gd" id="4_wu5qp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm888"]
 size = Vector2(128, 128)
@@ -13,11 +13,9 @@ size = Vector2(128, 128)
 [sub_resource type="GDScript" id="GDScript_v47qu"]
 script/source = "extends GenericProp
 
-
-func _init() -> void:
+func _ready() -> void:
 	onInteract.connect(onGenericPropInteract)
 	onInteract.connect(_onRadiatorInteract)
-
 
 func _onRadiatorInteract() :
 	print(\"je suis un radiateur :D\")
@@ -173,3 +171,8 @@ sprite_frames = SubResource("SpriteFrames_te7gt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Baignoire/Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rxyj1")
+
+[connection signal="body_entered" from="Radiateur/Area2D" to="Radiateur" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Radiateur/Area2D" to="Radiateur" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Baignoire/Area2D" to="Baignoire" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Baignoire/Area2D" to="Baignoire" method="_on_area_2d_body_exited"]

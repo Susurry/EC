@@ -25,11 +25,11 @@ func initialize_state_machine():
 	state_machine.initialize()
 
 func handle_input():
-	if (canMove) :	
+	if (canMove):
 		var horizontal: float = Input.get_axis("left", "right")
 		var vertical: float = Input.get_axis("up", "down")
 		input_direction = Vector2(horizontal, vertical)
-	else :
+	else:
 		input_direction = Vector2(0, 0)
 
 func handle_state_update(delta: float):

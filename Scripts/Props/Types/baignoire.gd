@@ -1,7 +1,6 @@
 extends GenericProp
 
-
-func _init() -> void:
+func _ready() -> void:
 	onInteract.connect(onGenericPropInteract)
 	onInteract.connect(_onBathtubInteract)
 

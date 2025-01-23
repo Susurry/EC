@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Theadload="*res://Scripts/Autoload/theadload.gd"
+Threadload="*res://Scripts/Autoload/threadload.gd"
 
 [display]
 

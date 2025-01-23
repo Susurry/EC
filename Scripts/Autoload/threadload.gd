@@ -4,7 +4,7 @@ var maps: Resource = preload("uid://byrvrkqe18ml0")
 
 func load_scene(viewport: Node, next_scene: String):
 	
-	# Supprime les éléments de la scene précédente
+	# Supprime la scène précedente
 	for prev_scene in viewport.get_children():
 		prev_scene.queue_free()
 	
