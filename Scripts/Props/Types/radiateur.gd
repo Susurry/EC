@@ -1,4 +1,4 @@
-extends GenericProp
+extends Prop
 
 func on_interact(player: Player) -> void:
 	player.state_machine.change_state("Interacting")

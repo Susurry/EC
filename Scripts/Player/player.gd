@@ -6,7 +6,7 @@ const SPEED: float = 50
 @onready var skin: PlayerSkin = $Skin
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
-var props_around: Array[GenericProp]
+var props_around: Array[Prop]
 
 var input_direction: Vector2
 var input_interact: bool

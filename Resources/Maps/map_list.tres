@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_thahi")
-locations = {}
+locations = {
+"Debug": &"uid://bv7jahf4uj8v0",
+"Debug2": &"uid://qmadlfp31trp"
+}
