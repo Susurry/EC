@@ -263,9 +263,10 @@ nodes/walk/position = Vector2(26.6667, 173.333)
 node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &"Transition", 1, &"walk", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6pu"]
-size = Vector2(16, 16)
+size = Vector2(14, 10)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 motion_mode = 1
 script = ExtResource("1_kwswl")
 
@@ -301,5 +302,5 @@ parameters/idle/Idle/blend_position = Vector2(0, 1)
 parameters/walk/Walk/blend_position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_pl6pu")

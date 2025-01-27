@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6qpcw7ie75bt"
-path="res://.godot/imported/animated_door_condominium.png-ddc348e4988eb589eb9823b2f03d700a.ctex"
+uid="uid://csbb1b36ogu1p"
+path="res://.godot/imported/City_Terrains.png-06b45ab82a1862d0f80b4df8c4381bd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/animatedSpritesheets/animated_door_condominium.png"
-dest_files=["res://.godot/imported/animated_door_condominium.png-ddc348e4988eb589eb9823b2f03d700a.ctex"]
+source_file="res://Graphics/Tilesets/City_Terrains.png"
+dest_files=["res://.godot/imported/City_Terrains.png-06b45ab82a1862d0f80b4df8c4381bd3.ctex"]
 
 [params]
 

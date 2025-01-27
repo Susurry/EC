@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://bgqgj7765vbkd"]
 
 [ext_resource type="Script" path="res://Scripts/Props/Types/radiateur.gd" id="1_edchd"]
-[ext_resource type="Shader" path="res://Graphics/shaders/outline.gdshader" id="2_gtpoy"]
-[ext_resource type="Texture2D" uid="uid://dekyp0soam3k3" path="res://Graphics/animatedSpritesheets/animated_radiator.png" id="3_0qcwu"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_gtpoy"]
+[ext_resource type="Texture2D" uid="uid://dekyp0soam3k3" path="res://Graphics/Props/animated_radiator.png" id="3_0qcwu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lcvdf"]
 shader = ExtResource("2_gtpoy")
@@ -70,7 +70,7 @@ animations = [{
 size = Vector2(23, 12)
 
 [node name="Radiateur" type="Node2D"]
-position = Vector2(51, 90)
+y_sort_enabled = true
 script = ExtResource("1_edchd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

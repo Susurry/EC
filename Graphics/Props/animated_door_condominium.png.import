@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2t1h8e55htyl"
-path="res://.godot/imported/animated_bathtub.png-45b4d7c5fe27ab80b64262b65e9f67be.ctex"
+uid="uid://c6qpcw7ie75bt"
+path="res://.godot/imported/animated_door_condominium.png-1a856c19ab5b5f3420434045e1c0e94d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/animatedSpritesheets/animated_bathtub.png"
-dest_files=["res://.godot/imported/animated_bathtub.png-45b4d7c5fe27ab80b64262b65e9f67be.ctex"]
+source_file="res://Graphics/Props/animated_door_condominium.png"
+dest_files=["res://.godot/imported/animated_door_condominium.png-1a856c19ab5b5f3420434045e1c0e94d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dekyp0soam3k3"
-path="res://.godot/imported/animated_radiator.png-3fa8b4761e0ab43107274b556825f0b2.ctex"
+uid="uid://dlojq4nc0idyw"
+path="res://.godot/imported/animated_shower.png-99d885539cc3d651ef7afe4e6565e6d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/animatedSpritesheets/animated_radiator.png"
-dest_files=["res://.godot/imported/animated_radiator.png-3fa8b4761e0ab43107274b556825f0b2.ctex"]
+source_file="res://Graphics/Props/animated_shower.png"
+dest_files=["res://.godot/imported/animated_shower.png-99d885539cc3d651ef7afe4e6565e6d4.ctex"]
 
 [params]
 

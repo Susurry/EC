@@ -7,5 +7,10 @@
 script = ExtResource("1_tskkq")
 player_resource = ExtResource("2_un65m")
 
-[node name="StartPoint" type="Node2D" parent="."]
-position = Vector2(167, 91)
+[node name="StartPoints" type="Node2D" parent="."]
+
+[node name="0_LeftVoid" type="Node2D" parent="StartPoints"]
+position = Vector2(13, 77)
+
+[node name="1_RightVoid" type="Node2D" parent="StartPoints"]
+position = Vector2(109, 26)
