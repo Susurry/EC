@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=6 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="PackedScene" uid="uid://bv7jahf4uj8v0" path="res://Scenes/Maps/Debug/debug.tscn" id="1_ighmg"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="3_dtuef"]
 [ext_resource type="Script" path="res://Scripts/UI/score.gd" id="3_nnnuy"]
+[ext_resource type="Script" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0b8yu")
@@ -27,13 +28,42 @@ render_target_update_mode = 4
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 480.0
 script = ExtResource("3_dtuef")
 
-[node name="Score" type="Label" parent="UI"]
+[node name="ScoreElements" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("3_nnnuy")
+
+[node name="Score" type="Label" parent="UI/ScoreElements"]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 125.0
 offset_bottom = 23.0
 text = "Pollution Score :"
-script = ExtResource("3_nnnuy")
+
+[node name="DebugElements" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("5_3c3ax")
+
+[node name="Versioning" type="Button" parent="UI/DebugElements"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -30.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+
+[connection signal="pressed" from="UI/DebugElements/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
