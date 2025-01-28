@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=7 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="PackedScene" uid="uid://bv7jahf4uj8v0" path="res://Scenes/Maps/Debug/debug.tscn" id="1_ighmg"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="3_dtuef"]
 [ext_resource type="Script" path="res://Scripts/UI/score.gd" id="3_nnnuy"]
 [ext_resource type="Script" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
+[ext_resource type="Script" path="res://Scenes/timer.gd" id="6_6ntbc"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0b8yu")
@@ -65,5 +66,22 @@ offset_bottom = -1.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
+
+[node name="TimerElements" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_6ntbc")
+minute = 10
+seconde = 20
+time_multi = 3.0
+
+[node name="Time" type="Label" parent="UI/TimerElements"]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 2.0
+offset_right = 638.0
+offset_bottom = 25.0
+text = "00 : 00 : 00"
 
 [connection signal="pressed" from="UI/DebugElements/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
