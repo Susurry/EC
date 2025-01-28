@@ -18,6 +18,9 @@ func load_scene(viewport: Node, next_scene: String, pos_id: int):
 				return
 			3:
 				var scene = ResourceLoader.load_threaded_get(maps.locations[next_scene]).instantiate()
-				scene.start_id = pos_id
+				
+				if scene is Map:
+					scene.start_id = pos_id
+				
 				viewport.call_deferred("add_child", scene)
 				return

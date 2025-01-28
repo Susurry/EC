@@ -1,6 +1,7 @@
 extends Control
 
-@onready var score_label: Control = $ScoreElements
+@onready var score_element: Control = $ScoreElements
+@onready var time_element: Control = $TimerElements
 
 func update_score(arg: int) -> void:
-	score_label.on_update_score(arg)
+	score_element.on_update_score(arg)

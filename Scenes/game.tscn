@@ -40,10 +40,19 @@ offset_bottom = 480.0
 script = ExtResource("3_nnnuy")
 
 [node name="Score" type="Label" parent="UI/ScoreElements"]
-layout_mode = 0
-offset_right = 125.0
+layout_mode = 1
+offset_left = 5.0
+offset_right = 130.0
 offset_bottom = 23.0
 text = "Pollution Score :"
+
+[node name="Grade" type="Label" parent="UI/ScoreElements"]
+layout_mode = 1
+offset_left = 493.0
+offset_right = 533.0
+offset_bottom = 23.0
+text = "C"
+horizontal_alignment = 1
 
 [node name="DebugElements" type="Control" parent="UI"]
 layout_mode = 1
@@ -69,19 +78,21 @@ focus_mode = 0
 
 [node name="TimerElements" type="Control" parent="UI"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 480.0
 script = ExtResource("6_6ntbc")
 minute = 10
 seconde = 20
-time_multi = 3.0
 
 [node name="Time" type="Label" parent="UI/TimerElements"]
-layout_mode = 0
-offset_left = 557.0
-offset_top = 2.0
-offset_right = 638.0
-offset_bottom = 25.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_right = -5.0
+offset_bottom = 23.0
+grow_horizontal = 0
 text = "00 : 00 : 00"
 
 [connection signal="pressed" from="UI/DebugElements/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
