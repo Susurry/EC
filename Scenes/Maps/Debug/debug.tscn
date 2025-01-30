@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/baignoire.tscn" id="4_skoci"]
 [ext_resource type="PackedScene" uid="uid://cfutd05my7baa" path="res://Scenes/Camera/camera.tscn" id="7_mc8ak"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qdvi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn0tc"]
 texture = ExtResource("3_4fo1h")
 15:10/0 = 0
 10:6/0 = 0
@@ -17,7 +17,7 @@ texture = ExtResource("3_4fo1h")
 
 [sub_resource type="TileSet" id="TileSet_0w515"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_6qdvi")
+sources/0 = SubResource("TileSetAtlasSource_nn0tc")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm888"]
 size = Vector2(128, 128)
@@ -54,3 +54,4 @@ position = Vector2(38, 114)
 
 [node name="Baignoire" parent="." instance=ExtResource("4_skoci")]
 position = Vector2(87, 67)
+dathing = "dial_test2"

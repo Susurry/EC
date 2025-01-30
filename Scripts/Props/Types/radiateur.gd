@@ -1,6 +1,10 @@
 extends Prop
 
-func on_interact(player: Player) -> void:
-	player.state_machine.change_state("Interacting")
-	print("je suis un radiateur :D")
-	Game.ui.update_score(-10)
+var as_interacted: bool = false
+
+func on_interact(_player: Player) -> void:
+	if !as_interacted:
+		Dialogic.start("dial_test", "book1")
+		as_interacted = true;
+	else:
+		Dialogic.start("dial_test", "book2")

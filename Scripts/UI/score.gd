@@ -8,13 +8,13 @@ var score: int = 0
 
 func _ready() -> void:
 	score_label.text = "Pollution Score : " + str(score)
-	
+
 func on_update_score(arg: int) -> void:
 	score += arg
 	score_label.text = "Pollution Score : " + str(score)
-	_update_grading(score)
+	_update_grading()
 
-func _update_grading(score: int):
+func _update_grading() -> void:
 	match score:
 		var x when x >= 60:
 			grade_label.text = "A"

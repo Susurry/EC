@@ -30,11 +30,7 @@ func handle_interact() -> void:
 	if (Input.is_action_just_pressed("interact")):
 		if (props_around):
 			props_around[props_around.size()-1].on_interact(self)
-	
-	# Temporaire
-	if (Input.is_action_just_pressed("leave_interact")):
-		if (state_machine.current_state == "Interacting"):
-			state_machine.change_state("Regular")
+			state_machine.change_state("Interacting")
 
 func handle_state_update(delta: float) -> void:
 	state_machine.update_state(delta)

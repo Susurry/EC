@@ -17,7 +17,6 @@ offset_bottom = 1080.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
@@ -93,24 +92,6 @@ grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
 
-[node name="MapDebug" type="OptionButton" parent="UI/DebugElements"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -41.0
-offset_right = 138.0
-offset_bottom = -10.0
-grow_vertical = 0
-focus_mode = 0
-clip_text = true
-allow_reselect = true
-item_count = 2
-popup/item_0/text = "Debug"
-popup/item_1/text = "Debug2"
-popup/item_1/id = 1
-
 [node name="LineEdit" type="LineEdit" parent="UI/DebugElements"]
 layout_mode = 1
 offset_left = 5.0
@@ -138,7 +119,25 @@ popup/item_0/text = "Spawn n° 0"
 popup/item_1/text = "Spawn n° 1"
 popup/item_1/id = 1
 
+[node name="MapDebug" type="OptionButton" parent="UI/DebugElements"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -41.0
+offset_right = 138.0
+offset_bottom = -10.0
+grow_vertical = 0
+focus_mode = 0
+clip_text = true
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "Debug"
+popup/item_1/text = "Debug2"
+popup/item_1/id = 1
+
 [connection signal="pressed" from="UI/DebugElements/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
-[connection signal="item_selected" from="UI/DebugElements/MapDebug" to="UI/DebugElements" method="_on_option_button_item_selected"]
 [connection signal="text_submitted" from="UI/DebugElements/LineEdit" to="UI/DebugElements" method="_on_line_edit_text_submitted"]
 [connection signal="item_selected" from="UI/DebugElements/RespawnDebug" to="UI/DebugElements" method="_on_respawn_debug_item_selected"]
+[connection signal="item_selected" from="UI/DebugElements/MapDebug" to="UI/DebugElements" method="_on_option_button_item_selected"]

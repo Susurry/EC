@@ -22,4 +22,4 @@ func _process(delta: float) -> void:
 		seconde = int(time) % 60
 		time_label.text = format_string % [heure, minute, seconde]
 	else:
-		print("It just work")
+		print("It just works")
