@@ -5,23 +5,21 @@
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="3_dtuef"]
 [ext_resource type="Script" path="res://Scripts/UI/score.gd" id="3_nnnuy"]
 [ext_resource type="Script" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
-[ext_resource type="Script" path="res://Scenes/timer.gd" id="6_6ntbc"]
+[ext_resource type="Script" path="res://Scripts/UI/timer.gd" id="6_6ntbc"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0b8yu")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
-offset_right = 320.0
-offset_bottom = 240.0
-scale = Vector2(2, 2)
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
 canvas_item_default_texture_filter = 0
-size = Vector2i(320, 240)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Debug" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_ighmg")]
@@ -29,14 +27,14 @@ render_target_update_mode = 4
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 480.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("3_dtuef")
 
 [node name="ScoreElements" type="Control" parent="UI"]
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 480.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("3_nnnuy")
 
 [node name="Score" type="Label" parent="UI/ScoreElements"]
@@ -48,16 +46,16 @@ text = "Pollution Score :"
 
 [node name="Grade" type="Label" parent="UI/ScoreElements"]
 layout_mode = 1
-offset_left = 493.0
-offset_right = 533.0
+offset_left = 300.0
+offset_right = 340.0
 offset_bottom = 23.0
 text = "C"
 horizontal_alignment = 1
 
 [node name="TimerElements" type="Control" parent="UI"]
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 480.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("6_6ntbc")
 minute = 10
 seconde = 20
@@ -76,8 +74,8 @@ text = "00 : 00 : 00"
 [node name="DebugElements" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 480.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("5_3c3ax")
 
 [node name="Versioning" type="Button" parent="UI/DebugElements"]
@@ -87,10 +85,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -126.0
-offset_top = -30.0
-offset_right = -1.0
-offset_bottom = -1.0
+offset_left = -136.0
+offset_top = -40.0
+offset_right = -11.0
+offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
@@ -100,8 +98,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -31.0
-offset_right = 130.0
+offset_left = 10.0
+offset_top = -41.0
+offset_right = 138.0
+offset_bottom = -10.0
 grow_vertical = 0
 focus_mode = 0
 clip_text = true
@@ -112,25 +112,23 @@ popup/item_1/text = "Debug2"
 popup/item_1/id = 1
 
 [node name="LineEdit" type="LineEdit" parent="UI/DebugElements"]
-layout_mode = 0
-offset_left = -1.0
+layout_mode = 1
+offset_left = 5.0
 offset_top = 28.0
-offset_right = 124.0
+offset_right = 130.0
 offset_bottom = 59.0
 placeholder_text = "Modifier Score"
 clear_button_enabled = true
 
 [node name="RespawnDebug" type="OptionButton" parent="UI/DebugElements"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -183.0
-offset_top = -31.0
-offset_right = -55.0
-grow_horizontal = 2
+offset_left = 148.0
+offset_top = -41.0
+offset_right = 276.0
+offset_bottom = -10.0
 grow_vertical = 0
 focus_mode = 0
 clip_text = true
