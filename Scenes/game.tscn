@@ -30,20 +30,25 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("3_dtuef")
 
-[node name="ScoreElements" type="Control" parent="UI"]
+[node name="OWElements" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreElements" type="Control" parent="UI/OWElements"]
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("3_nnnuy")
 
-[node name="Score" type="Label" parent="UI/ScoreElements"]
+[node name="Score" type="Label" parent="UI/OWElements/ScoreElements"]
 layout_mode = 1
 offset_left = 5.0
 offset_right = 130.0
 offset_bottom = 23.0
 text = "Pollution Score :"
 
-[node name="Grade" type="Label" parent="UI/ScoreElements"]
+[node name="Grade" type="Label" parent="UI/OWElements/ScoreElements"]
 layout_mode = 1
 offset_left = 300.0
 offset_right = 340.0
@@ -51,7 +56,7 @@ offset_bottom = 23.0
 text = "C"
 horizontal_alignment = 1
 
-[node name="TimerElements" type="Control" parent="UI"]
+[node name="TimerElements" type="Control" parent="UI/OWElements"]
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -59,7 +64,7 @@ script = ExtResource("6_6ntbc")
 minute = 10
 seconde = 20
 
-[node name="Time" type="Label" parent="UI/TimerElements"]
+[node name="Time" type="Label" parent="UI/OWElements/TimerElements"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

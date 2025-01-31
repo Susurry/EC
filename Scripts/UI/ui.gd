@@ -1,7 +1,7 @@
 extends Control
 
-@onready var score_element: Control = $ScoreElements
-@onready var time_element: Control = $TimerElements
+@onready var score_element: Control = $OWElements/ScoreElements
+@onready var time_element: Control = $OWElements/TimerElements
 @onready var debug_element: Control = $DebugElements
 
 func _ready() -> void:
