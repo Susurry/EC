@@ -1,12 +1,17 @@
-extends Node
+extends Node2D
 
 var maps: Resource = preload("uid://byrvrkqe18ml0")
+var viewport: SubViewport
 
-func load_scene(viewport: Node, next_scene: String, pos_id: int):
+@onready var loading_screen: PackedScene = preload("uid://dncr4ks587ty3") 
+
+func load_scene(next_scene: String, pos_id: int = 0, transition_type: String = "") -> void:
+	_erase_scenes()
 	
-	# Supprime la scène précedente
-	for prev_scene in viewport.get_children():
-		prev_scene.queue_free()
+	# Créer la scène de chargement
+	var loading_instance: Node2D = loading_screen.instantiate()
+	loading_instance.transition_key = transition_type # Envoie le type de transition pour le chargement
+	viewport.call_deferred("add_child", loading_instance)
 	
 	ResourceLoader.load_threaded_request(maps.locations[next_scene], "", true)
 	
@@ -17,10 +22,20 @@ func load_scene(viewport: Node, next_scene: String, pos_id: int):
 				print("Error, invalid scene")
 				return
 			3:
-				var scene = ResourceLoader.load_threaded_get(maps.locations[next_scene]).instantiate()
+				var scene: Node2D = ResourceLoader.load_threaded_get(maps.locations[next_scene]).instantiate()
 				
+				# Pour éviter les problèmes si on une scène sans joueur (ex: menu, leaderboard)
 				if scene is Map:
 					scene.start_id = pos_id
 				
-				viewport.call_deferred("add_child", scene)
+				loading_instance.next_scene = scene
 				return
+
+func trigger_next_scene(target_scene: Node2D) -> void:
+	_erase_scenes()
+	viewport.call_deferred("add_child", target_scene)
+
+func _erase_scenes() -> void:
+	# Supprime les scènes contenu dans le viewport (écran de chargement, scène précédente)
+	for prev_scene in viewport.get_children():
+		prev_scene.queue_free()

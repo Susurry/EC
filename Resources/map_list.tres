@@ -6,5 +6,6 @@
 script = ExtResource("1_thahi")
 locations = {
 "Debug": &"uid://bv7jahf4uj8v0",
-"Debug2": &"uid://qmadlfp31trp"
+"Debug2": &"uid://qmadlfp31trp",
+"Loading": "uid://dncr4ks587ty3"
 }

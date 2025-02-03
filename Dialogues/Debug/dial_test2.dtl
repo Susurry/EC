@@ -1,4 +1,4 @@
 Do you want to use the bathtub of teleportation ?
 - Yes
-	do ThreadLoad.load_scene(Game.level_container, "Debug2", 1)
+	do ThreadLoad.load_scene("Debug2", 1, "DebugTrans")
 - No

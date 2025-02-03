@@ -26,8 +26,8 @@ func _on_line_edit_text_submitted(new_score: String) -> void:
 
 # SCENE TELEPORTER
 func _on_option_button_item_selected(index: int) -> void:
-	ThreadLoad.load_scene(Game.level_container, dictionnaire[index], 0)
+	ThreadLoad.load_scene(dictionnaire[index])
 	current_map = dictionnaire[index]
 
 func _on_respawn_debug_item_selected(index: int) -> void:
-	ThreadLoad.load_scene(Game.level_container, current_map, index)
+	ThreadLoad.load_scene(current_map, index)
