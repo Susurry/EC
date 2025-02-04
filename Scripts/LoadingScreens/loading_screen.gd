@@ -1,6 +1,6 @@
 extends Node2D
 
-var transitions: Resource = preload("uid://bbt22kryavcuy")
+@export var transitions: Resource
 var next_scene: Node2D
 var transition_key: String
 

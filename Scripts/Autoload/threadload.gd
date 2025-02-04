@@ -1,9 +1,12 @@
 extends Node2D
 
-var maps: Resource = preload("uid://byrvrkqe18ml0")
+@export var maps: Resource
+@export var loading_screen: PackedScene
+
 var viewport: SubViewport
 
-@onready var loading_screen: PackedScene = preload("uid://dncr4ks587ty3") 
+func initialize_viewport(game_viewport: SubViewport) -> void:
+	viewport = game_viewport
 
 func load_scene(next_scene: String, pos_id: int = 0, transition_type: String = "") -> void:
 	_erase_scenes()

@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="030225-14"
+config/version="040225-10"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-ThreadLoad="*res://Scripts/Autoload/threadload.gd"
+ThreadLoad="*res://Scenes/Autoload/threadload.tscn"
 SaveManager="*res://Scripts/Autoload/savemanager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
