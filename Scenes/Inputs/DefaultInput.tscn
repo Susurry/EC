@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtsdy6b7oq6h4"]
+
+[ext_resource type="Script" path="res://Scripts/Inputs/Types/input_default.gd" id="1_yqbwc"]
+
+[node name="DefaultInput" type="Node2D"]
+script = ExtResource("1_yqbwc")

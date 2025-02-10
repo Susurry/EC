@@ -22,12 +22,10 @@ func initialize_state_machine() -> void:
 	state_machine.initialize()
 
 func handle_input() -> void:
-	var horizontal: float = Input.get_axis("left", "right")
-	var vertical: float = Input.get_axis("up", "down")
-	input_direction = Vector2(horizontal, vertical)
+	input_direction = Game.inputs.get_direction()
 
 func handle_interact() -> void:
-	if (Input.is_action_just_pressed("interact")):
+	if (Game.inputs.is_interacting()):
 		if (props_around):
 			props_around[props_around.size()-1].on_interact(self)
 			state_machine.change_state("Interacting")

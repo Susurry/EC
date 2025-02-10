@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=8 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="PackedScene" uid="uid://bv7jahf4uj8v0" path="res://Scenes/Maps/Debug/debug.tscn" id="1_ighmg"]
+[ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="3_dtuef"]
 [ext_resource type="Script" path="res://Scripts/UI/score.gd" id="3_nnnuy"]
 [ext_resource type="Script" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
@@ -9,6 +10,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0b8yu")
+controls = ExtResource("2_0tg3l")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 texture_filter = 1
@@ -24,6 +26,7 @@ render_target_update_mode = 4
 [node name="Debug" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_ighmg")]
 
 [node name="UI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
@@ -80,7 +83,6 @@ grow_horizontal = 0
 text = "00 : 00 : 00"
 
 [node name="DebugElements" type="Control" parent="UI"]
-layout_mode = 1
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
