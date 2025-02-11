@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED: float = 50
+const SPRINT_SPEED: float = 100
 
 @onready var skin: PlayerSkin = $Skin
 @onready var state_machine: PlayerStateMachine = $StateMachine
@@ -10,6 +11,8 @@ var props_around: Array[Prop]
 
 var input_direction: Vector2
 var input_interact: bool
+
+var curr_speed: float
 
 func _ready() -> void:
 	initialize_state_machine()
@@ -23,6 +26,12 @@ func initialize_state_machine() -> void:
 
 func handle_input() -> void:
 	input_direction = Game.inputs.get_direction()
+
+func handle_sprint() -> void:
+	if (Game.inputs.is_sprinting()):
+		curr_speed = SPRINT_SPEED
+	else:
+		curr_speed = SPEED
 
 func handle_interact() -> void:
 	if (Game.inputs.is_interacting()):

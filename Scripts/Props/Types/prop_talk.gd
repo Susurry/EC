@@ -1,6 +1,6 @@
 extends Prop
 
-@export var dathing: String
+@export var timeline: String
 
 func on_interact(_player: Player) -> void:
-	Dialogic.start(dathing)
+	Dialogic.start(timeline)
