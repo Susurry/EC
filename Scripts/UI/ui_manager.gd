@@ -3,6 +3,7 @@ extends Control
 @onready var score_element: Control = $OWElements/ScoreElements
 @onready var time_element: Control = $OWElements/TimerElements
 @onready var debug_element: Control = $DebugElements
+@onready var pause_element: Control = $PauseElements
 
 func _ready() -> void:
 	initialize_debug_tools()

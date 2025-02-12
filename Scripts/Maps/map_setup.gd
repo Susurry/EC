@@ -3,6 +3,7 @@ class_name Map
 
 @export var player_resource: PackedScene
 @export var camera_resource: PackedScene 
+@export var pause_ressource: PackedScene
 
 @export var background_color: Color
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 	initialize_bg_color()
 	initialize_player()
 	initialize_camera()
+	initialize_pause()
 
 func initialize_player() -> void:
 	player = player_resource.instantiate()
@@ -33,3 +35,7 @@ func initialize_camera() -> void:
 
 func initialize_bg_color() -> void:
 	RenderingServer.set_default_clear_color(background_color)
+	
+func initialize_pause() -> void:
+	var pause = pause_ressource.instantiate()
+	add_child(pause)

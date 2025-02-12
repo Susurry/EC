@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bv7jahf4uj8v0"]
+[gd_scene load_steps=12 format=4 uid="uid://bv7jahf4uj8v0"]
 
 [ext_resource type="PackedScene" uid="uid://cma8bt0crjux0" path="res://Scenes/Player/player.tscn" id="1_4hn0q"]
 [ext_resource type="Script" path="res://Scripts/Maps/map_setup.gd" id="1_u1qa6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bgqgj7765vbkd" path="res://Scenes/Props/radiateur.tscn" id="3_h3mln"]
 [ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/baignoire.tscn" id="4_skoci"]
 [ext_resource type="PackedScene" uid="uid://cfutd05my7baa" path="res://Scenes/Camera/camera.tscn" id="7_mc8ak"]
+[ext_resource type="PackedScene" uid="uid://bfwcj54nwr3on" path="res://Scenes/UI/PauseElements/pause.tscn" id="8_s20tg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn0tc"]
 texture = ExtResource("3_4fo1h")
@@ -27,6 +28,7 @@ y_sort_enabled = true
 script = ExtResource("1_u1qa6")
 player_resource = ExtResource("1_4hn0q")
 camera_resource = ExtResource("7_mc8ak")
+pause_ressource = ExtResource("8_s20tg")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
 limit_left = -100
 limit_right = 500

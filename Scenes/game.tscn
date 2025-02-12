@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=9 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
-[ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="3_dtuef"]
-[ext_resource type="Script" path="res://Scripts/UI/score.gd" id="3_nnnuy"]
+[ext_resource type="Script" path="res://Scripts/UI/ui_manager.gd" id="3_dtuef"]
+[ext_resource type="Script" path="res://Scripts/UI/OWElements/score.gd" id="3_nnnuy"]
 [ext_resource type="Script" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
-[ext_resource type="Script" path="res://Scripts/UI/timer.gd" id="6_6ntbc"]
+[ext_resource type="Script" path="res://Scripts/UI/OWElements/timer.gd" id="6_6ntbc"]
+[ext_resource type="Script" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
+[ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0b8yu")
@@ -146,7 +148,106 @@ popup/item_0/text = "Debug"
 popup/item_1/text = "Debug2"
 popup/item_1/id = 1
 
+[node name="PauseElements" type="Control" parent="UI"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("7_2fcg4")
+
+[node name="Label" type="Label" parent="UI/PauseElements"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 83.0
+offset_top = -130.0
+offset_right = 208.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "PAUSE"
+
+[node name="TabContainer" type="TabContainer" parent="UI/PauseElements"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -67.0
+offset_right = 321.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Menu" type="Control" parent="UI/PauseElements/TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseElements/TabContainer/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -37.0
+offset_right = 32.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Retour" type="Button" parent="UI/PauseElements/TabContainer/Menu/VBoxContainer"]
+layout_mode = 2
+text = "Retour"
+
+[node name="HSeparator" type="HSeparator" parent="UI/PauseElements/TabContainer/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Quitter" type="Button" parent="UI/PauseElements/TabContainer/Menu/VBoxContainer"]
+layout_mode = 2
+text = "Quitter"
+
+[node name="Controls" type="VBoxContainer" parent="UI/PauseElements/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+metadata/_tab_index = 1
+
+[node name="Key_Rebind" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+layout_mode = 2
+
+[node name="Key_Rebind2" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+layout_mode = 2
+action_name = "right"
+
+[node name="Key_Rebind3" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+layout_mode = 2
+action_name = "up"
+
+[node name="Key_Rebind4" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+layout_mode = 2
+action_name = "down"
+
+[node name="Key_Rebind5" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+layout_mode = 2
+action_name = "interact"
+
 [connection signal="pressed" from="UI/DebugElements/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
 [connection signal="text_submitted" from="UI/DebugElements/LineEdit" to="UI/DebugElements" method="_on_line_edit_text_submitted"]
 [connection signal="item_selected" from="UI/DebugElements/RespawnDebug" to="UI/DebugElements" method="_on_respawn_debug_item_selected"]
 [connection signal="item_selected" from="UI/DebugElements/MapDebug" to="UI/DebugElements" method="_on_option_button_item_selected"]
+[connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Retour" to="UI/PauseElements" method="_on_retour_pressed"]
+[connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Quitter" to="UI/PauseElements" method="_on_quitter_pressed"]
