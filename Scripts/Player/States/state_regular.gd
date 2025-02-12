@@ -21,4 +21,5 @@ func animate(player: Player, _delta: float) -> void:
 		player.skin.set_animation_state(PlayerSkin.ANIMATION_STATES.walk)
 		player.skin.set_animation_direction(player.input_direction)
 	else:
+		player.skin.set_animation_speed(1.0)
 		player.skin.set_animation_state(PlayerSkin.ANIMATION_STATES.idle)

@@ -27,6 +27,7 @@ y_sort_enabled = true
 script = ExtResource("1_u1qa6")
 player_resource = ExtResource("1_4hn0q")
 camera_resource = ExtResource("7_mc8ak")
+background_color = Color(0.227451, 0.227451, 0.313726, 1)
 limit_left = -100
 limit_right = 500
 limit_top = -100

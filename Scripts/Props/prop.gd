@@ -3,13 +3,13 @@ class_name Prop
 
 signal onInteract
 
-@onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: Node2D = $PropSprite
 
 func draw_outline() -> void:
-	animatedSprite.material.set_shader_parameter("width",1.0)
+	sprite.material.set_shader_parameter("width",1.0)
 
 func erase_outline() -> void:
-	animatedSprite.material.set_shader_parameter("width",0)
+	sprite.material.set_shader_parameter("width",0)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.name == "Player"):

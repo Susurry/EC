@@ -55,7 +55,7 @@ size = Vector2(20, 27)
 y_sort_enabled = true
 script = ExtResource("1_lfh3d")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PropSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_8syqh")
 sprite_frames = SubResource("SpriteFrames_te7gt")
 autoplay = "default"

@@ -1,70 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgqgj7765vbkd"]
+[gd_scene load_steps=6 format=3 uid="uid://bgqgj7765vbkd"]
 
 [ext_resource type="Script" path="res://Scripts/Props/Types/radiateur.gd" id="1_edchd"]
 [ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_gtpoy"]
 [ext_resource type="Texture2D" uid="uid://dekyp0soam3k3" path="res://Graphics/Props/animated_radiator.png" id="3_0qcwu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lcvdf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blpni"]
 shader = ExtResource("2_gtpoy")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0nnj1"]
-atlas = ExtResource("3_0qcwu")
-region = Rect2(0, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bchu"]
-atlas = ExtResource("3_0qcwu")
-region = Rect2(29, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8qlq"]
-atlas = ExtResource("3_0qcwu")
-region = Rect2(58, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxi82"]
-atlas = ExtResource("3_0qcwu")
-region = Rect2(87, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivjyo"]
-atlas = ExtResource("3_0qcwu")
-region = Rect2(116, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pkssv"]
-atlas = ExtResource("3_0qcwu")
-region = Rect2(145, 0, 29, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_avwmd"]
-atlas = ExtResource("3_0qcwu")
-region = Rect2(174, 0, 29, 30)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1kcid"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0nnj1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3bchu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q8qlq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nxi82")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ivjyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pkssv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_avwmd")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq52r"]
 size = Vector2(23, 12)
@@ -73,9 +16,10 @@ size = Vector2(23, 12)
 y_sort_enabled = true
 script = ExtResource("1_edchd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_lcvdf")
-sprite_frames = SubResource("SpriteFrames_1kcid")
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_blpni")
+texture = ExtResource("3_0qcwu")
+hframes = 7
 
 [node name="Area2D" type="Area2D" parent="."]
 

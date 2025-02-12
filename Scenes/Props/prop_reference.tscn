@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_fqnt1"]
 [ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_y06h2"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8syqh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
 shader = ExtResource("2_y06h2")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
@@ -17,8 +17,8 @@ size = Vector2(22, 22)
 y_sort_enabled = true
 script = ExtResource("1_fqnt1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_8syqh")
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_aomuj")
 
 [node name="Area2D" type="Area2D" parent="."]
 

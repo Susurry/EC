@@ -16,7 +16,6 @@ func _is_mobile() -> bool:
 	return OS.has_feature("web_android") || OS.has_feature("web_ios")
 
 func _initialize_viewport() -> void:
-	RenderingServer.set_default_clear_color(Color.BLACK)
 	ThreadLoad.initialize_viewport($SubViewportContainer/SubViewport)
 	ThreadLoad.load_scene(first_map)
 
