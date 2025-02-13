@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://6eecifybnu8r"]
+[gd_scene load_steps=54 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Scenes/Maps/Ville/Appartement.tres" id="2_2g8ls"]
@@ -104,6 +104,13 @@ region = Rect2(48, 74, 20, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yo6nu"]
 size = Vector2(16, 14)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jooey"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(68, 65, 20, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cihg3"]
+size = Vector2(15, 15)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhf2a"]
 atlas = ExtResource("6_dxfoh")
 region = Rect2(0, 0, 36, 39)
@@ -131,6 +138,10 @@ region = Rect2(19, 104, 17, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1yqo"]
 size = Vector2(13, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uow5"]
+atlas = ExtResource("6_dxfoh")
+region = Rect2(227, 16, 15, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8jqf5"]
 atlas = ExtResource("8_ocr7a")
@@ -327,7 +338,7 @@ shape = SubResource("RectangleShape2D_fm46s")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="MeublesCuisine" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(40, 108)
+position = Vector2(41, 108)
 texture = SubResource("AtlasTexture_1h0dr")
 offset = Vector2(0, 15)
 
@@ -367,6 +378,17 @@ texture = SubResource("AtlasTexture_vixhj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chaise1/StaticBody2D"]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_yo6nu")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Chaise2" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(98, 123)
+texture = SubResource("AtlasTexture_jooey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Chaise2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chaise2/StaticBody2D"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_cihg3")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Rangement" type="Sprite2D" parent="Props/Generic"]
@@ -412,6 +434,10 @@ texture = SubResource("AtlasTexture_gx0ag")
 position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_o1yqo")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="TapisSortie" type="Sprite2D" parent="Props/Generic"]
+position = Vector2(217, 152)
+texture = SubResource("AtlasTexture_7uow5")
 
 [node name="PorteSDB" type="AnimatedSprite2D" parent="Props"]
 position = Vector2(168, 107)
