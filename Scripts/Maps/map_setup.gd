@@ -1,12 +1,7 @@
 extends Node2D
 class_name Map
 
-@export var player_resource: PackedScene
-@export var camera_resource: PackedScene 
-@export var pause_ressource: PackedScene
-
 @export var background_color: Color
-
 @export var limit_left: int = 0
 @export var limit_right: int = 10000
 @export var limit_top: int = 0
@@ -15,6 +10,10 @@ class_name Map
 var player: Player
 var camera: Camera2D
 var start_id: int = 0
+
+@onready var player_resource: PackedScene = preload("uid://cma8bt0crjux0")
+@onready var camera_resource: PackedScene = preload("uid://cfutd05my7baa")
+@onready var pause_ressource: PackedScene = preload("uid://bfwcj54nwr3on")
 
 func _ready() -> void:
 	initialize_bg_color()

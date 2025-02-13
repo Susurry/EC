@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var maps: Resource
-@export var loading_screen: PackedScene
-
 var viewport: SubViewport
+
+@onready var loading_screen: PackedScene = preload("uid://dncr4ks587ty3") 
+@onready  var maps: Resource = preload("uid://byrvrkqe18ml0")
 
 func initialize_viewport(game_viewport: SubViewport) -> void:
 	viewport = game_viewport
