@@ -11,7 +11,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0b8yu")
-first_map = "Debug"
+first_map = "Appartement"
 controls = ExtResource("2_0tg3l")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -21,6 +21,7 @@ offset_bottom = 1080.0
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
+snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4

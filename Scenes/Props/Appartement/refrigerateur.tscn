@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3 uid="uid://xaecaqya5vhf"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_wnx7y"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_h6l2b"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="3_1dvp8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibmy1"]
+shader = ExtResource("2_h6l2b")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfwcg"]
+atlas = ExtResource("3_1dvp8")
+region = Rect2(0, 128, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6b7c"]
+atlas = ExtResource("3_1dvp8")
+region = Rect2(32, 128, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bj35"]
+atlas = ExtResource("3_1dvp8")
+region = Rect2(64, 128, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6dia"]
+atlas = ExtResource("3_1dvp8")
+region = Rect2(96, 128, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nbpr"]
+atlas = ExtResource("3_1dvp8")
+region = Rect2(128, 128, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6syn"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_dfwcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6b7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bj35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6dia")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_6nbpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6dia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bj35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6b7c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(8, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+size = Vector2(11, 37)
+
+[node name="Refrigerateur" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(28, 158)
+script = ExtResource("1_wnx7y")
+timeline = "Refrigerateur"
+
+[node name="PropSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ibmy1")
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_y6syn")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, 1)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4.5, -0.5)
+shape = SubResource("RectangleShape2D_abqwm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

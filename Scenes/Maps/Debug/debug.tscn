@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://bv7jahf4uj8v0"]
+[gd_scene load_steps=7 format=4 uid="uid://bv7jahf4uj8v0"]
 
 [ext_resource type="Script" path="res://Scripts/Maps/map_setup.gd" id="1_u1qa6"]
 [ext_resource type="Texture2D" uid="uid://b0ddcd68fgmkb" path="res://icon.svg" id="2_28i80"]
 [ext_resource type="Texture2D" uid="uid://csbb1b36ogu1p" path="res://Graphics/Tilesets/City_Terrains.png" id="3_4fo1h"]
-[ext_resource type="PackedScene" uid="uid://bgqgj7765vbkd" path="res://Scenes/Props/radiateur.tscn" id="3_h3mln"]
-[ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/baignoire.tscn" id="4_skoci"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn0tc"]
 texture = ExtResource("3_4fo1h")
@@ -53,10 +51,3 @@ texture = ExtResource("2_28i80")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 shape = SubResource("RectangleShape2D_fm888")
-
-[node name="Radiateur" parent="." instance=ExtResource("3_h3mln")]
-position = Vector2(38, 114)
-
-[node name="Baignoire" parent="." instance=ExtResource("4_skoci")]
-position = Vector2(87, 67)
-timeline = "dial_test2"

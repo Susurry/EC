@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://c651srsug8m05"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_2wgxy"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="2_blxri"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_fbh47"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70myv"]
+shader = ExtResource("2_fbh47")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1qv3"]
+atlas = ExtResource("2_blxri")
+region = Rect2(128, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmd2k"]
+atlas = ExtResource("2_blxri")
+region = Rect2(176, 64, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vc204"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1qv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmd2k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(33.5, 21.5)
+
+[node name="Television" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(95, 20)
+script = ExtResource("1_2wgxy")
+timeline = "Television"
+
+[node name="PropSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_70myv")
+sprite_frames = SubResource("SpriteFrames_vc204")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.25, 18)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
