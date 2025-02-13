@@ -1,10 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://qmadlfp31trp"]
+[gd_scene load_steps=5 format=4 uid="uid://qmadlfp31trp"]
 
 [ext_resource type="Script" path="res://Scripts/Maps/map_setup.gd" id="1_tskkq"]
-[ext_resource type="PackedScene" uid="uid://cma8bt0crjux0" path="res://Scenes/Player/player.tscn" id="2_un65m"]
-[ext_resource type="PackedScene" uid="uid://cfutd05my7baa" path="res://Scenes/Camera/camera.tscn" id="3_dcvdv"]
 [ext_resource type="Texture2D" uid="uid://csbb1b36ogu1p" path="res://Graphics/Tilesets/City_Terrains.png" id="4_8keua"]
-[ext_resource type="PackedScene" uid="uid://bfwcj54nwr3on" path="res://Scenes/UI/PauseElements/pause.tscn" id="4_rgqqi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8hit0"]
 texture = ExtResource("4_8keua")
@@ -19,9 +16,6 @@ sources/0 = SubResource("TileSetAtlasSource_8hit0")
 
 [node name="Debug2" type="Node2D"]
 script = ExtResource("1_tskkq")
-player_resource = ExtResource("2_un65m")
-camera_resource = ExtResource("3_dcvdv")
-pause_ressource = ExtResource("4_rgqqi")
 
 [node name="StartPoints" type="Node2D" parent="."]
 

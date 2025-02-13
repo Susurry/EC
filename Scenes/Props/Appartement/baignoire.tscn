@@ -1,0 +1,136 @@
+[gd_scene load_steps=20 format=3 uid="uid://b1vb7txwbkq24"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_toggle.gd" id="1_sjd1u"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_vcscp"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="3_jus2a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8syqh"]
+shader = ExtResource("2_vcscp")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbtrl"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ishj"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhmw4"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guioi"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebtnp"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nst3y"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is5q6"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdkrs"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5n2g"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq8k2"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r8h7"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj7ef"]
+atlas = ExtResource("3_jus2a")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_te7gt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbtrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ishj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhmw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guioi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebtnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nst3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is5q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdkrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5n2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq8k2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r8h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj7ef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(26, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+size = Vector2(20, 22)
+
+[node name="Baignoire" type="Node2D"]
+z_index = -1
+y_sort_enabled = true
+script = ExtResource("1_sjd1u")
+timeline = "Baignoire"
+
+[node name="PropSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_8syqh")
+sprite_frames = SubResource("SpriteFrames_te7gt")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 23.5)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_abqwm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

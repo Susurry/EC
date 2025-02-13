@@ -1,33 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxcxonkl50hfs"]
+[gd_scene load_steps=8 format=3 uid="uid://0ji1ktwqxaxa"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_fqnt1"]
-[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_y06h2"]
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_g5w4t"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_yrn7m"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/PropSheetSolo.png" id="3_408e4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
-shader = ExtResource("2_y06h2")
+shader = ExtResource("2_yrn7m")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nburb"]
+atlas = ExtResource("3_408e4")
+region = Rect2(178, 0, 35, 38)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
-size = Vector2(22, 22)
+size = Vector2(24, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+size = Vector2(29.5, 20)
 
-[node name="PropReference" type="Node2D"]
+[node name="MeubleSDB" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_fqnt1")
+script = ExtResource("1_g5w4t")
+timeline = "MeubleSDB"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_aomuj")
+texture = SubResource("AtlasTexture_nburb")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_rxyj1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.25, 7)
 shape = SubResource("RectangleShape2D_abqwm")
 debug_color = Color(1, 0, 0, 0.419608)
 
