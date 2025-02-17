@@ -26,7 +26,7 @@ func _initialize_inputs() -> void:
 				inputs = load(controls.types["Mobile"]).instantiate()
 			else:
 				inputs = load(controls.types["Default"]).instantiate()
-		_:
-			inputs = load(controls.types["Default"]).instantiate()
+		_: # Si pas sur plateforme web
+			inputs = load(controls.types["Mobile"]).instantiate()
 	
 	add_child(inputs)

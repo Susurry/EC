@@ -1,5 +1,8 @@
 extends InputManager
 
+const MOVE_DEADZONE: float = 8
+const SPRINT_DEADZONE: float = 40
+
 @onready var knob = $Joystick/Knob
 @onready var max_dist = $Joystick.shape.radius
 @onready var stick_center: Vector2 = $Joystick.texture_normal.get_size() / 2
@@ -16,8 +19,20 @@ func _process(delta: float) -> void:
 		interact_pressed_timer -= delta
 
 func get_direction() -> Vector2:
-	var dir = knob.position - stick_center
+	var dir: Vector2 = Vector2.ZERO
+	
+	if stick_center.distance_to(knob.position) > MOVE_DEADZONE:
+		dir = knob.position - stick_center
+	
 	return dir
+
+func is_sprinting() -> bool:
+	var sprint: bool = false
+	
+	if stick_center.distance_to(knob.position) > SPRINT_DEADZONE:
+		sprint = true
+	
+	return sprint
 
 func is_interacting() -> bool:
 	return interact_pressed_timer > 0
