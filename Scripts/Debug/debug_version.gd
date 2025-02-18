@@ -20,7 +20,7 @@ func _on_button_pressed() -> void:
 
 # SCORE MODIFIER
 func _on_line_edit_text_submitted(new_score: String) -> void:
-	Game.ui.update_score(int(new_score))
+	Game.ui.update_empreinte(int(new_score))
 	line_edit.text = ""
 
 

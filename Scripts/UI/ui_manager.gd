@@ -1,7 +1,6 @@
 extends Control
 
-@onready var score_element: Control = $OWElements/ScoreElements
-@onready var time_element: Control = $OWElements/TimerElements
+@onready var carbone_element: Control = $OWElements/Rows/Carbone
 @onready var debug_element: Control = $DebugElements
 @onready var pause_element: Control = $PauseElements
 
@@ -12,5 +11,5 @@ func initialize_debug_tools() -> void:
 	if !OS.is_debug_build():
 		debug_element.queue_free()
 
-func update_score(arg: int) -> void:
-	score_element.on_update_score(arg)
+func update_empreinte(arg: int) -> void:
+	carbone_element.on_update_empreinte(arg)

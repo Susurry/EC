@@ -1,13 +1,48 @@
-[gd_scene load_steps=9 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=20 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
 [ext_resource type="Script" path="res://Scripts/UI/ui_manager.gd" id="3_dtuef"]
 [ext_resource type="Script" path="res://Scripts/UI/OWElements/score.gd" id="3_nnnuy"]
 [ext_resource type="Script" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
+[ext_resource type="Theme" uid="uid://beo0lsl3ym4d2" path="res://Graphics/UI/Themes/Panel_Container.tres" id="5_hijog"]
 [ext_resource type="Script" path="res://Scripts/UI/OWElements/timer.gd" id="6_6ntbc"]
+[ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="6_j0fp3"]
 [ext_resource type="Script" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
+[ext_resource type="LabelSettings" uid="uid://bjqrdqohjhs6g" path="res://Graphics/UI/Themes/Label_UI.tres" id="7_qvet4"]
 [ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
+[ext_resource type="Script" path="res://Scripts/UI/OWElements/grade.gd" id="9_8c7js"]
+[ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
+[ext_resource type="Texture2D" uid="uid://dlnaxsc87amrs" path="res://Graphics/UI/Grade.svg" id="10_ccnpu"]
+[ext_resource type="Texture2D" uid="uid://dj2x73g0s5dqt" path="res://Graphics/UI/Timer.svg" id="11_hab27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bohx"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxqwe"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxa5y"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl602"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_detail = 4
+anti_aliasing = false
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0b8yu")
@@ -34,53 +69,170 @@ offset_bottom = 1080.0
 mouse_filter = 2
 script = ExtResource("3_dtuef")
 
-[node name="OWElements" type="Control" parent="UI"]
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-mouse_filter = 2
+[node name="OWElements" type="MarginContainer" parent="UI"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 200.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 25
 
-[node name="ScoreElements" type="Control" parent="UI/OWElements"]
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="Rows" type="HBoxContainer" parent="UI/OWElements"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="Carbone" type="Control" parent="UI/OWElements/Rows"]
+layout_mode = 2
 mouse_filter = 2
 script = ExtResource("3_nnnuy")
 
-[node name="Score" type="Label" parent="UI/OWElements/ScoreElements"]
-layout_mode = 1
-offset_left = 5.0
-offset_right = 130.0
-offset_bottom = 23.0
-text = "Pollution Score :"
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Carbone"]
+layout_mode = 2
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("5_hijog")
 
-[node name="Grade" type="Label" parent="UI/OWElements/ScoreElements"]
-layout_mode = 1
-offset_left = 300.0
-offset_right = 340.0
-offset_bottom = 23.0
-text = "C"
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Carbone/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Carbone/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_j0fp3")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Carbone"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 72.0
+offset_right = 62.0
+offset_bottom = 109.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0bohx")
+
+[node name="Label" type="Label" parent="UI/OWElements/Rows/Carbone/PanelLabel"]
+layout_mode = 2
+text = "6.9"
+label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TimerElements" type="Control" parent="UI/OWElements"]
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="Follower" type="Control" parent="UI/OWElements/Rows"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Follower"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("5_hijog")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Follower/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Follower/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("9_hu01s")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Follower"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 72.0
+offset_right = 62.0
+offset_bottom = 109.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
+
+[node name="Label" type="Label" parent="UI/OWElements/Rows/Follower/PanelLabel"]
+layout_mode = 2
+text = "01
+"
+label_settings = ExtResource("7_qvet4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grade" type="Control" parent="UI/OWElements/Rows"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("9_8c7js")
+
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Grade"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("5_hijog")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Grade/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Grade/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_ccnpu")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Grade"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 72.0
+offset_right = 62.0
+offset_bottom = 109.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cxa5y")
+
+[node name="Label" type="Label" parent="UI/OWElements/Rows/Grade/PanelLabel"]
+layout_mode = 2
+text = "C"
+label_settings = ExtResource("7_qvet4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Control" parent="UI/OWElements/Rows"]
+layout_mode = 2
 mouse_filter = 2
 script = ExtResource("6_6ntbc")
 minute = 10
 seconde = 20
 
-[node name="Time" type="Label" parent="UI/OWElements/TimerElements"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -86.0
-offset_right = -5.0
-offset_bottom = 23.0
-grow_horizontal = 0
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Timer"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("5_hijog")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Timer/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Timer/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_hab27")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Timer"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 8.0
+offset_right = 231.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bl602")
+
+[node name="Label" type="Label" parent="UI/OWElements/Rows/Timer/PanelLabel"]
+layout_mode = 2
 text = "00 : 00 : 00"
+label_settings = ExtResource("7_qvet4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DebugElements" type="Control" parent="UI"]
 anchors_preset = 0
@@ -106,10 +258,10 @@ focus_mode = 0
 
 [node name="LineEdit" type="LineEdit" parent="UI/DebugElements"]
 layout_mode = 1
-offset_left = 5.0
-offset_top = 28.0
-offset_right = 130.0
-offset_bottom = 59.0
+offset_left = 10.0
+offset_top = 996.0
+offset_right = 135.0
+offset_bottom = 1027.0
 placeholder_text = "Modifier Score"
 clear_button_enabled = true
 

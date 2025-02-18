@@ -8,7 +8,7 @@ extends Control
 var time : float
 var format_string = "%02d : %02d : %02d"
 
-@onready var time_label = $Time
+@onready var time_label = $PanelLabel/Label
 
 func _ready() -> void:
 	time_label.text = format_string % [heure, minute, seconde]
