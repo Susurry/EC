@@ -3,21 +3,18 @@ class_name Game
 
 @export var first_map: String
 @export var controls: Resource
+@export var viewport: SubViewport
 
-static var ui
 static var inputs: InputManager
 
 func _ready() -> void:
 	_initialize_viewport()
 	_initialize_inputs()
-	ui = $UI
-
-func _is_mobile() -> bool:
-	return OS.has_feature("web_android") || OS.has_feature("web_ios")
 
 func _initialize_viewport() -> void:
-	ThreadLoad.initialize_viewport($SubViewportContainer/SubViewport)
+	ThreadLoad.initialize_viewport(viewport)
 	ThreadLoad.load_scene(first_map)
+	get_tree().root.size_changed.connect(_setup_resolution_change) # Signal si la résolution change
 
 func _initialize_inputs() -> void:
 	match OS.get_name():
@@ -29,4 +26,11 @@ func _initialize_inputs() -> void:
 		_: # Si pas sur plateforme web
 			inputs = load(controls.types["Mobile"]).instantiate()
 	
-	add_child(inputs)
+	$UI.add_child(inputs)
+
+func _is_mobile() -> bool:
+	return OS.has_feature("web_android") || OS.has_feature("web_ios")
+
+func _setup_resolution_change() -> void:
+	$SubViewportContainer.set_size(get_viewport_rect().size)
+	$UI.set_size(get_viewport_rect().size)

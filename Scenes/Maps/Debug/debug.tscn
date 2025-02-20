@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0ddcd68fgmkb" path="res://icon.svg" id="2_28i80"]
 [ext_resource type="Texture2D" uid="uid://csbb1b36ogu1p" path="res://Graphics/Tilesets/City_Terrains.png" id="3_4fo1h"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nn0tc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gol01"]
 texture = ExtResource("3_4fo1h")
 15:10/0 = 0
 10:6/0 = 0
@@ -13,7 +13,7 @@ texture = ExtResource("3_4fo1h")
 
 [sub_resource type="TileSet" id="TileSet_0w515"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_nn0tc")
+sources/0 = SubResource("TileSetAtlasSource_gol01")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm888"]
 size = Vector2(128, 128)

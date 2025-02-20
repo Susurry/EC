@@ -2,5 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/Inputs/Types/input_default.gd" id="1_yqbwc"]
 
-[node name="DefaultInput" type="Node2D"]
+[node name="DefaultInput" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_yqbwc")

@@ -1,11 +1,11 @@
 extends InputManager
 
-const MOVE_DEADZONE: float = 8
-const SPRINT_DEADZONE: float = 40
+const MOVE_DEADZONE: float = 10
+const SPRINT_DEADZONE: float = 60
 
-@onready var knob = $Joystick/Knob
-@onready var max_dist = $Joystick.shape.radius
-@onready var stick_center: Vector2 = $Joystick.texture_normal.get_size() / 2
+@onready var knob: Sprite2D = $MarginContainer/Control/Joystick/Knob
+@onready var max_dist: float = $MarginContainer/Control/Joystick.shape.radius
+@onready var stick_center: Vector2 = $MarginContainer/Control/Joystick.texture_normal.get_size() / 2
 
 var touched: bool = false
 var interact_pressed_timer: float

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name InputManager
 
 func get_direction() -> Vector2:
