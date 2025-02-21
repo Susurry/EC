@@ -2,6 +2,9 @@ extends PlayerState
 
 var canMove: bool = true
 
+func _ready() -> void:
+	Dialogic.timeline_started.connect(onTimelineStarted)
+
 func step(player: Player, _delta: float) -> void:
 	player.handle_input()
 	player.handle_sprint()
@@ -23,3 +26,6 @@ func animate(player: Player, _delta: float) -> void:
 	else:
 		player.skin.set_animation_speed(1.0)
 		player.skin.set_animation_state(PlayerSkin.ANIMATION_STATES.idle)
+
+func onTimelineStarted() -> void:
+	get_parent().change_state("Interacting")

@@ -65,7 +65,7 @@ animations = [{
 size = Vector2(8, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
-size = Vector2(12, 37)
+size = Vector2(13, 35)
 
 [node name="Refrigerateur" type="Node2D"]
 y_sort_enabled = true
@@ -88,7 +88,7 @@ shape = SubResource("RectangleShape2D_rxyj1")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-4, 0)
+position = Vector2(-3.5, 0.5)
 shape = SubResource("RectangleShape2D_abqwm")
 debug_color = Color(1, 0, 0, 0.419608)
 
