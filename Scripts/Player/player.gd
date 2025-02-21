@@ -37,7 +37,6 @@ func handle_interact() -> void:
 	if (Game.inputs.is_interacting()):
 		if (props_around):
 			props_around[props_around.size()-1].on_interact(self)
-			state_machine.change_state("Interacting")
 
 func handle_state_update(delta: float) -> void:
 	state_machine.update_state(delta)
