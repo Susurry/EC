@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://xaecaqya5vhf"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_wnx7y"]
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_toggle.gd" id="1_qion4"]
 [ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_h6l2b"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="3_1dvp8"]
 
@@ -65,12 +65,12 @@ animations = [{
 size = Vector2(8, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
-size = Vector2(11, 37)
+size = Vector2(12, 37)
 
 [node name="Refrigerateur" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(28, 158)
-script = ExtResource("1_wnx7y")
+script = ExtResource("1_qion4")
 timeline = "Refrigerateur"
 
 [node name="PropSprite" type="AnimatedSprite2D" parent="."]
@@ -88,7 +88,7 @@ shape = SubResource("RectangleShape2D_rxyj1")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-4.5, -0.5)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_abqwm")
 debug_color = Color(1, 0, 0, 0.419608)
 

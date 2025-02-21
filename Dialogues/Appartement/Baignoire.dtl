@@ -1,5 +1,10 @@
 label book1
-Vous vous lavez.
+Comment souhaitez-vous vous laver ?
+- Prendre un bain
+	do EventBus.emit_signal("set_empreinte", 0.1)
+- Prendre une douche
+	do EventBus.emit_signal("set_empreinte", -0.1)
+Vous êtes tout propre ! Normalement c'est un mini-jeu.
 [end_timeline]
 label book2
 Vous vous êtes déjà lavé.

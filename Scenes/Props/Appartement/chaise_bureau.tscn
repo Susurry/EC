@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnusf4j8q8ps6"]
+
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_mhcd4"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_pyiot"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/PropSheetSolo.png" id="3_hpn3q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
+shader = ExtResource("2_pyiot")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsbxf"]
+atlas = ExtResource("3_hpn3q")
+region = Rect2(19, 104, 17, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(5, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+size = Vector2(13, 13)
+
+[node name="ChaiseBureau" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(41, 80)
+script = ExtResource("1_mhcd4")
+timeline = "ChaiseBureau"
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_aomuj")
+texture = SubResource("AtlasTexture_bsbxf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12, 2)
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 4.5)
+shape = SubResource("RectangleShape2D_abqwm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

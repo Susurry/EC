@@ -28,7 +28,7 @@ func _on_button_pressed() -> void:
 
 # SCORE MODIFIER
 func _on_line_edit_text_submitted(new_score: String) -> void:
-	EventBus.emit_signal("set_empreinte", int(new_score))
+	EventBus.emit_signal("set_empreinte", float(new_score))
 	line_edit.text = ""
 
 # SCENE TELEPORTER
