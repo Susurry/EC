@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="QuestList" load_steps=2 format=3 uid="uid://bnvvnakxw6yl5"]
+
+[ext_resource type="Script" path="res://Scripts/UI/QuestElements/Resources/quest_list.gd" id="1_q1q63"]
+
+[resource]
+script = ExtResource("1_q1q63")
+quests = {
+"quest1": "uid://bfl61vq4myag0",
+"quest2": "uid://bx20exuffsaqg",
+"quest3": "uid://ds5xgmt3sm8dm"
+}

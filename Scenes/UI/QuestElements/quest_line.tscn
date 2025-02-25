@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c584eglnuab88"]
+
+[ext_resource type="Theme" uid="uid://beo0lsl3ym4d2" path="res://Graphics/UI/Themes/Panel_Container.tres" id="1_4c8dg"]
+
+[node name="QuestLine" type="HBoxContainer"]
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_4c8dg")
+
+[node name="Label" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+text = "Temp Text"
+horizontal_alignment = 1
+vertical_alignment = 1
