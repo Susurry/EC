@@ -1,0 +1,14 @@
+label book1
+Qu'est ce que tu veux ?
+- Une montre ? | [if SaveManager.getElement("Player", "inventory").has("montre") == false] [else="disable"]
+	Tiens.
+	do EventBus.emit_signal("add_item", "montre")
+
+- DES GENS !? | [if SaveManager.getElement("Player", "inventory").has("gens") == false] [else="disable"]
+	TIENS!
+	do EventBus.emit_signal("add_item", "gens")
+- tout effacer
+	do EventBus.emit_signal("clear_items")
+- effacer gens
+	do EventBus.emit_signal("remove_item", "gens")
+[end_timeline]

@@ -10,6 +10,7 @@ static var inputs: InputManager
 func _ready() -> void:
 	_initialize_viewport()
 	_initialize_inputs()
+	_initialize_dialogic()
 
 func _initialize_viewport() -> void:
 	ThreadLoad.initialize_viewport(viewport)
@@ -27,6 +28,9 @@ func _initialize_inputs() -> void:
 			inputs = load(controls.types["Mobile"]).instantiate()
 	
 	$UI.add_child(inputs)
+
+func _initialize_dialogic() -> void:
+	Dialogic.start("init")
 
 func _is_mobile() -> bool:
 	return OS.has_feature("web_android") || OS.has_feature("web_ios")

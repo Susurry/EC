@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://cfisy1407tyxo"]
+
+[ext_resource type="Texture2D" uid="uid://dmh3spjg6ychw" path="res://Graphics/Characters/character_m_1.png" id="1_5s01q"]
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_ovryl"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_o68bl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vayjf"]
+shader = ExtResource("2_o68bl")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf4u6"]
+atlas = ExtResource("1_5s01q")
+region = Rect2(288, 41, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eheae"]
+atlas = ExtResource("1_5s01q")
+region = Rect2(304, 41, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt16r"]
+atlas = ExtResource("1_5s01q")
+region = Rect2(320, 41, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gftn"]
+atlas = ExtResource("1_5s01q")
+region = Rect2(336, 41, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktx8p"]
+atlas = ExtResource("1_5s01q")
+region = Rect2(352, 41, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfnd4"]
+atlas = ExtResource("1_5s01q")
+region = Rect2(368, 41, 16, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbngg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf4u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eheae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt16r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gftn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktx8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfnd4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3338"]
+size = Vector2(20, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfxdk"]
+size = Vector2(16, 23)
+
+[node name="PNJ" type="Node2D"]
+script = ExtResource("1_ovryl")
+timeline = "pnj"
+
+[node name="PropSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_vayjf")
+sprite_frames = SubResource("SpriteFrames_kbngg")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_t3338")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bfxdk")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

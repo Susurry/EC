@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Items" load_steps=2 format=3 uid="uid://bq5ri1v65mysg"]
+
+[ext_resource type="Script" path="res://Scripts/UI/InventoryElements/Resources/items_list.gd" id="1_kinnu"]
+
+[resource]
+script = ExtResource("1_kinnu")
+dictionnaire = {
+"gens": "uid://bxlgsb6fsifr8",
+"montre": "uid://dj2x73g0s5dqt"
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=27 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -14,8 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
 [ext_resource type="Texture2D" uid="uid://dlnaxsc87amrs" path="res://Graphics/UI/Grade.svg" id="10_ccnpu"]
 [ext_resource type="Texture2D" uid="uid://dj2x73g0s5dqt" path="res://Graphics/UI/Timer.svg" id="11_hab27"]
+[ext_resource type="Script" path="res://Scripts/UI/InventoryElements/inventaire.gd" id="12_dga6m"]
+[ext_resource type="PackedScene" uid="uid://dd68i11y1vc5d" path="res://Scenes/UI/InventoryElements/item_inventaire.tscn" id="13_2gf62"]
+[ext_resource type="Resource" uid="uid://bq5ri1v65mysg" path="res://Resources/UI/item_list.tres" id="14_d0qqe"]
 [ext_resource type="Script" path="res://Scripts/UI/QuestElements/quest_manager.gd" id="15_kmh8j"]
-[ext_resource type="Resource" uid="uid://bnvvnakxw6yl5" path="res://Resources/quest_list.tres" id="16_r4mnh"]
+[ext_resource type="Resource" uid="uid://bnvvnakxw6yl5" path="res://Resources/UI/quest_list.tres" id="16_r4mnh"]
 [ext_resource type="PackedScene" uid="uid://c584eglnuab88" path="res://Scenes/UI/QuestElements/quest_line.tscn" id="17_1aw0d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bohx"]
@@ -86,34 +89,38 @@ offset_bottom = 200.0
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 25
 
-[node name="Rows" type="HBoxContainer" parent="UI/OWElements"]
+[node name="Columns" type="VBoxContainer" parent="UI/OWElements"]
+layout_mode = 2
+theme_override_constants/separation = 130
+
+[node name="Stats" type="HBoxContainer" parent="UI/OWElements/Columns"]
 layout_mode = 2
 theme_override_constants/separation = 90
 
-[node name="Carbone" type="Control" parent="UI/OWElements/Rows"]
+[node name="Carbone" type="Control" parent="UI/OWElements/Columns/Stats"]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("3_nnnuy")
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Carbone"]
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Carbone"]
 layout_mode = 2
 offset_right = 72.0
 offset_bottom = 72.0
 theme = ExtResource("5_hijog")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Carbone/LogoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Carbone/LogoPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Carbone/LogoPanel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Carbone/LogoPanel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("6_j0fp3")
 expand_mode = 1
 
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Carbone"]
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Carbone"]
 layout_mode = 2
 offset_left = 9.0
 offset_top = 72.0
@@ -121,36 +128,36 @@ offset_right = 62.0
 offset_bottom = 109.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0bohx")
 
-[node name="Label" type="Label" parent="UI/OWElements/Rows/Carbone/PanelLabel"]
+[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Carbone/PanelLabel"]
 layout_mode = 2
 text = "6.9"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Follower" type="Control" parent="UI/OWElements/Rows"]
+[node name="Follower" type="Control" parent="UI/OWElements/Columns/Stats"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Follower"]
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Follower"]
 layout_mode = 0
 offset_right = 72.0
 offset_bottom = 72.0
 theme = ExtResource("5_hijog")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Follower/LogoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Follower/LogoPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Follower/LogoPanel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Follower/LogoPanel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("9_hu01s")
 expand_mode = 1
 
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Follower"]
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Follower"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 72.0
@@ -158,7 +165,7 @@ offset_right = 62.0
 offset_bottom = 109.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
-[node name="Label" type="Label" parent="UI/OWElements/Rows/Follower/PanelLabel"]
+[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Follower/PanelLabel"]
 layout_mode = 2
 text = "01
 "
@@ -166,30 +173,30 @@ label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Grade" type="Control" parent="UI/OWElements/Rows"]
+[node name="Grade" type="Control" parent="UI/OWElements/Columns/Stats"]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("9_8c7js")
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Grade"]
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Grade"]
 layout_mode = 0
 offset_right = 72.0
 offset_bottom = 72.0
 theme = ExtResource("5_hijog")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Grade/LogoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Grade/LogoPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Grade/LogoPanel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Grade/LogoPanel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("10_ccnpu")
 expand_mode = 1
 
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Grade"]
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Grade"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 72.0
@@ -197,39 +204,39 @@ offset_right = 62.0
 offset_bottom = 109.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cxa5y")
 
-[node name="Label" type="Label" parent="UI/OWElements/Rows/Grade/PanelLabel"]
+[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Grade/PanelLabel"]
 layout_mode = 2
 text = "C"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Control" parent="UI/OWElements/Rows"]
+[node name="Timer" type="Control" parent="UI/OWElements/Columns/Stats"]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("6_6ntbc")
 minute = 10
 seconde = 20
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Rows/Timer"]
+[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer"]
 layout_mode = 0
 offset_right = 72.0
 offset_bottom = 72.0
 theme = ExtResource("5_hijog")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Rows/Timer/LogoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Timer/LogoPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Rows/Timer/LogoPanel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Timer/LogoPanel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("11_hab27")
 expand_mode = 1
 
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Rows/Timer"]
+[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer"]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 8.0
@@ -237,12 +244,19 @@ offset_right = 231.0
 offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bl602")
 
-[node name="Label" type="Label" parent="UI/OWElements/Rows/Timer/PanelLabel"]
+[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Timer/PanelLabel"]
 layout_mode = 2
 text = "00 : 00 : 00"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Inventaire" type="HBoxContainer" parent="UI/OWElements/Columns"]
+layout_mode = 2
+theme_override_constants/separation = 70
+script = ExtResource("12_dga6m")
+item_display = ExtResource("13_2gf62")
+list_item = ExtResource("14_d0qqe")
 
 [node name="DebugElements" type="MarginContainer" parent="UI"]
 layout_mode = 1
@@ -398,13 +412,16 @@ action_name = "interact"
 
 [node name="QuestElements" type="Control" parent="UI"]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
+anchor_bottom = 0.5
 offset_left = -300.0
-offset_top = 325.0
-offset_bottom = 825.0
+offset_top = -250.0
+offset_bottom = 250.0
 grow_horizontal = 0
+grow_vertical = 2
 script = ExtResource("15_kmh8j")
 quest_data = ExtResource("16_r4mnh")
 quest_prefab = ExtResource("17_1aw0d")

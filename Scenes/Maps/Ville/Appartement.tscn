@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://6eecifybnu8r"]
+[gd_scene load_steps=49 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Scenes/Maps/Ville/Appartement.tres" id="2_2g8ls"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cx1fol84qh5hv" path="res://Scenes/Props/Appartement/porte_sdb.tscn" id="12_l8hgc"]
 [ext_resource type="PackedScene" uid="uid://cyqoe56afno1e" path="res://Scenes/Props/Appartement/rangement.tscn" id="12_vo2jj"]
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
+[ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="15_0xvqo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
@@ -378,3 +379,6 @@ position = Vector2(168, 106)
 [node name="Rangement" parent="." instance=ExtResource("12_vo2jj")]
 
 [node name="ChaiseBureau" parent="." instance=ExtResource("13_hvk87")]
+
+[node name="PNJ" parent="." instance=ExtResource("15_0xvqo")]
+position = Vector2(57, 29)
