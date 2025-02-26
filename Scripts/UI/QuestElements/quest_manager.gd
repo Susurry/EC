@@ -34,6 +34,8 @@ func add_quest(key: String) -> void:
 	new_quest_label.text = new_quest_data.name
 	new_quest.name = key
 	
+	SaveManager.setElement("Quests", {key: false})
+	
 	target.add_child(new_quest)
 
 func clean_quests() -> void:
@@ -42,6 +44,7 @@ func clean_quests() -> void:
 
 func set_quest_state(quest_name: String) -> void:
 	target.get_node(quest_name + "/Panel/Label").modulate = Color.GREEN
+	SaveManager.setElement("Quests", {quest_name: true})
 
 func set_mission_name(new_name: String) -> void:
 	mission_label.text = new_name

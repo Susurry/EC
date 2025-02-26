@@ -10,7 +10,7 @@ static var inputs: InputManager
 func _ready() -> void:
 	_initialize_viewport()
 	_initialize_inputs()
-	_initialize_dialogic()
+	#_initialize_dialogic()
 
 func _initialize_viewport() -> void:
 	ThreadLoad.initialize_viewport(viewport)
@@ -25,7 +25,7 @@ func _initialize_inputs() -> void:
 			else:
 				inputs = load(controls.types["Default"]).instantiate()
 		_: # Si pas sur plateforme web
-			inputs = load(controls.types["Mobile"]).instantiate()
+			inputs = load(controls.types["Default"]).instantiate()
 	
 	$UI.add_child(inputs)
 

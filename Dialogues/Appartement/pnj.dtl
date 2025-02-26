@@ -1,4 +1,3 @@
-label book1
 Qu'est ce que tu veux ?
 - Une montre ? | [if SaveManager.getElement("Player", "inventory").has("montre") == false] [else="disable"]
 	Tiens.
@@ -9,6 +8,7 @@ Qu'est ce que tu veux ?
 	do EventBus.emit_signal("add_item", "gens")
 - tout effacer
 	do EventBus.emit_signal("clear_items")
-- effacer gens
-	do EventBus.emit_signal("remove_item", "gens")
-[end_timeline]
+- Follower !
+	do EventBus.emit_signal("add_follower")
+- Impact nul
+	do EventBus.emit_signal("set_empreinte", 5)
