@@ -14,7 +14,7 @@ func setup_minigame(minigame_name: String) -> void:
 	var minigame_instance: Node2D = minigame_load.instantiate()
 	add_child(minigame_instance)
 	get_parent().visible = true
-	game.get_tree().paused = true
+	game.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func erase_minigame() -> void:
 	for n in self.get_children():
@@ -22,5 +22,5 @@ func erase_minigame() -> void:
 		n.queue_free()
 		
 	get_parent().visible = false
-	game.get_tree().paused = false
+	game.process_mode = Node.PROCESS_MODE_INHERIT
 	
