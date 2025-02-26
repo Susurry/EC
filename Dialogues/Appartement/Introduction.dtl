@@ -1,0 +1,13 @@
+label book1
+Bienvenue sur Eco-Campus ! Nous vous recommandons de suivre le tutoriel si c'est votre première partie.
+- Faire le tutoriel
+	Ok cool
+- passer le tutoriel
+Il est l'heure de se rendre à la fac !
+do EventBus.emit_signal("add_quest", "1_appart")
+do EventBus.emit_signal("add_quest", "1-1_breakfast")
+do EventBus.emit_signal("add_quest", "1-2_shower")
+[end_timeline]
+label book2
+Vous êtes maintenant fin prêt pour vous rendre à la fac !
+do EventBus.emit_signal("set_quest_state", "1_appart")

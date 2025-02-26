@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://b1vb7txwbkq24"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Types/prop_toggle.gd" id="1_sjd1u"]
+[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_roojc"]
 [ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_vcscp"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="3_jus2a"]
 
@@ -110,7 +110,7 @@ size = Vector2(20, 22)
 [node name="Baignoire" type="Node2D"]
 z_index = -1
 y_sort_enabled = true
-script = ExtResource("1_sjd1u")
+script = ExtResource("1_roojc")
 timeline = "Baignoire"
 
 [node name="PropSprite" type="AnimatedSprite2D" parent="."]
