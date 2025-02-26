@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=29 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" path="res://Scripts/UI/QuestElements/quest_manager.gd" id="15_kmh8j"]
 [ext_resource type="Resource" uid="uid://bnvvnakxw6yl5" path="res://Resources/UI/quest_list.tres" id="16_r4mnh"]
 [ext_resource type="PackedScene" uid="uid://c584eglnuab88" path="res://Scenes/UI/QuestElements/quest_line.tscn" id="17_1aw0d"]
+[ext_resource type="Script" path="res://Scripts/MiniJeux/mini_game_manager.gd" id="21_68r2r"]
+[ext_resource type="Resource" uid="uid://bkhn78x1ls0qp" path="res://Resources/minigame_list.tres" id="22_paejm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bohx"]
 bg_color = Color(0, 0, 0, 0.588235)
@@ -463,6 +465,23 @@ theme_override_constants/margin_bottom = 10
 [node name="Columns" type="VBoxContainer" parent="UI/QuestElements/QuestList"]
 layout_mode = 2
 theme_override_constants/separation = 5
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
+process_mode = 3
+visible = false
+offset_left = 650.0
+offset_top = 300.0
+offset_right = 1250.0
+offset_bottom = 750.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer2"]
+process_mode = 3
+handle_input_locally = false
+size = Vector2i(600, 450)
+render_target_update_mode = 0
+script = ExtResource("21_68r2r")
+list_minigame = ExtResource("22_paejm")
 
 [connection signal="text_submitted" from="UI/DebugElements/Rows/LineEdit" to="UI/DebugElements" method="_on_line_edit_text_submitted"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/RespawnDebug" to="UI/DebugElements" method="_on_respawn_debug_item_selected"]

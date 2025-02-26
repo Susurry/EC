@@ -2,6 +2,7 @@ label book1
 Comment souhaitez-vous vous laver ?
 - Prendre un bain
 	do EventBus.emit_signal("set_empreinte", 0.1)
+	do EventBus.emit_signal("setup_minigame", "default")
 - Prendre une douche
 	do EventBus.emit_signal("set_empreinte", -0.1)
 Vous êtes tout propre ! Normalement c'est un mini-jeu.
