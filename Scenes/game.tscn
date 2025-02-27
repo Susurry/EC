@@ -1,4 +1,5 @@
-[gd_scene load_steps=29 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=30 format=3 uid="uid://jkjt5tbai10j"]
+
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
 [ext_resource type="Script" path="res://Scripts/UI/OWElements/score.gd" id="3_nnnuy"]

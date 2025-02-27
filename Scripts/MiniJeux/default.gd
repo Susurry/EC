@@ -4,4 +4,4 @@ extends Node2D
 
 func _on_button_pressed() -> void:
 	get_parent().erase_minigame()
-	Dialogic.start(timeline, "book3")
+	Dialogic.start(timeline, "book2")
