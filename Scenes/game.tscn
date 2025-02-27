@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=34 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -23,6 +23,22 @@
 [ext_resource type="PackedScene" uid="uid://c584eglnuab88" path="res://Scenes/UI/QuestElements/quest_line.tscn" id="17_1aw0d"]
 [ext_resource type="Script" path="res://Scripts/MiniJeux/mini_game_manager.gd" id="21_68r2r"]
 [ext_resource type="Resource" uid="uid://bkhn78x1ls0qp" path="res://Resources/minigame_list.tres" id="22_paejm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85rjn"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_0degb"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_85rjn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m42nw"]
+
+[sub_resource type="Theme" id="Theme_kybcf"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_m42nw")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bohx"]
 bg_color = Color(0, 0, 0, 0.588235)
@@ -89,32 +105,29 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="MinigameSVC" type="SubViewportContainer" parent="Viewports"]
+[node name="PanelContainer" type="PanelContainer" parent="Viewports"]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 315.0
+offset_right = 1285.0
+offset_bottom = 765.0
+theme = SubResource("Theme_0degb")
+
+[node name="MinigameSVC" type="SubViewportContainer" parent="Viewports/PanelContainer"]
 process_mode = 3
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -325.0
-offset_top = -225.0
-offset_right = 325.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+theme = SubResource("Theme_kybcf")
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Viewports/MinigameSVC" node_paths=PackedStringArray("game_viewport")]
+[node name="SubViewport" type="SubViewport" parent="Viewports/PanelContainer/MinigameSVC" node_paths=PackedStringArray("game_viewport")]
 process_mode = 3
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(650, 450)
-render_target_update_mode = 0
+size = Vector2i(644, 444)
+render_target_update_mode = 4
 script = ExtResource("21_68r2r")
 list_minigame = ExtResource("22_paejm")
-game_viewport = NodePath("../../GameSVC/SubViewport")
+game_viewport = NodePath("../../../GameSVC/SubViewport")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
