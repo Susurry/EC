@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=30 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://Scripts/UI/QuestElements/quest_manager.gd" id="15_kmh8j"]
 [ext_resource type="Resource" uid="uid://bnvvnakxw6yl5" path="res://Resources/UI/quest_list.tres" id="16_r4mnh"]
 [ext_resource type="PackedScene" uid="uid://c584eglnuab88" path="res://Scenes/UI/QuestElements/quest_line.tscn" id="17_1aw0d"]
+[ext_resource type="Script" path="res://Scripts/MiniJeux/mini_game_manager.gd" id="21_68r2r"]
+[ext_resource type="Resource" uid="uid://bkhn78x1ls0qp" path="res://Resources/minigame_list.tres" id="22_paejm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bohx"]
 bg_color = Color(0, 0, 0, 0.588235)
@@ -61,20 +63,38 @@ font_size = 20
 script = ExtResource("1_0b8yu")
 first_map = "Appartement"
 controls = ExtResource("2_0tg3l")
-viewport = NodePath("SubViewportContainer/SubViewport")
+viewport = NodePath("GameSVC/SubViewport")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="GameSVC" type="SubViewportContainer" parent="."]
 texture_filter = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="GameSVC"]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
+
+[node name="MinigameSVC" type="SubViewportContainer" parent="."]
+process_mode = 3
+offset_left = 650.0
+offset_top = 300.0
+offset_right = 1250.0
+offset_bottom = 750.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="MinigameSVC" node_paths=PackedStringArray("game_viewport")]
+process_mode = 3
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(600, 450)
+render_target_update_mode = 4
+script = ExtResource("21_68r2r")
+list_minigame = ExtResource("22_paejm")
+game_viewport = NodePath("../../GameSVC/SubViewport")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

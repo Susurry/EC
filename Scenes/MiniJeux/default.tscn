@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgpu4hmb3vlfw"]
+
+[ext_resource type="Script" path="res://Scripts/MiniJeux/default.gd" id="1_6kric"]
+[ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="2_wgtt7"]
+
+[node name="Default" type="Node2D"]
+script = ExtResource("1_6kric")
+timeline = "Baignoire"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 600.0
+offset_bottom = 450.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -15.5
+offset_right = 73.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GG ! Well PLayed !"
+
+[node name="Community" type="Sprite2D" parent="."]
+position = Vector2(285, 129)
+texture = ExtResource("2_wgtt7")
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

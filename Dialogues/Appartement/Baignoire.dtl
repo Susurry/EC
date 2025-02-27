@@ -1,12 +1,18 @@
-if SaveManager.getElement("Quests", "1-2_shower") == false :
+label book1
+if SaveManager.getElement("Quests", "1-2_shower") == false:
 	Comment souhaitez-vous vous laver ?
 	- Prendre un bain
 		do EventBus.emit_signal("set_empreinte", 0.1)
+		do EventBus.emit_signal("setup_minigame", "default")
 	- Prendre une douche
 		do EventBus.emit_signal("set_empreinte", -0.1)
-	Vous êtes tout propre ! Normalement c'est un mini-jeu.
-	do EventBus.emit_signal("set_quest_state", "1-2_shower")
-	if SaveManager.getElement("Quests", "1-1_breakfast") == true :
-		do Dialogic.start_timeline("Introduction", "book2")
-else :
+		jump book2
+else:
 	Vous vous êtes déjà lavé.
+[end_timeline]
+label book2
+Vous êtes tout propre !
+do EventBus.emit_signal("set_quest_state", "1-2_shower")
+if SaveManager.getElement("Quests", "1-1_breakfast") == true:
+	do Dialogic.start_timeline("Introduction", "book2")
+[end_timeline]
