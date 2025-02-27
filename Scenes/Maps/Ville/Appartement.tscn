@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/PropSheetSolo.png" id="6_dxfoh"]
 [ext_resource type="PackedScene" uid="uid://c651srsug8m05" path="res://Scenes/Props/Appartement/television.tscn" id="7_qu1vg"]
 [ext_resource type="PackedScene" uid="uid://xaecaqya5vhf" path="res://Scenes/Props/Appartement/refrigerateur.tscn" id="8_1kehp"]
-[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="8_ocr7a"]
 [ext_resource type="PackedScene" uid="uid://v3gbf6c5eubg" path="res://Scenes/Props/Appartement/livre.tscn" id="10_5ip7c"]
 [ext_resource type="PackedScene" uid="uid://ehxdlgrurvmw" path="res://Scenes/Props/Appartement/bibliotheque.tscn" id="11_4b6mu"]
 [ext_resource type="PackedScene" uid="uid://cx1fol84qh5hv" path="res://Scenes/Props/Appartement/porte_sdb.tscn" id="12_l8hgc"]
 [ext_resource type="PackedScene" uid="uid://cyqoe56afno1e" path="res://Scenes/Props/Appartement/rangement.tscn" id="12_vo2jj"]
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
+[ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
 [ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="15_0xvqo"]
+[ext_resource type="Script" path="res://Scripts/Events/appartement_intro.gd" id="16_7gbmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
@@ -131,10 +132,6 @@ size = Vector2(16, 36)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uow5"]
 atlas = ExtResource("6_dxfoh")
 region = Rect2(227, 16, 15, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tyvq3"]
-atlas = ExtResource("8_ocr7a")
-region = Rect2(134, 178, 8, 45)
 
 [node name="Appartement" type="Node2D"]
 y_sort_enabled = true
@@ -352,10 +349,6 @@ z_index = -1
 position = Vector2(217, 152)
 texture = SubResource("AtlasTexture_7uow5")
 
-[node name="PorteSortie" type="Sprite2D" parent="Props"]
-position = Vector2(227, 138)
-texture = SubResource("AtlasTexture_tyvq3")
-
 [node name="Baignoire" parent="Props" instance=ExtResource("3_hb0ix")]
 position = Vector2(213, 30)
 
@@ -376,9 +369,15 @@ position = Vector2(24, 36)
 [node name="PorteSDB" parent="Props" instance=ExtResource("12_l8hgc")]
 position = Vector2(168, 106)
 
-[node name="Rangement" parent="." instance=ExtResource("12_vo2jj")]
+[node name="Rangement" parent="Props" instance=ExtResource("12_vo2jj")]
 
-[node name="ChaiseBureau" parent="." instance=ExtResource("13_hvk87")]
+[node name="ChaiseBureau" parent="Props" instance=ExtResource("13_hvk87")]
 
-[node name="PNJ" parent="." instance=ExtResource("15_0xvqo")]
-position = Vector2(57, 29)
+[node name="PorteSortie" parent="Props" instance=ExtResource("14_kt3ce")]
+position = Vector2(227, 138)
+
+[node name="PNJ_debug" parent="." instance=ExtResource("15_0xvqo")]
+position = Vector2(102, 121)
+
+[node name="Cinématique_Intro" type="Node2D" parent="."]
+script = ExtResource("16_7gbmn")

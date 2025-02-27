@@ -1,5 +1,4 @@
 [gd_scene load_steps=29 format=3 uid="uid://jkjt5tbai10j"]
-
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
 [ext_resource type="Script" path="res://Scripts/UI/OWElements/score.gd" id="3_nnnuy"]
@@ -9,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="6_j0fp3"]
 [ext_resource type="Script" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
 [ext_resource type="LabelSettings" uid="uid://bjqrdqohjhs6g" path="res://Graphics/UI/Themes/Label_UI.tres" id="7_qvet4"]
+[ext_resource type="Script" path="res://Scripts/UI/OWElements/follower.gd" id="7_r175c"]
 [ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
 [ext_resource type="Script" path="res://Scripts/UI/OWElements/grade.gd" id="9_8c7js"]
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
@@ -158,6 +158,7 @@ vertical_alignment = 1
 [node name="Follower" type="Control" parent="UI/OWElements/Columns/Stats"]
 layout_mode = 2
 mouse_filter = 2
+script = ExtResource("7_r175c")
 
 [node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Follower"]
 layout_mode = 0

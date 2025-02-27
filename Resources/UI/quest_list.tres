@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_q1q63")
 quests = {
-"quest1": "uid://bfl61vq4myag0",
-"quest2": "uid://bx20exuffsaqg",
-"quest3": "uid://ds5xgmt3sm8dm"
+"1-1_breakfast": "uid://bd7hg8onbk7we",
+"1-2_shower": "uid://b2ce66iouulsg",
+"1_appart": "uid://yt4xycg3kvnl"
 }
