@@ -63,35 +63,55 @@ font_size = 20
 script = ExtResource("1_0b8yu")
 first_map = "Appartement"
 controls = ExtResource("2_0tg3l")
-viewport = NodePath("GameSVC/SubViewport")
+viewport = NodePath("Viewports/GameSVC/SubViewport")
 
-[node name="GameSVC" type="SubViewportContainer" parent="."]
-texture_filter = 1
+[node name="Viewports" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="GameSVC" type="SubViewportContainer" parent="Viewports"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="GameSVC"]
+[node name="SubViewport" type="SubViewport" parent="Viewports/GameSVC"]
 handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="MinigameSVC" type="SubViewportContainer" parent="."]
+[node name="MinigameSVC" type="SubViewportContainer" parent="Viewports"]
 process_mode = 3
-offset_left = 650.0
-offset_top = 300.0
-offset_right = 1250.0
-offset_bottom = 750.0
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -225.0
+offset_right = 325.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="MinigameSVC" node_paths=PackedStringArray("game_viewport")]
+[node name="SubViewport" type="SubViewport" parent="Viewports/MinigameSVC" node_paths=PackedStringArray("game_viewport")]
 process_mode = 3
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(600, 450)
-render_target_update_mode = 4
+size = Vector2i(650, 450)
+render_target_update_mode = 0
 script = ExtResource("21_68r2r")
 list_minigame = ExtResource("22_paejm")
 game_viewport = NodePath("../../GameSVC/SubViewport")

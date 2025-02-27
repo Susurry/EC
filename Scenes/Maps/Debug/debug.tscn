@@ -22,10 +22,6 @@ size = Vector2(128, 128)
 y_sort_enabled = true
 script = ExtResource("1_u1qa6")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
-limit_left = -100
-limit_right = 500
-limit_top = -100
-limit_bottom = 500
 
 [node name="StartPoints" type="Node2D" parent="."]
 

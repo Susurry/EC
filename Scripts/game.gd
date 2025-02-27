@@ -36,5 +36,5 @@ func _is_mobile() -> bool:
 	return OS.has_feature("web_android") || OS.has_feature("web_ios")
 
 func _setup_resolution_change() -> void:
-	$SubViewportContainer.set_size(get_viewport_rect().size)
+	$Viewports.set_size(get_viewport_rect().size)
 	$UI.set_size(get_viewport_rect().size)
