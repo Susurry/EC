@@ -1,10 +1,7 @@
 extends SubViewport
 
-@export var list_minigame :Resource
-
-var minigame_display: PackedScene
-
-@onready var game = get_parent().get_parent().viewport
+@export var list_minigame: Resource
+@export var game_viewport: SubViewport
 
 func _ready() -> void:
 	EventBus.add_signal("setup_minigame", setup_minigame)
@@ -14,13 +11,11 @@ func setup_minigame(minigame_name: String) -> void:
 	var minigame_instance: Node2D = minigame_load.instantiate()
 	add_child(minigame_instance)
 	get_parent().visible = true
-	game.process_mode = Node.PROCESS_MODE_DISABLED
+	EventBus.emit_signal("minigame_toggle", true)
 	
 func erase_minigame() -> void:
-	for n in self.get_children():
-		self.remove_child(n)
+	for n in get_children():
 		n.queue_free()
 		
 	get_parent().visible = false
-	game.process_mode = Node.PROCESS_MODE_INHERIT
-	
+	EventBus.emit_signal("minigame_toggle", false)

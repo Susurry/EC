@@ -1,10 +1,17 @@
 extends PlayerState
 
+var in_minigame: bool = false
+
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(onTimelineEnded)
+	EventBus.add_signal("minigame_toggle", set_in_minigame)
 
 func animate(player: Player, _delta: float) -> void:
 	player.skin.set_animation_state(PlayerSkin.ANIMATION_STATES.idle)
 
 func onTimelineEnded() -> void:
-	get_parent().change_state("Regular")
+	if in_minigame == false:
+		get_parent().change_state("Regular")
+
+func set_in_minigame(arg: bool):
+	in_minigame = arg
