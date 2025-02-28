@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var timeline: String
+@export var window_size: Vector2
 
 var shower: bool = false
 var bath_full: bool = false

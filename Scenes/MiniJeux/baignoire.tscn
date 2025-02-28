@@ -141,6 +141,7 @@ animations = [{
 [node name="Default" type="Node2D"]
 script = ExtResource("1_7gsmj")
 timeline = "Baignoire"
+window_size = Vector2(800, 650)
 
 [node name="WindowSize" type="Control" parent="."]
 layout_mode = 3
