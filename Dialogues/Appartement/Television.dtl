@@ -1,1 +1,4 @@
 La LED de la TV clignote, indiquant qu'elle est en veille.
+
+do EventBus.emit_signal("setup_minigame", "television")
+[end_timeline]

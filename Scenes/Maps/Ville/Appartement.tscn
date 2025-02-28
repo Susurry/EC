@@ -135,7 +135,6 @@ region = Rect2(227, 16, 15, 18)
 
 [node name="Appartement" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(-7, 0)
 script = ExtResource("1_8h08n")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
 limit_left = -144
@@ -147,7 +146,7 @@ limit_bottom = 256
 
 [node name="0_Lit" type="Marker2D" parent="StartPoints"]
 z_index = 50
-position = Vector2(55, 49)
+position = Vector2(166, 58)
 gizmo_extents = 30.0
 
 [node name="1_Sortie" type="Marker2D" parent="StartPoints"]

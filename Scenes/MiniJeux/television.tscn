@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsnubr52gfqvq"]
+
+[ext_resource type="Script" path="res://Scenes/MiniJeux/television.gd" id="1_csnu5"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="1_fetsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itwrx"]
+atlas = ExtResource("1_fetsl")
+region = Rect2(134, 64, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41u7f"]
+atlas = ExtResource("1_fetsl")
+region = Rect2(182, 64, 38, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86k7g"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_itwrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41u7f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Television" type="Node2D"]
+script = ExtResource("1_csnu5")
+window_size = Vector2(1000, 500)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(592, 234)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_86k7g")
+autoplay = "default"
+frame_progress = 0.427623

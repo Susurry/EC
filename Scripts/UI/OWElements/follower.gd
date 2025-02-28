@@ -15,4 +15,4 @@ func _initialize_follower() -> void:
 func add_follower(arg: int = 1) -> void:
 	follower += arg
 	follower_label.text = str(follower)
-	#grade_element.update_grading()
+	grade_element.update_grading()
