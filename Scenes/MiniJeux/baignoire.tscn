@@ -169,5 +169,5 @@ offset_right = 435.0
 offset_bottom = 553.0
 text = "Quitter"
 
-[connection signal="pressed" from="WindowSize/AnimatedSprite2D/Button" to="." method="_on_button_pressed" binds= ["play_anim"]]
+[connection signal="pressed" from="WindowSize/AnimatedSprite2D/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="WindowSize/BoutonQuitter" to="." method="_on_bouton_quitter_pressed"]
