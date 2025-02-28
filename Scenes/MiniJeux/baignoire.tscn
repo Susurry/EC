@@ -1,0 +1,173 @@
+[gd_scene load_steps=20 format=3 uid="uid://dgpu4hmb3vlfw"]
+
+[ext_resource type="Script" path="res://Scripts/MiniJeux/default.gd" id="1_7gsmj"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="2_3ua7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afyks"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yl6a"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxttj"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdace"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fokw6"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfyal"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vflwm"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7f6p"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os2dq"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duf7q"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opt44"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u05bc"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7q5q"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b2m3"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_none1"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbos1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afyks")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yl6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxttj")
+}],
+"loop": true,
+"name": &"shower",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlaqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdace")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fokw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfyal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vflwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7f6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os2dq")
+}],
+"loop": false,
+"name": &"shower_end",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duf7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opt44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u05bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7q5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b2m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_none1")
+}],
+"loop": false,
+"name": &"start_shower",
+"speed": 5.0
+}]
+
+[node name="Default" type="Node2D"]
+script = ExtResource("1_7gsmj")
+timeline = "Baignoire"
+
+[node name="WindowSize" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 650.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WindowSize"]
+position = Vector2(400, 325)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_mbos1")
+autoplay = "default"
+
+[node name="Button" type="Button" parent="WindowSize/AnimatedSprite2D"]
+offset_left = 4.5
+offset_top = -11.25
+offset_right = 12.5
+offset_bottom = -3.25
+scale = Vector2(0.55, 0.554)
+
+[node name="BoutonQuitter" type="Button" parent="WindowSize"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 522.0
+offset_right = 435.0
+offset_bottom = 553.0
+text = "Quitter"
+
+[connection signal="pressed" from="WindowSize/AnimatedSprite2D/Button" to="." method="_on_button_pressed" binds= ["play_anim"]]
+[connection signal="pressed" from="WindowSize/BoutonQuitter" to="." method="_on_bouton_quitter_pressed"]

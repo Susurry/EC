@@ -3,7 +3,7 @@ if SaveManager.getElement("Quests", "1-2_shower") == false:
 	Comment souhaitez-vous vous laver ?
 	- Prendre un bain
 		do EventBus.emit_signal("set_empreinte", 0.1)
-		do EventBus.emit_signal("setup_minigame", "default")
+		do EventBus.emit_signal("setup_minigame", "baignoire")
 	- Prendre une douche
 		do EventBus.emit_signal("set_empreinte", -0.1)
 		jump book2

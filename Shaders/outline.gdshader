@@ -4,7 +4,7 @@
 shader_type canvas_item;
 
 uniform vec4 line_color : source_color = vec4(1.0); // Color of the outline
-uniform float width : hint_range(0, 1) = 0.0; // Width of the outline
+uniform float width : hint_range(0, 5) = 0.0; // Width of the outline
 
 // Offsets to check neighboring pixels for the outline
 const vec2 OFFSETS[8] = vec2[](

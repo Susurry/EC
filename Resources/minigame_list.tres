@@ -5,5 +5,6 @@
 [resource]
 script = ExtResource("1_yfh3e")
 dictionnary_minigame = {
-"default": "uid://dgpu4hmb3vlfw"
+"baignoire": "uid://dgpu4hmb3vlfw",
+"television": "uid://bsnubr52gfqvq"
 }
