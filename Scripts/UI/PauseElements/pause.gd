@@ -6,7 +6,7 @@ var in_minigame: bool = false
 func _ready() -> void:
 	Dialogic.timeline_started.connect(onTimelineStarted)
 	Dialogic.timeline_ended.connect(onTimelineEnded)
-	EventBus.add_signal("minigame_toggle", set_in_minigame)
+	EventBus.add_signal("block_player_state", set_in_minigame)
 
 func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("pause")):

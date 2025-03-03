@@ -4,7 +4,7 @@ var in_minigame: bool = false
 
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(onTimelineEnded)
-	EventBus.add_signal("minigame_toggle", set_in_minigame)
+	EventBus.add_signal("block_player_state", set_in_minigame)
 
 func animate(player: Player, _delta: float) -> void:
 	player.skin.set_animation_state(PlayerSkin.ANIMATION_STATES.idle)

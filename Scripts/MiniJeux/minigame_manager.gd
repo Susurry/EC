@@ -22,14 +22,14 @@ func setup_minigame(minigame_name: String) -> void:
 	exit_button.position = ((size - SubViewContainer.custom_minimum_size) / 2) - exit_button_offset
 	
 	target.add_child(minigame_instance)
-	EventBus.emit_signal("minigame_toggle", true)
+	EventBus.emit_signal("block_player_state", true)
 	visible = true
 	
 func erase_minigame(timeline: String = "", bookmark: int = 0) -> void:
 	for n in target.get_children():
 		n.queue_free()
 		
-	EventBus.emit_signal("minigame_toggle", false)
+	EventBus.emit_signal("block_player_state", false)
 	visible = false
 
 	if !timeline:
