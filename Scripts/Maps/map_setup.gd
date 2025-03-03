@@ -2,6 +2,7 @@ extends Node2D
 class_name Map
 
 @export var background_color: Color
+@export var camera_zoom: int = 4
 @export var limit_left: int = 0
 @export var limit_right: int = 10000
 @export var limit_top: int = 0
@@ -28,6 +29,7 @@ func initialize_player() -> void:
 
 func initialize_camera() -> void:
 	camera = camera_resource.instantiate()
+	camera.zoom = Vector2(camera_zoom,camera_zoom)
 	camera.target = player
 	camera.set_limits(limit_left, limit_right, limit_top, limit_bottom)
 	add_child(camera)

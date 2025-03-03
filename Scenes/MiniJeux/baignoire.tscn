@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dgpu4hmb3vlfw"]
+[gd_scene load_steps=21 format=3 uid="uid://dgpu4hmb3vlfw"]
 
-[ext_resource type="Script" path="res://Scripts/MiniJeux/default.gd" id="1_7gsmj"]
+[ext_resource type="Script" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="2_3ua7n"]
+[ext_resource type="Script" path="res://Scripts/MiniJeux/Jeux/baignoire.gd" id="2_3w5rc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afyks"]
 atlas = ExtResource("2_3ua7n")
@@ -138,16 +139,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Default" type="Node2D"]
+[node name="Baignoire" type="Node2D"]
 script = ExtResource("1_7gsmj")
-timeline = "Baignoire"
 window_size = Vector2(800, 650)
+end_timeline = "Baignoire"
+bookmark = 2
 
 [node name="WindowSize" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 650.0
+script = ExtResource("2_3w5rc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WindowSize"]
 position = Vector2(400, 325)
@@ -170,5 +173,5 @@ offset_right = 435.0
 offset_bottom = 553.0
 text = "Quitter"
 
-[connection signal="pressed" from="WindowSize/AnimatedSprite2D/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="WindowSize/BoutonQuitter" to="." method="_on_bouton_quitter_pressed"]
+[connection signal="pressed" from="WindowSize/AnimatedSprite2D/Button" to="WindowSize" method="_on_button_pressed"]
+[connection signal="pressed" from="WindowSize/BoutonQuitter" to="." method="quit_minigame"]
