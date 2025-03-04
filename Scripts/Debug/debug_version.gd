@@ -3,7 +3,8 @@ extends Control
 var dictionnaire : Dictionary = {
 	0 : "Debug",
 	1 : "Debug2",
-	2 : "Appartement"
+	2 : "Appartement",
+	3 : "PeriphOuest"
 }
 
 var current_map : String = "Debug"

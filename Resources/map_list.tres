@@ -7,5 +7,6 @@ script = ExtResource("1_thahi")
 locations = {
 "Appartement": "uid://6eecifybnu8r",
 "Debug": &"uid://bv7jahf4uj8v0",
-"Debug2": &"uid://qmadlfp31trp"
+"Debug2": &"uid://qmadlfp31trp",
+"PeriphOuest": "uid://b1neja655fiab"
 }

@@ -364,12 +364,14 @@ layout_mode = 2
 focus_mode = 0
 clip_text = true
 allow_reselect = true
-item_count = 3
+item_count = 4
 popup/item_0/text = "Debug"
 popup/item_1/text = "Debug2"
 popup/item_1/id = 1
 popup/item_2/text = "Appartement"
 popup/item_2/id = 2
+popup/item_3/text = "PeriphOuest"
+popup/item_3/id = 3
 
 [node name="Versioning" type="Button" parent="UI/DebugElements/Rows"]
 layout_mode = 2
