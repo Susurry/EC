@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxcxonkl50hfs"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_fqnt1"]
-[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_y06h2"]
+[ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="1_fqnt1"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_y06h2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
 shader = ExtResource("2_y06h2")

@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="TransitionList" load_steps=2 format=3 uid="uid://bbt22kryavcuy"]
 
-[ext_resource type="Script" path="res://Scripts/LoadingScreens/Ressources/trans_list.gd" id="1_pydxx"]
-
+[ext_resource type="Script" uid="uid://cw5t18gjobue6" path="res://Scripts/LoadingScreens/Ressources/trans_list.gd" id="1_pydxx"]
 
 [resource]
 script = ExtResource("1_pydxx")

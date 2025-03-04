@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://bd7hg8onbk7we"]
 
-[ext_resource type="Script" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_1oiw4"]
+[ext_resource type="Script" uid="uid://b33ppoek3j2kg" path="res://Scripts/UI/QuestElements/Resources/quest_variables.gd" id="1_1oiw4"]
 
 [resource]
 script = ExtResource("1_1oiw4")

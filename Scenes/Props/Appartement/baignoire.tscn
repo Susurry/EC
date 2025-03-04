@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://b1vb7txwbkq24"]
 
-[ext_resource type="Script" path="res://Scripts/Props/Types/prop_talk.gd" id="1_roojc"]
-[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_vcscp"]
+[ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="1_roojc"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_vcscp"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="3_jus2a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8syqh"]

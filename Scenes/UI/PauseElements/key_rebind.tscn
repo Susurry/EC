@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://buustbd8v505r"]
 
-[ext_resource type="Script" path="res://Scripts/UI/PauseElements/key_rebind.gd" id="1_1f1jf"]
+[ext_resource type="Script" uid="uid://dt4gjstj4xldd" path="res://Scripts/UI/PauseElements/key_rebind.gd" id="1_1f1jf"]
 
 [node name="KeyRebind" type="Control"]
 layout_mode = 3

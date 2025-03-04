@@ -1,6 +1,6 @@
 [gd_scene load_steps=49 format=4 uid="uid://6eecifybnu8r"]
 
-[ext_resource type="Script" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
+[ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Scenes/Maps/Ville/Appartement.tres" id="2_2g8ls"]
 [ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/Appartement/baignoire.tscn" id="3_hb0ix"]
 [ext_resource type="PackedScene" uid="uid://0ji1ktwqxaxa" path="res://Scenes/Props/Appartement/meuble_sdb.tscn" id="4_swjjx"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
 [ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
 [ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="15_0xvqo"]
-[ext_resource type="Script" path="res://Scripts/Events/appartement_intro.gd" id="16_7gbmn"]
+[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/appartement_intro.gd" id="16_7gbmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")

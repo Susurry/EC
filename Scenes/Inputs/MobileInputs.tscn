@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bs16bs1oatfng"]
 
-[ext_resource type="Script" path="res://Scripts/Inputs/Types/inputs_mobile.gd" id="1_6k15q"]
+[ext_resource type="Script" uid="uid://8msweorkqf61" path="res://Scripts/Inputs/Types/inputs_mobile.gd" id="1_6k15q"]
 [ext_resource type="Texture2D" uid="uid://cidwa0ftsbyx7" path="res://Graphics/Other/joystick_bg.svg" id="2_untfi"]
 [ext_resource type="Texture2D" uid="uid://daqr0kn5cboth" path="res://Graphics/Other/joystick.svg" id="3_abxnb"]
 [ext_resource type="Texture2D" uid="uid://2d7rauh77nxq" path="res://Graphics/Other/joy1.png" id="3_c7m3c"]
@@ -17,6 +17,7 @@ anchor_bottom = 1.0
 offset_top = -500.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 script = ExtResource("1_6k15q")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
