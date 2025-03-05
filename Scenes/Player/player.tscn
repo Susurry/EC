@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cek8g1ywmqwc7" path="res://Scripts/Player/player.gd" id="1_kwswl"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Player/player_statemachine.gd" id="2_bd34b"]
 [ext_resource type="Script" uid="uid://caxshq1n32r05" path="res://Scripts/Player/States/state_regular.gd" id="3_31thm"]
-[ext_resource type="Texture2D" uid="uid://dmh3spjg6ychw" path="res://Graphics/Characters/character_m_1.png" id="4_vdxrv"]
 [ext_resource type="Script" uid="uid://c3iggjmylnxds" path="res://Scripts/Player/States/state_interacting.gd" id="4_woepn"]
+[ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="5_dd0ac"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Player/player_anim.gd" id="5_hytlb"]
 
 [sub_resource type="Animation" id="Animation_l2uah"]
@@ -288,7 +288,7 @@ script = ExtResource("3_31thm")
 script = ExtResource("4_woepn")
 
 [node name="Skin" type="Sprite2D" parent="."]
-texture = ExtResource("4_vdxrv")
+texture = ExtResource("5_dd0ac")
 hframes = 56
 vframes = 20
 frame = 3
@@ -297,7 +297,7 @@ script = ExtResource("5_hytlb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin"]
 libraries = {
-"": SubResource("AnimationLibrary_vtfkf")
+&"": SubResource("AnimationLibrary_vtfkf")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="Skin"]
