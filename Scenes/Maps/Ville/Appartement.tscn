@@ -376,7 +376,7 @@ position = Vector2(168, 106)
 position = Vector2(227, 138)
 
 [node name="PNJ_debug" parent="." instance=ExtResource("15_0xvqo")]
-position = Vector2(102, 121)
+position = Vector2(102, 199)
 
 [node name="Cinématique_Intro" type="Node2D" parent="."]
 script = ExtResource("16_7gbmn")
