@@ -7,7 +7,7 @@ var binds : Array
 
 @export var action_name : String = "left"
 
-var inputlist: Dictionary = {
+var inputlist: Dictionary [String, String] = {
 	"left" : "Move Left",
 	"right" : "Move Right",
 	"up" : "Move Up",

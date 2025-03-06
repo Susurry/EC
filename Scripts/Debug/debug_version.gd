@@ -1,6 +1,6 @@
 extends Control
 
-var dictionnaire : Dictionary = {
+var dictionnaire : Dictionary[int,String] = {
 	0 : "Debug",
 	1 : "Debug2",
 	2 : "Appartement",

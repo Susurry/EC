@@ -15,7 +15,6 @@ func initialize() -> void:
 
 func initialize_states() -> void:
 	for i in get_children():
-		var new_state: Node2D = i
 		states[i.name] = i
 
 func change_state(to: String) -> void:

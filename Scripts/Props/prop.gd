@@ -1,7 +1,7 @@
 extends Node2D
 class_name Prop
 
-signal onInteract
+@warning_ignore("unused_signal") signal onInteract
 
 @onready var sprite: Node2D = $PropSprite
 

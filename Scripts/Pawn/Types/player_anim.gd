@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name PawnSkin
 
-const ANIMATION_STATES: Dictionary = {
+const ANIMATION_STATES: Dictionary[String,int] = {
 	"idle": 0,
 	"walk": 1,
 }
