@@ -258,7 +258,7 @@ states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_faol6"]
-graph_offset = Vector2(-17.4147, -130.653)
+graph_offset = Vector2(-456.667, 26)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_t5d6h")
 nodes/TimeScale/position = Vector2(493.333, 160)
 nodes/Transition/node = SubResource("AnimationNodeTransition_2sv47")
@@ -307,7 +307,7 @@ parameters/TimeScale/scale = 1.0
 parameters/Transition/current_state = "0"
 parameters/Transition/transition_request = ""
 parameters/Transition/current_index = 0
-parameters/idle/Idle/blend_position = Vector2(0, 1)
+parameters/idle/Idle/blend_position = Vector2(0, 0.00273967)
 parameters/walk/Walk/blend_position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

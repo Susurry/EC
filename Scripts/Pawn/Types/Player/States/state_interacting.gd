@@ -1,10 +1,10 @@
 extends PawnState
 
-var in_minigame: bool = false
+var is_blocked: bool = false
 
 func _ready() -> void:
 	Dialogic.timeline_ended.connect(onTimelineEnded)
-	EventBus.add_signal("block_player_state", set_in_minigame)
+	EventBus.add_signal("block_player_state", set_blocked)
 
 func enter(pawn: Pawn) -> void:
 	pawn.navigationAgent.avoidance_enabled = false
@@ -29,8 +29,8 @@ func animate(pawn: Pawn, _delta: float) -> void:
 		pawn.skin.set_animation_state(PawnSkin.ANIMATION_STATES.idle)
 
 func onTimelineEnded() -> void:
-	if in_minigame == false:
+	if is_blocked == false:
 		get_parent().change_state("Regular")
 
-func set_in_minigame(arg: bool):
-	in_minigame = arg
+func set_blocked(arg: bool):
+	is_blocked = arg

@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://qmadlfp31trp"]
+[gd_scene load_steps=12 format=4 uid="uid://qmadlfp31trp"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_tskkq"]
 [ext_resource type="Texture2D" uid="uid://b0ddcd68fgmkb" path="res://icon.svg" id="3_uyh36"]
 [ext_resource type="Texture2D" uid="uid://csbb1b36ogu1p" path="res://Graphics/Tilesets/City_Terrains.png" id="4_8keua"]
+[ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="4_a3cje"]
+[ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="4_dwvx3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpyvj"]
 texture = ExtResource("4_8keua")
@@ -17,6 +19,61 @@ sources/0 = SubResource("TileSetAtlasSource_kpyvj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y108t"]
 size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_dwvx3"]
+resource_name = "cutscene_1"
+length = 4.0
+step = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["dial_test2", 2],
+"method": &"cutscene_dialogue"
+}, {
+"args": ["dial_test2", 3],
+"method": &"cutscene_dialogue"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../PNJ_debug:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(104, 125), Vector2(104, 50), Vector2(0, 50), Vector2(104, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_uufvl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PNJ_debug:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(104, 125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uufvl"]
+_data = {
+&"RESET": SubResource("Animation_uufvl"),
+&"cutscene_1": SubResource("Animation_dwvx3")
+}
 
 [node name="Debug2" type="Node2D"]
 y_sort_enabled = true
@@ -50,3 +107,17 @@ texture = ExtResource("3_uyh36")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 shape = SubResource("RectangleShape2D_y108t")
+
+[node name="PNJ_debug" parent="." instance=ExtResource("4_dwvx3")]
+position = Vector2(104, 125)
+timeline = "dial_test2"
+
+[node name="Cutscenes" type="Node2D" parent="."]
+script = ExtResource("4_a3cje")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes"]
+libraries = {
+&"": SubResource("AnimationLibrary_uufvl")
+}
+
+[connection signal="animation_finished" from="Cutscenes/AnimationPlayer" to="Cutscenes" method="cutscene_end"]

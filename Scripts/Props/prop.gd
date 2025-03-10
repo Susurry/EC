@@ -12,12 +12,12 @@ func erase_outline() -> void:
 	sprite.material.set_shader_parameter("width",0)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if(body.name == "Player"):
+	if body is Player:
 		body.props_around.append(self)
 		draw_outline()
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if(body.name == "Player"):
+	if body is Player:
 		body.props_around.erase(self)
 		erase_outline() 
 

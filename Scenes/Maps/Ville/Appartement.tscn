@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
 [ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
 [ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="15_0xvqo"]
-[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/appartement_intro.gd" id="16_7gbmn"]
+[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/Appartement/appartement_intro.gd" id="16_7gbmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
@@ -369,6 +369,7 @@ position = Vector2(24, 36)
 position = Vector2(168, 106)
 
 [node name="Rangement" parent="Props" instance=ExtResource("12_vo2jj")]
+position = Vector2(202, 118)
 
 [node name="ChaiseBureau" parent="Props" instance=ExtResource("13_hvk87")]
 
@@ -376,7 +377,7 @@ position = Vector2(168, 106)
 position = Vector2(227, 138)
 
 [node name="PNJ_debug" parent="." instance=ExtResource("15_0xvqo")]
-position = Vector2(97, 117)
+position = Vector2(97, 120)
 
-[node name="Cinématique_Intro" type="Node2D" parent="."]
+[node name="Intro_Event" type="Node2D" parent="."]
 script = ExtResource("16_7gbmn")
