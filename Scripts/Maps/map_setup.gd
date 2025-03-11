@@ -25,6 +25,7 @@ func _ready() -> void:
 func initialize_player() -> void:
 	player = player_resource.instantiate()
 	player.position = $StartPoints.get_child(start_id).position # Ordre du child important
+	$Cutscenes.player = player
 	add_child(player)
 
 func initialize_camera() -> void:

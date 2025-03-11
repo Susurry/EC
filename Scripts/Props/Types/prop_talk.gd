@@ -8,3 +8,4 @@ func on_interact(player: Player) -> void:
 	player.skin.set_animation_direction(direction)
 	
 	Dialogic.start(timeline)
+	

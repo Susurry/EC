@@ -5,7 +5,7 @@ var bath_full: bool = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if animated_sprite.is_playing() == false && bath_full == true :
 			animated_sprite.play("shower")
 			shower = true
