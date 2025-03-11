@@ -15,15 +15,17 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 	state_machine.change_state("Regular")
 
 func on_interact(player: Player) -> void:
-	var direction: Vector2 = position - player.position
-	player.skin.set_animation_direction(direction)
-	skin.set_animation_direction(-direction)
-	
 	if !as_interacted:
 		Dialogic.start(timeline, "book1")
 		as_interacted = true;
 	else:
 		Dialogic.start(timeline, "book2")
+	
+	await Dialogic.timeline_started
+	
+	var direction: Vector2 = position - player.position
+	player.skin.set_animation_direction(direction)
+	skin.set_animation_direction(-direction)
 
 func draw_outline() -> void:
 	sprite.material.set_shader_parameter("width",1.0)
