@@ -373,6 +373,7 @@ position = Vector2(168, 106)
 position = Vector2(202, 118)
 
 [node name="ChaiseBureau" parent="Props" instance=ExtResource("13_hvk87")]
+position = Vector2(45, 81)
 
 [node name="PorteSortie" parent="Props" instance=ExtResource("14_kt3ce")]
 position = Vector2(227, 138)

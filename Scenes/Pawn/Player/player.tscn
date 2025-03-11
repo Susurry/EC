@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://cma8bt0crjux0"]
+[gd_scene load_steps=36 format=3 uid="uid://cma8bt0crjux0"]
 
 [ext_resource type="Script" uid="uid://cek8g1ywmqwc7" path="res://Scripts/Pawn/Types/Player/player.gd" id="1_e7tqf"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/Types/state_machine.gd" id="2_td7cf"]
 [ext_resource type="Script" uid="uid://caxshq1n32r05" path="res://Scripts/Pawn/Types/Player/States/state_regular.gd" id="3_1jcui"]
+[ext_resource type="Script" uid="uid://cql4rov5cfgy4" path="res://Scripts/Pawn/Types/Player/States/state_sitting.gd" id="5_1jcui"]
 [ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="5_6t4at"]
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/Types/state_pathfinding.gd" id="5_td7cf"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/Types/player_anim.gd" id="6_tk42l"]
@@ -258,7 +259,7 @@ states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_faol6"]
-graph_offset = Vector2(-456.667, 26)
+graph_offset = Vector2(-317.333, 54)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_t5d6h")
 nodes/TimeScale/position = Vector2(493.333, 160)
 nodes/Transition/node = SubResource("AnimationNodeTransition_2sv47")
@@ -286,6 +287,9 @@ script = ExtResource("3_1jcui")
 
 [node name="Pathfinding" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_td7cf")
+
+[node name="Sitting" type="Node2D" parent="StateMachine"]
+script = ExtResource("5_1jcui")
 
 [node name="Skin" type="Sprite2D" parent="."]
 texture = ExtResource("5_6t4at")
