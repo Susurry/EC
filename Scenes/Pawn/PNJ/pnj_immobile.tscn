@@ -1,11 +1,17 @@
-[gd_scene load_steps=35 format=3 uid="uid://cma8bt0crjux0"]
+[gd_scene load_steps=38 format=3 uid="uid://wrsox72avo62"]
 
-[ext_resource type="Script" uid="uid://cek8g1ywmqwc7" path="res://Scripts/Pawn/Types/Player/player.gd" id="1_e7tqf"]
-[ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/Types/state_machine.gd" id="2_td7cf"]
-[ext_resource type="Script" uid="uid://caxshq1n32r05" path="res://Scripts/Pawn/Types/Player/States/state_regular.gd" id="3_1jcui"]
-[ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="5_6t4at"]
-[ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/Types/state_pathfinding.gd" id="5_td7cf"]
-[ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/Types/player_anim.gd" id="6_tk42l"]
+[ext_resource type="Script" uid="uid://cudjjhnq77mhl" path="res://Scripts/Pawn/Types/PNJ_Immobile/pnj.gd" id="1_xybwu"]
+[ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/Types/state_machine.gd" id="1_y7sa2"]
+[ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="2_nr0hi"]
+[ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/Types/player_anim.gd" id="3_0woi1"]
+[ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ_Immobile/States/state_regular.gd" id="3_xybwu"]
+[ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/Types/state_pathfinding.gd" id="4_x2a3f"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="4_xybwu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2a3f"]
+shader = ExtResource("4_xybwu")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
 
 [sub_resource type="Animation" id="Animation_l2uah"]
 length = 0.001
@@ -271,29 +277,33 @@ nodes/walk/position = Vector2(26.6667, 173.333)
 node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &"Transition", 1, &"walk", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6pu"]
-size = Vector2(14, 10)
+size = Vector2(12, 9)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0woi1"]
+size = Vector2(26, 33)
+
+[node name="PNJ_Immobile" type="CharacterBody2D"]
 y_sort_enabled = true
 motion_mode = 1
-script = ExtResource("1_e7tqf")
+script = ExtResource("1_xybwu")
 
 [node name="StateMachine" type="Node2D" parent="."]
-script = ExtResource("2_td7cf")
+script = ExtResource("1_y7sa2")
 
 [node name="Regular" type="Node2D" parent="StateMachine"]
-script = ExtResource("3_1jcui")
+script = ExtResource("3_xybwu")
 
 [node name="Pathfinding" type="Node2D" parent="StateMachine"]
-script = ExtResource("5_td7cf")
+script = ExtResource("4_x2a3f")
 
 [node name="Skin" type="Sprite2D" parent="."]
-texture = ExtResource("5_6t4at")
+material = SubResource("ShaderMaterial_x2a3f")
+texture = ExtResource("2_nr0hi")
 hframes = 56
 vframes = 20
 frame = 3
 region_filter_clip_enabled = true
-script = ExtResource("6_tk42l")
+script = ExtResource("3_0woi1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin"]
 libraries = {
@@ -311,7 +321,7 @@ parameters/idle/Idle/blend_position = Vector2(0, 0.00273967)
 parameters/walk/Walk/blend_position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_pl6pu")
 debug_color = Color(1, 0, 0, 0.419608)
 
@@ -319,5 +329,13 @@ debug_color = Color(1, 0, 0, 0.419608)
 avoidance_enabled = true
 radius = 8.0
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_0woi1")
+
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

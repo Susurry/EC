@@ -33,13 +33,12 @@ func handle_state_update(delta: float) -> void:
 func handle_state_animation(delta) -> void:
 	state_machine.animate_state(delta)
 
-func set_movement_target(movement_target: Vector2):
-	navigationAgent.target_position = movement_target
+func set_movement_target(_movement_target: Vector2):
+	pass
+
+func _on_navigation_agent_2d_navigation_finished() -> void:
+	pass
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
 	move_and_slide()
-
-func _on_navigation_agent_2d_navigation_finished() -> void:
-	pass
-	#set_movement_target(target)
