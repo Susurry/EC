@@ -4,7 +4,8 @@ var dictionnaire : Dictionary[int,String] = {
 	0 : "Debug",
 	1 : "Debug2",
 	2 : "Appartement",
-	3 : "PeriphOuest"
+	3 : "PeriphOuest",
+	4 : "CentreVille"
 }
 
 var current_map : String = "Debug"
