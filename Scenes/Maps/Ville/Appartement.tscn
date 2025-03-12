@@ -363,6 +363,8 @@ position = Vector2(24, 36)
 [node name="Refrigerateur" parent="Props" instance=ExtResource("8_1kehp")]
 
 [node name="Livre" parent="Props" instance=ExtResource("10_5ip7c")]
+z_index = 1
+position = Vector2(24, 78)
 
 [node name="Bibliotheque" parent="Props" instance=ExtResource("11_4b6mu")]
 
