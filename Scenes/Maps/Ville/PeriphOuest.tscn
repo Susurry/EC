@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=6 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Scenes/Maps/Ville/PeriphOuest.tres" id="2_cae2k"]
 [ext_resource type="Texture2D" uid="uid://cidwdf3708xxj" path="res://Graphics/Props/ME_Singles_Vehicles_16x16_Car_Right_1.png" id="3_vhjgv"]
 [ext_resource type="Texture2D" uid="uid://ce8cm85rt4lmu" path="res://Graphics/Props/ME_Singles_Vehicles_16x16_Car_Down_1.png" id="4_81uen"]
 [ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="5_fmneq"]
-[ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="6_n0grg"]
 
 [node name="PeriphOuest" type="Node2D"]
 y_sort_enabled = true
@@ -48,6 +47,3 @@ texture = ExtResource("4_81uen")
 
 [node name="PNJ_debug" parent="Props" instance=ExtResource("5_fmneq")]
 position = Vector2(735, 379)
-
-[node name="Cutscenes" type="Node2D" parent="."]
-script = ExtResource("6_n0grg")

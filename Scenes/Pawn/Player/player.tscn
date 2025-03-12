@@ -91,6 +91,42 @@ tracks/0/keys = {
 "values": [62, 63, 64, 65, 66]
 }
 
+[sub_resource type="Animation" id="Animation_td7cf"]
+resource_name = "sit_left"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [230, 231, 232, 233, 234, 235]
+}
+
+[sub_resource type="Animation" id="Animation_1jcui"]
+resource_name = "sit_right"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [224, 225, 226, 227, 228, 229]
+}
+
 [sub_resource type="Animation" id="Animation_lxcha"]
 resource_name = "walk_down"
 length = 1.2
@@ -161,42 +197,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [118, 119, 120, 121, 122, 123]
-}
-
-[sub_resource type="Animation" id="Animation_td7cf"]
-resource_name = "sit_left"
-length = 0.6
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [230, 231, 232, 233, 234, 235]
-}
-
-[sub_resource type="Animation" id="Animation_1jcui"]
-resource_name = "sit_right"
-length = 0.6
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [224, 225, 226, 227, 228, 229]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtfkf"]
@@ -330,7 +330,7 @@ states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_faol6"]
-graph_offset = Vector2(-767.891, -8.55748)
+graph_offset = Vector2(-185.333, 81.3333)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_t5d6h")
 nodes/TimeScale/position = Vector2(493.333, 160)
 nodes/Transition/node = SubResource("AnimationNodeTransition_2sv47")
@@ -381,9 +381,9 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendTree_faol6")
 anim_player = NodePath("../AnimationPlayer")
 parameters/TimeScale/scale = 1.0
-parameters/Transition/current_state = "2"
+parameters/Transition/current_state = "0"
 parameters/Transition/transition_request = ""
-parameters/Transition/current_index = 2
+parameters/Transition/current_index = 0
 parameters/idle/Idle/blend_position = Vector2(0, 0.00273967)
 parameters/sit/Sit/blend_position = Vector2(-0.000351489, -0.00270271)
 parameters/walk/Walk/blend_position = Vector2(0, 1)
