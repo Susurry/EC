@@ -6,11 +6,12 @@ func step(pawn: Pawn, _delta: float) -> void:
 	if pawn.allow_input():
 		pawn.handle_input()
 		pawn.handle_sprint()
-		pawn.handle_interact()
 	
 		pawn.velocity = pawn.input_direction.normalized() * pawn.curr_speed
 	
 		pawn.move_and_slide()
+		
+		pawn.handle_interact()
 
 func animate(pawn: Pawn, _delta: float) -> void:
 	if (pawn.allow_input() and pawn.input_direction):

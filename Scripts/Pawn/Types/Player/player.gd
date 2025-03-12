@@ -14,8 +14,7 @@ var in_event: bool = false
 var is_talking: bool = false
 
 func _ready() -> void:
-	initialize_state_machine()
-	initialize_pawn()
+	super()
 	initialize_signals()
 
 func initialize_signals() -> void:
