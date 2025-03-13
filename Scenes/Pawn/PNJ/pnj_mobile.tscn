@@ -286,6 +286,8 @@ size = Vector2(26, 33)
 y_sort_enabled = true
 motion_mode = 1
 script = ExtResource("1_mqls6")
+path_size = 3
+timeline = "dial_test"
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("2_6q7pp")
@@ -325,15 +327,20 @@ position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_wq3u7")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-avoidance_enabled = true
-radius = 8.0
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_6xwsv")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+radius = 8.0
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 8.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]

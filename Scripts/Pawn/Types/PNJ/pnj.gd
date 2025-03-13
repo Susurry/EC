@@ -3,11 +3,9 @@ class_name PNJ
 
 @export var timeline: String
 
-var as_interacted: bool = false
-
 @onready var sprite: Node2D = $Skin
 
-func set_movement_target(movement_target: Vector2):
+func set_movement_target(movement_target: Vector2) -> void:
 	state_machine.change_state("Pathfinding")
 	navigationAgent.target_position = movement_target
 
@@ -15,11 +13,8 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 	state_machine.change_state("Regular")
 
 func on_interact(player: Player) -> void:
-	if !as_interacted:
-		Dialogic.start(timeline, "book1")
-		as_interacted = true;
-	else:
-		Dialogic.start(timeline, "book2")
+	erase_outline()
+	Dialogic.start(timeline, "book1")
 	
 	await Dialogic.timeline_started
 	

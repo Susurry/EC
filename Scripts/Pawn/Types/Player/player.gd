@@ -46,10 +46,10 @@ func onTimelineStarted() -> void:
 func onTimelineEnded() -> void:
 	is_talking = false
 
-func set_in_event(arg: bool):
+func set_in_event(arg: bool) -> void:
 	in_event = arg
 
-func set_movement_target(movement_target: Vector2):
+func set_movement_target(movement_target: Vector2) -> void:
 	state_machine.change_state("Pathfinding")
 	navigationAgent.target_position = movement_target
 
