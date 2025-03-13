@@ -394,7 +394,9 @@ shape = SubResource("RectangleShape2D_pl6pu")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-avoidance_enabled = true
+radius = 8.0
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 radius = 8.0
 
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
