@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csbb1b36ogu1p" path="res://Graphics/Tilesets/City_Terrains.png" id="4_8keua"]
 [ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="4_a3cje"]
 [ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="4_dwvx3"]
-[ext_resource type="PackedScene" uid="uid://bcny5exc06a15" path="res://Scenes/Pawn/PNJ/pnj_mobile.tscn" id="6_2giru"]
+[ext_resource type="Script" uid="uid://df0d0ft4f664q" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/pnj_mobile_manager.gd" id="6_grxwr"]
 [ext_resource type="PackedScene" uid="uid://wrsox72avo62" path="res://Scenes/Pawn/PNJ/pnj_immobile.tscn" id="6_uufvl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpyvj"]
@@ -139,22 +139,25 @@ position = Vector2(39, 123)
 timeline = "dial_test"
 
 [node name="PNJ_Manager" type="Node2D" parent="."]
+script = ExtResource("6_grxwr")
 
-[node name="PNJ_Mobile" parent="PNJ_Manager" node_paths=PackedStringArray("middle_targets", "spawn_targets") instance=ExtResource("6_2giru")]
-position = Vector2(268, 171)
-middle_targets = NodePath("../TargetPNJ")
-spawn_targets = NodePath("../../StartPoints")
-timeline = ""
+[node name="Middle_Targets" type="Node2D" parent="PNJ_Manager"]
 
-[node name="TargetPNJ" type="Node2D" parent="PNJ_Manager"]
-
-[node name="Target1" type="Marker2D" parent="PNJ_Manager/TargetPNJ"]
+[node name="Target1" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
 position = Vector2(175, 102)
 
-[node name="Target2" type="Marker2D" parent="PNJ_Manager/TargetPNJ"]
+[node name="Target2" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
 position = Vector2(175, 175)
 
-[node name="Target3" type="Marker2D" parent="PNJ_Manager/TargetPNJ"]
+[node name="Target3" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
 position = Vector2(260, 102)
+
+[node name="End_Targets" type="Node2D" parent="PNJ_Manager"]
+
+[node name="Target1" type="Marker2D" parent="PNJ_Manager/End_Targets"]
+position = Vector2(168, 30)
+
+[node name="Target2" type="Marker2D" parent="PNJ_Manager/End_Targets"]
+position = Vector2(34, 168)
 
 [connection signal="animation_finished" from="Cutscenes/AnimationPlayer" to="Cutscenes" method="cutscene_end"]
