@@ -8,7 +8,6 @@ func step(pawn: Pawn, _delta: float) -> void:
 		pawn.handle_sprint()
 	
 		pawn.velocity = pawn.input_direction.normalized() * pawn.curr_speed
-	
 		pawn.move_and_slide()
 		
 		pawn.handle_interact()

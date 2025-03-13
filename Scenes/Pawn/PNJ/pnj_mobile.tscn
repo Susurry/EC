@@ -1,12 +1,12 @@
 [gd_scene load_steps=38 format=3 uid="uid://bcny5exc06a15"]
 
 [ext_resource type="Script" uid="uid://c8ipxs8354371" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/pnj_mobile.gd" id="1_mqls6"]
-[ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/Types/state_machine.gd" id="2_6q7pp"]
+[ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="2_6q7pp"]
 [ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="3_j34d2"]
-[ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/Types/state_pathfinding.gd" id="4_snmpb"]
+[ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/state_pathfinding.gd" id="4_snmpb"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="5_iwcx3"]
 [ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="6_h8deo"]
-[ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/Types/player_anim.gd" id="7_rvass"]
+[ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_rvass"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_utgjr"]
 shader = ExtResource("5_iwcx3")
