@@ -6,6 +6,7 @@ const SPEED: float = 50
 @onready var skin: PawnSkin = $Skin
 @onready var state_machine: StateMachine = $StateMachine
 @onready var navigationAgent: NavigationAgent2D = $NavigationAgent2D
+@onready var navigationObs: NavigationObstacle2D = $NavigationObstacle2D
 
 func _ready() -> void:
 	initialize_state_machine()
