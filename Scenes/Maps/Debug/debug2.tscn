@@ -107,7 +107,7 @@ limit_bottom = 500
 
 [node name="0_Baththub" type="Marker2D" parent="StartPoints"]
 z_index = 50
-position = Vector2(62, 78)
+position = Vector2(129, 134)
 gizmo_extents = 30.0
 
 [node name="1_RightCube" type="Marker2D" parent="StartPoints"]
@@ -140,9 +140,11 @@ timeline = "dial_test"
 
 [node name="PNJ_Manager" type="Node2D" parent="."]
 
-[node name="PNJ_Mobile" parent="PNJ_Manager" node_paths=PackedStringArray("targets") instance=ExtResource("6_2giru")]
-position = Vector2(204, 127)
-targets = NodePath("../TargetPNJ")
+[node name="PNJ_Mobile" parent="PNJ_Manager" node_paths=PackedStringArray("middle_targets", "spawn_targets") instance=ExtResource("6_2giru")]
+position = Vector2(268, 171)
+middle_targets = NodePath("../TargetPNJ")
+spawn_targets = NodePath("../../StartPoints")
+timeline = ""
 
 [node name="TargetPNJ" type="Node2D" parent="PNJ_Manager"]
 

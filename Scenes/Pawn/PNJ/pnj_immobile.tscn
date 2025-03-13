@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/Types/state_machine.gd" id="1_y7sa2"]
 [ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="2_nr0hi"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/Types/player_anim.gd" id="3_0woi1"]
-[ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/PNJ_Immobile/States/state_regular.gd" id="3_xybwu"]
+[ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="3_xybwu"]
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/Types/state_pathfinding.gd" id="4_x2a3f"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="4_xybwu"]
 
