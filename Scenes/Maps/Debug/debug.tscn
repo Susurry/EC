@@ -19,7 +19,6 @@ sources/0 = SubResource("TileSetAtlasSource_gol01")
 size = Vector2(128, 128)
 
 [node name="Debug" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_u1qa6")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
 

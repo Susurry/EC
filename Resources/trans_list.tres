@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_pydxx")
-types = {
+types = Dictionary[String, String]({
 "DebugTrans": "uid://nrggjd5m8l82"
-}
+})

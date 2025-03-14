@@ -1,4 +1,5 @@
 if SaveManager.getElement("Quests", "1_appart") == true :
-	Parfait, vous pourrez prendre l'air quand la ville existera :)
+	Parfait, vous pouvez prendre l'air.
+	do ThreadLoad.load_scene("CentreVille", 0, "DebugTrans")
 else :
 	Vous n'êtes pas prêt !

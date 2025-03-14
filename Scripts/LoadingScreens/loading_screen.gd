@@ -5,7 +5,11 @@ var next_scene: Node2D
 var transition_key: String
 
 func _ready() -> void:
+	initialize_loading_screen()
 	initialize_load_type()
+
+func initialize_loading_screen() -> void:
+	RenderingServer.set_default_clear_color(Color.BLACK)
 
 func initialize_load_type() -> void:
 	if transition_key.is_empty():

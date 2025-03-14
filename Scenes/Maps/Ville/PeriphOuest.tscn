@@ -236,7 +236,6 @@ texture = ExtResource("3_n0grg")
 sources/0 = SubResource("TileSetAtlasSource_8tmdn")
 
 [node name="PeriphOuest" type="Node2D"]
-y_sort_enabled = true
 script = ExtResource("1_r1ah8")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
 limit_left = -1000
