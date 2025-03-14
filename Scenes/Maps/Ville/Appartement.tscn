@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://6eecifybnu8r"]
+[gd_scene load_steps=48 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Scenes/Maps/Ville/Appartement.tres" id="2_2g8ls"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cyqoe56afno1e" path="res://Scenes/Props/Appartement/rangement.tscn" id="12_vo2jj"]
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
 [ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
-[ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="15_0xvqo"]
 [ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/Appartement/appartement_intro.gd" id="16_7gbmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
@@ -145,7 +144,7 @@ limit_bottom = 256
 
 [node name="0_Lit" type="Marker2D" parent="StartPoints"]
 z_index = 50
-position = Vector2(200, 152)
+position = Vector2(48, 47)
 gizmo_extents = 30.0
 
 [node name="1_Sortie" type="Marker2D" parent="StartPoints"]
@@ -377,9 +376,6 @@ position = Vector2(45, 81)
 
 [node name="PorteSortie" parent="Props" instance=ExtResource("14_kt3ce")]
 position = Vector2(227, 138)
-
-[node name="PNJ_debug" parent="." instance=ExtResource("15_0xvqo")]
-position = Vector2(104, 125)
 
 [node name="Intro_Event" type="Node2D" parent="."]
 script = ExtResource("16_7gbmn")

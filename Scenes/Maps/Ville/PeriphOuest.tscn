@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=8 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Scenes/Maps/Ville/PeriphOuest.tres" id="2_cae2k"]
 [ext_resource type="Texture2D" uid="uid://b6ryuh7ypvje4" path="res://Graphics/Tilesets/Tileset_Ville.png" id="3_n0grg"]
 [ext_resource type="Texture2D" uid="uid://cidwdf3708xxj" path="res://Graphics/Props/ME_Singles_Vehicles_16x16_Car_Right_1.png" id="3_vhjgv"]
-[ext_resource type="PackedScene" uid="uid://cfisy1407tyxo" path="res://Scenes/Props/Appartement/pnj.tscn" id="5_fmneq"]
 [ext_resource type="Texture2D" uid="uid://ctm2eeo4kvdk6" path="res://Graphics/Props/Camion.png" id="6_pjxp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tmdn"]
@@ -238,16 +237,14 @@ sources/0 = SubResource("TileSetAtlasSource_8tmdn")
 [node name="PeriphOuest" type="Node2D"]
 script = ExtResource("1_r1ah8")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
-limit_left = -1000
-limit_right = 1000
-limit_top = -1000
-limit_bottom = 1000
+limit_left = -10000
+limit_top = -10000
 
 [node name="StartPoints" type="Node2D" parent="."]
 
 [node name="0_Debug" type="Marker2D" parent="StartPoints"]
 z_index = 50
-position = Vector2(70, 142)
+position = Vector2(529, 640)
 gizmo_extents = 30.0
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -271,9 +268,6 @@ y_sort_enabled = true
 [node name="Sprite2D" type="Sprite2D" parent="Props/Generic"]
 position = Vector2(1041, 328)
 texture = ExtResource("3_vhjgv")
-
-[node name="PNJ_debug" parent="Props" instance=ExtResource("5_fmneq")]
-position = Vector2(1025, 680)
 
 [node name="Camion" type="Sprite2D" parent="Props"]
 position = Vector2(1074, 633)

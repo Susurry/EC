@@ -253,11 +253,6 @@ z_index = 50
 position = Vector2(25, 416)
 gizmo_extents = 30.0
 
-[node name="1_Debug2" type="Marker2D" parent="StartPoints"]
-z_index = 50
-position = Vector2(1090, 1390)
-gizmo_extents = 30.0
-
 [node name="TileMaps" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="TileMaps"]
@@ -484,21 +479,36 @@ y_sort_enabled = true
 
 [node name="PNJ_Manager" type="Node2D" parent="."]
 script = ExtResource("4_pmrli")
-pnj_quantity = 20
+pnj_quantity = 30
 
 [node name="Middle_Targets" type="Node2D" parent="PNJ_Manager"]
 
 [node name="Target1" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
-position = Vector2(467, 911)
+position = Vector2(367, 400)
 
 [node name="Target2" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
-position = Vector2(1088, 528)
+position = Vector2(1099, 335)
 
 [node name="Target3" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
-position = Vector2(705, 1385)
+position = Vector2(304, 1391)
 
 [node name="Target4" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
-position = Vector2(966, 608)
+position = Vector2(930, 973)
+
+[node name="Target5" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
+position = Vector2(1088, 1392)
+
+[node name="Target6" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
+position = Vector2(703, 239)
+
+[node name="Target7" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
+position = Vector2(1216, 912)
+
+[node name="Target8" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
+position = Vector2(176, 736)
+
+[node name="Target9" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
+position = Vector2(451, 680)
 
 [node name="End_Targets" type="Node2D" parent="PNJ_Manager"]
 
