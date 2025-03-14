@@ -17,7 +17,7 @@ var start_id: int = 0
 @onready var pause_ressource: PackedScene = preload("uid://bfwcj54nwr3on")
 
 func _ready() -> void:
-	initialize_bg_color()
+	initialize_scene()
 	initialize_player()
 	initialize_camera()
 	initialize_pause()
@@ -36,8 +36,9 @@ func initialize_camera() -> void:
 	camera.set_limits(limit_left, limit_right, limit_top, limit_bottom)
 	add_child(camera)
 
-func initialize_bg_color() -> void:
+func initialize_scene() -> void:
 	RenderingServer.set_default_clear_color(background_color)
+	y_sort_enabled = true
 	
 func initialize_pause() -> void:
 	var pause = pause_ressource.instantiate()

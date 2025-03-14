@@ -8,8 +8,8 @@
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/state_pathfinding.gd" id="4_x2a3f"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="4_xybwu"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x2a3f"]
+resource_local_to_scene = true
 shader = ExtResource("4_xybwu")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
@@ -300,6 +300,7 @@ script = ExtResource("4_x2a3f")
 [node name="Skin" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_x2a3f")
 texture = ExtResource("2_nr0hi")
+offset = Vector2(0, -10.5)
 hframes = 56
 vframes = 20
 frame = 3
@@ -322,14 +323,12 @@ parameters/idle/Idle/blend_position = Vector2(0, 0.00273967)
 parameters/walk/Walk/blend_position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_pl6pu")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_0woi1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
