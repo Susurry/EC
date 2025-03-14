@@ -1,4 +1,4 @@
 extends Resource
-class_name TransitionList
+class_name LoadingScreenList
 
 @export var types: Dictionary[String,String]

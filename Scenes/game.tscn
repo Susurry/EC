@@ -236,8 +236,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
 [node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Follower/PanelLabel"]
 layout_mode = 2
-text = "01
-"
+text = "01"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -284,8 +283,7 @@ vertical_alignment = 1
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("6_6ntbc")
-minute = 10
-seconde = 20
+heure = 2
 
 [node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer"]
 layout_mode = 0

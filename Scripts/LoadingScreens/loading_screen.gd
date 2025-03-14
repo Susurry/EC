@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var transitions: Resource
+@export var loading_screens: Resource
 var next_scene: Node2D
-var transition_key: String
+var loading_screen_key: String
 
 func _ready() -> void:
 	initialize_loading_screen()
@@ -12,10 +12,10 @@ func initialize_loading_screen() -> void:
 	RenderingServer.set_default_clear_color(Color.BLACK)
 
 func initialize_load_type() -> void:
-	if transition_key.is_empty():
+	if loading_screen_key.is_empty():
 		ThreadLoad.trigger_next_scene(next_scene)
 	else:
-		var load_trans: Node2D = load(transitions.types[transition_key]).instantiate()
+		var load_trans: Node2D = load(loading_screens.types[loading_screen_key]).instantiate()
 		add_child(load_trans)
 
 func _on_event_trigger() -> void:

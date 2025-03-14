@@ -7,6 +7,14 @@ var manager: Node2D
 var target_id: int = 0
 var spawn_point: Vector2
 var targets: Array[Vector2]
+var skin_texture: Texture2D
+
+func _ready() -> void:
+	super()
+	initialize_skin()
+
+func initialize_skin() -> void:
+	skin.texture = skin_texture
 
 func initialize_pawn() -> void:
 	await get_tree().physics_frame

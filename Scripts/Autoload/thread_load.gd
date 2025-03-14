@@ -8,12 +8,12 @@ var viewport: SubViewport
 func initialize_viewport(game_viewport: SubViewport) -> void:
 	viewport = game_viewport
 
-func load_scene(next_scene: String, pos_id: int = 0, transition_type: String = "") -> void:
+func load_scene(next_scene: String, pos_id: int = 0, loading_screen_type: String = "") -> void:
 	_erase_scenes()
 	
 	# Créer la scène de chargement
 	var loading_instance: Node2D = loading_screen.instantiate()
-	loading_instance.transition_key = transition_type # Envoie le type de transition pour le chargement
+	loading_instance.loading_screen_key = loading_screen_type # Envoie la clée pour selectionner l'écran de chargement
 	viewport.call_deferred("add_child", loading_instance)
 	
 	ResourceLoader.load_threaded_request(maps.locations[next_scene], "", true)
