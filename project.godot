@@ -22,27 +22,12 @@ SaveManager="*res://Scripts/Autoload/savemanager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ThreadLoad="*res://Scripts/Autoload/thread_load.gd"
 EventBus="*res://Scripts/Autoload/event_bus.gd"
+AudioManager="*res://Scripts/Autoload/AudioManager/audio_manager.gd"
 
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={
-"Baignoire": "res://Dialogues/Appartement/Baignoire.dtl",
-"Bibliotheque": "res://Dialogues/Appartement/Bibliotheque.dtl",
-"ChaiseBureau": "res://Dialogues/Appartement/ChaiseBureau.dtl",
-"Introduction": "res://Dialogues/Appartement/Introduction.dtl",
-"Lit": "res://Dialogues/Appartement/Lit.dtl",
-"Livre": "res://Dialogues/Appartement/Livre.dtl",
-"MeubleSDB": "res://Dialogues/Appartement/MeubleSDB.dtl",
-"PorteSortieApp": "res://Dialogues/Appartement/PorteSortieApp.dtl",
-"Rangement": "res://Dialogues/Appartement/Rangement.dtl",
-"Refrigerateur": "res://Dialogues/Appartement/Refrigerateur.dtl",
-"Television": "res://Dialogues/Appartement/Television.dtl",
-"dial_test": "res://Dialogues/Debug/dial_test.dtl",
-"dial_test2": "res://Dialogues/Debug/dial_test2.dtl",
-"init": "res://Dialogues/init.dtl",
-"pnj": "res://Dialogues/Appartement/pnj.dtl"
-}
+directories/dtl_directory={}
 layout/style_list=[]
 layout/default_style="Default"
 variables={}
