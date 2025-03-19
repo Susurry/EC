@@ -1,7 +1,7 @@
 [gd_scene load_steps=48 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
-[ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Scenes/Maps/Ville/Appartement.tres" id="2_2g8ls"]
+[ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Graphics/Tilesets/Tileset_Appartement.tres" id="2_2g8ls"]
 [ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/Appartement/baignoire.tscn" id="3_hb0ix"]
 [ext_resource type="PackedScene" uid="uid://0ji1ktwqxaxa" path="res://Scenes/Props/Appartement/meuble_sdb.tscn" id="4_swjjx"]
 [ext_resource type="PackedScene" uid="uid://buv610vd4bdfb" path="res://Scenes/Props/Appartement/lit.tscn" id="6_clj8j"]
