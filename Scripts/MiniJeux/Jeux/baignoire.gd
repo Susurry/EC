@@ -3,7 +3,7 @@ extends Control
 var shower: bool = false
 var bath_full: bool = false
 
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite = $SpriteBaignoire
 
 func _process(_delta: float) -> void:
 	if animated_sprite.is_playing() == false && bath_full == true :
