@@ -344,7 +344,7 @@ nodes/walk/position = Vector2(13.3333, 226.667)
 node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &"Transition", 1, &"walk", &"Transition", 2, &"sit", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6pu"]
-size = Vector2(12, 9)
+size = Vector2(14, 9)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true

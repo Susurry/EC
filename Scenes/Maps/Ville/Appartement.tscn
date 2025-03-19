@@ -25,28 +25,28 @@ atlas = ExtResource("6_dxfoh")
 region = Rect2(160, 0, 18, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_klsvt"]
-size = Vector2(12, 22)
+size = Vector2(12, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgkqb"]
 atlas = ExtResource("6_dxfoh")
 region = Rect2(213, 0, 32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pceon"]
-size = Vector2(29, 13)
+size = Vector2(30, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmbv8"]
 atlas = ExtResource("6_dxfoh")
 region = Rect2(214, 16, 13, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8iyhl"]
-size = Vector2(8, 32)
+size = Vector2(8, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u7ule"]
 atlas = ExtResource("6_dxfoh")
 region = Rect2(160, 19, 16, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_db8x8"]
-size = Vector2(10, 11)
+size = Vector2(10, 9.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1djca"]
 atlas = ExtResource("6_dxfoh")
@@ -61,7 +61,7 @@ atlas = ExtResource("6_dxfoh")
 region = Rect2(95, 0, 18, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_os225"]
-size = Vector2(13.5, 18.5)
+size = Vector2(14, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_agr87"]
 atlas = ExtResource("6_dxfoh")
@@ -98,7 +98,7 @@ atlas = ExtResource("6_dxfoh")
 region = Rect2(32, 47, 36, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrsgg"]
-size = Vector2(32, 19)
+size = Vector2(32, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xubt4"]
 atlas = ExtResource("6_dxfoh")
@@ -119,7 +119,7 @@ atlas = ExtResource("6_dxfoh")
 region = Rect2(68, 65, 20, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cihg3"]
-size = Vector2(15, 15)
+size = Vector2(16, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7agy"]
 atlas = ExtResource("6_dxfoh")
@@ -133,6 +133,7 @@ atlas = ExtResource("6_dxfoh")
 region = Rect2(227, 16, 15, 18)
 
 [node name="Appartement" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_8h08n")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
 limit_left = -144
@@ -176,46 +177,54 @@ position = Vector2(24, 43)
 texture = SubResource("AtlasTexture_jggg6")
 
 [node name="Toilette" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(215, 77)
+position = Vector2(206, 80)
 texture = SubResource("AtlasTexture_jhilq")
+centered = false
+offset = Vector2(0, -12)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Toilette"]
+position = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Toilette/StaticBody2D"]
-position = Vector2(0, 7)
+position = Vector2(9, 15.5)
 shape = SubResource("RectangleShape2D_klsvt")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Etagere1" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(191, 74)
+position = Vector2(191, 80)
 texture = SubResource("AtlasTexture_jgkqb")
+offset = Vector2(0, -6)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Etagere1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Etagere1/StaticBody2D"]
-position = Vector2(-0.5, 14.5)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_pceon")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Etagere2" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(148, 66)
+position = Vector2(142, 80)
 texture = SubResource("AtlasTexture_lmbv8")
+centered = false
+offset = Vector2(0, -29)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Etagere2"]
+position = Vector2(5, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Etagere2/StaticBody2D"]
-position = Vector2(-1, 13)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_8iyhl")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Poubelle" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(151, 36)
+position = Vector2(143, 28)
 texture = SubResource("AtlasTexture_u7ule")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Poubelle"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Poubelle/StaticBody2D"]
-position = Vector2(0, 1.5)
+position = Vector2(8, 10)
 shape = SubResource("RectangleShape2D_db8x8")
 debug_color = Color(1, 0, 0, 0.419608)
 
@@ -225,34 +234,41 @@ position = Vector2(173, 55)
 texture = SubResource("AtlasTexture_1djca")
 
 [node name="Ventilation" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(150, 12)
+position = Vector2(143, 5)
 texture = SubResource("AtlasTexture_jv2it")
+centered = false
 
 [node name="Chevet" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(40, 29)
+position = Vector2(31, 14)
 texture = SubResource("AtlasTexture_grhrw")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Chevet"]
+position = Vector2(9, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chevet/StaticBody2D"]
-position = Vector2(0.25, 4.25)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_os225")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Fenetre" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(63, 17)
+position = Vector2(44, 3)
 texture = SubResource("AtlasTexture_agr87")
+centered = false
 
 [node name="Serviettes" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(196, 25)
+position = Vector2(187, 19)
 texture = SubResource("AtlasTexture_7wsxd")
+centered = false
 
 [node name="MeubleTV" type="Sprite2D" parent="Props/Generic"]
 z_index = -1
-position = Vector2(95, 31)
+position = Vector2(81, 21)
 texture = SubResource("AtlasTexture_36p0q")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/MeubleTV"]
+position = Vector2(14, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/MeubleTV/StaticBody2D"]
 position = Vector2(0.5, 0.5)
@@ -261,14 +277,17 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Tapis1" type="Sprite2D" parent="Props/Generic"]
 z_index = -1
-position = Vector2(89, 55)
+position = Vector2(66, 39)
 texture = SubResource("AtlasTexture_n4hdr")
+centered = false
 
 [node name="Plante" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(72, 30)
+position = Vector2(63, 19)
 texture = SubResource("AtlasTexture_ew1tg")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Plante"]
+position = Vector2(9, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Plante/StaticBody2D"]
 position = Vector2(1, 5)
@@ -287,21 +306,27 @@ position = Vector2(-1, 0)
 polygon = PackedVector2Array(-24, 43, -24, -4, 14, -4, 14, 11, -9, 11, -9, 43)
 
 [node name="Canape" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(93, 67)
+position = Vector2(75, 60)
 texture = SubResource("AtlasTexture_0h1ng")
+centered = false
+offset = Vector2(0, -6)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Canape"]
+position = Vector2(18, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Canape/StaticBody2D"]
-position = Vector2(0, 2.5)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_hrsgg")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Table" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(97, 101)
+position = Vector2(83, 94)
 texture = SubResource("AtlasTexture_xubt4")
+centered = false
+offset = Vector2(0, -8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Table"]
+position = Vector2(14, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Table/StaticBody2D"]
 position = Vector2(0, 2.5)
@@ -309,10 +334,12 @@ shape = SubResource("RectangleShape2D_6s2bq")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Chaise1" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(97, 89)
+position = Vector2(87, 75)
 texture = SubResource("AtlasTexture_vixhj")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Chaise1"]
+position = Vector2(10, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chaise1/StaticBody2D"]
 position = Vector2(0, 5.5)
@@ -320,21 +347,25 @@ shape = SubResource("RectangleShape2D_yo6nu")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Chaise2" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(97, 109)
+position = Vector2(87, 97)
 texture = SubResource("AtlasTexture_jooey")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Chaise2"]
+position = Vector2(10, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Chaise2/StaticBody2D"]
-position = Vector2(-0.5, 3.5)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_cihg3")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Bureau" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(23, 78)
+position = Vector2(14, 55)
 texture = SubResource("AtlasTexture_e7agy")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Bureau"]
+position = Vector2(10, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Bureau/StaticBody2D"]
 position = Vector2(0, 4)
@@ -343,8 +374,9 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="TapisSortie" type="Sprite2D" parent="Props/Generic"]
 z_index = -1
-position = Vector2(217, 152)
+position = Vector2(210, 143)
 texture = SubResource("AtlasTexture_7uow5")
+centered = false
 
 [node name="Baignoire" parent="Props" instance=ExtResource("3_hb0ix")]
 position = Vector2(213, 30)
@@ -356,23 +388,27 @@ position = Vector2(173, 28)
 position = Vector2(24, 36)
 
 [node name="Television" parent="Props" instance=ExtResource("7_qu1vg")]
+position = Vector2(95, 20)
 
 [node name="Refrigerateur" parent="Props" instance=ExtResource("8_1kehp")]
+position = Vector2(12, 160)
+metadata/_edit_group_ = true
 
 [node name="Livre" parent="Props" instance=ExtResource("10_5ip7c")]
 z_index = 1
 position = Vector2(24, 78)
 
 [node name="Bibliotheque" parent="Props" instance=ExtResource("11_4b6mu")]
+position = Vector2(136, 120)
 
 [node name="PorteSDB" parent="Props" instance=ExtResource("12_l8hgc")]
-position = Vector2(168, 106)
+position = Vector2(168, 117)
 
 [node name="Rangement" parent="Props" instance=ExtResource("12_vo2jj")]
 position = Vector2(202, 118)
 
 [node name="ChaiseBureau" parent="Props" instance=ExtResource("13_hvk87")]
-position = Vector2(45, 81)
+position = Vector2(37, 80)
 
 [node name="PorteSortie" parent="Props" instance=ExtResource("14_kt3ce")]
 position = Vector2(227, 138)

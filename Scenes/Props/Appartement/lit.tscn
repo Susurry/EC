@@ -25,7 +25,9 @@ timeline = "Lit"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_1mp60")
+position = Vector2(-10, -21)
 texture = SubResource("AtlasTexture_haukc")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

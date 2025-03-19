@@ -23,7 +23,9 @@ timeline = "Livre"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_aomuj")
+position = Vector2(-6, -9)
 texture = SubResource("AtlasTexture_iky2d")
+centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
 

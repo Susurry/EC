@@ -19,6 +19,7 @@ script = ExtResource("1_fqnt1")
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_aomuj")
+centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
 

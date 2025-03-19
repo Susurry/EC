@@ -25,21 +25,20 @@ timeline = "Bibliotheque"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_yy8sl")
-position = Vector2(136, 119)
+position = Vector2(-18, -19)
 texture = SubResource("AtlasTexture_2nvbm")
+centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(136, 119)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_4dh6m")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(136, 140)
 shape = SubResource("RectangleShape2D_7258q")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

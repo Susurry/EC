@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="140325-16"
+config/version="190325-13"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -27,7 +27,23 @@ AudioManager="*res://Scripts/Autoload/AudioManager/audio_manager.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"Baignoire": "res://Dialogues/Appartement/Baignoire.dtl",
+"Bibliotheque": "res://Dialogues/Appartement/Bibliotheque.dtl",
+"ChaiseBureau": "res://Dialogues/Appartement/ChaiseBureau.dtl",
+"Introduction": "res://Dialogues/Appartement/Introduction.dtl",
+"Lit": "res://Dialogues/Appartement/Lit.dtl",
+"Livre": "res://Dialogues/Appartement/Livre.dtl",
+"MeubleSDB": "res://Dialogues/Appartement/MeubleSDB.dtl",
+"PorteSortieApp": "res://Dialogues/Appartement/PorteSortieApp.dtl",
+"Rangement": "res://Dialogues/Appartement/Rangement.dtl",
+"Refrigerateur": "res://Dialogues/Appartement/Refrigerateur.dtl",
+"Television": "res://Dialogues/Appartement/Television.dtl",
+"dial_test": "res://Dialogues/Debug/dial_test.dtl",
+"dial_test2": "res://Dialogues/Debug/dial_test2.dtl",
+"init": "res://Dialogues/init.dtl",
+"pnj": "res://Dialogues/Appartement/pnj.dtl"
+}
 layout/style_list=[]
 layout/default_style="Default"
 variables={}
@@ -125,5 +141,3 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.157274, 0.157274, 0.157274, 1)
-2d/snap/snap_2d_transforms_to_pixel=true
-2d/snap/snap_2d_vertices_to_pixel=true

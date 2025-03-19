@@ -108,15 +108,16 @@ size = Vector2(26, 27)
 size = Vector2(20, 22)
 
 [node name="Baignoire" type="Node2D"]
-z_index = -1
 y_sort_enabled = true
 script = ExtResource("1_roojc")
 timeline = "Baignoire"
 
 [node name="PropSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_8syqh")
+position = Vector2(-16, -32)
 sprite_frames = SubResource("SpriteFrames_te7gt")
 autoplay = "default"
+centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -8)
