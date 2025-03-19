@@ -26,7 +26,9 @@ timeline = "Rangement"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_aomuj")
+position = Vector2(-18, -19)
 texture = SubResource("AtlasTexture_24i0i")
+centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
 

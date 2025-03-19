@@ -14,10 +14,10 @@ atlas = ExtResource("3_408e4")
 region = Rect2(178, 0, 35, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
-size = Vector2(24, 8)
+size = Vector2(25, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
-size = Vector2(29.5, 20)
+size = Vector2(29, 20)
 
 [node name="MeubleSDB" type="Node2D"]
 y_sort_enabled = true
@@ -26,18 +26,20 @@ timeline = "MeubleSDB"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_aomuj")
+position = Vector2(-17, -19)
 texture = SubResource("AtlasTexture_nburb")
+centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 21)
+position = Vector2(0.5, 21)
 shape = SubResource("RectangleShape2D_rxyj1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.25, 7)
+position = Vector2(0.5, 7)
 shape = SubResource("RectangleShape2D_abqwm")
 debug_color = Color(1, 0, 0, 0.419608)
 

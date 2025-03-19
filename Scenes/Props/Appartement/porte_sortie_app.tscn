@@ -23,7 +23,9 @@ timeline = "PorteSortieApp"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_d5qku")
+position = Vector2(-4, -23)
 texture = SubResource("AtlasTexture_tyvq3")
+centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
 
