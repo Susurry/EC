@@ -6,7 +6,7 @@ var scorm := Scorm.new()
 
 var dontSave := false
 
-func _ready():	
+func _ready() -> void:
 	if hasSave():
 		self.load()
 
@@ -27,7 +27,7 @@ func getElement(category:String,element:String,onlyCategory:bool=false)->Variant
 	else:
 		return null
 
-func save()->void:
+func save() -> void:
 	if dontSave:
 		return
 	var timeDict = Time.get_datetime_dict_from_system()
@@ -41,7 +41,7 @@ func save()->void:
 	if scorm.isGameOnMoodle():
 		scorm.setSave(_swap_quotes(var_to_str(saveDict),false))
 
-func load()->void:
+func load() -> void:
 	var onlineSave = null
 	if scorm.isGameOnMoodle():
 		onlineSave = str_to_var(_swap_quotes(scorm.getSave(),true))
@@ -62,14 +62,14 @@ func load()->void:
 	else:
 		saveDict = offlineSave
 
-func hasCategory(categoryName:String)-> bool:
+func hasCategory(categoryName:String) -> bool:
 	var cat = getElement(categoryName,"",true)
 	if cat == null:
 		return false
 	else:
 		return true
 
-func _is_later(time:Dictionary,timeToCompareTo:Dictionary)->bool:
+func _is_later(time:Dictionary,timeToCompareTo:Dictionary) -> bool:
 	for key in time.keys():
 		if time[key] >= timeToCompareTo[key]:
 			return true
@@ -77,7 +77,7 @@ func _is_later(time:Dictionary,timeToCompareTo:Dictionary)->bool:
 			return false
 	return false
 
-func _swap_quotes(data:String,swapToDoubleQuotes:bool)->String:
+func _swap_quotes(data:String,swapToDoubleQuotes:bool) -> String:
 	var temp
 	if swapToDoubleQuotes == true:
 		temp = data.replace("'", '"')
@@ -88,7 +88,7 @@ func _swap_quotes(data:String,swapToDoubleQuotes:bool)->String:
 		temp = data.replace('"',"'")
 		return temp.replace("\n","")
 
-func deleteSave():
+func deleteSave() -> void:
 	# empty file
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
 	file.close()
