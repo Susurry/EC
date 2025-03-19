@@ -10,7 +10,7 @@ func _init(audio_bus: String, pool_size : int):
 		add_child(player)
 		audio_players.append(player)
 		player.bus = audio_bus
-		player.finished.connect(_on_player_finished.bind(player))
+		player.finished.connect(on_player_finished.bind(player))
 
 # Selectionne un player non utilisé ou le plus ancien si aucun est disponible
 func select_player(resource: AudioStream):
@@ -26,5 +26,5 @@ func select_player(resource: AudioStream):
 	audio_players.erase(front_player)
 	return audio_players.back()
 
-func _on_player_finished(player: AudioStreamPlayer):
+func on_player_finished(player: AudioStreamPlayer):
 	player.stream = null

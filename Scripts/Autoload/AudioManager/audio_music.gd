@@ -10,7 +10,7 @@ func play(resource: AudioStreamSynchronized):
 
 # Utiliser pour stopper la musique
 func stop():
-	audio_players.front().finished.emit()
+	on_player_finished(audio_players.front())
 
 # Utiliser pour mettre la musique sur pause
 func pause():

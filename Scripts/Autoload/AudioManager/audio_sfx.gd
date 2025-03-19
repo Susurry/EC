@@ -9,4 +9,4 @@ func play(resource: AudioStreamWAV):
 # Utiliser pour arrêter tout les sfx
 func stop():
 	for player in audio_players:
-		player.call_deferred("stop")
+		player.call_deferred("on_player_finished")
