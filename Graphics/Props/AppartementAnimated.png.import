@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckmjnv4tcdhkt"
-path="res://.godot/imported/PropSheetAnimated.png-c4da75c61adaad1d13b6a5750f423455.ctex"
+path="res://.godot/imported/AppartementAnimated.png-ff0fe91a70bc30f3d042580dda166b39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Props/PropSheetAnimated.png"
-dest_files=["res://.godot/imported/PropSheetAnimated.png-c4da75c61adaad1d13b6a5750f423455.ctex"]
+source_file="res://Graphics/Props/AppartementAnimated.png"
+dest_files=["res://.godot/imported/AppartementAnimated.png-ff0fe91a70bc30f3d042580dda166b39.ctex"]
 
 [params]
 

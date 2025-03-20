@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/Appartement/baignoire.tscn" id="3_hb0ix"]
 [ext_resource type="PackedScene" uid="uid://0ji1ktwqxaxa" path="res://Scenes/Props/Appartement/meuble_sdb.tscn" id="4_swjjx"]
 [ext_resource type="PackedScene" uid="uid://buv610vd4bdfb" path="res://Scenes/Props/Appartement/lit.tscn" id="6_clj8j"]
-[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/PropSheetSolo.png" id="6_dxfoh"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="6_dxfoh"]
 [ext_resource type="PackedScene" uid="uid://c651srsug8m05" path="res://Scenes/Props/Appartement/television.tscn" id="7_qu1vg"]
 [ext_resource type="PackedScene" uid="uid://xaecaqya5vhf" path="res://Scenes/Props/Appartement/refrigerateur.tscn" id="8_1kehp"]
 [ext_resource type="PackedScene" uid="uid://v3gbf6c5eubg" path="res://Scenes/Props/Appartement/livre.tscn" id="10_5ip7c"]
@@ -230,8 +230,9 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Tapis2" type="Sprite2D" parent="Props/Generic"]
 z_index = -1
-position = Vector2(173, 55)
+position = Vector2(158, 46)
 texture = SubResource("AtlasTexture_1djca")
+centered = false
 
 [node name="Ventilation" type="Sprite2D" parent="Props/Generic"]
 position = Vector2(143, 5)
