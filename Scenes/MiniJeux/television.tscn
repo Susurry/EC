@@ -51,6 +51,7 @@ offset_bottom = 400.0
 script = ExtResource("2_dkvd2")
 
 [node name="Prise" type="Button" parent="WindowSize"]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 243.0
 offset_right = 591.0
@@ -93,9 +94,9 @@ focus_mode = 0
 flat = true
 
 [connection signal="pressed" from="WindowSize/Prise" to="WindowSize" method="_on_tv_eteint"]
-[connection signal="pressed" from="WindowSize/Prise" to="WindowSize/Meuble/BoutonTV" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="WindowSize/Prise" to="WindowSize/Prise" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="WindowSize/Prise" to="WindowSize/Meuble/BoutonTV" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="WindowSize/Meuble/BoutonTV" to="WindowSize" method="_on_tv_eteint"]
-[connection signal="pressed" from="WindowSize/Meuble/BoutonTV" to="WindowSize/Meuble/BoutonTV" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="WindowSize/Meuble/BoutonTV" to="WindowSize/Prise" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="WindowSize/Meuble/BoutonTV" to="WindowSize/Meuble/BoutonTV" method="set_disabled" binds= [true]]
 [connection signal="pressed" from="WindowSize/Meuble/Pousser_meuble" to="WindowSize" method="_on_pousser_meuble_pressed"]
