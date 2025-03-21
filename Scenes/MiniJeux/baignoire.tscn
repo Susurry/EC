@@ -186,6 +186,7 @@ focus_mode = 0
 flat = true
 
 [node name="Bouchon" type="Button" parent="WindowSize"]
+layout_mode = 0
 offset_left = 378.0
 offset_top = 387.0
 offset_right = 421.0
@@ -195,6 +196,7 @@ text = "Bouchon"
 flat = true
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
+layout_mode = 0
 offset_left = 140.0
 offset_top = 516.0
 offset_right = 655.0
