@@ -1,22 +1,19 @@
 extends InputManager
 
 const MOVE_DEADZONE: float = 10
-const SPRINT_DEADZONE: float = 60
+const SPRINT_DEADZONE: float = 110
 
 @onready var knob: Sprite2D = $MarginContainer/Control/Joystick/Knob
 @onready var max_dist: float = $MarginContainer/Control/Joystick.shape.radius
 @onready var stick_center: Vector2 = $MarginContainer/Control/Joystick.texture_normal.get_size() / 2
 
 var touched: bool = false
-var interact_pressed_timer: float
+var interact_pressed: bool
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if touched:
 		knob.global_position = get_global_mouse_position()
 		knob.position = stick_center + (knob.position - stick_center).limit_length(max_dist)
-	
-	if interact_pressed_timer > 0:
-		interact_pressed_timer -= delta
 
 func get_direction() -> Vector2:
 	var dir: Vector2 = Vector2.ZERO
@@ -35,7 +32,9 @@ func is_sprinting() -> bool:
 	return sprint
 
 func is_interacting() -> bool:
-	return interact_pressed_timer > 0
+	var result: bool = interact_pressed
+	interact_pressed = false
+	return result
 
 func _on_joystick_pressed() -> void:
 	touched = true
@@ -45,4 +44,4 @@ func _on_joystick_released() -> void:
 	knob.position = stick_center
 
 func _on_interact_button_pressed() -> void:
-	interact_pressed_timer = 0.1
+	interact_pressed = true

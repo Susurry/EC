@@ -22,7 +22,7 @@ size = Vector2(13, 13)
 [node name="ChaiseBureau" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_rayt1")
-enter_offset = Vector2(-2, -1)
+enter_offset = Vector2(6, 1)
 exit_offset = Vector2(17, 4)
 
 [node name="PropSprite" type="Sprite2D" parent="."]
