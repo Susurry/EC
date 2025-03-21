@@ -187,10 +187,10 @@ flat = true
 
 [node name="Bouchon" type="Button" parent="WindowSize"]
 layout_mode = 0
-offset_left = 378.0
-offset_top = 387.0
-offset_right = 421.0
-offset_bottom = 407.0
+offset_left = 375.0
+offset_top = 381.0
+offset_right = 425.0
+offset_bottom = 409.0
 theme_override_font_sizes/font_size = 8
 text = "Bouchon"
 flat = true

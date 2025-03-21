@@ -45,10 +45,10 @@ func shower_stop():
 	if progress_bar.value >= 6:
 		shower_end()
 		return
-
+	
+	timer.stop()
 	animated_sprite.play("shower_end")
 	await animated_sprite.animation_finished
-	timer.stop()
 	valve_button.disabled = false
 
 func _on_button_pressed() -> void:
