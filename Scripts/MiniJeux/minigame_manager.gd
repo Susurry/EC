@@ -18,7 +18,7 @@ func setup_minigame(minigame_name: String) -> void:
 	var minigame_instance: Node2D = minigame_load.instantiate()
 	
 	minigame_instance.minigame_manager = self
-	SubViewContainer.custom_minimum_size =  minigame_instance.window_size
+	SubViewContainer.custom_minimum_size =  minigame_instance.get_window_size()
 	exit_button.position = ((size - SubViewContainer.custom_minimum_size) / 2) - exit_button_offset
 	
 	target.add_child(minigame_instance)
