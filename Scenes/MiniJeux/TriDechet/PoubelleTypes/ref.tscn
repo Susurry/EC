@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ibps4ddsx3q"]
+
+[ext_resource type="Script" uid="uid://b5s8ctsqrgef5" path="res://Scenes/MiniJeux/TriDechet/trashbin_move.gd" id="1_f4ki8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeplx"]
+size = Vector2(218, 283)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cc60"]
+size = Vector2(218, 20)
+
+[node name="Poubelle" type="Button"]
+offset_right = 218.0
+offset_bottom = 283.0
+focus_mode = 0
+text = "Recyclé :)"
+script = ExtResource("1_f4ki8")
+metadata/_edit_group_ = true
+
+[node name="PushBackArea" type="Area2D" parent="."]
+position = Vector2(109, 142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushBackArea"]
+shape = SubResource("RectangleShape2D_aeplx")
+
+[node name="Hole" type="Area2D" parent="."]
+position = Vector2(109, 10)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+shape = SubResource("RectangleShape2D_7cc60")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="button_down" from="." to="." method="_on_interact" binds= [true]]
+[connection signal="button_up" from="." to="." method="_on_interact" binds= [false]]
+[connection signal="area_entered" from="PushBackArea" to="." method="_on_collision_other" binds= [true]]
+[connection signal="area_exited" from="PushBackArea" to="." method="_on_collision_other" binds= [false]]
+[connection signal="area_entered" from="Hole" to="." method="_on_trash_enter"]
