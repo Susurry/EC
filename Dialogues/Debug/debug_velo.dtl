@@ -1,0 +1,6 @@
+label book1
+Veux-tu jouer au mini-jeu du vélo ?
+- Oui
+	Il arrive, promis.
+- Non
+[end_timeline]

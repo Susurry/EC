@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="200325-15"
+config/version="250325-11"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -41,6 +41,7 @@ directories/dtl_directory={
 "Television": "res://Dialogues/Appartement/Television.dtl",
 "bus_corpo": "res://Dialogues/PeriphOuest/bus_corpo.dtl",
 "bus_periph": "res://Dialogues/PeriphOuest/bus_periph.dtl",
+"debug_velo": "res://Dialogues/Debug/debug_velo.dtl",
 "dial_test": "res://Dialogues/Debug/dial_test.dtl",
 "dial_test2": "res://Dialogues/Debug/dial_test2.dtl",
 "init": "res://Dialogues/init.dtl",
