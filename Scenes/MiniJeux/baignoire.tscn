@@ -1,9 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://dgpu4hmb3vlfw"]
+[gd_scene load_steps=22 format=3 uid="uid://dgpu4hmb3vlfw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_3ua7n"]
 [ext_resource type="Script" uid="uid://bvia05yei278y" path="res://Scripts/MiniJeux/Jeux/baignoire.gd" id="2_3w5rc"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(160, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afyks"]
 atlas = ExtResource("2_3ua7n")
@@ -16,10 +19,6 @@ region = Rect2(96, 0, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxttj"]
 atlas = ExtResource("2_3ua7n")
 region = Rect2(128, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]
-atlas = ExtResource("2_3ua7n")
-region = Rect2(160, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdace"]
 atlas = ExtResource("2_3ua7n")
@@ -71,6 +70,14 @@ region = Rect2(128, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbos1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlaqs")
+}],
+"loop": true,
+"name": &"bath_full",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_afyks")
@@ -140,9 +147,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6tp1"]
+atlas = ExtResource("2_3ua7n")
+region = Rect2(7, 21, 4, 4)
+
 [node name="Baignoire" type="Node2D"]
 script = ExtResource("1_7gsmj")
-window_size = Vector2(800, 650)
 end_timeline = "Baignoire"
 bookmark = 2
 
@@ -153,26 +163,48 @@ offset_right = 800.0
 offset_bottom = 650.0
 script = ExtResource("2_3w5rc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WindowSize"]
+[node name="SpriteBaignoire" type="AnimatedSprite2D" parent="WindowSize"]
 position = Vector2(400, 325)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_mbos1")
+animation = &"start_shower"
 autoplay = "default"
 
-[node name="Button" type="Button" parent="WindowSize/AnimatedSprite2D"]
+[node name="ValveGauche" type="Sprite2D" parent="WindowSize/SpriteBaignoire"]
+modulate = Color(0.539663, 0.539663, 0.539663, 1)
+position = Vector2(-7, -9)
+texture = SubResource("AtlasTexture_h6tp1")
+
+[node name="ValveDroite" type="Button" parent="WindowSize/SpriteBaignoire"]
 offset_left = 4.5
 offset_top = -11.25
 offset_right = 12.5
 offset_bottom = -3.25
 scale = Vector2(0.55, 0.554)
+focus_mode = 0
+flat = true
 
-[node name="BoutonQuitter" type="Button" parent="WindowSize"]
+[node name="Bouchon" type="Button" parent="WindowSize"]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 522.0
-offset_right = 435.0
-offset_bottom = 553.0
-text = "Quitter"
+offset_left = 375.0
+offset_top = 381.0
+offset_right = 425.0
+offset_bottom = 409.0
+theme_override_font_sizes/font_size = 8
+text = "Bouchon"
+flat = true
 
-[connection signal="pressed" from="WindowSize/AnimatedSprite2D/Button" to="WindowSize" method="_on_button_pressed"]
-[connection signal="pressed" from="WindowSize/BoutonQuitter" to="." method="quit_minigame"]
+[node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 516.0
+offset_right = 655.0
+offset_bottom = 543.0
+max_value = 18.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="WindowSize"]
+
+[connection signal="pressed" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize" method="_on_button_pressed"]
+[connection signal="pressed" from="WindowSize/Bouchon" to="WindowSize" method="_on_bouchon_pressed"]
+[connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="shower"]

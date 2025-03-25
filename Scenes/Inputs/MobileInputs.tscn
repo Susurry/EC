@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2d7rauh77nxq" path="res://Graphics/Other/joy1.png" id="3_c7m3c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_re68d"]
-radius = 70.0
+radius = 120.0
 
 [node name="MobileElements" type="Control"]
 layout_mode = 3

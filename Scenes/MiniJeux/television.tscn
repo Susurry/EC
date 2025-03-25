@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsnubr52gfqvq"]
+[gd_scene load_steps=9 format=3 uid="uid://bsnubr52gfqvq"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_304nj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="1_fetsl"]
-
+[ext_resource type="Script" uid="uid://76wybtfhkfoc" path="res://Scripts/MiniJeux/Jeux/télévision.gd" id="2_dkvd2"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="3_kqpfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itwrx"]
 atlas = ExtResource("1_fetsl")
@@ -11,6 +12,10 @@ region = Rect2(134, 64, 38, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_41u7f"]
 atlas = ExtResource("1_fetsl")
 region = Rect2(182, 64, 38, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkvd2"]
+atlas = ExtResource("1_fetsl")
+region = Rect2(137, 70, 32, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_86k7g"]
 animations = [{
@@ -24,15 +29,74 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkvd2")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
 }]
 
 [node name="Television" type="Node2D"]
 script = ExtResource("1_304nj")
 window_size = Vector2(1000, 400)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(592, 234)
+[node name="WindowSize" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1000.0
+offset_bottom = 400.0
+script = ExtResource("2_dkvd2")
+
+[node name="Prise" type="Button" parent="WindowSize"]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 243.0
+offset_right = 591.0
+offset_bottom = 274.0
+focus_mode = 0
+disabled = true
+text = "Prise"
+
+[node name="Meuble" type="Node2D" parent="WindowSize"]
+
+[node name="SpriteTV" type="AnimatedSprite2D" parent="WindowSize/Meuble"]
+z_index = 1
+position = Vector2(501, 165)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_86k7g")
+animation = &"stop"
 autoplay = "default"
-frame_progress = 0.427623
+
+[node name="BoutonTV" type="Button" parent="WindowSize/Meuble"]
+offset_left = 556.0
+offset_top = 195.0
+offset_right = 597.0
+offset_bottom = 221.0
+focus_mode = 0
+flat = true
+
+[node name="SpriteMeuble" type="Sprite2D" parent="WindowSize/Meuble"]
+position = Vector2(497, 259)
+scale = Vector2(7.5651, 5.85399)
+texture = ExtResource("3_kqpfy")
+region_enabled = true
+region_rect = Rect2(1.93495, 40.8983, 24.9948, 17.1227)
+
+[node name="Pousser_meuble" type="Button" parent="WindowSize/Meuble"]
+offset_left = 403.0
+offset_top = 221.0
+offset_right = 591.0
+offset_bottom = 309.0
+focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="WindowSize/Prise" to="WindowSize" method="_on_tv_eteint"]
+[connection signal="pressed" from="WindowSize/Prise" to="WindowSize/Prise" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="WindowSize/Prise" to="WindowSize/Meuble/BoutonTV" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="WindowSize/Meuble/BoutonTV" to="WindowSize" method="_on_tv_eteint"]
+[connection signal="pressed" from="WindowSize/Meuble/BoutonTV" to="WindowSize/Prise" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="WindowSize/Meuble/BoutonTV" to="WindowSize/Meuble/BoutonTV" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="WindowSize/Meuble/Pousser_meuble" to="WindowSize" method="_on_pousser_meuble_pressed"]
