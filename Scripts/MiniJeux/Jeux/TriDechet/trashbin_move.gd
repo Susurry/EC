@@ -8,10 +8,15 @@ const SPEED: int = 400
 var click_offset: Vector2
 var is_inside_other: bool = false
 var pen_dir: float = 1
+var screen_limit: float
+var curr_pos_y: float = position.y
 
-@onready var screen_limit: float = get_parent().size.x - size.x # Taille de la fenêtre moins la taille du bouton
+@onready var minigame_window: Control = get_parent()
 @onready var coll_area: Area2D = $PushBackArea
-@onready var curr_pos_y: float = position.y
+
+func _ready() -> void:
+	screen_limit = minigame_window.size.x - size.x # Taille de la fenêtre moins la taille du bouton
+	curr_pos_y = position.y
 
 func _physics_process(delta: float) -> void:
 	if button_pressed:
@@ -22,14 +27,14 @@ func _physics_process(delta: float) -> void:
 	
 	global_position.x = clamp(global_position.x, 0 , screen_limit)
 
-func _on_interact(pressed: bool) -> void:
+func _on_interact() -> void:
 	click_offset = get_global_mouse_position() - global_position
 	
 	# Lorsque le click est enfoncé désactive la zone de détéction / relaché active la zone de détéction
-	coll_area.monitoring = !pressed
-	coll_area.set_collision_layer_value(1,!pressed)
+	coll_area.monitoring = !button_pressed
+	coll_area.set_collision_layer_value(1,!button_pressed)
 	
-	if pressed:
+	if button_pressed:
 		position.y = curr_pos_y - select_offset
 	else:
 		position.y = curr_pos_y
@@ -47,7 +52,7 @@ func _on_collision_other(area: Area2D, inside: bool) -> void:
 func _on_trash_enter(area: Area2D) -> void:
 	area.monitoring = false
 	if type == area.get_parent().type:
-		print("Good")
+		minigame_window.update_score(0.05)
 	else:
-		print("Bad >:(")
+		minigame_window.update_score(-0.05)
 	area.get_parent().queue_free()

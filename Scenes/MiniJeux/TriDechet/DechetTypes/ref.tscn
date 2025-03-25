@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://e2fy0gl10th8"]
 
-[ext_resource type="Script" uid="uid://c575a1vntlmsm" path="res://Scenes/MiniJeux/TriDechet/trash_item.gd" id="1_5msnf"]
+[ext_resource type="Script" uid="uid://c575a1vntlmsm" path="res://Scripts/MiniJeux/Jeux/TriDechet/trash_item.gd" id="1_5msnf"]
 [ext_resource type="Texture2D" uid="uid://b0ddcd68fgmkb" path="res://icon.svg" id="2_dxbmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0itnd"]
