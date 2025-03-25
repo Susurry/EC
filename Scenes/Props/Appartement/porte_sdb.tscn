@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfkgy11ob2lse" path="res://Scripts/Props/Types/prop_door.gd" id="1_0eo08"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_577e1"]
-[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="2_vac3v"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_vac3v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gpq78"]
 shader = ExtResource("2_577e1")

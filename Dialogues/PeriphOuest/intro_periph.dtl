@@ -1,0 +1,7 @@
+Il est l'heure de se rendre à la fac ! Plusieurs options s'offrent à vous donc n'hésitez pas d'explorer ;)
+do EventBus.emit_signal("clean_quests")
+do EventBus.emit_signal("add_quest", "2_transport")
+do EventBus.emit_signal("add_quest", "2-1_voiture")
+do EventBus.emit_signal("add_quest", "2-2_transports")
+do EventBus.emit_signal("add_quest", "2-3_pieds")
+do EventBus.emit_signal("add_quest", "2-4_velo")

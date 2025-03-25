@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://buv610vd4bdfb"]
 
-[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/PropSheetSolo.png" id="1_h0q8t"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="1_h0q8t"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_oqfvk"]
 [ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="2_q7yw1"]
 

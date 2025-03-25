@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://cp1m5aulw3omg"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_0m7db"]
-[ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Scenes/Maps/Ville/PeriphOuest.tres" id="2_uihib"]
+[ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="2_uihib"]
 [ext_resource type="Texture2D" uid="uid://b6ryuh7ypvje4" path="res://Graphics/Tilesets/Tileset_Ville.png" id="3_uihib"]
 [ext_resource type="Script" uid="uid://df0d0ft4f664q" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/pnj_mobile_manager.gd" id="4_pmrli"]
 

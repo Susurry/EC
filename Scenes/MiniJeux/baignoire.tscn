@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dgpu4hmb3vlfw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
-[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="2_3ua7n"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_3ua7n"]
 [ext_resource type="Script" uid="uid://bvia05yei278y" path="res://Scripts/MiniJeux/Jeux/baignoire.gd" id="2_3w5rc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]

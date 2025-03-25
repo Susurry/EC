@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckmjnv4tcdhkt"
-path="res://.godot/imported/PropSheetAnimated.png-c4da75c61adaad1d13b6a5750f423455.ctex"
+uid="uid://cykfdxsexsje3"
+path="res://.godot/imported/19_Graveyard_16x16.png-5f2c068e28c633b209a63f0afb6c122a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Props/PropSheetAnimated.png"
-dest_files=["res://.godot/imported/PropSheetAnimated.png-c4da75c61adaad1d13b6a5750f423455.ctex"]
+source_file="res://Graphics/TEMP/19_Graveyard_16x16.png"
+dest_files=["res://.godot/imported/19_Graveyard_16x16.png-5f2c068e28c633b209a63f0afb6c122a.ctex"]
 
 [params]
 

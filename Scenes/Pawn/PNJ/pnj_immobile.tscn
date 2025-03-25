@@ -281,7 +281,7 @@ node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &
 size = Vector2(12, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0woi1"]
-size = Vector2(26, 33)
+size = Vector2(32, 32)
 
 [node name="PNJ_Immobile" type="CharacterBody2D"]
 y_sort_enabled = true
