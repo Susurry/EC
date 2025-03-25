@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_yfh3e")
-dictionnary_minigame = {
+dictionnary_minigame = Dictionary[String, String]({
 "baignoire": "uid://dgpu4hmb3vlfw",
-"television": "uid://bsnubr52gfqvq"
-}
+"television": "uid://bsnubr52gfqvq",
+"tridechet": "uid://cp4xg7covqurw"
+})
