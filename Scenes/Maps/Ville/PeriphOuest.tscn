@@ -13,13 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://dfr2s44y31igt" path="res://Scenes/Props/PeriphOuest/player_car.tscn" id="10_sh6pw"]
 [ext_resource type="PackedScene" uid="uid://dl6y8sa87g672" path="res://Scenes/Pawn/PNJ/PeriphOuest/pnj_eboueur.tscn" id="11_4suwe"]
 [ext_resource type="Script" uid="uid://cudjjhnq77mhl" path="res://Scripts/Pawn/Types/PNJ/pnj.gd" id="12_yn25f"]
-[ext_resource type="Script" uid="uid://tew383mi3h4e" path="res://Scenes/Maps/Ville/periphouest_intro.gd" id="13_4ny56"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="13_k5lkh"]
 [ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="14_5c4ie"]
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/state_pathfinding.gd" id="15_uymh2"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="16_6cxdi"]
 [ext_resource type="Texture2D" uid="uid://rg600cb81l8y" path="res://Graphics/Characters/Generic/character_baptiste.png" id="17_ydjjt"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="18_1d2nq"]
+[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/map_intro.gd" id="20_yn25f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
 atlas = ExtResource("4_4y10b")
@@ -364,7 +364,7 @@ shape = SubResource("RectangleShape2D_pjxp2")
 debug_color = Color(0.847517, 0.374056, 0, 0.419608)
 
 [node name="MetroPeriph" parent="Props" instance=ExtResource("4_vtu41")]
-position = Vector2(262, 260)
+position = Vector2(270, 276)
 timeline = "metro_periph"
 
 [node name="BusPeriph" parent="Props" instance=ExtResource("5_vtu41")]
@@ -461,7 +461,8 @@ radius = 8.0
 radius = 8.0
 
 [node name="Intro_Event" type="Node2D" parent="."]
-script = ExtResource("13_4ny56")
+script = ExtResource("20_yn25f")
+timeline = "intro_periph"
 
 [connection signal="body_entered" from="PNJs/PNJ_Debug1/Area2D" to="PNJs/PNJ_Debug1" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="PNJs/PNJ_Debug1/Area2D" to="PNJs/PNJ_Debug1" method="_on_area_2d_body_exited"]

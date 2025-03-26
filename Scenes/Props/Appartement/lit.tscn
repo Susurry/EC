@@ -41,5 +41,8 @@ debug_color = Color(1, 0, 0, 0.419608)
 position = Vector2(13, 12)
 shape = SubResource("RectangleShape2D_8rlkn")
 
+[node name="FacingDirection" type="Marker2D" parent="."]
+position = Vector2(0, 8)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
