@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cyqoe56afno1e" path="res://Scenes/Props/Appartement/rangement.tscn" id="12_vo2jj"]
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
 [ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
-[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/Appartement/appartement_intro.gd" id="16_7gbmn"]
+[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/map_intro.gd" id="16_7gbmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
@@ -393,7 +393,6 @@ position = Vector2(95, 20)
 
 [node name="Refrigerateur" parent="Props" instance=ExtResource("8_1kehp")]
 position = Vector2(12, 160)
-metadata/_edit_group_ = true
 
 [node name="Livre" parent="Props" instance=ExtResource("10_5ip7c")]
 z_index = 1
@@ -416,3 +415,4 @@ position = Vector2(227, 138)
 
 [node name="Intro_Event" type="Node2D" parent="."]
 script = ExtResource("16_7gbmn")
+timeline = "Introduction"
