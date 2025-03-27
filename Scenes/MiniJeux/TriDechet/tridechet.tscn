@@ -13,7 +13,7 @@ script = ExtResource("1_aeplx")
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1200.0
-offset_bottom = 850.0
+offset_bottom = 750.0
 script = ExtResource("2_ltthm")
 items = Array[PackedScene]([ExtResource("3_7cc60"), ExtResource("4_ltthm")])
 max_trash_items = 8
@@ -25,9 +25,9 @@ autostart = true
 [node name="Poubelle2" parent="WindowSize" instance=ExtResource("4_7cc60")]
 layout_mode = 0
 offset_left = 663.0
-offset_top = 560.0
+offset_top = 500.0
 offset_right = 881.0
-offset_bottom = 843.0
+offset_bottom = 783.0
 text = "Pas Recyclé >:)"
 type = 1
 select_offset = 15
@@ -35,9 +35,9 @@ select_offset = 15
 [node name="Poubelle" parent="WindowSize" instance=ExtResource("4_7cc60")]
 layout_mode = 0
 offset_left = 260.0
-offset_top = 560.0
+offset_top = 500.0
 offset_right = 478.0
-offset_bottom = 843.0
+offset_bottom = 783.0
 select_offset = 15
 
 [connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="_on_timer_timeout"]

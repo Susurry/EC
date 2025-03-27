@@ -14,7 +14,7 @@ func initialize_piece() -> void:
 	screen_limit = minigame_window.size - size
 	global_position = position_item
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if button_pressed:
 		global_position = get_global_mouse_position() - click_offset
 	
@@ -30,7 +30,7 @@ func _on_collision_area_area_entered(area: Area2D) -> void:
 		new_position = area.global_position - (size / 2)
 		area_reference = area
 
-func _on_collision_area_area_exited(area: Area2D) -> void:
+func _on_collision_area_area_exited(_area: Area2D) -> void:
 	item_above_target = false
 
 func _on_button_up() -> void:
