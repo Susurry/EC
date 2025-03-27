@@ -16,6 +16,23 @@ offset_right = 800.0
 offset_bottom = 650.0
 script = ExtResource("2_djmmm")
 
+[node name="Container_Pieces" type="PanelContainer" parent="WindowSize"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 60.0
+
+[node name="VSeparator" type="VSeparator" parent="WindowSize"]
+layout_mode = 0
+offset_left = 395.0
+offset_right = 399.0
+offset_bottom = 59.0
+
+[node name="Container_Outils" type="PanelContainer" parent="WindowSize"]
+layout_mode = 0
+offset_left = 400.0
+offset_right = 800.0
+offset_bottom = 60.0
+
 [node name="PanelPieces" type="Control" parent="WindowSize"]
 anchors_preset = 0
 offset_right = 400.0
