@@ -14,7 +14,6 @@ offset_bottom = 283.0
 focus_mode = 0
 text = "Recyclé :)"
 script = ExtResource("1_f4ki8")
-metadata/_edit_group_ = true
 
 [node name="PushBackArea" type="Area2D" parent="."]
 position = Vector2(109, 142)

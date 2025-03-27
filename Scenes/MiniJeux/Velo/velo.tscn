@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://cysq8n807qxk6"]
+
+[ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_fhjup"]
+[ext_resource type="PackedScene" uid="uid://dpetw1dobdtfv" path="res://Scenes/MiniJeux/Velo/pièce_vélo.tscn" id="2_45o1r"]
+[ext_resource type="Script" uid="uid://b81ew5onrw8io" path="res://Scripts/MiniJeux/Jeux/Vélo/velo.gd" id="2_djmmm"]
+[ext_resource type="PackedScene" uid="uid://bob0ru5rubcc1" path="res://Scenes/MiniJeux/Velo/anchor.tscn" id="3_tgnvy"]
+[ext_resource type="PackedScene" uid="uid://b1dbx3flwo4jg" path="res://Scenes/MiniJeux/Velo/outil.tscn" id="5_djmmm"]
+
+[node name="Velo" type="Node2D"]
+script = ExtResource("1_fhjup")
+
+[node name="WindowSize" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 650.0
+script = ExtResource("2_djmmm")
+
+[node name="Container_Pieces" type="PanelContainer" parent="WindowSize"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 60.0
+
+[node name="VSeparator" type="VSeparator" parent="WindowSize"]
+layout_mode = 0
+offset_left = 395.0
+offset_right = 399.0
+offset_bottom = 59.0
+
+[node name="Container_Outils" type="PanelContainer" parent="WindowSize"]
+layout_mode = 0
+offset_left = 400.0
+offset_right = 800.0
+offset_bottom = 60.0
+
+[node name="PanelPieces" type="Control" parent="WindowSize"]
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 60.0
+
+[node name="Chaine" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 75.0
+offset_bottom = 40.0
+position_item = Vector2(0, 0)
+
+[node name="Boulon_1" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 0.0
+offset_right = 177.0
+offset_bottom = 40.0
+text = "Boulon 1
+"
+position_item = Vector2(100, 0)
+id_piece_velo = 1
+
+[node name="Boulon_2" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 0.0
+offset_right = 277.0
+offset_bottom = 40.0
+text = "Boulon 2
+"
+id_piece_velo = 2
+
+[node name="Sonette" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 3.0
+offset_right = 375.0
+offset_bottom = 43.0
+text = "Sonette
+"
+position_item = Vector2(300, 0)
+id_piece_velo = 3
+
+[node name="Anchors" type="Node2D" parent="WindowSize"]
+
+[node name="Anchor_Chaine" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+position = Vector2(293, 343)
+scale = Vector2(0.1, 0.1)
+is_fixed = true
+
+[node name="Anchor_Boulon_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+position = Vector2(589, 339)
+scale = Vector2(0.1, 0.1)
+anchor_id = 1
+
+[node name="Anchor_Boulon_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+position = Vector2(437, 342)
+scale = Vector2(0.1, 0.1)
+anchor_id = 2
+
+[node name="Anchor_Sonette" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+position = Vector2(442, 245)
+scale = Vector2(0.1, 0.1)
+anchor_id = 3
+
+[node name="Anchor_Pompe_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+position = Vector2(352, 450)
+scale = Vector2(0.1, 0.1)
+anchor_id = 4
+piece_is_on = true
+
+[node name="Anchor_Pompe_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+position = Vector2(497, 452)
+scale = Vector2(0.1, 0.1)
+anchor_id = 4
+piece_is_on = true
+
+[node name="PanelOutils" type="Control" parent="WindowSize"]
+anchors_preset = 0
+offset_left = 400.0
+offset_right = 800.0
+offset_bottom = 40.0
+
+[node name="Cle_a_molette" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 110.0
+offset_bottom = 40.0
+text = "Clé à molette
+"
+position_item = Vector2(400, 0)
+id_anchor_interactible = Array[int]([1, 2])
+
+[node name="Tournevis" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 0.0
+offset_right = 235.0
+offset_bottom = 40.0
+text = "Tournevis
+"
+position_item = Vector2(550, 0)
+id_anchor_interactible = Array[int]([3])
+
+[node name="Pompe" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 0.0
+offset_right = 385.0
+offset_bottom = 40.0
+text = "Pompe
+"
+position_item = Vector2(700, 0)
+id_anchor_interactible = Array[int]([4])
