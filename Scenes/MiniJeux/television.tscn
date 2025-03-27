@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bsnubr52gfqvq"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_304nj"]
-[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/PropSheetAnimated.png" id="1_fetsl"]
+[ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="1_fetsl"]
 [ext_resource type="Script" uid="uid://76wybtfhkfoc" path="res://Scripts/MiniJeux/Jeux/télévision.gd" id="2_dkvd2"]
-[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/PropSheetSolo.png" id="3_kqpfy"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="3_kqpfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itwrx"]
 atlas = ExtResource("1_fetsl")

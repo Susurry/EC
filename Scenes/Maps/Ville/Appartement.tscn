@@ -1,11 +1,11 @@
 [gd_scene load_steps=48 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
-[ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Scenes/Maps/Ville/Appartement.tres" id="2_2g8ls"]
+[ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Graphics/Tilesets/Tileset_Appartement.tres" id="2_2g8ls"]
 [ext_resource type="PackedScene" uid="uid://b1vb7txwbkq24" path="res://Scenes/Props/Appartement/baignoire.tscn" id="3_hb0ix"]
 [ext_resource type="PackedScene" uid="uid://0ji1ktwqxaxa" path="res://Scenes/Props/Appartement/meuble_sdb.tscn" id="4_swjjx"]
 [ext_resource type="PackedScene" uid="uid://buv610vd4bdfb" path="res://Scenes/Props/Appartement/lit.tscn" id="6_clj8j"]
-[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/PropSheetSolo.png" id="6_dxfoh"]
+[ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="6_dxfoh"]
 [ext_resource type="PackedScene" uid="uid://c651srsug8m05" path="res://Scenes/Props/Appartement/television.tscn" id="7_qu1vg"]
 [ext_resource type="PackedScene" uid="uid://xaecaqya5vhf" path="res://Scenes/Props/Appartement/refrigerateur.tscn" id="8_1kehp"]
 [ext_resource type="PackedScene" uid="uid://v3gbf6c5eubg" path="res://Scenes/Props/Appartement/livre.tscn" id="10_5ip7c"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cyqoe56afno1e" path="res://Scenes/Props/Appartement/rangement.tscn" id="12_vo2jj"]
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
 [ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
-[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/Appartement/appartement_intro.gd" id="16_7gbmn"]
+[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/map_intro.gd" id="16_7gbmn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
@@ -230,8 +230,9 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Tapis2" type="Sprite2D" parent="Props/Generic"]
 z_index = -1
-position = Vector2(173, 55)
+position = Vector2(158, 46)
 texture = SubResource("AtlasTexture_1djca")
+centered = false
 
 [node name="Ventilation" type="Sprite2D" parent="Props/Generic"]
 position = Vector2(143, 5)
@@ -392,7 +393,6 @@ position = Vector2(95, 20)
 
 [node name="Refrigerateur" parent="Props" instance=ExtResource("8_1kehp")]
 position = Vector2(12, 160)
-metadata/_edit_group_ = true
 
 [node name="Livre" parent="Props" instance=ExtResource("10_5ip7c")]
 z_index = 1
@@ -415,3 +415,4 @@ position = Vector2(227, 138)
 
 [node name="Intro_Event" type="Node2D" parent="."]
 script = ExtResource("16_7gbmn")
+timeline = "Introduction"

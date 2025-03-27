@@ -4,8 +4,13 @@
 
 [resource]
 script = ExtResource("1_q1q63")
-quests = {
+quests = Dictionary[String, String]({
 "1-1_breakfast": "uid://bd7hg8onbk7we",
 "1-2_shower": "uid://b2ce66iouulsg",
-"1_appart": "uid://yt4xycg3kvnl"
-}
+"1_appart": "uid://yt4xycg3kvnl",
+"2-1_voiture": "uid://c2d32v68si25b",
+"2-2_transports": "uid://dse32nmpy3eb3",
+"2-3_pieds": "uid://bjn7ucwcq15bq",
+"2-4_velo": "uid://e1ic08c26glh",
+"2_transport": "uid://djoavc7u3i0yy"
+})
