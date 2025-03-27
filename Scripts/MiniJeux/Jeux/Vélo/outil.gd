@@ -10,10 +10,9 @@ var new_position: Vector2
 var area_reference: Area2D
 var tool_used: bool = false
 var current_anchor_id: int
+var minigame_window: Control
 
-@onready var minigame_window: Control = get_parent()
-
-func _ready() -> void:
+func initialize_outil() -> void:
 	screen_limit = minigame_window.size - size
 	global_position = position_item
 
@@ -41,4 +40,5 @@ func _on_button_up() -> void:
 		if area_reference.piece_is_on and area_reference.is_fixed == false:
 			print("ça marche")
 			area_reference.is_fixed = true
+			minigame_window.add_action()
 	global_position = position_item

@@ -8,10 +8,9 @@ var item_above_target: bool = false
 var screen_limit: Vector2
 var new_position: Vector2
 var area_reference: Area2D
+var minigame_window: Control
 
-@onready var minigame_window: Control = get_parent()
-
-func _ready() -> void:
+func initialize_piece() -> void:
 	screen_limit = minigame_window.size - size
 	global_position = position_item
 
@@ -26,7 +25,6 @@ func _on_interact() -> void:
 	click_offset = get_global_mouse_position() - global_position
 
 func _on_collision_area_area_entered(area: Area2D) -> void:
-	print("thing")
 	if area.anchor_id == id_piece_velo:
 		item_above_target = true
 		new_position = area.global_position - (size / 2)
@@ -39,6 +37,6 @@ func _on_button_up() -> void:
 	if item_above_target:
 		position_item = new_position
 		self.disabled = true
-		get_child(0).queue_free()
 		area_reference.piece_is_on = true
+		minigame_window.add_action()
 	global_position = position_item

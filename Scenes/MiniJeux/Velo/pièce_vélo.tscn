@@ -15,7 +15,6 @@ text = "Chaine
 "
 script = ExtResource("1_vudnt")
 position_item = Vector2(200, 0)
-metadata/_edit_group_ = true
 
 [node name="CollisionArea" type="Area2D" parent="."]
 monitorable = false

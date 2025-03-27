@@ -14,7 +14,6 @@ focus_mode = 0
 text = "Chaine
 "
 script = ExtResource("1_7rfj6")
-metadata/_edit_group_ = true
 
 [node name="CollisionArea" type="Area2D" parent="."]
 monitorable = false
