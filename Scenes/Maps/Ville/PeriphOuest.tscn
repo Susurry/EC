@@ -86,9 +86,14 @@ limit_bottom = 1008
 
 [node name="StartPoints" type="Node2D" parent="."]
 
-[node name="0_Debug" type="Marker2D" parent="StartPoints"]
+[node name="0_Appartement" type="Marker2D" parent="StartPoints"]
 z_index = 50
 position = Vector2(489, 634)
+gizmo_extents = 30.0
+
+[node name="1_Centre" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(1178, 577)
 gizmo_extents = 30.0
 
 [node name="TileMaps" type="Node2D" parent="."]
