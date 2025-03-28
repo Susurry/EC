@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=24 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="3_udijt"]
@@ -14,9 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://dl6y8sa87g672" path="res://Scenes/Pawn/PNJ/PeriphOuest/pnj_eboueur.tscn" id="11_4suwe"]
 [ext_resource type="PackedScene" uid="uid://wrsox72avo62" path="res://Scenes/Pawn/PNJ/pnj_immobile.tscn" id="13_5c4ie"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="16_6cxdi"]
+[ext_resource type="Texture2D" uid="uid://0ssub3vqug30" path="res://Graphics/Characters/Generic/character_enzo.png" id="16_fx4co"]
 [ext_resource type="Script" uid="uid://b6r412c6n5w0u" path="res://Scripts/Events/mission_poubelle.gd" id="17_iuw2w"]
 [ext_resource type="Texture2D" uid="uid://rg600cb81l8y" path="res://Graphics/Characters/Generic/character_baptiste.png" id="17_ydjjt"]
-[ext_resource type="PackedScene" uid="uid://chv50xmrlkp03" path="res://Scenes/Props/PeriphOuest/sac_poubelle.tscn" id="18_fx4co"]
+[ext_resource type="PackedScene" uid="uid://chv50xmrlkp03" path="res://Graphics/TEMP/sac_poubelle.tscn" id="18_fx4co"]
 [ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/map_intro.gd" id="20_yn25f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
@@ -142,30 +143,31 @@ metadata/_edit_group_ = true
 material = SubResource("ShaderMaterial_uymh2")
 texture = ExtResource("17_ydjjt")
 
-[node name="PNJ_Velo2" parent="PNJs" instance=ExtResource("13_5c4ie")]
-position = Vector2(658, 345)
+[node name="PNJ_Poubelle" parent="PNJs" instance=ExtResource("13_5c4ie")]
+position = Vector2(950, 544)
 timeline = "debug_tri_dechet"
 metadata/_edit_group_ = true
 
-[node name="Skin" parent="PNJs/PNJ_Velo2" index="1"]
+[node name="Skin" parent="PNJs/PNJ_Poubelle" index="1"]
 material = SubResource("ShaderMaterial_uymh2")
-texture = ExtResource("17_ydjjt")
+texture = ExtResource("16_fx4co")
 
 [node name="Intro_Event" type="Node2D" parent="."]
 script = ExtResource("20_yn25f")
 timeline = "intro_periph"
 
 [node name="Mission_Poubelle" type="Node2D" parent="."]
+y_sort_enabled = true
 script = ExtResource("17_iuw2w")
 
 [node name="Sac_Poubelle" parent="Mission_Poubelle" instance=ExtResource("18_fx4co")]
-position = Vector2(406, 687)
+position = Vector2(823, 687)
 
 [node name="Sac_Poubelle2" parent="Mission_Poubelle" instance=ExtResource("18_fx4co")]
-position = Vector2(500, 712)
+position = Vector2(891, 615)
 
 [node name="Sac_Poubelle3" parent="Mission_Poubelle" instance=ExtResource("18_fx4co")]
-position = Vector2(581, 682)
+position = Vector2(972, 644)
 
 [editable path="PNJs/PNJ_Velo"]
-[editable path="PNJs/PNJ_Velo2"]
+[editable path="PNJs/PNJ_Poubelle"]

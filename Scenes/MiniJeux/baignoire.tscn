@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgpu4hmb3vlfw"]
+[gd_scene load_steps=24 format=3 uid="uid://dgpu4hmb3vlfw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_3ua7n"]
 [ext_resource type="Script" uid="uid://bvia05yei278y" path="res://Scripts/MiniJeux/Jeux/baignoire.gd" id="2_3w5rc"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_0rf1o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]
 atlas = ExtResource("2_3ua7n")
@@ -151,6 +152,10 @@ animations = [{
 atlas = ExtResource("2_3ua7n")
 region = Rect2(7, 21, 4, 4)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv3uq"]
+atlas = ExtResource("4_0rf1o")
+region = Rect2(49, 2, 5, 3)
+
 [node name="Baignoire" type="Node2D"]
 script = ExtResource("1_7gsmj")
 end_timeline = "Baignoire"
@@ -191,10 +196,13 @@ offset_top = 381.0
 offset_right = 425.0
 offset_bottom = 409.0
 theme_override_font_sizes/font_size = 8
-text = "Bouchon"
+icon = SubResource("AtlasTexture_jv3uq")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
+visible = false
 layout_mode = 0
 offset_left = 140.0
 offset_top = 516.0

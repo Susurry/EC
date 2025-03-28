@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp4xg7covqurw"]
+[gd_scene load_steps=9 format=3 uid="uid://cp4xg7covqurw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_aeplx"]
 [ext_resource type="Script" uid="uid://ddcdbgy7hgrmh" path="res://Scripts/MiniJeux/Jeux/TriDechet/tridechet.gd" id="2_ltthm"]
 [ext_resource type="PackedScene" uid="uid://e2fy0gl10th8" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref.tscn" id="3_7cc60"]
 [ext_resource type="PackedScene" uid="uid://c4ibps4ddsx3q" path="res://Scenes/MiniJeux/TriDechet/PoubelleTypes/ref.tscn" id="4_7cc60"]
 [ext_resource type="PackedScene" uid="uid://rf4a4v7hbyi7" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref_nonrec.tscn" id="4_ltthm"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="6_i8t5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8t5w"]
+atlas = ExtResource("6_i8t5w")
+region = Rect2(19, 2, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eka6x"]
+atlas = ExtResource("6_i8t5w")
+region = Rect2(2, 2, 13, 16)
 
 [node name="Tridechet" type="Node2D"]
 script = ExtResource("1_aeplx")
@@ -28,7 +37,10 @@ offset_left = 663.0
 offset_top = 500.0
 offset_right = 881.0
 offset_bottom = 783.0
-text = "Pas Recyclé >:)"
+text = ""
+icon = SubResource("AtlasTexture_i8t5w")
+icon_alignment = 1
+expand_icon = true
 type = 1
 select_offset = 15
 
@@ -38,6 +50,10 @@ offset_left = 260.0
 offset_top = 500.0
 offset_right = 478.0
 offset_bottom = 783.0
+text = ""
+icon = SubResource("AtlasTexture_eka6x")
+icon_alignment = 1
+expand_icon = true
 select_offset = 15
 
 [connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="_on_timer_timeout"]

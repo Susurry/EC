@@ -1,18 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://chv50xmrlkp03"]
+[gd_scene load_steps=8 format=3 uid="uid://chv50xmrlkp03"]
 
 [ext_resource type="Script" uid="uid://ccces5iri0lt3" path="res://Scripts/Props/Types/prop_sac_poubelle.gd" id="1_p7pmb"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_iptsd"]
-[ext_resource type="Texture2D" uid="uid://2d7rauh77nxq" path="res://Graphics/Other/joy1.png" id="3_p7pmb"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="3_ko84d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
+resource_local_to_scene = true
 shader = ExtResource("2_iptsd")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5fih"]
+atlas = ExtResource("3_ko84d")
+region = Rect2(34, 4, 13, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
-size = Vector2(22, 22)
+size = Vector2(17, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+size = Vector2(9, 7)
 
 [node name="Sac_Poubelle" type="Node2D"]
 y_sort_enabled = true
@@ -21,23 +27,26 @@ timeline = "sac_poubelle"
 
 [node name="PropSprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_aomuj")
-position = Vector2(-10, -10)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_p7pmb")
+position = Vector2(0, 8)
+texture = SubResource("AtlasTexture_p5fih")
 centered = false
+offset = Vector2(0, -8)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6.5, 9)
 shape = SubResource("RectangleShape2D_rxyj1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6.5, 10.5)
 shape = SubResource("RectangleShape2D_abqwm")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="FacingDirection" type="Marker2D" parent="."]
+position = Vector2(6.5, 9.5)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

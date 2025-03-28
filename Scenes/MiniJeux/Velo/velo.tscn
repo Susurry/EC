@@ -1,10 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://cysq8n807qxk6"]
+[gd_scene load_steps=16 format=3 uid="uid://cysq8n807qxk6"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_fhjup"]
 [ext_resource type="PackedScene" uid="uid://dpetw1dobdtfv" path="res://Scenes/MiniJeux/Velo/pièce_vélo.tscn" id="2_45o1r"]
 [ext_resource type="Script" uid="uid://b81ew5onrw8io" path="res://Scripts/MiniJeux/Jeux/Vélo/velo.gd" id="2_djmmm"]
 [ext_resource type="PackedScene" uid="uid://bob0ru5rubcc1" path="res://Scenes/MiniJeux/Velo/anchor.tscn" id="3_tgnvy"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_quksx"]
 [ext_resource type="PackedScene" uid="uid://b1dbx3flwo4jg" path="res://Scenes/MiniJeux/Velo/outil.tscn" id="5_djmmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quksx"]
+atlas = ExtResource("4_quksx")
+region = Rect2(2, 22, 44, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4363w"]
+atlas = ExtResource("4_quksx")
+region = Rect2(56, 0, 16, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqmdg"]
+atlas = ExtResource("4_quksx")
+region = Rect2(47, 7, 8, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15brd"]
+atlas = ExtResource("4_quksx")
+region = Rect2(47, 7, 8, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tsbv"]
+atlas = ExtResource("4_quksx")
+region = Rect2(55, 7, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqi1l"]
+atlas = ExtResource("4_quksx")
+region = Rect2(81, 1, 9, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx55q"]
+atlas = ExtResource("4_quksx")
+region = Rect2(72, 0, 9, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpnpr"]
+atlas = ExtResource("4_quksx")
+region = Rect2(90, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sntwy"]
+atlas = SubResource("AtlasTexture_lpnpr")
 
 [node name="Velo" type="Node2D"]
 script = ExtResource("1_fhjup")
@@ -15,6 +51,11 @@ anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 600.0
 script = ExtResource("2_djmmm")
+
+[node name="Sprite2D" type="Sprite2D" parent="WindowSize"]
+position = Vector2(404, 342)
+scale = Vector2(12, 12)
+texture = SubResource("AtlasTexture_quksx")
 
 [node name="Container_Pieces" type="PanelContainer" parent="WindowSize"]
 layout_mode = 0
@@ -44,6 +85,11 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 75.0
 offset_bottom = 40.0
+text = "
+"
+icon = SubResource("AtlasTexture_4363w")
+icon_alignment = 1
+expand_icon = true
 position_item = Vector2(0, 0)
 
 [node name="Boulon_1" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
@@ -52,8 +98,11 @@ offset_left = 100.0
 offset_top = 0.0
 offset_right = 177.0
 offset_bottom = 40.0
-text = "Boulon 1
+text = "
 "
+icon = SubResource("AtlasTexture_rqmdg")
+icon_alignment = 1
+expand_icon = true
 position_item = Vector2(100, 0)
 id_piece_velo = 1
 
@@ -63,8 +112,11 @@ offset_left = 200.0
 offset_top = 0.0
 offset_right = 277.0
 offset_bottom = 40.0
-text = "Boulon 2
+text = "
 "
+icon = SubResource("AtlasTexture_15brd")
+icon_alignment = 1
+expand_icon = true
 id_piece_velo = 2
 
 [node name="Sonette" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
@@ -73,41 +125,44 @@ offset_left = 300.0
 offset_top = 3.0
 offset_right = 375.0
 offset_bottom = 43.0
-text = "Sonette
+text = "
 "
+icon = SubResource("AtlasTexture_4tsbv")
+icon_alignment = 1
+expand_icon = true
 position_item = Vector2(300, 0)
 id_piece_velo = 3
 
 [node name="Anchors" type="Node2D" parent="WindowSize"]
 
 [node name="Anchor_Chaine" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(440, 343)
+position = Vector2(361, 386)
 scale = Vector2(0.1, 0.1)
 is_fixed = true
 
 [node name="Anchor_Boulon_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(589, 339)
+position = Vector2(242, 389)
 scale = Vector2(0.1, 0.1)
 anchor_id = 1
 
 [node name="Anchor_Boulon_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(291, 342)
+position = Vector2(566, 390)
 scale = Vector2(0.1, 0.1)
 anchor_id = 2
 
 [node name="Anchor_Sonette" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(442, 245)
+position = Vector2(506, 210)
 scale = Vector2(0.1, 0.1)
 anchor_id = 3
 
 [node name="Anchor_Pompe_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(352, 450)
+position = Vector2(230, 342)
 scale = Vector2(0.1, 0.1)
 anchor_id = 4
 piece_is_on = true
 
 [node name="Anchor_Pompe_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(497, 452)
+position = Vector2(578, 342)
 scale = Vector2(0.1, 0.1)
 anchor_id = 4
 piece_is_on = true
@@ -124,8 +179,11 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 110.0
 offset_bottom = 40.0
-text = "Clé à molette
+text = "
 "
+icon = SubResource("AtlasTexture_xqi1l")
+icon_alignment = 1
+expand_icon = true
 position_item = Vector2(400, 0)
 id_anchor_interactible = Array[int]([1, 2])
 
@@ -135,8 +193,11 @@ offset_left = 150.0
 offset_top = 0.0
 offset_right = 235.0
 offset_bottom = 40.0
-text = "Tournevis
+text = "
 "
+icon = SubResource("AtlasTexture_hx55q")
+icon_alignment = 1
+expand_icon = true
 position_item = Vector2(550, 0)
 id_anchor_interactible = Array[int]([3])
 
@@ -146,7 +207,10 @@ offset_left = 300.0
 offset_top = 0.0
 offset_right = 385.0
 offset_bottom = 40.0
-text = "Pompe
+text = "
 "
+icon = SubResource("AtlasTexture_sntwy")
+icon_alignment = 1
+expand_icon = true
 position_item = Vector2(700, 0)
 id_anchor_interactible = Array[int]([4])

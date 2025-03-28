@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://e2fy0gl10th8"]
+[gd_scene load_steps=5 format=3 uid="uid://e2fy0gl10th8"]
 
 [ext_resource type="Script" uid="uid://c575a1vntlmsm" path="res://Scripts/MiniJeux/Jeux/TriDechet/trash_item.gd" id="1_5msnf"]
-[ext_resource type="Texture2D" uid="uid://b0ddcd68fgmkb" path="res://icon.svg" id="2_dxbmk"]
+[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="2_8gpu6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs2hl"]
+atlas = ExtResource("2_8gpu6")
+region = Rect2(50, 20, 8, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0itnd"]
 size = Vector2(127, 128)
@@ -10,7 +14,8 @@ size = Vector2(127, 128)
 script = ExtResource("1_5msnf")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_dxbmk")
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_cs2hl")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
