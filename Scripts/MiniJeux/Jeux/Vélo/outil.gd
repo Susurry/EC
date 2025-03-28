@@ -38,7 +38,6 @@ func _on_collision_area_area_exited(_area: Area2D) -> void:
 func _on_button_up() -> void:
 	if item_above_target:
 		if area_reference.piece_is_on and area_reference.is_fixed == false:
-			print("ça marche")
 			area_reference.is_fixed = true
 			minigame_window.add_action()
 	global_position = position_item

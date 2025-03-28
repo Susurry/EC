@@ -195,14 +195,19 @@ offset_left = 375.0
 offset_top = 381.0
 offset_right = 425.0
 offset_bottom = 409.0
+focus_mode = 0
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 8
+toggle_mode = true
 icon = SubResource("AtlasTexture_jv3uq")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
-visible = false
 layout_mode = 0
 offset_left = 140.0
 offset_top = 516.0

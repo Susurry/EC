@@ -12,5 +12,9 @@ quests = Dictionary[String, String]({
 "2-2_transports": "uid://dse32nmpy3eb3",
 "2-3_pieds": "uid://bjn7ucwcq15bq",
 "2-4_velo": "uid://e1ic08c26glh",
-"2_transport": "uid://djoavc7u3i0yy"
+"2_transport": "uid://djoavc7u3i0yy",
+"3-1_ramasser": "uid://bwr0shqeulkwj",
+"3-2_trier": "uid://bi41jp5nckjht",
+"3-3_parler": "uid://bxt35qemiuowu",
+"3_eboueur": "uid://51gomaom0up"
 })

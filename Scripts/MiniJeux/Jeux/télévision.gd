@@ -16,3 +16,6 @@ func _on_pousser_meuble_pressed() -> void:
 	else:
 		$Meuble/Pousser_meuble.disabled = true
 		$Prise.disabled = false
+
+func _on_update_score(score: float):
+	EventBus.emit_signal("set_empreinte", score)

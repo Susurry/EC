@@ -3,13 +3,11 @@
 [ext_resource type="Script" uid="uid://b3r8kkqdrgjde" path="res://Scripts/MiniJeux/Jeux/Vélo/outil.gd" id="1_7rfj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeplx"]
-size = Vector2(103.5, 39.5)
+size = Vector2(100, 40)
 
 [node name="Chaine" type="Button"]
-offset_left = 169.0
-offset_top = 1.0
-offset_right = 244.0
-offset_bottom = 41.0
+offset_right = 100.0
+offset_bottom = 40.0
 focus_mode = 0
 text = "Chaine
 "
@@ -19,7 +17,7 @@ script = ExtResource("1_7rfj6")
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
-position = Vector2(52.25, 20)
+position = Vector2(50, 20)
 shape = SubResource("RectangleShape2D_aeplx")
 
 [connection signal="button_down" from="." to="." method="_on_interact"]

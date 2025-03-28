@@ -36,18 +36,21 @@ func _on_interact() -> void:
 	
 	if button_pressed:
 		position.y = curr_pos_y - select_offset
+		z_index = 1 # Pour que la poubelle sélectionner soit toujours au-dessus
 	else:
 		position.y = curr_pos_y
 
 func _on_collision_other(area: Area2D, inside: bool) -> void:
 	is_inside_other = inside
-	if area:
+	if is_inside_other:
 		if coll_area.global_position.x > area.global_position.x:
 			pen_dir = 1
 		elif coll_area.global_position.x < area.global_position.x:
 			pen_dir = -1
 		else:
 			area.get_parent().pen_dir = -pen_dir # Si les deux poubelles occupes la même position
+	else:
+		z_index = 0 # Remet à la valeur de base seulement lorsque les poubelles sont séparées
 
 func _on_trash_enter(area: Area2D) -> void:
 	area.monitoring = false

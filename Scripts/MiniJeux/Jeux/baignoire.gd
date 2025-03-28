@@ -24,11 +24,14 @@ func shower():
 	else:
 		if progress_bar.value >= 6 and progress_bar.value < 12:
 			# Placez la signal de sauvegarde ici
-			print("score -2") # à remplacer
+			if progress_bar.value == 6:
+				EventBus.emit_signal("set_empreinte", -0.2)
+				EventBus.emit_signal("set_quest_state", "1-2_shower")
 		elif progress_bar.value >= 12 and progress_bar.value < 18:
-			print("score +1") # à remplacer
+			if progress_bar.value == 12:
+				EventBus.emit_signal("set_empreinte", 0.1)
 		elif progress_bar.value >= 18:
-			print("score +2") # à remplacer
+			EventBus.emit_signal("set_empreinte", 0.1)
 			shower_end()
 			return
 		

@@ -24,7 +24,6 @@ func _initialize_panels() -> void:
 
 func add_action() -> void:
 	actions_completed += 1
-	print(actions_completed)
 	if actions_completed >= actions_needed:
 		await get_tree().create_timer(2.0).timeout
 		get_parent().quit_minigame()

@@ -81,13 +81,10 @@ offset_bottom = 60.0
 
 [node name="Chaine" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 75.0
-offset_bottom = 40.0
 text = "
 "
 icon = SubResource("AtlasTexture_4363w")
+flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(0, 0)
@@ -95,12 +92,11 @@ position_item = Vector2(0, 0)
 [node name="Boulon_1" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
 offset_left = 100.0
-offset_top = 0.0
-offset_right = 177.0
-offset_bottom = 40.0
+offset_right = 200.0
 text = "
 "
 icon = SubResource("AtlasTexture_rqmdg")
+flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(100, 0)
@@ -109,29 +105,27 @@ id_piece_velo = 1
 [node name="Boulon_2" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
 offset_left = 200.0
-offset_top = 0.0
-offset_right = 277.0
-offset_bottom = 40.0
+offset_right = 300.0
 text = "
 "
 icon = SubResource("AtlasTexture_15brd")
+flat = true
 icon_alignment = 1
 expand_icon = true
-id_piece_velo = 2
+id_piece_velo = 1
 
 [node name="Sonette" parent="WindowSize/PanelPieces" instance=ExtResource("2_45o1r")]
 layout_mode = 0
 offset_left = 300.0
-offset_top = 3.0
-offset_right = 375.0
-offset_bottom = 43.0
+offset_right = 400.0
 text = "
 "
 icon = SubResource("AtlasTexture_4tsbv")
+flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(300, 0)
-id_piece_velo = 3
+id_piece_velo = 2
 
 [node name="Anchors" type="Node2D" parent="WindowSize"]
 
@@ -148,23 +142,23 @@ anchor_id = 1
 [node name="Anchor_Boulon_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 position = Vector2(566, 390)
 scale = Vector2(0.1, 0.1)
-anchor_id = 2
+anchor_id = 1
 
 [node name="Anchor_Sonette" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 position = Vector2(506, 210)
 scale = Vector2(0.1, 0.1)
-anchor_id = 3
+anchor_id = 2
 
 [node name="Anchor_Pompe_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(230, 342)
+position = Vector2(230, 330)
 scale = Vector2(0.1, 0.1)
-anchor_id = 4
+anchor_id = 3
 piece_is_on = true
 
 [node name="Anchor_Pompe_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
-position = Vector2(578, 342)
+position = Vector2(578, 330)
 scale = Vector2(0.1, 0.1)
-anchor_id = 4
+anchor_id = 3
 piece_is_on = true
 
 [node name="PanelOutils" type="Control" parent="WindowSize"]
@@ -175,13 +169,10 @@ offset_bottom = 40.0
 
 [node name="Cle_a_molette" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 110.0
-offset_bottom = 40.0
 text = "
 "
 icon = SubResource("AtlasTexture_xqi1l")
+flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(400, 0)
@@ -190,12 +181,11 @@ id_anchor_interactible = Array[int]([1, 2])
 [node name="Tournevis" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
 offset_left = 150.0
-offset_top = 0.0
-offset_right = 235.0
-offset_bottom = 40.0
+offset_right = 250.0
 text = "
 "
 icon = SubResource("AtlasTexture_hx55q")
+flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(550, 0)
@@ -204,12 +194,11 @@ id_anchor_interactible = Array[int]([3])
 [node name="Pompe" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
 offset_left = 300.0
-offset_top = 0.0
-offset_right = 385.0
-offset_bottom = 40.0
+offset_right = 400.0
 text = "
 "
 icon = SubResource("AtlasTexture_sntwy")
+flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(700, 0)

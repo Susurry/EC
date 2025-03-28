@@ -1,3 +1,7 @@
 label book1
 J'ai renversé mon camion, oops !
+do EventBus.emit_signal("add_quest", "3_eboueur")
+do EventBus.emit_signal("add_quest", "3-1_ramasser")
+do EventBus.emit_signal("add_quest", "3-2_trier")
+do EventBus.emit_signal("add_quest", "3-3_parler")
 [end_timeline]
