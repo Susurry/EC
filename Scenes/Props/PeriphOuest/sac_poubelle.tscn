@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://chv50xmrlkp03"]
+
+[ext_resource type="Script" uid="uid://ccces5iri0lt3" path="res://Scripts/Props/Types/prop_sac_poubelle.gd" id="1_p7pmb"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_iptsd"]
+[ext_resource type="Texture2D" uid="uid://2d7rauh77nxq" path="res://Graphics/Other/joy1.png" id="3_p7pmb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
+shader = ExtResource("2_iptsd")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
+size = Vector2(22, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
+
+[node name="Sac_Poubelle" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_p7pmb")
+timeline = "sac_poubelle"
+
+[node name="PropSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_aomuj")
+position = Vector2(-10, -10)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_p7pmb")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rxyj1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_abqwm")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="FacingDirection" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
