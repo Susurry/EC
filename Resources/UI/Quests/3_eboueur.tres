@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_h1fk7")
 type = 0
-name = ""
+name = "Aider l'éboueur"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

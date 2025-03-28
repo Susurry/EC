@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_17mqc")
-type = 0
-name = ""
+type = 1
+name = "Trier les déchets"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

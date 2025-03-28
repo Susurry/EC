@@ -15,7 +15,7 @@ atlas = ExtResource("3_ko84d")
 region = Rect2(34, 4, 13, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
-size = Vector2(17, 18)
+size = Vector2(23, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
 size = Vector2(9, 7)

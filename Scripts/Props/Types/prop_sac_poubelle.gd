@@ -16,3 +16,7 @@ func on_interact(player: Player) -> void:
 		poubelle_data[id] = true
 		SaveManager.setElement("Missions", {"poubelle": poubelle_data})
 		queue_free()
+		
+		if not poubelle_data.has(false):
+			Dialogic.start("pnj_eboueur", "book2")
+			
