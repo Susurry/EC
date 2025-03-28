@@ -17,6 +17,8 @@ region = Rect2(2, 2, 13, 16)
 
 [node name="Tridechet" type="Node2D"]
 script = ExtResource("1_aeplx")
+end_timeline = "quest_poubelles"
+bookmark = 2
 
 [node name="WindowSize" type="Control" parent="."]
 layout_mode = 3
@@ -28,7 +30,7 @@ items = Array[PackedScene]([ExtResource("3_7cc60"), ExtResource("4_ltthm")])
 max_trash_items = 8
 
 [node name="Timer" type="Timer" parent="WindowSize"]
-wait_time = 4.0
+wait_time = 2.0
 autostart = true
 
 [node name="Poubelle2" parent="WindowSize" instance=ExtResource("4_7cc60")]
