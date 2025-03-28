@@ -39,6 +39,7 @@ Imagine que j'ai une bouteille de verre à jeter. À ton avis, dans quelle poube
 	Bien joué en tout cas, tu m'a convaincu que l'écologie, ça t'intéresses ! Garde le cap !
 	Bon, bref, je vais vite déplacer mon camion, j'ai suffisament bloqué la route comme ça. Merci du coup de main !
 	do EventBus.emit_signal("set_quest_state", "3_eboueur")
+	do EventBus.emit_signal("play_cutscene", "cutscene_eboueur_done")
 	[end_timeline]
 - Bleu
 	... Raté, on a pas de poubelle bleue dans notre ville. Ça dépend des communes, mais les poubelles bleues sont généralement réservé au carton et au papier !

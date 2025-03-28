@@ -7,13 +7,21 @@ const ITEM_SPAWN_MARGIN: int = 50
 
 var score: float
 var trash_count: int
+var z_index_tracker: int
 
 func _ready() -> void:
 	randomize()
 
+func update_trash_count() -> void:
+	trash_count += 1
+	if trash_count == max_trash_items:
+		EventBus.emit_signal("set_empreinte", score)
+		await get_tree().create_timer(2.5).timeout 
+		get_parent().quit_minigame()
+
 func update_score(value: float) -> void:
 	score += value
-	print(score)
+	update_trash_count()
 
 func _on_timer_timeout() -> void:
 	if trash_count < max_trash_items:
@@ -21,10 +29,5 @@ func _on_timer_timeout() -> void:
 		var trash_instance: Node2D = trash_load.instantiate()
 		
 		trash_instance.position.x = randf_range(ITEM_SPAWN_MARGIN, size.x - ITEM_SPAWN_MARGIN)
-		trash_instance.minigame_window = self
 		
 		add_child(trash_instance)
-		trash_count += 1
-	else:
-		print("Ajout Score Final")
-		get_parent().quit_minigame()

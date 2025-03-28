@@ -208,6 +208,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
+visible = false
 layout_mode = 0
 offset_left = 140.0
 offset_top = 516.0

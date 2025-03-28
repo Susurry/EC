@@ -4,6 +4,5 @@
 
 [node name="Camera2D" type="Camera2D"]
 zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+process_callback = 0
 script = ExtResource("1_fdi6h")
