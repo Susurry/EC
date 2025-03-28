@@ -1,12 +1,8 @@
 label book1
 if SaveManager.getElement("Quests", "1-2_shower") == false:
-	Comment souhaitez-vous vous laver ?
-	- Prendre un bain
-		do EventBus.emit_signal("set_empreinte", 0.1)
-		do EventBus.emit_signal("setup_minigame", "baignoire")
-	- Prendre une douche
-		do EventBus.emit_signal("set_empreinte", -0.1)
-		jump book2
+	Il est l'heure de se laver ! Est-ce que ça sera un bain ou une douche ?
+	do EventBus.emit_signal("set_empreinte", 0.1)
+	do EventBus.emit_signal("setup_minigame", "baignoire")
 else:
 	Vous vous êtes déjà lavé.
 [end_timeline]

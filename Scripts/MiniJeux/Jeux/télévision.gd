@@ -10,7 +10,7 @@ func _on_tv_eteint() -> void:
 	get_parent().quit_minigame()
 
 func _on_pousser_meuble_pressed() -> void:
-	if count <= 10:
+	if count <= 16:
 		sprites_tv.position.x += -5
 		count += 1
 	else:
