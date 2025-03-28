@@ -254,7 +254,7 @@ limit_bottom = 1744
 
 [node name="0_Debug" type="Marker2D" parent="StartPoints"]
 z_index = 50
-position = Vector2(57, 416)
+position = Vector2(47, 416)
 gizmo_extents = 30.0
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -536,4 +536,4 @@ position = Vector2(10, 490)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition/PeriphOuest"]
 shape = SubResource("RectangleShape2D_dnyma")
 
-[connection signal="body_entered" from="MapTransition/PeriphOuest" to="MapTransition" method="_on_level_transition" binds= ["PeriphOuest", 0, "DebugTrans"]]
+[connection signal="body_entered" from="MapTransition/PeriphOuest" to="MapTransition" method="_on_level_transition" binds= ["PeriphOuest", 1, "DebugTrans"]]
