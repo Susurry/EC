@@ -151,6 +151,7 @@ offset_bottom = 1080.0
 mouse_filter = 2
 
 [node name="OWElements" type="MarginContainer" parent="UI"]
+z_index = 2
 layout_mode = 1
 offset_right = 600.0
 offset_bottom = 155.0
@@ -326,6 +327,7 @@ item_display = ExtResource("13_2gf62")
 list_item = ExtResource("14_d0qqe")
 
 [node name="DebugElements" type="MarginContainer" parent="UI"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -369,6 +371,7 @@ focus_mode = 0
 
 [node name="PauseElements" type="Control" parent="UI"]
 process_mode = 3
+z_index = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -473,6 +476,7 @@ layout_mode = 2
 action_name = "interact"
 
 [node name="QuestElements" type="Control" parent="UI"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
