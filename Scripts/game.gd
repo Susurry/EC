@@ -16,6 +16,7 @@ func _initialize_viewport() -> void:
 	ThreadLoad.initialize_viewport(viewport)
 	ThreadLoad.load_scene(first_map)
 	get_tree().root.size_changed.connect(_setup_resolution_change) # Signal si la résolution change
+	_setup_resolution_change()
 
 func _initialize_inputs() -> void:
 	match OS.get_name():
