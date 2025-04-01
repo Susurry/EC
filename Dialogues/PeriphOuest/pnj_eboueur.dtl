@@ -34,6 +34,7 @@ Imagine que j'ai une bouteille de verre à jeter. À ton avis, dans quelle poube
 	... Pas vraiment, non. Le verre peut être recyclé, mais celui-ci doit être jetée dans une autre poubelle que la jaune !
 	jump TryAgain
 - Verte
+	do EventBus.emit_signal("add_follower", 1)
 	C'est ça, bravo ! Ça dépend des communes, mais généralement le verre doit être jeté dans des conteneurs verts à des endroits précis en ville.
 	do EventBus.emit_signal("set_quest_state", "3-3_parler")
 	Bien joué en tout cas, tu m'a convaincu que l'écologie, ça t'intéresses ! Garde le cap !

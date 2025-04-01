@@ -39,3 +39,4 @@ func _is_mobile() -> bool:
 func _setup_resolution_change() -> void:
 	$Viewports.set_size(get_viewport_rect().size)
 	$UI.set_size(get_viewport_rect().size)
+	FadeManager.set_size(get_viewport_rect().size)

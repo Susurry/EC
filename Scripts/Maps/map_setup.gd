@@ -39,6 +39,7 @@ func initialize_camera() -> void:
 func initialize_scene() -> void:
 	RenderingServer.set_default_clear_color(background_color)
 	y_sort_enabled = true
+	FadeManager.trigger_fade(0, 0.25)
 	
 func initialize_pause() -> void:
 	var pause = pause_ressource.instantiate()
