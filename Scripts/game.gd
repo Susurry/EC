@@ -16,6 +16,7 @@ func _initialize_viewport() -> void:
 	ThreadLoad.initialize_viewport(viewport)
 	ThreadLoad.load_scene(first_map)
 	get_tree().root.size_changed.connect(_setup_resolution_change) # Signal si la résolution change
+	_setup_resolution_change()
 
 func _initialize_inputs() -> void:
 	match OS.get_name():
@@ -38,3 +39,5 @@ func _is_mobile() -> bool:
 func _setup_resolution_change() -> void:
 	$Viewports.set_size(get_viewport_rect().size)
 	$UI.set_size(get_viewport_rect().size)
+	FadeManager.set_size(get_viewport_rect().size)
+	$UI/Pointer.on_resolution_change()

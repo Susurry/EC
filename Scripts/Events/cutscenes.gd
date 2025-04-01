@@ -26,3 +26,6 @@ func cutscene_end(_anim_name: StringName) -> void:
 
 func move_player(target: Vector2) -> void:
 	player.set_movement_target(target)
+
+func cutscene_fade(target: float, duration: float) -> void:
+	FadeManager.trigger_fade(target,duration)

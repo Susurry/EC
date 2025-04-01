@@ -13,10 +13,12 @@ func initialize_loading_screen() -> void:
 
 func initialize_load_type() -> void:
 	if loading_screen_key.is_empty():
-		ThreadLoad.trigger_next_scene(next_scene)
+		_on_event_trigger()
 	else:
+		FadeManager.visible = false
 		var load_trans: Node2D = load(loading_screens.types[loading_screen_key]).instantiate()
 		add_child(load_trans)
 
 func _on_event_trigger() -> void:
+	FadeManager.visible = true
 	ThreadLoad.trigger_next_scene(next_scene)

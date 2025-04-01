@@ -176,7 +176,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(400, 0)
-id_anchor_interactible = Array[int]([1, 2])
+id_anchor_interactible = Array[int]([1])
 
 [node name="Tournevis" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
@@ -189,7 +189,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(550, 0)
-id_anchor_interactible = Array[int]([3])
+id_anchor_interactible = Array[int]([2])
 
 [node name="Pompe" parent="WindowSize/PanelOutils" instance=ExtResource("5_djmmm")]
 layout_mode = 0
@@ -202,4 +202,4 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 position_item = Vector2(700, 0)
-id_anchor_interactible = Array[int]([4])
+id_anchor_interactible = Array[int]([3])

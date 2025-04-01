@@ -23,6 +23,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ThreadLoad="*res://Scripts/Autoload/thread_load.gd"
 EventBus="*res://Scripts/Autoload/event_bus.gd"
 AudioManager="*res://Scripts/Autoload/AudioManager/audio_manager.gd"
+FadeManager="*res://Scenes/Autoload/fade_manager.tscn"
 
 [dialogic]
 
