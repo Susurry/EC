@@ -1,16 +1,92 @@
 label book1
 do EventBus.emit_signal("set_mission_name", "Sensibliser les étudiants")
-Bienvenue sur Eco-Campus ! Nous vous recommandons de suivre le tutoriel si c'est votre première partie.
-do EventBus.emit_signal("point_cursor", 60.0, 175.0, 0.0)
+# #do EventBus.emit_signal("point_cursor", 60.0, 175.0, 0.0)
+Bienvenue sur Eco-Campus ! Votre objectif est de sensibiliser les étudiants de l'université avant que le compte à rebours catastrophe n'atteigne la fin.
+S'il s'agit de votre première partie, nous vous recommandons de suivre le tutoriel.
 - Faire le tutoriel
-	Ok cool
+	jump book3
 - passer le tutoriel
-Il est l'heure de se rendre à la fac !
-do EventBus.emit_signal("add_quest", "1_appart")
-do EventBus.emit_signal("add_quest", "1-1_breakfast")
-do EventBus.emit_signal("add_quest", "1-2_shower")
-do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
-[end_timeline]
+	Il est l'heure de se rendre à la fac !
+	do EventBus.emit_signal("add_quest", "1_appart")
+	do EventBus.emit_signal("add_quest", "1-1_breakfast")
+	do EventBus.emit_signal("add_quest", "1-2_shower")
+	do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
+	[end_timeline]
 label book2
 Vous êtes maintenant fin prêt pour vous rendre à la fac !
 do EventBus.emit_signal("set_quest_state", "1_appart")
+[end_timeline]
+label book3
+do EventBus.emit_signal("add_quest", "0_tutoriel")
+Passons en revue les contrôles de bases !
+Pour déplacer votre personnage, utilisez les flèches directionnelles ou, sur mobile, le joystick analogique à gauche de l'écran.
+Alternativement, vous pouvez utiliser les touches, Z, Q, S, D ! Essayez maintenant !
+do EventBus.emit_signal("add_quest", "0-1_deplacer")
+jump book4
+[end_timeline]
+label book4
+do EventBus.emit_signal("set_quest_state", "0-1_deplacer")
+Bravo, vous savez maintenant vous déplacer ! Passons maintenant à la suite !
+Pour interagir avec votre environnement, utilisez la touche Espace, la touche E ou, sur mobile, le bouton interaction à droite de l'écran.
+Les éléments interactifs seront en surbrillance. Essayez-donc avec votre chaise de bureau !
+do EventBus.emit_signal("add_quest", "0-2_chaise")
+jump book5
+[end_timeline]
+label book5
+do EventBus.emit_signal("set_quest_state", "0-2_chaise")
+Confortable, n'est-ce pas ? Vous pourrez descendre dès que vous le voudrez en interagissant de nouveau (Espace, E, ou sur mobile à droite de l'écran).
+Il est maintenant l'heure de vous préparer pour se rendre à la fac !
+do EventBus.emit_signal("add_quest", "1_appart")
+do EventBus.emit_signal("add_quest", "1-1_breakfast")
+do EventBus.emit_signal("add_quest", "1-2_shower")
+[wait time="1.5"]
+do EventBus.emit_signal("point_cursor", 1547.0, 450.0, 90.0)
+Un Objectif vient de s'ajouter à votre liste de quête !
+Les Objectifs sont la plupart du temps divisés en Sous-Objectifs, que vous devez accomplir afin de progresser dans votre mission.
+do EventBus.emit_signal("point_cursor", 330.0, 140.0, 0.0)
+Gardez en tête que vous devez accomplir ces objectifs ainsi que votre mission avant la fin du chronomètre \: si celui-ci touche à sa fin, c'est perdu !
+do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
+Commençons par le petit-déjeuner ! Rendez-vous à votre réfrigérateur et interagissez avec !
+do EventBus.emit_signal("add_quest", "0-3_frigo")
+jump book6
+[end_timeline]
+label book6
+do EventBus.emit_signal("set_quest_state", "0-3_frigo")
+Dans Éco-Campus, les choix que vous faites ont des conséquences sur votre environnement.
+do EventBus.emit_signal("point_cursor", 60.0, 175.0, 0.0)
+Vous voyez ce nombre ? Il s'agit de votre Impact Environemental.
+Votre Impact Environnemental démarre à une moyenne de 10 \: si vos actions ont des conséquences positives, votre impact diminuera \: si vos actions ont des conséquences négatives, votre impact augmentera.
+Votre objectif est donc essayer de diminer le plus possible votre Impact Environnemental !
+do EventBus.emit_signal("point_cursor", 240.0, 175.0, 0.0)
+Si votre Impact Environnemental évolue au delà d'un certain seuil, votre Notation Écologique évoluera en conséquent.
+La Notation Écologique impacte la vitesse de découlement du chronomètre \: une meilleure note ralentit le chronomètre, tandis qu'une mauvaise note l'accélère !
+do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
+Passons maintenant au prochain sous-objectif ! Rendez-vous dans votre salle de bain pour la suite de l'aventure !
+do EventBus.emit_signal("add_quest", "0-4_baignoire")
+jump book7
+[end_timeline]
+label book7
+Vous voici à présent dans un Mini-jeu !
+Dans les Mini-jeux, vous pouvez interagir directement avec les éléments en cliquant / tappant dessus.
+Il est aussi possible de prendre différentes décisions lors des mini-jeux, aux conséquences sur votre Impact Environnemental. Explorez vos options et essayez-donc !
+jump book8
+[end_timeline]
+label book8
+do EventBus.emit_signal("set_quest_state", "0-4_baignoire")
+Vous êtes maintenant fin prêt à découvrir le monde d'Éco-Campus \: vous pouvez désormais sortir de chez vous !
+Cependant d'hésitez pas à prendre le temps d'explorer, et de potentiellement découvrir des Objectifs Secrets, qui amélioreront davantage votre Impact Environnemental.
+Amusez-vous bien sur Éco-Campus !
+# #do EventBus.emit_signal("")
+do EventBus.emit_signal("set_quest_state", "0_tutoriel")
+[end_timeline]
+label book8
+Bravo, vous venez de trouver un Objectif Secret ! Il s'agit de mini-jeux cachées qui n'aparaissent pas dans votre liste de quête.
+Les Objectifs Secrets vous apportent un bonus à l'Impact Environnemental, qui peut être plus élevé en fonction de votre initiative ! Essayez de trouver la meilleure action possible !
+[end_timeline]
+label book9
+do EventBus.emit_signal("point_cursor", 145.0, 175.0, 0.0)
+Note \: vous venez d'obtenir votre premier Follower !
+Les Followers vous apportent immédiatement du temps supplémentaire sur le Chronomètre quand sensibilisés, et plus tard à la fin du chapitre !
+Les Followers vous poseront à chaque fois une question sur le thème de l'écologie, à vous d'y répondre correctement pour les persuader !
+Des indices ce cachent dans le jeu pour chacunes des questions, à vous d'explorer pour les trouver !
+[end_timeline]
