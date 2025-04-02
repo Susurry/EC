@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=2 format=3 uid="uid://cpn32hail8dmj"]
+
+[ext_resource type="AudioStream" uid="uid://rk0e0e0o0dpc" path="res://Audio/Music/Ville/Loop_Ville.ogg" id="1_w6myu"]
+
+[resource]
+stream_count = 1
+stream_0/stream = ExtResource("1_w6myu")
+stream_0/volume = 0.0

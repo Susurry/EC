@@ -2,11 +2,13 @@ extends AudioPool
 class_name SoundMusic
 
 var tween: Tween
+var id_old_music: int = 0
 
 # Utiliser pour jouer la musique
 func play(resource: AudioStreamSynchronized) -> void:
-	var player: AudioStreamPlayer = select_player(resource)
-	player.call_deferred("play")
+	if compare_track(resource):
+		var player: AudioStreamPlayer = select_player(resource)
+		player.call_deferred("play")
 
 # Utiliser pour stopper la musique
 func stop() -> void:
@@ -29,3 +31,6 @@ func fade_music(to_volume: float, duration: float) -> void:
 	if tween: tween.kill()
 	tween = create_tween()
 	tween.tween_property(audio_players.front(), "volume_db", to_volume, duration)
+
+func compare_track(resource: AudioStreamSynchronized) -> bool:
+	return true if resource != audio_players.front().stream else false
