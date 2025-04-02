@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_40v6o")
 type = 1
-name = "Interagir avec Réfrigétateur"
+name = "Interagir : Réfrigétateur"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

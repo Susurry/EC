@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_m5d26")
 type = 1
-name = "Interagir avec Baignoire"
+name = "Interagir : Baignoire"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

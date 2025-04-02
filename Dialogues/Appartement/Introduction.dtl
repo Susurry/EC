@@ -47,7 +47,7 @@ do EventBus.emit_signal("point_cursor", 330.0, 140.0, 0.0)
 Gardez en tête que vous devez accomplir ces objectifs ainsi que votre mission avant la fin du chronomètre \: si celui-ci touche à sa fin, c'est perdu !
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Commençons par le petit-déjeuner ! Rendez-vous à votre réfrigérateur et interagissez avec !
-do EventBus.emit_signal("add_quest", "0-3_frigo")
+do EventBus.emit_signal("add_quest", "0-3_frigo", 3)
 jump book6
 [end_timeline]
 label book6
@@ -62,7 +62,7 @@ Si votre Impact Environnemental évolue au delà d'un certain seuil, votre Notat
 La Notation Écologique impacte la vitesse de découlement du chronomètre \: une meilleure note ralentit le chronomètre, tandis qu'une mauvaise note l'accélère !
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Passons maintenant au prochain sous-objectif ! Rendez-vous dans votre salle de bain pour la suite de l'aventure !
-do EventBus.emit_signal("add_quest", "0-4_baignoire")
+do EventBus.emit_signal("add_quest", "0-4_baignoire", 4)
 jump book7
 [end_timeline]
 label book7
