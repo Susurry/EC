@@ -7,12 +7,16 @@ extends Control
 
 var time : float
 var format_string = "%02d : %02d : %02d"
+var tween: Tween
 
 @onready var time_label = $PanelLabel/Label
+@onready var timer_bar = $BarreTemps/PanelProgressBar/TimeBar
+@onready var changing_timer_bar = $BarreTemps/PanelProgressBar/TimeBar/ChangeTimeBar
 
 func _ready() -> void:
 	time_label.text = format_string % [heure, minute, seconde]
 	time = (heure * 3600) + (minute * 60) + seconde
+	changing_timer_bar.visible = false
 
 func _process(delta: float) -> void:
 	if time > 0:
@@ -21,5 +25,13 @@ func _process(delta: float) -> void:
 		minute = int(time / 60) % 60
 		seconde = int(time) % 60
 		time_label.text = format_string % [heure, minute, seconde]
+		
+		timer_bar.value = -time
 	else:
 		pass
+
+func change_time(var_time: float) -> void:
+	time += var_time
+
+func _on_button_pressed() -> void:
+	change_time(1000.0)
