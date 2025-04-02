@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=39 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -59,6 +59,15 @@ corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_detail = 4
 anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg4q0"]
+bg_color = Color(0.885351, 0.479543, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm72l"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
+font_size = 24
 
 [sub_resource type="FontVariation" id="FontVariation_j7hgd"]
 variation_embolden = 1.0
@@ -359,6 +368,60 @@ label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="BarreTemps" type="VBoxContainer" parent="UI/OWElements/Columns/Stats/Timer"]
+layout_mode = 0
+offset_left = 450.0
+offset_right = 888.0
+offset_bottom = 59.0
+theme_override_constants/separation = 0
+
+[node name="PanelProgressBar" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TimeBar" type="ProgressBar" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/fill = SubResource("StyleBoxFlat_mg4q0")
+min_value = -9000.0
+max_value = 0.0
+value = -3000.0
+show_percentage = false
+
+[node name="ChangeTimeBar" type="ProgressBar" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar/TimeBar"]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_vm72l")
+min_value = -9000.0
+max_value = 0.0
+value = -2000.0
+show_percentage = false
+
+[node name="TimerBarIndicateur" type="Label" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_mg4q0")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="UI/OWElements/Columns/Stats/Timer"]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 35.0
+offset_right = 751.0
+offset_bottom = 66.0
+text = "Enlever 1000 s"
+
 [node name="Inventaire" type="HBoxContainer" parent="UI/OWElements/Columns"]
 layout_mode = 2
 theme_override_constants/separation = 70
@@ -597,6 +660,7 @@ libraries = {
 autoplay = "bobbing"
 
 [connection signal="pressed" from="Viewports/MinigameElements/Button" to="Viewports/MinigameElements" method="erase_minigame"]
+[connection signal="pressed" from="UI/OWElements/Columns/Stats/Timer/Button" to="UI/OWElements/Columns/Stats/Timer" method="_on_button_pressed"]
 [connection signal="text_submitted" from="UI/DebugElements/Rows/LineEdit" to="UI/DebugElements" method="_on_line_edit_text_submitted"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/RespawnDebug" to="UI/DebugElements" method="_on_respawn_debug_item_selected"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/MapDebug" to="UI/DebugElements" method="_on_option_button_item_selected"]
