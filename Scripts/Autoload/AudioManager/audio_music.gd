@@ -2,7 +2,6 @@ extends AudioPool
 class_name SoundMusic
 
 var tween: Tween
-var id_old_music: int = 0
 
 # Utiliser pour jouer la musique
 func play(resource: AudioStreamSynchronized) -> void:

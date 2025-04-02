@@ -12,7 +12,6 @@ class_name Map
 var player: Player
 var camera: Camera2D
 var start_id: int = 0
-var old_id_music: int
 
 @onready var player_resource: PackedScene = preload("uid://cma8bt0crjux0")
 @onready var camera_resource: PackedScene = preload("uid://cfutd05my7baa")
