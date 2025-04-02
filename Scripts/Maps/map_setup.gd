@@ -21,6 +21,7 @@ func _ready() -> void:
 	initialize_player()
 	initialize_camera()
 	initialize_pause()
+	initialize_save_checks()
 
 func initialize_player() -> void:
 	player = player_resource.instantiate()
@@ -44,3 +45,7 @@ func initialize_scene() -> void:
 func initialize_pause() -> void:
 	var pause = pause_ressource.instantiate()
 	add_child(pause)
+
+func initialize_save_checks() -> void:
+	if get_node_or_null("SceneSaveChecks"):
+		$SceneSaveChecks.initialize()
