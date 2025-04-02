@@ -1633,6 +1633,7 @@ y_sort_enabled = true
 
 [node name="PNJ_Eboueur" parent="PNJs" instance=ExtResource("11_4suwe")]
 position = Vector2(1042, 632)
+direction = Vector2(-1, 0)
 
 [node name="PNJ_Velo" parent="PNJs" instance=ExtResource("13_5c4ie")]
 position = Vector2(719, 160)
@@ -1649,6 +1650,7 @@ position = Vector2(628, 651)
 motion_mode = 1
 script = ExtResource("19_1cwe4")
 timeline = "pnj_random1"
+direction = Vector2(1, 0)
 
 [node name="StateMachine" type="Node2D" parent="PNJs/PNJ_Random1"]
 script = ExtResource("20_7f4wu")
