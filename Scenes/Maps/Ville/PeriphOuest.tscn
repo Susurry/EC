@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ds7lj8f48m20p" path="res://Scenes/Props/PeriphOuest/poubelles.tscn" id="19_yn25f"]
 [ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="20_k5lkh"]
 [ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/map_intro.gd" id="20_yn25f"]
-[ext_resource type="Script" path="res://Scripts/Events/map_transitions.gd" id="21_k5lkh"]
+[ext_resource type="Script" uid="uid://k3msidbt0ncx" path="res://Scripts/Events/map_transitions.gd" id="21_k5lkh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
 atlas = ExtResource("4_4y10b")
