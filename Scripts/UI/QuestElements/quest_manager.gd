@@ -15,7 +15,7 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("set_quest_state", set_quest_state)
 	EventBus.add_signal("set_mission_name", set_mission_name)
 
-func add_quest(key: String) -> void:
+func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	var new_quest_data: Resource = load(quest_data.quests[key])
 	var new_quest: BoxContainer = quest_prefab.instantiate()
 	
@@ -37,6 +37,7 @@ func add_quest(key: String) -> void:
 	SaveManager.setElement("Quests", {key: false})
 	
 	target.add_child(new_quest)
+	target.move_child(target.get_child(target.get_child_count()-1), quest_pos) # Pour deplace la quête dans une autre position
 
 func clean_quests() -> void:
 	for i in target.get_children():
