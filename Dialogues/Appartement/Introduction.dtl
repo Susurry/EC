@@ -75,7 +75,7 @@ label book8
 [wait time="0.6"]
 do EventBus.emit_signal("set_quest_state", "0-4_baignoire")
 Vous êtes maintenant fin prêt à découvrir le monde d'Éco-Campus \: vous pouvez désormais sortir de chez vous !
-Cependant d'hésitez pas à prendre le temps d'explorer, et de potentiellement découvrir des Objectifs Secrets, qui amélioreront davantage votre Impact Environnemental.
+Cependant n'hésitez pas à prendre le temps d'explorer, et de potentiellement découvrir des Objectifs Secrets, qui amélioreront davantage votre Impact Environnemental.
 Amusez-vous bien sur Éco-Campus !
 #-----------------------------------------------------
 # Event Bus pour ajouter du temps ici quand possible !
