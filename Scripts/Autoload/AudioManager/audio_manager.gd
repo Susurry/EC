@@ -33,6 +33,9 @@ func set_volume(id: int, volume: float) -> void:
 
 func fade_music(to_volume: float, duration: float) -> void:
 	audio_music.fade_music(to_volume,duration)
+
+func is_same_music(resource: AudioStreamSynchronized) -> bool:
+	return audio_music.is_same_music(resource)
 #endregion
 
 #region AudioBus

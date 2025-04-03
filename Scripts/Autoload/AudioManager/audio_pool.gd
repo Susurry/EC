@@ -7,6 +7,7 @@ var audio_players: Array[AudioStreamPlayer] = []
 func _init(audio_bus: String, pool_size : int) -> void:
 	for i in pool_size:
 		var player: AudioStreamPlayer = AudioStreamPlayer.new()
+		player.process_mode = PROCESS_MODE_ALWAYS
 		add_child(player)
 		audio_players.append(player)
 		player.bus = audio_bus

@@ -5,7 +5,7 @@ var tween: Tween
 
 # Utiliser pour jouer la musique
 func play(resource: AudioStreamSynchronized) -> void:
-	if compare_track(resource):
+	if is_same_music(resource):
 		var player: AudioStreamPlayer = select_player(resource)
 		player.call_deferred("play")
 
@@ -31,5 +31,5 @@ func fade_music(to_volume: float, duration: float) -> void:
 	tween = create_tween()
 	tween.tween_property(audio_players.front(), "volume_db", to_volume, duration)
 
-func compare_track(resource: AudioStreamSynchronized) -> bool:
+func is_same_music(resource: AudioStreamSynchronized) -> bool:
 	return true if resource != audio_players.front().stream else false

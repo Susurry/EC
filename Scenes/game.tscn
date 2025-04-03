@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=46 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -39,12 +39,166 @@ corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
 
+[sub_resource type="Animation" id="Animation_81klo"]
+resource_name = "feedback_good"
+length = 1.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelLabel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tgy6u"]
+resource_name = "feedback_bad"
+length = 1.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelLabel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cwurv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelLabel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mucmn"]
+_data = {
+&"RESET": SubResource("Animation_cwurv"),
+&"feedback_bad": SubResource("Animation_tgy6u"),
+&"feedback_good": SubResource("Animation_81klo")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxqwe"]
 bg_color = Color(0, 0, 0, 0.588235)
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_mucmn"]
+resource_name = "feedback_good"
+length = 1.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelLabel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ese38"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelLabel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oeip8"]
+_data = {
+&"RESET": SubResource("Animation_ese38"),
+&"feedback_good": SubResource("Animation_mucmn")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxa5y"]
 bg_color = Color(0, 0, 0, 0.588235)
@@ -253,6 +407,11 @@ label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/OWElements/Columns/Stats/Carbone"]
+libraries = {
+&"": SubResource("AnimationLibrary_mucmn")
+}
+
 [node name="Follower" type="Control" parent="UI/OWElements/Columns/Stats"]
 layout_mode = 2
 mouse_filter = 2
@@ -291,7 +450,13 @@ label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/OWElements/Columns/Stats/Follower"]
+libraries = {
+&"": SubResource("AnimationLibrary_oeip8")
+}
+
 [node name="Grade" type="Control" parent="UI/OWElements/Columns/Stats"]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("9_8c7js")
