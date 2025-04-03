@@ -5,6 +5,11 @@
 [resource]
 script = ExtResource("1_q1q63")
 quests = Dictionary[String, String]({
+"0-1_deplacer": "uid://bk4u35enc02xr",
+"0-2_chaise": "uid://dwp2xcuovho6e",
+"0-3_frigo": "uid://brlmna1hoe6h",
+"0-4_baignoire": "uid://lhu0eyknqk1b",
+"0_tutoriel": "uid://h2o1rkl5yd5x",
 "1-1_breakfast": "uid://bd7hg8onbk7we",
 "1-2_shower": "uid://b2ce66iouulsg",
 "1_appart": "uid://yt4xycg3kvnl",

@@ -261,6 +261,13 @@ metadata/_edit_lock_ = true
 [node name="Props" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Label" type="Label" parent="Props"]
+offset_left = 23.0
+offset_top = 443.0
+offset_right = 159.0
+offset_bottom = 466.0
+text = "Work in Progress!"
+
 [node name="Generic" type="Node2D" parent="Props"]
 y_sort_enabled = true
 

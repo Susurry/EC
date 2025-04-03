@@ -116,7 +116,6 @@ timeline = "Baignoire"
 material = SubResource("ShaderMaterial_8syqh")
 position = Vector2(-16, -32)
 sprite_frames = SubResource("SpriteFrames_te7gt")
-autoplay = "default"
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
