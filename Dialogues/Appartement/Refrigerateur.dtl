@@ -1,4 +1,7 @@
-if SaveManager.getElement("Quests", "1-1_breakfast") == false :
+if SaveManager.getElement("Quests", "0_tutoriel") == false and SaveManager.getElement("Quests", "0-3_frigo") == null:
+	Votre frigo est bien rempli pour un étudiant dis-donc !
+	[end_timeline]
+if SaveManager.getElement("Quests", "1-1_breakfast") == false:
 	Votre frigo est bien rempli ! Quel petit-déjeuner prendre ?
 	- Porridge et fruits
 		do EventBus.emit_signal("set_empreinte", 0.1)
@@ -21,7 +24,9 @@ if SaveManager.getElement("Quests", "1-1_breakfast") == false :
 		do EventBus.emit_signal("set_empreinte", -0.1)
 	Vous êtes repus !
 	do EventBus.emit_signal("set_quest_state", "1-1_breakfast")
-	if SaveManager.getElement("Quests", "1-2_shower") == true :
+	if SaveManager.getElement("Quests", "0_tutoriel") == false:
+		jump Introduction/book6
+	if SaveManager.getElement("Quests", "1-2_shower") == true:
 		do Dialogic.start_timeline("Introduction", "book2")
-else :
+else:
 	Vous êtes rassasié.e, pas besoin de plus !

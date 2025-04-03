@@ -1,4 +1,7 @@
 La LED de la TV clignote, indiquant qu'elle est en veille.
-
-do EventBus.emit_signal("setup_minigame", "television")
+if SaveManager.getElement("Quests", "0_tutoriel") == true or SaveManager.getElement("Quests", "0_tutoriel") == null:
+	Peut-être y'a t-il quelque chose que vous pouvez faire ?
+	do EventBus.emit_signal("setup_minigame", "television")
+	if SaveManager.getElement("Quests", "0_tutoriel") == true :
+		jump Introduction/book9
 [end_timeline]

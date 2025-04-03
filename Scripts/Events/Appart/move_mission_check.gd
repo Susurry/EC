@@ -18,8 +18,8 @@ func _physics_process(_delta: float) -> void:
 
 func check_mission_done() -> void:
 	if SaveManager.getElement("Quests", "0-1_deplacer") == false:
-		print("mission is done")
-		# MET TON TRUC DIALOGIC ICI POUR QUAND LA MISSION EST FINIE
+		#print("mission is done")
+		Dialogic.start("Introduction", "book4")
 	else:
-		print("kill the mission")
+		#print("kill the mission")
 		queue_free()

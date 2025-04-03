@@ -15,6 +15,8 @@ S'il s'agit de votre première partie, nous vous recommandons de suivre le tutor
 label book2
 Vous êtes maintenant fin prêt pour vous rendre à la fac !
 do EventBus.emit_signal("set_quest_state", "1_appart")
+if SaveManager.getElement("Quests", "0_tutoriel") == false:
+	jump Introduction/book8
 [end_timeline]
 label book3
 do EventBus.emit_signal("add_quest", "0_tutoriel")
@@ -22,15 +24,14 @@ Passons en revue les contrôles de bases !
 Pour déplacer votre personnage, utilisez les flèches directionnelles ou, sur mobile, le joystick analogique à gauche de l'écran.
 Alternativement, vous pouvez utiliser les touches, Z, Q, S, D ! Essayez maintenant !
 do EventBus.emit_signal("add_quest", "0-1_deplacer")
-jump book4
 [end_timeline]
 label book4
 do EventBus.emit_signal("set_quest_state", "0-1_deplacer")
-Bravo, vous savez maintenant vous déplacer ! Passons maintenant à la suite !
+Bravo, vous savez maintenant vous déplacer ! Notez que vous pouvez vous déplacer plus vite en maintenant appuyé le bouton Shift de gauche.
+Passons maintenant à la suite !
 Pour interagir avec votre environnement, utilisez la touche Espace, la touche E ou, sur mobile, le bouton interaction à droite de l'écran.
 Les éléments interactifs seront en surbrillance. Essayez-donc avec votre chaise de bureau !
 do EventBus.emit_signal("add_quest", "0-2_chaise")
-jump book5
 [end_timeline]
 label book5
 do EventBus.emit_signal("set_quest_state", "0-2_chaise")
@@ -39,7 +40,7 @@ Il est maintenant l'heure de vous préparer pour se rendre à la fac !
 do EventBus.emit_signal("add_quest", "1_appart")
 do EventBus.emit_signal("add_quest", "1-1_breakfast")
 do EventBus.emit_signal("add_quest", "1-2_shower")
-[wait time="1.5"]
+#[wait time="1.5"]
 do EventBus.emit_signal("point_cursor", 1547.0, 450.0, 90.0)
 Un Objectif vient de s'ajouter à votre liste de quête !
 Les Objectifs sont la plupart du temps divisés en Sous-Objectifs, que vous devez accomplir afin de progresser dans votre mission.
@@ -48,9 +49,9 @@ Gardez en tête que vous devez accomplir ces objectifs ainsi que votre mission a
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Commençons par le petit-déjeuner ! Rendez-vous à votre réfrigérateur et interagissez avec !
 do EventBus.emit_signal("add_quest", "0-3_frigo", 3)
-jump book6
 [end_timeline]
 label book6
+[wait time="0.6"]
 do EventBus.emit_signal("set_quest_state", "0-3_frigo")
 Dans Éco-Campus, les choix que vous faites ont des conséquences sur votre environnement.
 do EventBus.emit_signal("point_cursor", 60.0, 175.0, 0.0)
@@ -63,30 +64,36 @@ La Notation Écologique impacte la vitesse de découlement du chronomètre \: un
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Passons maintenant au prochain sous-objectif ! Rendez-vous dans votre salle de bain pour la suite de l'aventure !
 do EventBus.emit_signal("add_quest", "0-4_baignoire", 4)
-jump book7
 [end_timeline]
 label book7
+[wait time="0.6"]
 Vous voici à présent dans un Mini-jeu !
 Dans les Mini-jeux, vous pouvez interagir directement avec les éléments en cliquant / tappant dessus.
 Il est aussi possible de prendre différentes décisions lors des mini-jeux, aux conséquences sur votre Impact Environnemental. Explorez vos options et essayez-donc !
-jump book8
 [end_timeline]
 label book8
+[wait time="0.6"]
 do EventBus.emit_signal("set_quest_state", "0-4_baignoire")
 Vous êtes maintenant fin prêt à découvrir le monde d'Éco-Campus \: vous pouvez désormais sortir de chez vous !
 Cependant d'hésitez pas à prendre le temps d'explorer, et de potentiellement découvrir des Objectifs Secrets, qui amélioreront davantage votre Impact Environnemental.
 Amusez-vous bien sur Éco-Campus !
-# #do EventBus.emit_signal("")
+#-----------------------------------------------------
+# Event Bus pour ajouter du temps ici quand possible !
+#-----------------------------------------------------
 do EventBus.emit_signal("set_quest_state", "0_tutoriel")
 [end_timeline]
-label book8
+label book9
+[wait time="0.6"]
 Bravo, vous venez de trouver un Objectif Secret ! Il s'agit de mini-jeux cachées qui n'aparaissent pas dans votre liste de quête.
 Les Objectifs Secrets vous apportent un bonus à l'Impact Environnemental, qui peut être plus élevé en fonction de votre initiative ! Essayez de trouver la meilleure action possible !
 [end_timeline]
-label book9
+label book10
 do EventBus.emit_signal("point_cursor", 145.0, 175.0, 0.0)
+[wait time="0.6"]
 Note \: vous venez d'obtenir votre premier Follower !
 Les Followers vous apportent immédiatement du temps supplémentaire sur le Chronomètre quand sensibilisés, et plus tard à la fin du chapitre !
 Les Followers vous poseront à chaque fois une question sur le thème de l'écologie, à vous d'y répondre correctement pour les persuader !
 Des indices ce cachent dans le jeu pour chacunes des questions, à vous d'explorer pour les trouver !
-[end_timeline]
+do EventBus.emit_signal("point_cursor", 4000, 0.0, 0.0)
+[wait time="0.6"]
+jump pnj_eboueur/book3
