@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=2 format=3 uid="uid://dtpf1o6owrl73"]
+
+[ext_resource type="AudioStream" uid="uid://b06bwpkmg7dbj" path="res://Audio/Music/Campus/Full_Campus.ogg" id="1_elvbu"]
+
+[resource]
+stream_count = 1
+stream_0/stream = ExtResource("1_elvbu")
+stream_0/volume = 0.0
