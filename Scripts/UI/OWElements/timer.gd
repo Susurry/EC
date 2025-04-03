@@ -14,9 +14,16 @@ var tween: Tween
 @onready var changing_timer_bar = $BarreTemps/PanelProgressBar/TimeBar/ChangeTimeBar
 
 func _ready() -> void:
+	_initialize_timer()
+	_initialize_signals()
+
+func _initialize_timer() -> void:
 	time_label.text = format_string % [heure, minute, seconde]
 	time = (heure * 3600) + (minute * 60) + seconde
 	changing_timer_bar.visible = false
+
+func _initialize_signals() -> void:
+	EventBus.add_signal("change_time", change_time)
 
 func _process(delta: float) -> void:
 	if time > 0:
