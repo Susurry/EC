@@ -7,6 +7,7 @@ class_name Map
 @export var limit_right: int = 10000
 @export var limit_top: int = 0
 @export var limit_bottom: int = 10000
+@export var stream: AudioStreamSynchronized
 
 var player: Player
 var camera: Camera2D
@@ -16,11 +17,13 @@ var start_id: int = 0
 @onready var camera_resource: PackedScene = preload("uid://cfutd05my7baa")
 @onready var pause_ressource: PackedScene = preload("uid://bfwcj54nwr3on")
 
+
 func _ready() -> void:
 	initialize_scene()
 	initialize_player()
 	initialize_camera()
 	initialize_pause()
+	initialize_music()
 
 func initialize_player() -> void:
 	player = player_resource.instantiate()
@@ -44,3 +47,7 @@ func initialize_scene() -> void:
 func initialize_pause() -> void:
 	var pause = pause_ressource.instantiate()
 	add_child(pause)
+	
+func initialize_music() -> void:
+	AudioManager.fade_music(0,0)
+	AudioManager.play_music(stream)

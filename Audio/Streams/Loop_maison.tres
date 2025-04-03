@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=2 format=3 uid="uid://cr30twokork7q"]
+
+[ext_resource type="AudioStream" uid="uid://ciw2e6ph86h6q" path="res://Audio/Music/Maison/Loop_Maison.ogg" id="1_p2aix"]
+
+[resource]
+stream_count = 1
+stream_0/stream = ExtResource("1_p2aix")
+stream_0/volume = 0.0

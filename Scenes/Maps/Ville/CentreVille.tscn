@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://cp1m5aulw3omg"]
+[gd_scene load_steps=9 format=4 uid="uid://cp1m5aulw3omg"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_0m7db"]
+[ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_dnyma"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="2_uihib"]
 [ext_resource type="TileSet" uid="uid://c4cih28217htv" path="res://Graphics/Tilesets/Tileset_Ville.tres" id="3_ipl5a"]
 [ext_resource type="Script" uid="uid://df0d0ft4f664q" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/pnj_mobile_manager.gd" id="4_pmrli"]
@@ -21,6 +22,7 @@ script = ExtResource("1_0m7db")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
 limit_right = 1664
 limit_bottom = 1744
+stream = ExtResource("2_dnyma")
 
 [node name="StartPoints" type="Node2D" parent="."]
 
