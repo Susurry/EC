@@ -6,6 +6,8 @@ extends Control
 @onready var target: BoxContainer = $QuestList/Columns
 @onready var mission_label: Label = $MissionName/Panel/Label
 
+var tween: Tween
+
 func _ready() -> void:
 	_initialize_signals()
 
@@ -21,6 +23,7 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	
 	var new_quest_label: Label = new_quest.get_node("Panel/Label")
 	var new_quest_margin: MarginContainer = new_quest.get_node("Margin")
+	var quest_panel: PanelContainer = new_quest.get_node("Panel")
 	
 	match (new_quest_data.type):
 		0:
@@ -38,6 +41,11 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	
 	target.add_child(new_quest)
 	target.move_child(target.get_child(target.get_child_count()-1), quest_pos) # Pour deplace la quête dans une autre position
+	
+	# Pour le fade in des quêtes
+	tween = create_tween()
+	tween.connect("finished", tween.kill)
+	tween.tween_property(quest_panel, "self_modulate", Color.WHITE, 0.5)
 
 func clean_quests() -> void:
 	for i in target.get_children():

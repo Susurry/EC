@@ -23,9 +23,9 @@ func on_interact(player: Player) -> void:
 	
 	await Dialogic.timeline_started
 	
-	var direction: Vector2 = position - player.position
-	player.skin.set_animation_direction(direction)
-	skin.set_animation_direction(-direction)
+	var play_dir: Vector2 = position - player.position
+	player.skin.set_animation_direction(play_dir)
+	skin.set_animation_direction(-play_dir)
 
 func draw_outline() -> void:
 	sprite.material.set_shader_parameter("width",1.0)
