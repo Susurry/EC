@@ -38,6 +38,9 @@ Imagine que j'ai une bouteille de verre à jeter. À ton avis, dans quelle poube
 	C'est ça, bravo ! Ça dépend des communes, mais généralement le verre doit être jeté dans des conteneurs verts à des endroits précis en ville.
 	do EventBus.emit_signal("set_quest_state", "3-3_parler")
 	Bien joué en tout cas, tu m'a convaincu que l'écologie, ça t'intéresses ! Garde le cap !
+	if SaveManager.getElement("Quests", "0_tutoriel") == true :
+		jump Introduction/book10
+	label book3
 	Bon, bref, je vais vite déplacer mon camion, j'ai suffisament bloqué la route comme ça. Merci du coup de main !
 	do EventBus.emit_signal("set_quest_state", "3_eboueur")
 	do EventBus.emit_signal("play_cutscene", "cutscene_eboueur_done")
