@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://6eecifybnu8r"]
+[gd_scene load_steps=50 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Graphics/Tilesets/Tileset_Appartement.tres" id="2_2g8ls"]
@@ -15,7 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://cyqoe56afno1e" path="res://Scenes/Props/Appartement/rangement.tscn" id="12_vo2jj"]
 [ext_resource type="PackedScene" uid="uid://cnusf4j8q8ps6" path="res://Scenes/Props/Appartement/chaise_bureau.tscn" id="13_hvk87"]
 [ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
-[ext_resource type="Script" uid="uid://drhuiyw6i1uon" path="res://Scripts/Events/map_intro.gd" id="16_7gbmn"]
+[ext_resource type="Script" uid="uid://bb0bkalml0vnx" path="res://Scripts/Events/Appart/appart_save_checks.gd" id="15_01gxp"]
+[ext_resource type="Script" uid="uid://dkabrshrgo5vt" path="res://Scripts/Events/Appart/move_mission_check.gd" id="16_7f2nx"]
+[ext_resource type="Script" uid="uid://b4yoqkl1ue1uh" path="res://Scripts/Events/Appart/mission_chair_check.gd" id="17_0hnt7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
@@ -415,6 +417,13 @@ position = Vector2(37, 80)
 [node name="PorteSortie" parent="Props" instance=ExtResource("14_kt3ce")]
 position = Vector2(227, 138)
 
-[node name="Intro_Event" type="Node2D" parent="."]
-script = ExtResource("16_7gbmn")
+[node name="SceneSaveChecks" type="Node2D" parent="."]
+script = ExtResource("15_01gxp")
 timeline = "Introduction"
+
+[node name="MissionMoveCheck" type="Node2D" parent="SceneSaveChecks"]
+script = ExtResource("16_7f2nx")
+
+[node name="MissionChairCheck" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("chair_obj")]
+script = ExtResource("17_0hnt7")
+chair_obj = NodePath("../../Props/ChaiseBureau")

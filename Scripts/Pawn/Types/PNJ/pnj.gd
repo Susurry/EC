@@ -2,8 +2,13 @@ extends Pawn
 class_name PNJ
 
 @export var timeline: String
+@export var direction: Vector2 = Vector2.DOWN
 
 @onready var sprite: Node2D = $Skin
+
+func _ready() -> void:
+	super()
+	skin.set_animation_direction(direction)
 
 func set_movement_target(movement_target: Vector2) -> void:
 	state_machine.change_state("Pathfinding")

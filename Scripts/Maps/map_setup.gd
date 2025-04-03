@@ -23,6 +23,7 @@ func _ready() -> void:
 	initialize_player()
 	initialize_camera()
 	initialize_pause()
+	initialize_save_checks()
 	initialize_music()
 
 func initialize_player() -> void:
@@ -47,7 +48,11 @@ func initialize_scene() -> void:
 func initialize_pause() -> void:
 	var pause = pause_ressource.instantiate()
 	add_child(pause)
-	
+
+func initialize_save_checks() -> void:
+	if get_node_or_null("SceneSaveChecks"):
+		$SceneSaveChecks.initialize()
+
 func initialize_music() -> void:
 	AudioManager.fade_music(0,0)
 	AudioManager.play_music(stream)

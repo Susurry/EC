@@ -1,1 +1,7 @@
-Voiture Périphérie
+label book1
+if SaveManager.getElement("Quests", "3_eboueur") == true:
+	Vous ne pouvez pas conduire votre voiture maintenant : la feature n'est pas encore implémentée ;)
+	[end_timeline]
+else:
+	Vous ne pouvez pas conduire votre voiture maintenant : la route vers le centre ville est bloquée !
+	[end_timeline]
