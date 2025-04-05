@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp4xg7covqurw"]
+[gd_scene load_steps=10 format=3 uid="uid://cp4xg7covqurw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_aeplx"]
 [ext_resource type="Script" uid="uid://ddcdbgy7hgrmh" path="res://Scripts/MiniJeux/Jeux/TriDechet/tridechet.gd" id="2_ltthm"]
 [ext_resource type="PackedScene" uid="uid://e2fy0gl10th8" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref.tscn" id="3_7cc60"]
 [ext_resource type="PackedScene" uid="uid://c4ibps4ddsx3q" path="res://Scenes/MiniJeux/TriDechet/PoubelleTypes/ref.tscn" id="4_7cc60"]
 [ext_resource type="PackedScene" uid="uid://rf4a4v7hbyi7" path="res://Scenes/MiniJeux/TriDechet/DechetTypes/ref_nonrec.tscn" id="4_ltthm"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="5_eka6x"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="6_i8t5w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8t5w"]
@@ -28,6 +29,7 @@ offset_bottom = 750.0
 script = ExtResource("2_ltthm")
 items = Array[PackedScene]([ExtResource("3_7cc60"), ExtResource("4_ltthm")])
 max_trash_items = 8
+sfx_trash = ExtResource("5_eka6x")
 
 [node name="Timer" type="Timer" parent="WindowSize"]
 wait_time = 2.0

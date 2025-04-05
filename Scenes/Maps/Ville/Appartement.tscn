@@ -143,7 +143,8 @@ limit_left = -144
 limit_right = 384
 limit_top = -80
 limit_bottom = 256
-stream = ExtResource("2_7f2nx")
+music = ExtResource("2_7f2nx")
+music_volume = -5.0
 
 [node name="StartPoints" type="Node2D" parent="."]
 

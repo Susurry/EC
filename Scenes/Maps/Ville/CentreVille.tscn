@@ -22,7 +22,8 @@ script = ExtResource("1_0m7db")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
 limit_right = 1664
 limit_bottom = 1744
-stream = ExtResource("2_dnyma")
+music = ExtResource("2_dnyma")
+music_volume = -5.0
 
 [node name="StartPoints" type="Node2D" parent="."]
 

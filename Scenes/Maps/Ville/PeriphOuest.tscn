@@ -170,7 +170,8 @@ script = ExtResource("1_r1ah8")
 background_color = Color(0.745098, 0.882353, 0.972549, 1)
 limit_right = 1216
 limit_bottom = 1008
-stream = ExtResource("2_uymh2")
+music = ExtResource("2_uymh2")
+music_volume = -10.0
 
 [node name="StartPoints" type="Node2D" parent="."]
 

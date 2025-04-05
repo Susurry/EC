@@ -2,6 +2,8 @@ extends Control
 
 @export var quest_data: QuestList
 @export var quest_prefab: PackedScene
+@export var sfx_new_quest: AudioStreamWAV
+@export var sfx_quest_done: AudioStreamWAV
 
 @onready var target: BoxContainer = $QuestList/Columns
 @onready var mission_label: Label = $MissionName/Panel/Label
@@ -18,6 +20,9 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("set_mission_name", set_mission_name)
 
 func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(sfx_new_quest, -5.0)
+	
 	var new_quest_data: Resource = load(quest_data.quests[key])
 	var new_quest: BoxContainer = quest_prefab.instantiate()
 	
@@ -52,6 +57,9 @@ func clean_quests() -> void:
 		i.queue_free()
 
 func set_quest_state(quest_name: String) -> void:
+	AudioManager.stop_sfx()
+	AudioManager.play_sfx(sfx_quest_done, -5.0)
+	
 	target.get_node(quest_name + "/Panel/Label").modulate = Color.GREEN
 	SaveManager.setElement("Quests", {quest_name: true})
 

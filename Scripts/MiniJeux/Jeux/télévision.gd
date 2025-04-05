@@ -1,10 +1,16 @@
 extends Control
 
+@export var sfx_bouton: AudioStreamWAV
+
 var count: int = 0
 
 @onready var sprites_tv: Node2D = $Meuble
 
 func _on_tv_eteint() -> void:
+	AudioManager.play_sfx(sfx_bouton)
+	
+	SaveManager.setElement("Quests", {"S_television": true})
+	
 	$Meuble/SpriteTV.play("stop")
 	await get_tree().create_timer(2.5).timeout
 	get_parent().quit_minigame()
