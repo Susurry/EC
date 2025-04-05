@@ -1,50 +1,50 @@
 label book1
 if SaveManager.getElement("Quests", "3_eboueur") == true:
-	Fais comme si je n'étais plus là ! Je ne devrai plus être là justement !!
+	Eboueur: Fais comme si je n'étais plus là ! Je ne devrai plus être là justement !!
 	[end_timeline]
 if SaveManager.getElement("Quests", "3_eboueur") == false:
 	if SaveManager.getElement("Quests", "3-1_ramasser") == false:
-		Les poubelles sont sur la route, tu peux pas les louper !
+		Eboueur: Les poubelles sont sur la route, tu peux pas les louper !
 		[end_timeline]
 	if SaveManager.getElement("Quests", "3-2_trier") == false:
-		Super, est-ce que tu peux maintenant les jeter dans les conteneurs ? N'oublie pas de trier correctement !
+		Eboueur: Super, est-ce que tu peux maintenant les jeter dans les conteneurs ? N'oublie pas de trier correctement !
 		[end_timeline]
 	if SaveManager.getElement("Quests", "3-3_parler") == false:
-		C'est le moment où je te pose une superbe question !!
+		Eboueur: C'est le moment où je te pose une superbe question !!
 		jump Question
 else:
-	J'ai renversé le contenu de mon camion, oops ! Tu peux m'aider à nettoyer la rue ? Il y a des déchets à ramasser, il faudrait ensuite les trier correctement.
+	Eboueur: J'ai renversé le contenu de mon camion, oops ! Tu peux m'aider à nettoyer la rue ? Il y a des déchets à ramasser, il faudrait ensuite les trier correctement.
 	do EventBus.emit_signal("add_quest", "3_eboueur")
 	do EventBus.emit_signal("add_quest", "3-1_ramasser")
 	[end_timeline]
 label book2
 do EventBus.emit_signal("set_quest_state", "3-1_ramasser")
-Bravo ! Il faut maintenant aller les jeter ! Pensez à trier !
+Eboueur: Bravo ! Il faut maintenant aller les jeter ! Pensez à trier !
 do EventBus.emit_signal("add_quest", "3-2_trier")
 [end_timeline]
 label TryAgain
-Je suis sympa, je te laisse ré-essayer !
+Eboueur: Je suis sympa, je te laisse ré-essayer !
 jump Question
 label Question
-Imagine que j'ai une bouteille de verre à jeter. À ton avis, dans quelle poubelle dois-je la jeter ?
+Eboueur: Imagine que j'ai une bouteille de verre à jeter. À ton avis, dans quelle poubelle dois-je la jeter ?
 - Grise
-	C'est pas ça, non. Le poubelle grise est réservée aux déchets non recyclable, et nous sommes capable de recycler le verre.
+	Eboueur: C'est pas ça, non. Le poubelle grise est réservée aux déchets non recyclable, et nous sommes capable de recycler le verre.
 	jump TryAgain
 - Jaune
-	... Pas vraiment, non. Le verre peut être recyclé, mais celui-ci doit être jetée dans une autre poubelle que la jaune !
+	Eboueur: ... Pas vraiment, non. Le verre peut être recyclé, mais celui-ci doit être jetée dans une autre poubelle que la jaune !
 	jump TryAgain
 - Verte
 	do EventBus.emit_signal("add_follower", 1)
-	C'est ça, bravo ! Ça dépend des communes, mais généralement le verre doit être jeté dans des conteneurs verts à des endroits précis en ville.
+	Eboueur: C'est ça, bravo ! Ça dépend des communes, mais généralement le verre doit être jeté dans des conteneurs verts à des endroits précis en ville.
 	do EventBus.emit_signal("set_quest_state", "3-3_parler")
-	Bien joué en tout cas, tu m'a convaincu que l'écologie, ça t'intéresses ! Garde le cap !
+	Eboueur: Bien joué en tout cas, tu m'a convaincu que l'écologie, ça t'intéresses ! Garde le cap !
 	if SaveManager.getElement("Quests", "0_tutoriel") == true :
 		jump Introduction/book10
 	label book3
-	Bon, bref, je vais vite déplacer mon camion, j'ai suffisament bloqué la route comme ça. Merci du coup de main !
+	Eboueur: Bon, bref, je vais vite déplacer mon camion, j'ai suffisament bloqué la route comme ça. Merci du coup de main !
 	do EventBus.emit_signal("set_quest_state", "3_eboueur")
 	do EventBus.emit_signal("play_cutscene", "cutscene_eboueur_done")
 	[end_timeline]
 - Bleu
-	... Raté, on a pas de poubelle bleue dans notre ville. Ça dépend des communes, mais les poubelles bleues sont généralement réservé au carton et au papier !
+	Eboueur: ... Raté, on a pas de poubelle bleue dans notre ville. Ça dépend des communes, mais les poubelles bleues sont généralement réservé au carton et au papier !
 	jump TryAgain

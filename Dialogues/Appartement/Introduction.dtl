@@ -1,8 +1,15 @@
 label book1
 do EventBus.emit_signal("set_mission_name", "Sensibliser les étudiants")
 # #do EventBus.emit_signal("point_cursor", 60.0, 175.0, 0.0)
-Bienvenue sur Eco-Campus ! Votre objectif est de sensibiliser les étudiants de l'université avant que le compte à rebours catastrophe n'atteigne la fin.
-S'il s'agit de votre première partie, nous vous recommandons de suivre le tutoriel.
+Bienvenue sur Eco-Campus ! Votre objectif est de sensibiliser les étudiants de l'université avant que le compte à rebours catastrophe n'atteigne la fin.\
+\
+\
+[pulse][speed=0](Cliquer / tapper pour continuer)[speed][/pulse]
+S'il s'agit de votre première partie, nous vous recommandons de suivre le tutoriel.\
+\
+\
+\
+[pulse][speed=0](Cliquer / tapper pour sélectionne une option)[speed][/pulse]
 - Faire le tutoriel
 	jump book3
 - passer le tutoriel
