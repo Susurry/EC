@@ -1,5 +1,7 @@
 extends Control
 
+@export var sfx_follow: AudioStreamWAV
+
 var follower: int = 0
 
 @onready var follower_label = $PanelLabel/Label
@@ -14,6 +16,8 @@ func _initialize_follower() -> void:
 	EventBus.add_signal("add_follower", add_follower)
 
 func add_follower(arg: int = 1) -> void:
+	AudioManager.play_sfx(sfx_follow, -5.0)
+	
 	anim_player.play("feedback_good")
 	follower += arg
 	follower_label.text = str(follower)

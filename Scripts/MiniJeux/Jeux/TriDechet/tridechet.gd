@@ -4,6 +4,7 @@ const ITEM_SPAWN_MARGIN: int = 50
 
 @export var items: Array[PackedScene]
 @export var max_trash_items: int
+@export var sfx_trash: AudioStreamWAV
 
 var score: float
 var trash_count: int
@@ -13,6 +14,8 @@ func _ready() -> void:
 	randomize()
 
 func update_trash_count() -> void:
+	AudioManager.play_sfx(sfx_trash)
+	
 	trash_count += 1
 	if trash_count == max_trash_items:
 		EventBus.emit_signal("set_empreinte", score)

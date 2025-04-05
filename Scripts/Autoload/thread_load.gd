@@ -9,7 +9,8 @@ func initialize_viewport(game_viewport: SubViewport) -> void:
 	viewport = game_viewport
 
 func load_scene(next_scene: String, pos_id: int = 0, loading_screen_type: String = "") -> void:
-	FadeManager.trigger_fade(1, 0.25)
+	FadeManager.trigger_fade(1, 0.25, 3)
+	AudioManager.fade_music(-80, 0.5)
 	await FadeManager.tween.finished
 	
 	_erase_scenes()

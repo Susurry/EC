@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://dgpu4hmb3vlfw"]
+[gd_scene load_steps=25 format=3 uid="uid://dgpu4hmb3vlfw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_3ua7n"]
 [ext_resource type="Script" uid="uid://bvia05yei278y" path="res://Scripts/MiniJeux/Jeux/baignoire.gd" id="2_3w5rc"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="3_jv3uq"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_0rf1o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]
@@ -167,6 +168,7 @@ anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 650.0
 script = ExtResource("2_3w5rc")
+sfx_valve = ExtResource("3_jv3uq")
 
 [node name="SpriteBaignoire" type="AnimatedSprite2D" parent="WindowSize"]
 position = Vector2(400, 325)

@@ -1,13 +1,16 @@
 extends Node2D
 class_name Map
 
+@export_group("Camera Settings")
 @export var background_color: Color
 @export var camera_zoom: int = 4
 @export var limit_left: int = 0
 @export var limit_right: int = 10000
 @export var limit_top: int = 0
 @export var limit_bottom: int = 10000
-@export var stream: AudioStreamSynchronized
+@export_group("Music Settings")
+@export var music: AudioStreamSynchronized
+@export var music_volume: float
 
 var player: Player
 var camera: Camera2D
@@ -27,6 +30,7 @@ func _ready() -> void:
 	initialize_music()
 
 func initialize_player() -> void:
+	EventBus.emit_signal("set_ui_visibility", true)
 	player = player_resource.instantiate()
 	player.position = $StartPoints.get_child(start_id).position # Ordre du child important
 	if get_node_or_null("Cutscenes"):
@@ -43,7 +47,7 @@ func initialize_camera() -> void:
 func initialize_scene() -> void:
 	RenderingServer.set_default_clear_color(background_color)
 	y_sort_enabled = true
-	FadeManager.trigger_fade(0, 0.25)
+	FadeManager.trigger_fade(0, 0.25, 3)
 	
 func initialize_pause() -> void:
 	var pause = pause_ressource.instantiate()
@@ -54,5 +58,5 @@ func initialize_save_checks() -> void:
 		$SceneSaveChecks.initialize()
 
 func initialize_music() -> void:
-	AudioManager.fade_music(0,0)
-	AudioManager.play_music(stream)
+	AudioManager.fade_music(music_volume, 0)
+	AudioManager.play_music(music)

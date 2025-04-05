@@ -8,8 +8,8 @@ func _ready() -> void:
 	add_child(audio_music)
 
 #region SFX
-func play_sfx(resource: AudioStreamWAV) -> void:
-	audio_sfx.play(resource)
+func play_sfx(resource: AudioStreamWAV, volume: float = 0.0) -> void:
+	audio_sfx.play(resource, volume)
 
 func stop_sfx() -> void:
 	audio_sfx.stop()
@@ -28,7 +28,7 @@ func pause_music() -> void:
 func resume_music() -> void:
 	audio_music.resume()
 
-func set_volume(id: int, volume: float) -> void:
+func set_channel_volume(id: int, volume: float) -> void:
 	audio_music.set_channel_volume(id, volume)
 
 func fade_music(to_volume: float, duration: float) -> void:

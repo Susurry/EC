@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cx1fol84qh5hv"]
+[gd_scene load_steps=15 format=3 uid="uid://cx1fol84qh5hv"]
 
 [ext_resource type="Script" uid="uid://bfkgy11ob2lse" path="res://Scripts/Props/Types/prop_door.gd" id="1_0eo08"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_577e1"]
+[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="2_hm2ch"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_vac3v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gpq78"]
@@ -78,6 +79,7 @@ size = Vector2(16, 7.75)
 [node name="PorteSDB" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_0eo08")
+sfx_door = ExtResource("2_hm2ch")
 
 [node name="PropSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_gpq78")

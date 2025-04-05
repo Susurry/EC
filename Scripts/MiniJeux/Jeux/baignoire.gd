@@ -1,5 +1,7 @@
 extends Control
 
+@export var sfx_valve: AudioStreamWAV
+
 var is_bath_mode: bool = false
 
 @onready var animated_sprite = $SpriteBaignoire
@@ -56,6 +58,8 @@ func shower_stop():
 	valve_button.disabled = false
 
 func _on_button_pressed() -> void:
+	AudioManager.play_sfx(sfx_valve)
+	
 	valve_button.disabled = true
 	if timer.is_stopped():
 		shower_start()
@@ -63,4 +67,6 @@ func _on_button_pressed() -> void:
 		shower_stop()
 
 func _on_bouchon_pressed() -> void:
+	AudioManager.play_sfx(sfx_valve)
+	
 	is_bath_mode = !is_bath_mode

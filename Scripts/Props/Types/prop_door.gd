@@ -1,5 +1,7 @@
 extends Prop
 
+@export var sfx_door: AudioStreamWAV
+
 var toggle_state: bool = false
 var can_open: bool = true
 var is_inside: bool = false
@@ -8,6 +10,8 @@ var is_inside: bool = false
 
 func on_interact(_player: Player) -> void:
 	if can_open and !is_inside:
+		AudioManager.play_sfx(sfx_door, -10.0)
+		
 		if !toggle_state:
 			sprite.play("close_open")
 			toggle_state = true
