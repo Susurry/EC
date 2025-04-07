@@ -25,7 +25,7 @@ func _initialize_viewport() -> void:
 func _initialize_inputs() -> void:
 	match OS.get_name():
 		"Web":
-			if _is_mobile():
+			if EcoUtils.is_on_mobile():
 				inputs = load(controls.types["Mobile"]).instantiate()
 			else:
 				inputs = load(controls.types["Default"]).instantiate()
@@ -36,9 +36,6 @@ func _initialize_inputs() -> void:
 
 func _initialize_dialogic() -> void:
 	Dialogic.start("init")
-
-func _is_mobile() -> bool:
-	return OS.has_feature("web_android") || OS.has_feature("web_ios")
 
 func _setup_resolution_change() -> void:
 	$Viewports.set_size(get_viewport_rect().size)
