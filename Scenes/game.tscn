@@ -1,26 +1,23 @@
-[gd_scene load_steps=50 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=48 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
-[ext_resource type="Script" uid="uid://c08whhhmblpve" path="res://Scripts/UI/OWElements/score.gd" id="3_nnnuy"]
+[ext_resource type="Script" uid="uid://c08whhhmblpve" path="res://Scripts/UI/ScoreElements/score.gd" id="3_nnnuy"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="3_pspsg"]
 [ext_resource type="Script" uid="uid://ctt10x5enmtjc" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
 [ext_resource type="Theme" uid="uid://beo0lsl3ym4d2" path="res://Graphics/UI/Themes/Panel_Container.tres" id="5_hijog"]
-[ext_resource type="Script" uid="uid://bj4mgipt463b8" path="res://Scripts/UI/OWElements/timer.gd" id="6_6ntbc"]
+[ext_resource type="Script" uid="uid://bj4mgipt463b8" path="res://Scripts/UI/TimerElements/timer.gd" id="6_6ntbc"]
 [ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="6_j0fp3"]
 [ext_resource type="Script" uid="uid://cfxk5hxbgtty8" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
 [ext_resource type="AudioStream" uid="uid://bsmgjdcm3c66l" path="res://Audio/SFX/Temp/FB_Bad.wav" id="7_81klo"]
 [ext_resource type="LabelSettings" uid="uid://bjqrdqohjhs6g" path="res://Graphics/UI/Themes/Label_UI.tres" id="7_qvet4"]
-[ext_resource type="Script" uid="uid://c85sqtcabmrmb" path="res://Scripts/UI/OWElements/follower.gd" id="7_r175c"]
+[ext_resource type="Script" uid="uid://c85sqtcabmrmb" path="res://Scripts/UI/ScoreElements/follower.gd" id="7_r175c"]
 [ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
-[ext_resource type="Script" uid="uid://bvjmayxo7glmv" path="res://Scripts/UI/OWElements/grade.gd" id="9_8c7js"]
+[ext_resource type="Script" uid="uid://bvjmayxo7glmv" path="res://Scripts/UI/ScoreElements/grade.gd" id="9_8c7js"]
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
 [ext_resource type="Texture2D" uid="uid://dlnaxsc87amrs" path="res://Graphics/UI/Grade.svg" id="10_ccnpu"]
 [ext_resource type="AudioStream" uid="uid://b0jen6c4xqxv7" path="res://Audio/SFX/Temp/FB_Good.wav" id="10_fkdbe"]
-[ext_resource type="Texture2D" uid="uid://dj2x73g0s5dqt" path="res://Graphics/UI/Timer.svg" id="11_hab27"]
 [ext_resource type="Script" uid="uid://bgnif2jqnff2x" path="res://Scripts/UI/InventoryElements/inventaire.gd" id="12_dga6m"]
-[ext_resource type="PackedScene" uid="uid://dd68i11y1vc5d" path="res://Scenes/UI/InventoryElements/item_inventaire.tscn" id="13_2gf62"]
-[ext_resource type="Resource" uid="uid://bq5ri1v65mysg" path="res://Resources/UI/item_list.tres" id="14_d0qqe"]
 [ext_resource type="Script" uid="uid://nafy3vv6urjt" path="res://Scripts/UI/QuestElements/quest_manager.gd" id="15_kmh8j"]
 [ext_resource type="Resource" uid="uid://bnvvnakxw6yl5" path="res://Resources/UI/quest_list.tres" id="16_r4mnh"]
 [ext_resource type="PackedScene" uid="uid://c584eglnuab88" path="res://Scenes/UI/QuestElements/quest_line.tscn" id="17_1aw0d"]
@@ -36,10 +33,35 @@ shader = ExtResource("3_pspsg")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/width = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxqwe"]
-bg_color = Color(0, 0, 0, 0.588235)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl602"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg4q0"]
+bg_color = Color(0.885351, 0.479543, 3.85046e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm72l"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgy6u"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 7
+corner_radius_bottom_left = 7
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxqwe"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
 corner_detail = 4
 anti_aliasing = false
 
@@ -105,9 +127,9 @@ _data = {
 &"feedback_good": SubResource("Animation_mucmn")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bohx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwurv"]
 bg_color = Color(0, 0, 0, 0.588235)
-corner_radius_bottom_right = 7
+corner_radius_top_left = 7
 corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
@@ -210,22 +232,6 @@ corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl602"]
-bg_color = Color(0, 0, 0, 0.588235)
-corner_radius_top_left = 7
-corner_radius_bottom_left = 7
-corner_detail = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg4q0"]
-bg_color = Color(0.885351, 0.479543, 3.85046e-07, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm72l"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
-font_size = 24
 
 [sub_resource type="FontVariation" id="FontVariation_j7hgd"]
 variation_embolden = 1.0
@@ -358,213 +364,65 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 
-[node name="OWElements" type="MarginContainer" parent="UI"]
+[node name="TimerElements" type="MarginContainer" parent="UI"]
 z_index = 2
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -600.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
 offset_bottom = 155.0
-grow_horizontal = 0
+grow_horizontal = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 
-[node name="Columns" type="VBoxContainer" parent="UI/OWElements"]
+[node name="Columns" type="VBoxContainer" parent="UI/TimerElements"]
 layout_direction = 3
 layout_mode = 2
 theme_override_constants/separation = 130
 
-[node name="Stats" type="HBoxContainer" parent="UI/OWElements/Columns"]
-layout_mode = 2
-theme_override_constants/separation = 90
-
-[node name="Follower" type="Control" parent="UI/OWElements/Columns/Stats"]
-layout_mode = 2
-mouse_filter = 2
-script = ExtResource("7_r175c")
-sfx_follow = ExtResource("10_fkdbe")
-
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Follower"]
-layout_mode = 0
-offset_right = 72.0
-offset_bottom = 72.0
-theme = ExtResource("5_hijog")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Follower/LogoPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Follower/LogoPanel/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("9_hu01s")
-expand_mode = 1
-
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Follower"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 72.0
-offset_right = 62.0
-offset_bottom = 109.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
-
-[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Follower/PanelLabel"]
-layout_mode = 2
-text = "0"
-label_settings = ExtResource("7_qvet4")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/OWElements/Columns/Stats/Follower"]
-libraries = {
-&"": SubResource("AnimationLibrary_oeip8")
-}
-
-[node name="Carbone" type="Control" parent="UI/OWElements/Columns/Stats"]
-layout_mode = 2
-mouse_filter = 2
-script = ExtResource("3_nnnuy")
-sfx_good_score = ExtResource("10_fkdbe")
-sfx_bad_score = ExtResource("7_81klo")
-
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Carbone"]
-layout_mode = 2
-offset_right = 72.0
-offset_bottom = 72.0
-theme = ExtResource("5_hijog")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Carbone/LogoPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Carbone/LogoPanel/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("6_j0fp3")
-expand_mode = 1
-
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Carbone"]
-layout_mode = 2
-offset_left = 9.0
-offset_top = 72.0
-offset_right = 62.0
-offset_bottom = 109.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_0bohx")
-
-[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Carbone/PanelLabel"]
-layout_mode = 2
-text = "10.0"
-label_settings = ExtResource("7_qvet4")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/OWElements/Columns/Stats/Carbone"]
-libraries = {
-&"": SubResource("AnimationLibrary_mucmn")
-}
-
-[node name="Grade" type="Control" parent="UI/OWElements/Columns/Stats"]
-visible = false
-layout_mode = 2
-mouse_filter = 2
-script = ExtResource("9_8c7js")
-
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Grade"]
-layout_mode = 0
-offset_right = 72.0
-offset_bottom = 72.0
-theme = ExtResource("5_hijog")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Grade/LogoPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Grade/LogoPanel/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("10_ccnpu")
-expand_mode = 1
-
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Grade"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 72.0
-offset_right = 62.0
-offset_bottom = 109.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cxa5y")
-
-[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Grade/PanelLabel"]
-layout_mode = 2
-text = "C"
-label_settings = ExtResource("7_qvet4")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Timer" type="Control" parent="UI/OWElements/Columns/Stats"]
+[node name="Timer" type="Control" parent="UI/TimerElements/Columns"]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("6_6ntbc")
 heure = 2
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer"]
-layout_mode = 0
-offset_right = 72.0
-offset_bottom = 72.0
-theme = ExtResource("5_hijog")
+[node name="BarreTemps" type="VBoxContainer" parent="UI/TimerElements/Columns/Timer"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.0
+offset_right = 219.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Timer/LogoPanel"]
+[node name="PanelLabel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="TextureRect" type="TextureRect" parent="UI/OWElements/Columns/Stats/Timer/LogoPanel/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("11_hab27")
-expand_mode = 1
-
-[node name="PanelLabel" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer"]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 8.0
-offset_right = 231.0
-offset_bottom = 64.0
+size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bl602")
 
-[node name="Label" type="Label" parent="UI/OWElements/Columns/Stats/Timer/PanelLabel"]
+[node name="Label" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelLabel"]
 layout_mode = 2
 text = "00 : 00 : 00"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BarreTemps" type="VBoxContainer" parent="UI/OWElements/Columns/Stats/Timer"]
-layout_direction = 2
-layout_mode = 0
-offset_left = -967.0
-offset_right = -529.0
-offset_bottom = 59.0
-theme_override_constants/separation = 0
-
-[node name="PanelProgressBar" type="PanelContainer" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps"]
+[node name="PanelProgressBar" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelProgressBar"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="TimeBar" type="ProgressBar" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar"]
+[node name="TimeBar" type="ProgressBar" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelProgressBar"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/fill = SubResource("StyleBoxFlat_mg4q0")
@@ -573,7 +431,7 @@ max_value = 0.0
 value = -3000.0
 show_percentage = false
 
-[node name="ChangeTimeBar" type="ProgressBar" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar/TimeBar"]
+[node name="ChangeTimeBar" type="ProgressBar" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelProgressBar/TimeBar"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -587,26 +445,175 @@ max_value = 0.0
 value = -2000.0
 show_percentage = false
 
-[node name="TimerBarIndicateur" type="Label" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps"]
+[node name="TimerBarIndicateur" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
 text = "> > >"
 label_settings = SubResource("LabelSettings_mg4q0")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="UI/OWElements/Columns/Stats/Timer"]
-layout_mode = 0
-offset_left = 632.0
-offset_top = 35.0
-offset_right = 751.0
-offset_bottom = 66.0
+[node name="Button" type="Button" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
 text = "Enlever 1000 s"
 
-[node name="Inventaire" type="HBoxContainer" parent="UI/OWElements/Columns"]
+[node name="Stats" type="HBoxContainer" parent="UI/TimerElements/Columns"]
 layout_mode = 2
-theme_override_constants/separation = 70
+theme_override_constants/separation = 90
+alignment = 1
+
+[node name="ScoreElements" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 25
+
+[node name="Rows" type="HBoxContainer" parent="UI/ScoreElements"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Inventaire" type="GridContainer" parent="UI/ScoreElements/Rows"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 36
+columns = 2
 script = ExtResource("12_dga6m")
-item_display = ExtResource("13_2gf62")
-list_item = ExtResource("14_d0qqe")
+
+[node name="Score" type="VBoxContainer" parent="UI/ScoreElements/Rows"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Follower" type="Control" parent="UI/ScoreElements/Rows/Score"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("7_r175c")
+sfx_follow = ExtResource("10_fkdbe")
+
+[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tgy6u")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("9_hu01s")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 144.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
+
+[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Follower/PanelLabel"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("7_qvet4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScoreElements/Rows/Score/Follower"]
+libraries = {
+&"": SubResource("AnimationLibrary_oeip8")
+}
+
+[node name="Carbone" type="Control" parent="UI/ScoreElements/Rows/Score"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3_nnnuy")
+sfx_good_score = ExtResource("10_fkdbe")
+sfx_bad_score = ExtResource("7_81klo")
+
+[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
+layout_mode = 2
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cwurv")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Carbone/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Carbone/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_j0fp3")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 144.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
+
+[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Carbone/PanelLabel"]
+layout_mode = 2
+text = "10.0"
+label_settings = ExtResource("7_qvet4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScoreElements/Rows/Score/Carbone"]
+libraries = {
+&"": SubResource("AnimationLibrary_mucmn")
+}
+
+[node name="Grade" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("timer_element")]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("9_8c7js")
+timer_element = NodePath("../../../../TimerElements/Columns/Timer")
+
+[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Grade"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme = ExtResource("5_hijog")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Grade/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Grade/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_ccnpu")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Grade"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 72.0
+offset_right = 62.0
+offset_bottom = 109.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cxa5y")
+
+[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Grade/PanelLabel"]
+layout_mode = 2
+text = "C"
+label_settings = ExtResource("7_qvet4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DebugElements" type="MarginContainer" parent="UI"]
 z_index = 2
@@ -767,8 +774,8 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -300.0
-offset_top = -250.0
-offset_bottom = 250.0
+offset_top = -315.0
+offset_bottom = 185.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("15_kmh8j")
@@ -842,7 +849,7 @@ libraries = {
 autoplay = "bobbing"
 
 [connection signal="pressed" from="Viewports/MinigameElements/Button" to="Viewports/MinigameElements" method="erase_minigame"]
-[connection signal="pressed" from="UI/OWElements/Columns/Stats/Timer/Button" to="UI/OWElements/Columns/Stats/Timer" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/TimerElements/Columns/Timer/BarreTemps/Button" to="UI/TimerElements/Columns/Timer" method="_on_button_pressed"]
 [connection signal="text_submitted" from="UI/DebugElements/Rows/LineEdit" to="UI/DebugElements" method="_on_line_edit_text_submitted"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/RespawnDebug" to="UI/DebugElements" method="_on_respawn_debug_item_selected"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/MapDebug" to="UI/DebugElements" method="_on_option_button_item_selected"]
