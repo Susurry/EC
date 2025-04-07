@@ -20,8 +20,8 @@ func _ready() -> void:
 	_initialize_signals()
 
 func _initialize_timer() -> void:
-	time_label.text = format_string % [heure, minute, seconde]
-	time = (heure * 3600) + (minute * 60) + seconde
+	time_label.text = format_string % [heure, minute, seconde] # Affiche le temps en format HH : MM : SS
+	time = (heure * 3600) + (minute * 60) + seconde # Calcul du temps initial en secs
 	changing_timer_bar.visible = false
 
 func _initialize_signals() -> void:
@@ -47,7 +47,8 @@ func change_time(var_time: float) -> void:
 	if var_time < 0:
 		changing_timer_bar.visible = true
 		changing_timer_bar.value = -time
-		
+	
+	# Animation de la bar de temps / thermomètre
 	tween = create_tween()
 	tween.connect("finished", tween.kill)
 	tween.tween_property(timer_bar, "value", -time, 0.5)

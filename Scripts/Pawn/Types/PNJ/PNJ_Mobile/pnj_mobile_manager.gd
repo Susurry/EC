@@ -11,6 +11,7 @@ var spawn_target_array: Array[Vector2]
 func _ready() -> void:
 	initialize_paths()
 	for i in pnj_quantity:
+		# Crée un PNJ toutes les secondes, jusqu'au nombre de PNJ shouaité
 		initialize_pnj()
 		await get_tree().create_timer(1).timeout 
 
