@@ -574,7 +574,6 @@ value = -3000.0
 show_percentage = false
 
 [node name="ChangeTimeBar" type="ProgressBar" parent="UI/OWElements/Columns/Stats/Timer/BarreTemps/PanelProgressBar/TimeBar"]
-visible = false
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -595,7 +594,6 @@ label_settings = SubResource("LabelSettings_mg4q0")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="UI/OWElements/Columns/Stats/Timer"]
-visible = false
 layout_mode = 0
 offset_left = 632.0
 offset_top = 35.0
