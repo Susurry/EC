@@ -1,0 +1,9 @@
+label book1
+Postier: Bienvenue au centre-ville gamin !
+Postier: Dis, t'as un peu de temps devant toi ? Je dois livrer des colis en ville, mais mon camion de livraison est en panne.
+Postier: Je le ferai bien à pieds, mais je commence un peu à me faire vieux... Est-ce que tu pourrai me filer un coup de main ?
+- Oui
+	Postier: Nickel ! Je te confie la quête dès que celle-ci existe !
+- Non
+	Postier: Ah, je comprend, tu dois avoir des choses plus importantes à faire. Reviens me voir si tu changes d'avis si jamais !
+[end_timeline]
