@@ -8,6 +8,7 @@ func initialize() -> void:
 		Dialogic.start(timeline)
 	
 	if SaveManager.getElement("Quests", "0-1_deplacer") == true:
+		# Supprime la mission si elle est déjà accomplie
 		$MissionMoveCheck.queue_free()
 	else:
 		$MissionMoveCheck.initialize_quest(get_parent().player)
