@@ -10,9 +10,10 @@ var format_string = "%02d : %02d : %02d"
 var tween: Tween
 var is_tweening: bool
 
-@onready var time_label = $PanelLabel/Label
+@onready var time_label = $BarreTemps/PanelLabel/Label
 @onready var timer_bar = $BarreTemps/PanelProgressBar/TimeBar
 @onready var changing_timer_bar = $BarreTemps/PanelProgressBar/TimeBar/ChangeTimeBar
+@onready var time_multi_label = $BarreTemps/TimerBarIndicateur
 
 func _ready() -> void:
 	_initialize_timer()
