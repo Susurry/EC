@@ -139,6 +139,7 @@ region = Rect2(227, 16, 15, 18)
 y_sort_enabled = true
 script = ExtResource("1_8h08n")
 background_color = Color(0.227451, 0.227451, 0.313726, 1)
+camera_zoom = 6
 limit_left = -144
 limit_right = 384
 limit_top = -80
