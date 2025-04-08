@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=47 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dnhbmnrhr0bam" path="res://Graphics/Characters/Generic/character_generic27.png" id="26_whdg5"]
 [ext_resource type="Texture2D" uid="uid://bx4c1ixbp3uvi" path="res://Graphics/Characters/Generic/character_generic28.png" id="27_vn6re"]
 [ext_resource type="Script" uid="uid://b2k14hdfnse31" path="res://Scripts/Events/PeriphOuest/mission_eboueur.gd" id="28_1cwe4"]
+[ext_resource type="Texture2D" uid="uid://2tn8hjie0wpr" path="res://Graphics/Characters/character_reparateur.png" id="29_7f4wu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
 atlas = ExtResource("4_4y10b")
@@ -85,6 +86,12 @@ shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c4beq"]
+resource_local_to_scene = true
+shader = ExtResource("16_6cxdi")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whdg5"]
 resource_local_to_scene = true
 shader = ExtResource("16_6cxdi")
 shader_parameter/line_color = Color(1, 1, 1, 1)
@@ -355,6 +362,15 @@ metadata/_edit_group_ = true
 material = SubResource("ShaderMaterial_c4beq")
 texture = ExtResource("25_whdg5")
 
+[node name="PNJ_reparateur" parent="PNJs" instance=ExtResource("13_5c4ie")]
+position = Vector2(623, 160)
+timeline = "dial_test"
+metadata/_edit_group_ = true
+
+[node name="Skin" parent="PNJs/PNJ_reparateur" index="1"]
+material = SubResource("ShaderMaterial_whdg5")
+texture = ExtResource("29_7f4wu")
+
 [node name="Cutscenes" type="Node2D" parent="."]
 script = ExtResource("20_k5lkh")
 
@@ -392,3 +408,4 @@ camion_eboueur = NodePath("../../Props/CamionPoubelle")
 [editable path="PNJs/PNJ_Random3"]
 [editable path="PNJs/PNJ_Random4"]
 [editable path="PNJs/PNJ_Livraison2"]
+[editable path="PNJs/PNJ_reparateur"]

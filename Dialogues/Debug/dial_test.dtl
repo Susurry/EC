@@ -1,6 +1,11 @@
 label book1
-This is the first time we've talked...
+I am Error.
+do EventBus.emit_signal("add_item", "Casque")
+do EventBus.emit_signal("add_item", "Carte")
+do EventBus.emit_signal("add_item", "Colis")
+do EventBus.emit_signal("add_item", "Pieces")
+do EventBus.emit_signal("add_item", "Trash")
 [end_timeline]
 label book2
-Now it isn't...
+I am not Error!
 [end_timeline]

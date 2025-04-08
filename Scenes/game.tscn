@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=50 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -12,8 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://bsmgjdcm3c66l" path="res://Audio/SFX/Temp/FB_Bad.wav" id="7_81klo"]
 [ext_resource type="LabelSettings" uid="uid://bjqrdqohjhs6g" path="res://Graphics/UI/Themes/Label_UI.tres" id="7_qvet4"]
 [ext_resource type="Script" uid="uid://c85sqtcabmrmb" path="res://Scripts/UI/ScoreElements/follower.gd" id="7_r175c"]
+[ext_resource type="PackedScene" uid="uid://dd68i11y1vc5d" path="res://Scenes/UI/InventoryElements/item_inventaire.tscn" id="8_tgy6u"]
 [ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
 [ext_resource type="Script" uid="uid://bvjmayxo7glmv" path="res://Scripts/UI/ScoreElements/grade.gd" id="9_8c7js"]
+[ext_resource type="Resource" uid="uid://bq5ri1v65mysg" path="res://Resources/UI/item_list.tres" id="9_cwurv"]
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
 [ext_resource type="Texture2D" uid="uid://dlnaxsc87amrs" path="res://Graphics/UI/Grade.svg" id="10_ccnpu"]
 [ext_resource type="AudioStream" uid="uid://b0jen6c4xqxv7" path="res://Audio/SFX/Temp/FB_Good.wav" id="10_fkdbe"]
@@ -483,6 +485,8 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 36
 columns = 2
 script = ExtResource("12_dga6m")
+item_display = ExtResource("8_tgy6u")
+list_item = ExtResource("9_cwurv")
 
 [node name="Score" type="VBoxContainer" parent="UI/ScoreElements/Rows"]
 layout_mode = 2
