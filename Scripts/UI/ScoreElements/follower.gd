@@ -23,4 +23,4 @@ func add_follower(arg: int = 1) -> void:
 	follower += arg
 	follower_label.text = str(follower)
 	grade_element.update_grading()
-	time_element.change_time(1000)
+	time_element.change_time(180)
