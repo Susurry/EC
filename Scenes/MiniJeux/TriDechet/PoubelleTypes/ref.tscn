@@ -18,7 +18,7 @@ shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0v8tn"]
 atlas = ExtResource("2_gbcub")
-region = Rect2(17, 0, 17, 20)
+region = Rect2(0, 0, 17, 20)
 
 [node name="Poubelle" type="Button"]
 offset_right = 218.0
