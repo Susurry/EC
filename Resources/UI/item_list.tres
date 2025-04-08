@@ -5,6 +5,9 @@
 [resource]
 script = ExtResource("1_kinnu")
 dictionnaire = Dictionary[String, String]({
-"gens": "uid://bxlgsb6fsifr8",
-"montre": "uid://dj2x73g0s5dqt"
+"Carte": "uid://td8y23u7wg71",
+"Casque": "uid://bg5vnm88p28xa",
+"Colis": "uid://dadthpdr6h1qc",
+"Pieces": "uid://ncjxqjpo4lfd",
+"Trash": "uid://dr8m7vpohbvw0"
 })
