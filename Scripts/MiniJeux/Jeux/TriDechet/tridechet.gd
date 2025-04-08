@@ -9,6 +9,9 @@ const ITEM_SPAWN_MARGIN: int = 50
 var score: float
 var trash_count: int
 var z_index_tracker: int
+var holding_trash: bool = false
+
+@onready var timer = $Timer
 
 func _ready() -> void:
 	randomize()
@@ -34,3 +37,7 @@ func _on_timer_timeout() -> void:
 		trash_instance.position.x = randf_range(ITEM_SPAWN_MARGIN, size.x - ITEM_SPAWN_MARGIN)
 		
 		add_child(trash_instance)
+
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
+	timer.start()
+	_on_timer_timeout()
