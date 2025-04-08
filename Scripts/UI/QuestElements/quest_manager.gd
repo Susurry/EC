@@ -28,7 +28,6 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	
 	var new_quest_label: Label = new_quest.get_node("Panel/Label")
 	var new_quest_margin: MarginContainer = new_quest.get_node("Margin")
-	#var quest_animations: PanelContainer = new_quest.get_node("AnimationPlayer")
 	
 	match (new_quest_data.type): # Ajoute un style différent en fonction du type de quête
 		0:
