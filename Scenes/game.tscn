@@ -492,11 +492,12 @@ list_item = ExtResource("9_cwurv")
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Follower" type="Control" parent="UI/ScoreElements/Rows/Score"]
+[node name="Follower" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("time_element")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("7_r175c")
 sfx_follow = ExtResource("10_fkdbe")
+time_element = NodePath("../../../../TimerElements/Columns/Timer")
 
 [node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
 layout_mode = 0
