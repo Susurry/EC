@@ -1,10 +1,5 @@
 label book1
 I am Error.
-do EventBus.emit_signal("add_item", "Casque")
-do EventBus.emit_signal("add_item", "Carte")
-do EventBus.emit_signal("add_item", "Colis")
-do EventBus.emit_signal("add_item", "Pieces")
-do EventBus.emit_signal("add_item", "Trash")
 [end_timeline]
 label book2
 I am not Error!

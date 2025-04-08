@@ -1,3 +1,25 @@
-label book1
-J'attend un colis que j'ai commandé en ligne, celui-ci ne devrait pas tarder à arriver !
-[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison2") == true:
+	J'en suis sure que cette nouvelle robe m'ira à ravir cet été !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison2") == false:
+	Oh, tu as mon colis ? Chouette, merci !
+	do SaveManager.setElement("Quests", {"S_livraison2": true})
+	do EventBus.emit_signal("set_empreinte", -0.2)
+	do EventBus.emit_signal("remove_item", "Colis")
+	C'est bien pratique les commandes en ligne, je suis vraiment fan personnellement !
+	Sauf que l'autre jour, j'ai commandé un tas de vêtement, mais aucun ne m'allaient... Ils prennent maintenant de la place dans mon armoire, qu'est-ce que je devrai en faire selon toi ?
+	- Les retourner
+		C'est vrai que c'est une option ! En plus, les sites rendent ça très facile, on peut renvoyer nos colis tellement facilement aujourd'hui !
+	- les donner, ou les revendre
+		do EventBus.emit_signal("add_follower", 1)
+		Hmm, c'est vrai que les donner pourrait être pas mal, ça évitera les coûts en transport inutiles.
+		En plus, les gens pourrons profiter de mes superbes goûts ! 
+	- les recycler
+		Pourquoi pas mais c'est dommage, ils n'auront servi à rien ! Au moins rien n'est perdu j'imagine !
+	- les laisser s'entasser dans ton placard
+		... Peut-être que s'ils attentent un moment, d'ici là ma carrure aura changé et qu'ils m'iront comme un gant ? En espérant que la mode ne change pas trop vite !
+	En tout cas je prend note, Merci ! Et merci aussi d'avoir aidé notre livreur aujourd'hui, c'est de ça en moins pour notre ami débordé !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_livraison2") == null:
+	J'attend une livraison, surement le livreur est en chemin !
+	[end_timeline]
