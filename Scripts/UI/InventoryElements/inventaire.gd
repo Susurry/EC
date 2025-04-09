@@ -16,12 +16,20 @@ func _initialize_inventaire() -> void:
 
 func add_item(item_name: String) -> void:
 	var item_load: Control = item_display.instantiate()
-	item_load.name = item_name
+	item_load.name = find_new_name(item_name)
 	item_load.get_node("PanelContainer/TextureRect").texture = load(list_item.dictionnaire[item_name])
+	
 	add_child(item_load)
 	
 	item_list.append(item_name)
 	_save_inventory()
+
+func find_new_name(item_name: String) -> String:
+	for i in range(1, get_child_count() + 1):
+		var new_name: String = str(item_name, i)
+		if not has_node(new_name):
+			return new_name
+	return item_name
 
 func remove_item(item_name: String) -> void:
 	for i in item_list.size():
