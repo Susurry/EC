@@ -1,0 +1,12 @@
+if SaveManager.getElement("Quests", "S_vélo1") == null:
+	Il fait super beau aujourd'hui !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == false:
+	Tu es là pour un colis ?
+	Tiens voici les pièces du vélo.
+	do EventBus.emit_signal("add_item", "Pieces")
+	do SaveManager.setElement("Quests", {"S_vélo1": true})
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == true:
+	Je t'ai déjà filé les pièces du vélo !!
+	[end_timeline]

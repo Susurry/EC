@@ -1,0 +1,33 @@
+if SaveManager.getElement("Quests", "S_vélo2") == false:
+	Est-ce que t'es prêt à réparer ton vélo ?
+	- Oui
+		Nickel, je te confie le mini-jeu dès que voilà !
+	- Non
+		Pas grave, de toute façon le mini-jeu n'est pas encore prêt !
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo2") == true:
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == null:
+	Ah, te voilà !
+	J'ai commencé les réparations sur ton vélo. Cependant, il manque des pièces importantes pour finir de l'assembler.
+	Ces pièces ont été livrées au magasin du Centre-Ville, est-ce que tu peux aller les récupérer ?
+	- Oui
+		do SaveManager.setElement("Quests", {"S_vélo1": false})
+		Parfait ! Le magasin est au Sud du parc, face à la plage. Tu pourras difficilement le manquer.
+		Une fois que tu as récupéré les pièces, reviens me voir.
+	- Non
+		C'est comme tu veux, mais ton vélo va devoir rester ici en attendant.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == false:
+	Le magasin est au Sud du parc, face à la plage.
+	C'est cool d'avoir un magasin face à la mer, je suis jaloux.
+	[end_timeline]
+if SaveManager.getElement("Quests", "S_vélo1") == true:
+	do SaveManager.setElement("Quests", {"S_vélo2": false})
+	Parfait, je vois que tu as les pièces qu'ils manquent.
+	Mon atelier réparation vélo est en libre service, je t'invite à le réparer toi-même !
+	- Oui
+		Nickel, je te confie le mini-jeu dès que voilà !
+	- Non
+		Pas grave, de toute façon le mini-jeu n'est pas encore prêt !
+	[end_timeline]
