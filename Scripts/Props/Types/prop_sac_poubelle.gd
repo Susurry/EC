@@ -15,6 +15,7 @@ func on_interact(player: Player) -> void:
 		super(player)
 	elif SaveManager.getElement("Quests", "3-1_ramasser") == false: # Quête active
 		AudioManager.play_sfx(sfx_pick_up, -5.0)
+		EventBus.emit_signal("add_item", "Trash")
 		
 		var poubelle_data: Array[bool] = SaveManager.getElement("Missions", "Poubelle")
 		poubelle_data[id] = true
