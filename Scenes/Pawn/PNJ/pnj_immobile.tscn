@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://wrsox72avo62"]
+[gd_scene load_steps=39 format=3 uid="uid://wrsox72avo62"]
 
 [ext_resource type="Script" uid="uid://cudjjhnq77mhl" path="res://Scripts/Pawn/Types/PNJ/pnj.gd" id="1_xybwu"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="1_y7sa2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="3_xybwu"]
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/state_pathfinding.gd" id="4_x2a3f"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="4_xybwu"]
+[ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_mdncn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x2a3f"]
 resource_local_to_scene = true
@@ -336,6 +337,12 @@ radius = 8.0
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 radius = 8.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.294118)
+z_index = -1
+position = Vector2(0, 4)
+texture = ExtResource("8_mdncn")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

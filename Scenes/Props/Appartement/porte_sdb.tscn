@@ -71,10 +71,10 @@ animations = [{
 size = Vector2(22, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
-size = Vector2(16, 7.75)
+size = Vector2(16, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bd6ge"]
-size = Vector2(16, 7.75)
+size = Vector2(16, 8)
 
 [node name="PorteSDB" type="Node2D"]
 y_sort_enabled = true
