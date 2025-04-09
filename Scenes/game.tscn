@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=54 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ctt10x5enmtjc" path="res://Scripts/Debug/debug_version.gd" id="5_3c3ax"]
 [ext_resource type="Theme" uid="uid://beo0lsl3ym4d2" path="res://Graphics/UI/Themes/Panel_Container.tres" id="5_hijog"]
 [ext_resource type="Script" uid="uid://bj4mgipt463b8" path="res://Scripts/UI/TimerElements/timer.gd" id="6_6ntbc"]
+[ext_resource type="Script" uid="uid://dkksiofqx8gp7" path="res://Scenes/UI/TEMP_hover.gd" id="6_8m3t6"]
 [ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="6_j0fp3"]
 [ext_resource type="Script" uid="uid://cfxk5hxbgtty8" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
 [ext_resource type="AudioStream" uid="uid://bsmgjdcm3c66l" path="res://Audio/SFX/Temp/FB_Bad.wav" id="7_81klo"]
@@ -28,6 +29,8 @@
 [ext_resource type="Script" uid="uid://pgfwtff66dch" path="res://Scripts/UI/pointer.gd" id="25_22asu"]
 [ext_resource type="AudioStream" uid="uid://bjhtvd1epxpd" path="res://Audio/SFX/Temp/FB_QuestNew.wav" id="26_cwurv"]
 [ext_resource type="AudioStream" uid="uid://dcqkt8mbujfqy" path="res://Audio/SFX/Temp/FB_QuestDone.wav" id="27_mucmn"]
+[ext_resource type="Texture2D" uid="uid://8r41d4uqagr5" path="res://Graphics/TEMP/WIP_Thermomètre.png" id="29_mucmn"]
+[ext_resource type="Texture2D" uid="uid://b8knp86055yjx" path="res://Graphics/TEMP/WIP_SUn.png" id="30_8m3t6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gghaa"]
 resource_local_to_scene = true
@@ -44,24 +47,27 @@ corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
 
+[sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
+font_size = 24
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.72549)
+shadow_offset = Vector2(0, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg4q0"]
 bg_color = Color(0.885351, 0.479543, 3.85046e-07, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm72l"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
-font_size = 24
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgy6u"]
-bg_color = Color(0, 0, 0, 0.588235)
+bg_color = Color(0, 0, 0, 0)
 corner_radius_top_left = 7
 corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxqwe"]
-bg_color = Color(0, 0, 0, 0.588235)
+bg_color = Color(0, 0, 0, 0)
 corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_detail = 4
@@ -130,7 +136,7 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwurv"]
-bg_color = Color(0, 0, 0, 0.588235)
+bg_color = Color(0, 0, 0, 0)
 corner_radius_top_left = 7
 corner_radius_bottom_left = 7
 corner_detail = 4
@@ -411,8 +417,10 @@ offset_right = 219.0
 offset_bottom = 59.0
 grow_horizontal = 2
 theme_override_constants/separation = 5
+script = ExtResource("6_8m3t6")
 
 [node name="PanelLabel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bl602")
@@ -423,6 +431,12 @@ text = "00 : 00 : 00"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimerBarIndicateur" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
+layout_mode = 2
+text = "> > >"
+label_settings = SubResource("LabelSettings_mg4q0")
+horizontal_alignment = 1
 
 [node name="PanelProgressBar" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
@@ -456,12 +470,6 @@ max_value = 0.0
 value = -2000.0
 show_percentage = false
 
-[node name="TimerBarIndicateur" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
-layout_mode = 2
-text = "> > >"
-label_settings = SubResource("LabelSettings_mg4q0")
-horizontal_alignment = 1
-
 [node name="Button" type="Button" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 visible = false
 layout_mode = 2
@@ -478,9 +486,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -295.0
-offset_right = -15.0
-offset_bottom = 200.0
+offset_left = -2099.0
+offset_top = 443.0
+offset_right = -1819.0
+offset_bottom = 643.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 25
 
@@ -501,8 +510,10 @@ time_element = NodePath("../../../../TimerElements/Columns/Timer")
 
 [node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
 layout_mode = 0
-offset_right = 72.0
-offset_bottom = 72.0
+offset_left = 1145.0
+offset_top = -379.0
+offset_right = 1217.0
+offset_bottom = -307.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tgy6u")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel"]
@@ -519,9 +530,10 @@ expand_mode = 1
 
 [node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
 layout_mode = 0
-offset_left = 72.0
-offset_right = 144.0
-offset_bottom = 72.0
+offset_left = 1217.0
+offset_top = -379.0
+offset_right = 1289.0
+offset_bottom = -307.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
 [node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Follower/PanelLabel"]
@@ -545,8 +557,10 @@ sfx_bad_score = ExtResource("7_81klo")
 
 [node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
 layout_mode = 2
-offset_right = 72.0
-offset_bottom = 72.0
+offset_left = 989.0
+offset_top = -479.0
+offset_right = 1061.0
+offset_bottom = -407.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cwurv")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Carbone/LogoPanel"]
@@ -563,9 +577,10 @@ expand_mode = 1
 
 [node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
 layout_mode = 0
-offset_left = 72.0
-offset_right = 144.0
-offset_bottom = 72.0
+offset_left = 1061.0
+offset_top = -479.0
+offset_right = 1133.0
+offset_bottom = -407.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
 [node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Carbone/PanelLabel"]
@@ -646,12 +661,16 @@ list_item = ExtResource("9_cwurv")
 [node name="DebugElements" type="MarginContainer" parent="UI"]
 z_index = 2
 layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
 offset_right = 318.0
-offset_bottom = 100.0
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 25
 script = ExtResource("5_3c3ax")
 
 [node name="Rows" type="HBoxContainer" parent="UI/DebugElements"]
@@ -802,8 +821,8 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -300.0
-offset_top = -315.0
-offset_bottom = 185.0
+offset_top = -219.0
+offset_bottom = 281.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("15_kmh8j")
@@ -876,7 +895,19 @@ libraries = {
 }
 autoplay = "bobbing"
 
+[node name="TEMP_Thermometre" type="Sprite2D" parent="UI"]
+position = Vector2(714, 49)
+texture = ExtResource("29_mucmn")
+centered = false
+
+[node name="TEMP_Soleil" type="Sprite2D" parent="UI"]
+position = Vector2(1132, 30)
+texture = ExtResource("30_8m3t6")
+centered = false
+
 [connection signal="pressed" from="Viewports/MinigameElements/Button" to="Viewports/MinigameElements" method="erase_minigame"]
+[connection signal="mouse_entered" from="UI/TimerElements/Columns/Timer/BarreTemps" to="UI/TimerElements/Columns/Timer/BarreTemps" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/TimerElements/Columns/Timer/BarreTemps" to="UI/TimerElements/Columns/Timer/BarreTemps" method="_on_mouse_exited"]
 [connection signal="pressed" from="UI/TimerElements/Columns/Timer/BarreTemps/Button" to="UI/TimerElements/Columns/Timer" method="_on_button_pressed"]
 [connection signal="text_submitted" from="UI/DebugElements/Rows/LineEdit" to="UI/DebugElements" method="_on_line_edit_text_submitted"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/RespawnDebug" to="UI/DebugElements" method="_on_respawn_debug_item_selected"]

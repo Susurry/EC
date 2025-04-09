@@ -2,3 +2,6 @@
 
 [resource]
 font_size = 24
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.686275)
+shadow_offset = Vector2(0, 0)
