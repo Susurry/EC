@@ -80,4 +80,3 @@ func _on_bouchon_pressed(toggled_on: bool) -> void:
 		bouchon_button.position = pos_bouch.position
 	else:
 		bouchon_button.position = pos_debouch.position
-	print(toggled_on)
