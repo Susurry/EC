@@ -1,17 +1,23 @@
 extends Control
 
 @export var sfx_valve: AudioStreamWAV
+@export var pos_bouch: Node2D
+@export var pos_debouch: Node2D
 
 var is_bath_mode: bool = false
 
 @onready var animated_sprite = $SpriteBaignoire
-@onready var bouchon_button = $Bouchon
+@onready var bouchon_button = $BouchonElements/Bouchon
 @onready var valve_button = $SpriteBaignoire/ValveDroite
 @onready var timer = $Timer
 @onready var progress_bar: ProgressBar = $ProgressBar
 
 func shower_start() -> void:
-	bouchon_button.visible = false
+	bouchon_button.mouse_filter = MOUSE_FILTER_IGNORE
+	if is_bath_mode:
+		bouchon_button.visible = false
+		valve_button.visible = false
+	
 	animated_sprite.play("start_shower")
 	await animated_sprite.animation_finished
 	timer.start()
@@ -66,7 +72,12 @@ func _on_button_pressed() -> void:
 	else:
 		shower_stop()
 
-func _on_bouchon_pressed() -> void:
+func _on_bouchon_pressed(toggled_on: bool) -> void:
 	AudioManager.play_sfx(sfx_valve)
+	is_bath_mode = toggled_on
 	
-	is_bath_mode = !is_bath_mode
+	if toggled_on:
+		bouchon_button.position = pos_bouch.position
+	else:
+		bouchon_button.position = pos_debouch.position
+	print(toggled_on)

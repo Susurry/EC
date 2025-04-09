@@ -1,11 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://dgpu4hmb3vlfw"]
+[gd_scene load_steps=32 format=3 uid="uid://dgpu4hmb3vlfw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_7gsmj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_3ua7n"]
-[ext_resource type="Script" uid="uid://bvia05yei278y" path="res://Scripts/MiniJeux/Jeux/baignoire.gd" id="2_3w5rc"]
+[ext_resource type="Script" uid="uid://bvia05yei278y" path="res://Scripts/MiniJeux/Jeux/Baignoire/baignoire.gd" id="2_3w5rc"]
 [ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="3_jv3uq"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_0rf1o"]
 [ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="5_1kvi7"]
+[ext_resource type="Script" uid="uid://bu6mobch8a4to" path="res://Scripts/MiniJeux/Jeux/Baignoire/hover.gd" id="6_ot1v4"]
+[ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_6m5wv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlaqs"]
 atlas = ExtResource("2_3ua7n")
@@ -154,26 +156,41 @@ animations = [{
 atlas = ExtResource("2_3ua7n")
 region = Rect2(7, 21, 4, 4)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ot1v4"]
+shader = ExtResource("7_6m5wv")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_mns28"]
 atlas = ExtResource("5_1kvi7")
 region = Rect2(173, 53, 8, 8)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jv3uq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6m5wv"]
+atlas = SubResource("AtlasTexture_mns28")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dj4r4"]
+shader = ExtResource("7_6m5wv")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kvi7"]
 atlas = ExtResource("4_0rf1o")
-region = Rect2(49, 2, 5, 3)
+region = Rect2(47, 0, 9, 7)
 
 [node name="Baignoire" type="Node2D"]
 script = ExtResource("1_7gsmj")
 end_timeline = "Baignoire"
 bookmark = 2
 
-[node name="WindowSize" type="Control" parent="."]
+[node name="WindowSize" type="Control" parent="." node_paths=PackedStringArray("pos_bouch", "pos_debouch")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 650.0
 script = ExtResource("2_3w5rc")
 sfx_valve = ExtResource("3_jv3uq")
+pos_bouch = NodePath("BouchonElements/PosBoucher")
+pos_debouch = NodePath("BouchonElements/PosDeboucher")
 
 [node name="SpriteBaignoire" type="AnimatedSprite2D" parent="WindowSize"]
 position = Vector2(400, 325)
@@ -183,7 +200,7 @@ animation = &"start_shower"
 autoplay = "default"
 
 [node name="ValveGauche" type="Sprite2D" parent="WindowSize/SpriteBaignoire"]
-modulate = Color(0.539663, 0.539663, 0.539663, 1)
+modulate = Color(0.29219, 0.29219, 0.29219, 1)
 position = Vector2(-7, -9)
 texture = SubResource("AtlasTexture_h6tp1")
 
@@ -194,28 +211,14 @@ offset_right = 13.0
 offset_bottom = -3.0
 scale = Vector2(0.5, 0.499)
 focus_mode = 0
-icon = SubResource("AtlasTexture_mns28")
 flat = true
-icon_alignment = 1
-expand_icon = true
+script = ExtResource("6_ot1v4")
 
-[node name="Bouchon" type="Button" parent="WindowSize"]
-layout_mode = 0
-offset_left = 375.0
-offset_top = 381.0
-offset_right = 425.0
-offset_bottom = 409.0
-focus_mode = 0
-theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
-theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 8
-toggle_mode = true
-icon = SubResource("AtlasTexture_jv3uq")
-flat = true
-icon_alignment = 1
-expand_icon = true
+[node name="Sprite2D" type="Sprite2D" parent="WindowSize/SpriteBaignoire/ValveDroite"]
+material = SubResource("ShaderMaterial_ot1v4")
+position = Vector2(4, 4.00801)
+scale = Vector2(2, 2.00401)
+texture = SubResource("AtlasTexture_6m5wv")
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
 visible = false
@@ -229,6 +232,40 @@ show_percentage = false
 
 [node name="Timer" type="Timer" parent="WindowSize"]
 
+[node name="BouchonElements" type="Node2D" parent="WindowSize"]
+
+[node name="Bouchon" type="Button" parent="WindowSize/BouchonElements"]
+offset_left = 308.0
+offset_top = 285.0
+offset_right = 358.0
+offset_bottom = 313.0
+focus_mode = 0
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 8
+toggle_mode = true
+flat = true
+script = ExtResource("6_ot1v4")
+
+[node name="Sprite2D" type="Sprite2D" parent="WindowSize/BouchonElements/Bouchon"]
+material = SubResource("ShaderMaterial_dj4r4")
+position = Vector2(0, -3.75)
+scale = Vector2(5.55, 5.55)
+texture = SubResource("AtlasTexture_1kvi7")
+centered = false
+
+[node name="PosBoucher" type="Marker2D" parent="WindowSize/BouchonElements"]
+position = Vector2(375, 381)
+
+[node name="PosDeboucher" type="Marker2D" parent="WindowSize/BouchonElements"]
+position = Vector2(308, 285)
+
+[connection signal="mouse_entered" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize/SpriteBaignoire/ValveDroite" method="_on_mouse_hover" binds= [0.75]]
+[connection signal="mouse_exited" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize/SpriteBaignoire/ValveDroite" method="_on_mouse_hover" binds= [0.0]]
 [connection signal="pressed" from="WindowSize/SpriteBaignoire/ValveDroite" to="WindowSize" method="_on_button_pressed"]
-[connection signal="pressed" from="WindowSize/Bouchon" to="WindowSize" method="_on_bouchon_pressed"]
 [connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="shower"]
+[connection signal="mouse_entered" from="WindowSize/BouchonElements/Bouchon" to="WindowSize/BouchonElements/Bouchon" method="_on_mouse_hover" binds= [1.0]]
+[connection signal="mouse_exited" from="WindowSize/BouchonElements/Bouchon" to="WindowSize/BouchonElements/Bouchon" method="_on_mouse_hover" binds= [0.0]]
+[connection signal="toggled" from="WindowSize/BouchonElements/Bouchon" to="WindowSize" method="_on_bouchon_pressed"]
