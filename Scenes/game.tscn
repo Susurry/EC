@@ -53,7 +53,7 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
 font_size = 24
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgy6u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwurv"]
 bg_color = Color(0, 0, 0, 0.588235)
 corner_radius_top_left = 7
 corner_radius_bottom_left = 7
@@ -64,75 +64,6 @@ anti_aliasing = false
 bg_color = Color(0, 0, 0, 0.588235)
 corner_radius_top_right = 7
 corner_radius_bottom_right = 7
-corner_detail = 4
-anti_aliasing = false
-
-[sub_resource type="Animation" id="Animation_ese38"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelLabel/Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_mucmn"]
-resource_name = "feedback_good"
-length = 1.5
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelLabel/Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oeip8"]
-_data = {
-&"RESET": SubResource("Animation_ese38"),
-&"feedback_good": SubResource("Animation_mucmn")
-}
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwurv"]
-bg_color = Color(0, 0, 0, 0.588235)
-corner_radius_top_left = 7
-corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
 
@@ -226,6 +157,75 @@ _data = {
 &"RESET": SubResource("Animation_cwurv"),
 &"feedback_bad": SubResource("Animation_tgy6u"),
 &"feedback_good": SubResource("Animation_81klo")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgy6u"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 7
+corner_radius_bottom_left = 7
+corner_detail = 4
+anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_ese38"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelLabel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mucmn"]
+resource_name = "feedback_good"
+length = 1.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LogoPanel/MarginContainer/TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelLabel/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oeip8"]
+_data = {
+&"RESET": SubResource("Animation_ese38"),
+&"feedback_good": SubResource("Animation_mucmn")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxa5y"]
@@ -492,54 +492,11 @@ theme_override_constants/separation = 180
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Follower" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("time_element")]
-layout_mode = 2
-mouse_filter = 2
-script = ExtResource("7_r175c")
-sfx_follow = ExtResource("10_fkdbe")
-time_element = NodePath("../../../../TimerElements/Columns/Timer")
-
-[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
-layout_mode = 0
-offset_right = 72.0
-offset_bottom = 72.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tgy6u")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("9_hu01s")
-expand_mode = 1
-
-[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
-layout_mode = 0
-offset_left = 72.0
-offset_right = 144.0
-offset_bottom = 72.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
-
-[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Follower/PanelLabel"]
-layout_mode = 2
-text = "0"
-label_settings = ExtResource("7_qvet4")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScoreElements/Rows/Score/Follower"]
-libraries = {
-&"": SubResource("AnimationLibrary_oeip8")
-}
-
-[node name="Carbone" type="Control" parent="UI/ScoreElements/Rows/Score"]
+[node name="Carbone" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("grade_element")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("3_nnnuy")
+grade_element = NodePath("../Grade")
 sfx_good_score = ExtResource("10_fkdbe")
 sfx_bad_score = ExtResource("7_81klo")
 
@@ -580,12 +537,59 @@ libraries = {
 &"": SubResource("AnimationLibrary_mucmn")
 }
 
-[node name="Grade" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("timer_element")]
+[node name="Follower" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("grade_element", "time_element")]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("7_r175c")
+grade_element = NodePath("../Grade")
+sfx_follow = ExtResource("10_fkdbe")
+time_element = NodePath("../../../../TimerElements/Columns/Timer")
+
+[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tgy6u")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("9_hu01s")
+expand_mode = 1
+
+[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 144.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
+
+[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Follower/PanelLabel"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("7_qvet4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScoreElements/Rows/Score/Follower"]
+libraries = {
+&"": SubResource("AnimationLibrary_oeip8")
+}
+
+[node name="Grade" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("timer_element", "carbone_element", "follower_element")]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("9_8c7js")
 timer_element = NodePath("../../../../TimerElements/Columns/Timer")
+carbone_element = NodePath("../Carbone")
+follower_element = NodePath("../Follower")
 
 [node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Grade"]
 layout_mode = 0
