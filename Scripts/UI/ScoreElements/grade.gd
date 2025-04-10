@@ -1,10 +1,10 @@
 extends Control
 
 @export var timer_element: Control
+@export var carbone_element: Control
+@export var follower_element: Control
 
 @onready var grade_label = $PanelLabel/Label
-@onready var carbone_element = get_parent().get_node("Carbone")
-@onready var follower_element = get_parent().get_node("Follower")
 
 func _ready() -> void:
 	timer_element.time_multi_label.text = ">>>"

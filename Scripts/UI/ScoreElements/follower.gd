@@ -1,12 +1,12 @@
 extends Control
 
+@export var grade_element: Control
 @export var sfx_follow: AudioStreamWAV
 @export var time_element: Control
 
 var follower: int = 0
 
 @onready var follower_label: Label = $PanelLabel/Label
-@onready var grade_element: Control = get_parent().get_node("Grade")
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:

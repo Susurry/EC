@@ -5,7 +5,7 @@ if SaveManager.getElement("Quests", "S_livraison2") == false:
 	Oh, tu as mon colis ? Chouette, merci !
 	do SaveManager.setElement("Quests", {"S_livraison2": true})
 	do EventBus.emit_signal("set_empreinte", -0.2)
-	do EventBus.emit_signal("remove_item", "Colis")
+	# do EventBus.emit_signal("remove_item", "Colis")
 	C'est bien pratique les commandes en ligne, je suis vraiment fan personnellement !
 	Sauf que l'autre jour, j'ai commandé un tas de vêtement, mais aucun ne m'allaient... Ils prennent maintenant de la place dans mon armoire, qu'est-ce que je devrai en faire selon toi ?
 	- Les retourner

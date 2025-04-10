@@ -5,7 +5,7 @@ if SaveManager.getElement("Quests", "S_livraison1") == false:
 	Oh, c'est toi le livreur aujourd'hui ? D'accord...
 	do SaveManager.setElement("Quests", {"S_livraison1": true})
 	do EventBus.emit_signal("set_empreinte", -0.2)
-	do EventBus.emit_signal("remove_item", "Colis")
+	# do EventBus.emit_signal("remove_item", "Colis")
 	C'est cool de ta part d'aider notre cher livreur, entre les colis et la distribution du journal ça ne doit pas être facile pour lui.
 	D'ailleurs, à propos du journal, j'y pense...
 	Cet hiver, je lisais dans le journal qu'on devait baisser le chauffage... Je sais plus c'était quoi la température maximum qu'on nous recommandait, tu t'en souviens ?
