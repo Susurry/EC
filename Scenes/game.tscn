@@ -44,14 +44,14 @@ corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
 
+[sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
+font_size = 24
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg4q0"]
 bg_color = Color(0.885351, 0.479543, 3.85046e-07, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm72l"]
 bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_mg4q0"]
-font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwurv"]
 bg_color = Color(0, 0, 0, 0.588235)
@@ -408,7 +408,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -219.0
 offset_right = 219.0
-offset_bottom = 59.0
+offset_bottom = 140.0
 grow_horizontal = 2
 theme_override_constants/separation = 5
 
@@ -417,12 +417,19 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bl602")
 
-[node name="Label" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelLabel"]
+[node name="Time" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelLabel"]
+visible = false
 layout_mode = 2
 text = "00 : 00 : 00"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimerBarIndicateur" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelLabel"]
+layout_mode = 2
+text = "> > >"
+label_settings = SubResource("LabelSettings_mg4q0")
+horizontal_alignment = 1
 
 [node name="PanelProgressBar" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
@@ -456,43 +463,12 @@ max_value = 0.0
 value = -2000.0
 show_percentage = false
 
-[node name="TimerBarIndicateur" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
+[node name="Stats" type="HBoxContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
-text = "> > >"
-label_settings = SubResource("LabelSettings_mg4q0")
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Enlever 1000 s"
-
-[node name="Stats" type="HBoxContainer" parent="UI/TimerElements/Columns"]
-layout_mode = 2
-theme_override_constants/separation = 90
+theme_override_constants/separation = 190
 alignment = 1
 
-[node name="ScoreElements" type="MarginContainer" parent="UI"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -295.0
-offset_right = -15.0
-offset_bottom = 200.0
-grow_horizontal = 0
-theme_override_constants/margin_top = 25
-
-[node name="Rows" type="HBoxContainer" parent="UI/ScoreElements"]
-layout_mode = 2
-theme_override_constants/separation = 180
-
-[node name="Score" type="VBoxContainer" parent="UI/ScoreElements/Rows"]
-layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="Carbone" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("grade_element")]
+[node name="Carbone" type="Control" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats" node_paths=PackedStringArray("grade_element")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("3_nnnuy")
@@ -500,116 +476,122 @@ grade_element = NodePath("../Grade")
 sfx_good_score = ExtResource("10_fkdbe")
 sfx_bad_score = ExtResource("7_81klo")
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
-layout_mode = 2
-offset_right = 72.0
+[node name="LogoPanel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Carbone"]
+layout_mode = 1
+offset_left = -72.0
 offset_bottom = 72.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cwurv")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Carbone/LogoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Carbone/LogoPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Carbone/LogoPanel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Carbone/LogoPanel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("6_j0fp3")
 expand_mode = 1
 
-[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
-layout_mode = 0
-offset_left = 72.0
-offset_right = 144.0
+[node name="PanelLabel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Carbone"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 72.0
 offset_bottom = 72.0
+grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
-[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Carbone/PanelLabel"]
+[node name="Label" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Carbone/PanelLabel"]
 layout_mode = 2
 text = "10.0"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScoreElements/Rows/Score/Carbone"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Carbone"]
 libraries = {
 &"": SubResource("AnimationLibrary_mucmn")
 }
 
-[node name="Follower" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("grade_element", "time_element")]
+[node name="Follower" type="Control" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats" node_paths=PackedStringArray("grade_element", "time_element")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("7_r175c")
 grade_element = NodePath("../Grade")
 sfx_follow = ExtResource("10_fkdbe")
-time_element = NodePath("../../../../TimerElements/Columns/Timer")
+time_element = NodePath("../../..")
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
-layout_mode = 0
-offset_right = 72.0
+[node name="LogoPanel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Follower"]
+layout_mode = 1
+offset_left = -72.0
 offset_bottom = 72.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tgy6u")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Follower/LogoPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Follower/LogoPanel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("9_hu01s")
 expand_mode = 1
 
-[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
-layout_mode = 0
-offset_left = 72.0
-offset_right = 144.0
+[node name="PanelLabel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Follower"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 72.0
 offset_bottom = 72.0
+grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
-[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Follower/PanelLabel"]
+[node name="Label" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Follower/PanelLabel"]
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScoreElements/Rows/Score/Follower"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Follower"]
 libraries = {
 &"": SubResource("AnimationLibrary_oeip8")
 }
 
-[node name="Grade" type="Control" parent="UI/ScoreElements/Rows/Score" node_paths=PackedStringArray("timer_element", "carbone_element", "follower_element")]
+[node name="Grade" type="Control" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats" node_paths=PackedStringArray("timer_element", "carbone_element", "follower_element")]
 visible = false
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("9_8c7js")
-timer_element = NodePath("../../../../TimerElements/Columns/Timer")
+timer_element = NodePath("../../..")
 carbone_element = NodePath("../Carbone")
 follower_element = NodePath("../Follower")
 
-[node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Grade"]
+[node name="LogoPanel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Grade"]
 layout_mode = 0
 offset_right = 72.0
 offset_bottom = 72.0
 theme = ExtResource("5_hijog")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Grade/LogoPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Grade/LogoPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="UI/ScoreElements/Rows/Score/Grade/LogoPanel/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Grade/LogoPanel/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("10_ccnpu")
 expand_mode = 1
 
-[node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Grade"]
+[node name="PanelLabel" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Grade"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 72.0
@@ -617,32 +599,45 @@ offset_right = 62.0
 offset_bottom = 109.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cxa5y")
 
-[node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Grade/PanelLabel"]
+[node name="Label" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/Stats/Grade/PanelLabel"]
 layout_mode = 2
 text = "C"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InventoryPanel" type="Panel" parent="UI/ScoreElements/Rows"]
-custom_minimum_size = Vector2(100, 0)
+[node name="Button" type="Button" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
+visible = false
 layout_mode = 2
+size_flags_horizontal = 4
+text = "Enlever 1000 s"
+
+[node name="InventoryElements" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -170.0
+offset_right = 50.0
+offset_bottom = 170.0
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mucmn")
 
-[node name="Inventory" type="GridContainer" parent="UI/ScoreElements/Rows/InventoryPanel"]
-custom_minimum_size = Vector2(80, 0)
+[node name="Inventory" type="GridContainer" parent="UI/InventoryElements"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -40.0
-offset_top = 10.0
-offset_right = 40.0
-offset_bottom = 130.0
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -155.0
+offset_right = 15.0
+offset_bottom = 155.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 40
-columns = 2
 script = ExtResource("12_dga6m")
 item_display = ExtResource("8_tgy6u")
 list_item = ExtResource("9_cwurv")
@@ -806,8 +801,8 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -300.0
-offset_top = -315.0
-offset_bottom = 185.0
+offset_top = -250.0
+offset_bottom = 250.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("15_kmh8j")

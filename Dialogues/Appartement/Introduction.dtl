@@ -64,8 +64,8 @@ Vous voyez ce nombre ? Il s'agit de votre Impact Environemental.
 Votre Impact Environnemental démarre à une moyenne de 10 \: si vos actions ont des conséquences positives, votre impact diminuera \: si vos actions ont des conséquences négatives, votre impact augmentera.
 Votre objectif est donc essayer de diminer le plus possible votre Impact Environnemental !
 do EventBus.emit_signal("point_cursor", 940.0, 150.0, 0.0)
-Si votre Impact Environnemental évolue au delà d'un certain seuil, votre Notation Écologique évoluera en conséquent.
-La Notation Écologique impacte la vitesse de découlement du chronomètre \: une meilleure note ralentit le chronomètre, tandis qu'une mauvaise note l'accélère !
+Si votre Impact Environnemental évolue au delà d'un certain seuil, la vitesse du Chronomètre évoluera en conséquent.
+ Un meilleur Impacte environnemental ralentit la vitesse de découlement du chronomètre, tandis qu'un mauvais Impact l'accélère !
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Passons maintenant au prochain sous-objectif ! Rendez-vous dans votre salle de bain pour la suite de l'aventure !
 do EventBus.emit_signal("add_quest", "0-4_baignoire", 4)

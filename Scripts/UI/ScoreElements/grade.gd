@@ -6,9 +6,6 @@ extends Control
 
 @onready var grade_label = $PanelLabel/Label
 
-func _ready() -> void:
-	timer_element.time_multi_label.text = ">>>"
-
 func update_grading() -> void:
 	var grading_score: float = carbone_element.empreinte - floor(follower_element.follower/4)
 	match grading_score:
