@@ -59,3 +59,12 @@ func set_quest_state(quest_name: String) -> void:
 
 func set_mission_name(new_name: String) -> void:
 	mission_label.text = new_name
+
+func _on_button_toggled(toggled_on: bool) -> void:
+	#Fonction pourrie pour toggle l'UI lol
+	print("BONJOUR")
+	if toggled_on == true:
+		position.x = 1900
+		
+	else:
+		position.x = 1620

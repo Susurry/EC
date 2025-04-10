@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=55 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -242,13 +242,15 @@ corner_detail = 4
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucmn"]
-bg_color = Color(0, 0, 0, 0.588235)
+bg_color = Color(0, 0, 0, 0.294118)
 corner_radius_top_left = 7
 corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_8m3t6"]
 
 [sub_resource type="FontVariation" id="FontVariation_j7hgd"]
 variation_embolden = 1.0
@@ -416,6 +418,7 @@ offset_left = -219.0
 offset_right = 219.0
 offset_bottom = 59.0
 grow_horizontal = 2
+mouse_filter = 0
 theme_override_constants/separation = 5
 script = ExtResource("6_8m3t6")
 
@@ -423,6 +426,7 @@ script = ExtResource("6_8m3t6")
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bl602")
 
 [node name="Label" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelLabel"]
@@ -434,12 +438,14 @@ vertical_alignment = 1
 
 [node name="TimerBarIndicateur" type="Label" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
+mouse_filter = 1
 text = "> > >"
 label_settings = SubResource("LabelSettings_mg4q0")
 horizontal_alignment = 1
 
 [node name="PanelProgressBar" type="PanelContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelProgressBar"]
 layout_mode = 2
@@ -450,6 +456,7 @@ theme_override_constants/margin_bottom = 0
 [node name="TimeBar" type="ProgressBar" parent="UI/TimerElements/Columns/Timer/BarreTemps/PanelProgressBar"]
 layout_mode = 2
 size_flags_vertical = 1
+mouse_filter = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_mg4q0")
 min_value = -9000.0
 max_value = 0.0
@@ -464,6 +471,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_vm72l")
 min_value = -9000.0
 max_value = 0.0
@@ -486,10 +494,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -2099.0
-offset_top = 443.0
-offset_right = -1819.0
-offset_bottom = 643.0
+offset_left = -2100.0
+offset_top = 320.0
+offset_right = -1820.0
+offset_bottom = 745.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 25
 
@@ -511,9 +519,9 @@ time_element = NodePath("../../../../TimerElements/Columns/Timer")
 [node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
 layout_mode = 0
 offset_left = 1145.0
-offset_top = -379.0
+offset_top = -256.0
 offset_right = 1217.0
-offset_bottom = -307.0
+offset_bottom = -184.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tgy6u")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Follower/LogoPanel"]
@@ -531,9 +539,9 @@ expand_mode = 1
 [node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Follower"]
 layout_mode = 0
 offset_left = 1217.0
-offset_top = -379.0
+offset_top = -256.0
 offset_right = 1289.0
-offset_bottom = -307.0
+offset_bottom = -184.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
 [node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Follower/PanelLabel"]
@@ -558,9 +566,9 @@ sfx_bad_score = ExtResource("7_81klo")
 [node name="LogoPanel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
 layout_mode = 2
 offset_left = 989.0
-offset_top = -479.0
+offset_top = -356.0
 offset_right = 1061.0
-offset_bottom = -407.0
+offset_bottom = -284.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cwurv")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScoreElements/Rows/Score/Carbone/LogoPanel"]
@@ -578,9 +586,9 @@ expand_mode = 1
 [node name="PanelLabel" type="PanelContainer" parent="UI/ScoreElements/Rows/Score/Carbone"]
 layout_mode = 0
 offset_left = 1061.0
-offset_top = -479.0
+offset_top = -356.0
 offset_right = 1133.0
-offset_bottom = -407.0
+offset_bottom = -284.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dxqwe")
 
 [node name="Label" type="Label" parent="UI/ScoreElements/Rows/Score/Carbone/PanelLabel"]
@@ -636,24 +644,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InventoryPanel" type="Panel" parent="UI/ScoreElements/Rows"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(50, 400)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mucmn")
 
 [node name="Inventory" type="GridContainer" parent="UI/ScoreElements/Rows/InventoryPanel"]
-custom_minimum_size = Vector2(80, 0)
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -40.0
+offset_left = -16.0
 offset_top = 10.0
-offset_right = 40.0
+offset_right = 64.0
 offset_bottom = 130.0
 grow_horizontal = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 40
-columns = 2
 script = ExtResource("12_dga6m")
 item_display = ExtResource("8_tgy6u")
 list_item = ExtResource("9_cwurv")
@@ -825,17 +832,44 @@ offset_top = -219.0
 offset_bottom = 281.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("15_kmh8j")
 quest_data = ExtResource("16_r4mnh")
 quest_prefab = ExtResource("17_1aw0d")
 sfx_new_quest = ExtResource("26_cwurv")
 sfx_quest_done = ExtResource("27_mucmn")
 
+[node name="ToggleUI" type="Control" parent="UI/QuestElements"]
+anchors_preset = 0
+offset_left = -35.0
+offset_right = 5.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/QuestElements/ToggleUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Button" type="Button" parent="UI/QuestElements/ToggleUI/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_8m3t6")
+toggle_mode = true
+text = ">"
+text_overrun_behavior = 1
+clip_text = true
+
 [node name="MissionName" type="MarginContainer" parent="UI/QuestElements"]
 layout_mode = 0
 offset_left = -25.0
 offset_right = 300.0
 offset_bottom = 40.0
+mouse_filter = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_right = 10
 
@@ -915,3 +949,4 @@ centered = false
 [connection signal="pressed" from="UI/DebugElements/Rows/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Retour" to="UI/PauseElements" method="toggle_pause"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Quitter" to="UI/PauseElements" method="_on_quitter_pressed"]
+[connection signal="toggled" from="UI/QuestElements/ToggleUI/MarginContainer/Button" to="UI/QuestElements" method="_on_button_toggled"]

@@ -1,6 +1,5 @@
 label book1
 do EventBus.emit_signal("set_mission_name", "Sensibliser les étudiants")
-# #do EventBus.emit_signal("point_cursor", 60.0, 175.0, 0.0)
 Bienvenue sur Eco-Campus ! Votre objectif est de sensibiliser les étudiants de l'université avant que le compte à rebours catastrophe n'atteigne la fin.\
 \
 \
@@ -17,7 +16,6 @@ S'il s'agit de votre première partie, nous vous recommandons de suivre le tutor
 	do EventBus.emit_signal("add_quest", "1_appart")
 	do EventBus.emit_signal("add_quest", "1-1_breakfast")
 	do EventBus.emit_signal("add_quest", "1-2_shower")
-	do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 	[end_timeline]
 label book2
 Vous êtes maintenant fin prêt pour vous rendre à la fac !
@@ -51,7 +49,7 @@ do EventBus.emit_signal("add_quest", "1-2_shower")
 do EventBus.emit_signal("point_cursor", 1547.0, 450.0, 90.0)
 Un Objectif vient de s'ajouter à votre liste de quête !
 Les Objectifs sont la plupart du temps divisés en Sous-Objectifs, que vous devez accomplir afin de progresser dans votre mission.
-do EventBus.emit_signal("point_cursor", 330.0, 140.0, 0.0)
+do EventBus.emit_signal("point_cursor", 942.0, 104.0, 0.0)
 Gardez en tête que vous devez accomplir ces objectifs ainsi que votre mission avant la fin du chronomètre \: si celui-ci touche à sa fin, c'est perdu !
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Commençons par le petit-déjeuner ! Rendez-vous à votre réfrigérateur et interagissez avec !
@@ -61,13 +59,13 @@ label book6
 [wait time="0.6"]
 do EventBus.emit_signal("set_quest_state", "0-3_frigo")
 Dans Éco-Campus, les choix que vous faites ont des conséquences sur votre environnement.
-do EventBus.emit_signal("point_cursor", 60.0, 175.0, 0.0)
+do EventBus.emit_signal("point_cursor", 828.0, 187.0, 0.0)
 Vous voyez ce nombre ? Il s'agit de votre Impact Environemental.
 Votre Impact Environnemental démarre à une moyenne de 10 \: si vos actions ont des conséquences positives, votre impact diminuera \: si vos actions ont des conséquences négatives, votre impact augmentera.
 Votre objectif est donc essayer de diminer le plus possible votre Impact Environnemental !
-do EventBus.emit_signal("point_cursor", 240.0, 175.0, 0.0)
-Si votre Impact Environnemental évolue au delà d'un certain seuil, votre Notation Écologique évoluera en conséquent.
-La Notation Écologique impacte la vitesse de découlement du chronomètre \: une meilleure note ralentit le chronomètre, tandis qu'une mauvaise note l'accélère !
+do EventBus.emit_signal("point_cursor", 943.0, 075.0, 0.0)
+Si votre Impact Environnemental évolue au delà d'un certain seuil, la vitesse du Chronomètre évoluera en conséquent.
+Un meilleur Impacte environnemental ralentit la vitesse de découlement du chronomètre, tandis qu'un mauvais Impact l'accélère !
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Passons maintenant au prochain sous-objectif ! Rendez-vous dans votre salle de bain pour la suite de l'aventure !
 do EventBus.emit_signal("add_quest", "0-4_baignoire", 4)
@@ -93,7 +91,7 @@ Bravo, vous venez de trouver un Objectif Secret ! Il s'agit de mini-jeux cachée
 Les Objectifs Secrets vous apportent un bonus à l'Impact Environnemental, qui peut être plus élevé en fonction de votre initiative ! Essayez de trouver la meilleure action possible !
 [end_timeline]
 label book10
-do EventBus.emit_signal("point_cursor", 145.0, 175.0, 0.0)
+do EventBus.emit_signal("point_cursor", 986.0, 187.0, 0.0)
 [wait time="0.6"]
 Note \: vous venez d'obtenir votre premier Follower !
 Les Followers vous apportent immédiatement du temps supplémentaire sur le Chronomètre quand sensibilisés, et plus tard à la fin du chapitre !
