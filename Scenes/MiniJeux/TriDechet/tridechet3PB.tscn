@@ -140,6 +140,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false, true, false, true, false, true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FlechePBDroite5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FlechePBDroite6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3bl67"]
 _data = {
@@ -167,9 +191,9 @@ wait_time = 3.0
 
 [node name="Poubelle" parent="WindowSize" instance=ExtResource("6_ff1f2")]
 layout_mode = 0
-offset_left = 126.0
+offset_left = 111.0
 offset_top = 500.0
-offset_right = 296.0
+offset_right = 281.0
 offset_bottom = 783.0
 text = ""
 flat = true
@@ -233,6 +257,7 @@ offset_left = 508.0
 offset_top = 500.0
 offset_right = 679.0
 offset_bottom = 783.0
+text = ""
 flat = true
 type = 2
 select_offset = 15
@@ -269,9 +294,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 782.0
-offset_top = 670.0
+offset_top = 672.0
 offset_right = 894.0
-offset_bottom = 782.0
+offset_bottom = 784.0
 grow_vertical = 2
 rotation = -1.5708
 mouse_filter = 2
@@ -285,9 +310,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 410.0
+offset_left = 395.0
 offset_top = 560.0
-offset_right = 522.0
+offset_right = 507.0
 offset_bottom = 672.0
 grow_vertical = 2
 rotation = 1.5708
@@ -301,10 +326,45 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = 670.0
-offset_right = 125.0
-offset_bottom = 782.0
+offset_left = 1.0
+offset_top = 672.0
+offset_right = 113.0
+offset_bottom = 784.0
+grow_vertical = 2
+rotation = -1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+flip_h = true
+
+[node name="FlechePBDroite5" type="TextureRect" parent="WindowSize/Fleches"]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 790.0
+offset_top = 560.0
+offset_right = 902.0
+offset_bottom = 672.0
+grow_vertical = 2
+rotation = 1.5708
+mouse_filter = 2
+texture = ExtResource("9_6jsu8")
+expand_mode = 1
+
+[node name="FlechePBDroite6" type="TextureRect" parent="WindowSize/Fleches"]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 395.0
+offset_top = 672.0
+offset_right = 507.0
+offset_bottom = 784.0
 grow_vertical = 2
 rotation = -1.5708
 mouse_filter = 2
