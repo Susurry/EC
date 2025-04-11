@@ -13,6 +13,8 @@ func _initialize_anchors() -> void:
 			actions_needed += 1
 		if i.is_fixed == false:
 			actions_needed += 1
+		if i.anchor_id == 0:
+			i.visible = true
 
 func _initialize_panels() -> void:
 	for i in $PanelPieces.get_children():
@@ -24,6 +26,26 @@ func _initialize_panels() -> void:
 
 func add_action() -> void:
 	actions_completed += 1
+	
+	#change l'ancre interagisable quand le joueur a fini ses réparations.
+	if actions_completed == 1:
+		change_anchor(0)
+	
+	if actions_completed == 5:
+		change_anchor(1)
+	
+	if actions_completed == 7:
+		change_anchor(2)
+		
+		
 	if actions_completed >= actions_needed:
 		await get_tree().create_timer(2.0).timeout
 		get_parent().quit_minigame()
+		
+		
+func change_anchor(id: int) -> void:
+	for i in $Anchors.get_children():
+			if i.anchor_id == id:
+				i.visible = false
+			if i.anchor_id == id + 1:
+				i.visible = true
