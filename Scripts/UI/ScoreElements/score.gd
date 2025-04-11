@@ -1,12 +1,12 @@
 extends Control
 
-@export var grade_element: Control
+@export var time_element: Control
 @export var sfx_good_score: AudioStreamWAV
 @export var sfx_bad_score: AudioStreamWAV
 
 var empreinte: float = 10
 
-@onready var empreinte_label: Label = $PanelLabel/Label
+@onready var empreinte_label: Label = $Label
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
@@ -20,7 +20,7 @@ func on_update_empreinte(arg: float) -> void:
 	play_feedback(arg)
 	empreinte += arg
 	empreinte_label.text = str(empreinte)
-	grade_element.update_grading()
+	time_element.update_grading()
 
 func play_feedback(score: float) -> void:
 	if score > 0:

@@ -1,12 +1,11 @@
 extends Control
 
-@export var grade_element: Control
 @export var sfx_follow: AudioStreamWAV
 @export var time_element: Control
 
 var follower: int = 0
 
-@onready var follower_label: Label = $PanelLabel/Label
+@onready var follower_label: Label = $Label
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
@@ -22,5 +21,5 @@ func add_follower(arg: int = 1) -> void:
 	anim_player.play("feedback_good")
 	follower += arg
 	follower_label.text = str(follower)
-	grade_element.update_grading()
+	time_element.update_grading()
 	time_element.change_time(180)
