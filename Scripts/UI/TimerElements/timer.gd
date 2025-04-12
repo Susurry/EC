@@ -4,16 +4,20 @@ extends Control
 @export var minute : int
 @export var seconde : int
 @export var time_multi : float = 1.0
+@export_group("Setup")
+
+@export var carbone_element: Control
+@export var follower_element: Control
 
 var time : float
 var format_string = "%02d : %02d : %02d"
 var tween: Tween
 var is_tweening: bool
 
-@onready var time_label = $BarreTemps/PanelLabel/Label
-@onready var timer_bar = $BarreTemps/PanelProgressBar/TimeBar
-@onready var changing_timer_bar = $BarreTemps/PanelProgressBar/TimeBar/ChangeTimeBar
-@onready var time_multi_label = $BarreTemps/TimerBarIndicateur
+@onready var timer_bar: ProgressBar = $Bars/TimeBar
+@onready var changing_timer_bar: ProgressBar = $Bars/TimeBar/ChangeTimeBar
+@onready var time_label = $Labels/Time
+@onready var time_multi_label = $Labels/TimerBarIndicateur
 
 func _ready() -> void:
 	_initialize_timer()
@@ -39,6 +43,31 @@ func _process(delta: float) -> void:
 			timer_bar.value = -time
 	else:
 		pass
+
+func update_grading() -> void:
+	var grading_score: float = carbone_element.empreinte - floor(follower_element.follower/4)
+	match grading_score:
+		var x when x >= 18:
+			time_multi = 1.5
+			time_multi_label.text = ">>>>>"
+		var x when x < 18 and x >= 15:
+			time_multi = 1.5
+			time_multi_label.text = ">>>>>"
+		var x when x < 15 and x >= 12:
+			time_multi = 1.2
+			time_multi_label.text = ">>>>"
+		var x when x < 12 and x >= 9:
+			time_multi = 1
+			time_multi_label.text = ">>>"
+		var x when x < 9 and x >= 6:
+			time_multi = 0.8571
+			time_multi_label.text = ">>"
+		var x when x < 6 and x > 2 :
+			time_multi = 0.75
+			time_multi_label.text = ">"
+		var x when x <= 2:
+			time_multi =  0.75
+			time_multi_label.text = ">"
 
 func change_time(var_time: float) -> void:
 	is_tweening = true
