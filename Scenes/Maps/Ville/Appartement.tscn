@@ -49,7 +49,7 @@ atlas = ExtResource("6_dxfoh")
 region = Rect2(160, 19, 16, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_db8x8"]
-size = Vector2(10, 9.75)
+size = Vector2(15, 9.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1djca"]
 atlas = ExtResource("6_dxfoh")
@@ -129,7 +129,7 @@ atlas = ExtResource("6_dxfoh")
 region = Rect2(0, 98, 19, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4w4wj"]
-size = Vector2(16, 36)
+size = Vector2(16, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uow5"]
 atlas = ExtResource("6_dxfoh")
@@ -230,7 +230,7 @@ centered = false
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Poubelle"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Poubelle/StaticBody2D"]
-position = Vector2(8, 10)
+position = Vector2(8.5, 10)
 shape = SubResource("RectangleShape2D_db8x8")
 debug_color = Color(1, 0, 0, 0.419608)
 
@@ -375,7 +375,7 @@ centered = false
 position = Vector2(10, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Bureau/StaticBody2D"]
-position = Vector2(0, 4)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_4w4wj")
 debug_color = Color(1, 0, 0, 0.419608)
 
