@@ -1,12 +1,18 @@
 extends Control
 
+@export_group("Quest Settings")
 @export var quest_data: QuestList
 @export var quest_prefab: PackedScene
+@export_group("Font Settings")
+@export var label_medium_settings: LabelSettings
+@export var label_small_settings: LabelSettings
+@export_group("Sound Effects")
 @export var sfx_new_quest: AudioStreamWAV
 @export var sfx_quest_done: AudioStreamWAV
 
-@onready var target: BoxContainer = $QuestList/Columns
-@onready var mission_label: Label = $MissionName/Panel/Label
+@onready var target: BoxContainer = $QuestContainer/MarginContainer/Columns/QuestList
+@onready var mission_label: Label = $QuestContainer/MarginContainer/Columns/MissionName/Label
+@onready var hide_button: MarginContainer = $HidePanel
 
 var tween: Tween
 
@@ -27,16 +33,21 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	var new_quest: BoxContainer = quest_prefab.instantiate()
 	
 	var new_quest_label: Label = new_quest.get_node("Panel/Label")
+	var new_quest_panel: PanelContainer = new_quest.get_node("Panel")
 	var new_quest_margin: MarginContainer = new_quest.get_node("Margin")
 	
 	match (new_quest_data.type): # Ajoute un style différent en fonction du type de quête
 		0:
+			new_quest_label.label_settings = label_medium_settings
+			
 			new_quest_margin.add_theme_constant_override("margin_top", 35)
-			new_quest_margin.add_theme_constant_override("margin_left", 60)
-			new_quest_label.custom_minimum_size = Vector2(240,30)
+			new_quest_margin.add_theme_constant_override("margin_left", 40)
 		1:
-			new_quest_margin.add_theme_constant_override("margin_left", 100)
-			new_quest_label.custom_minimum_size = Vector2(200,30)
+			new_quest_label.label_settings = label_small_settings
+			new_quest_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+			new_quest_panel.self_modulate = 0
+			
+			new_quest_margin.add_theme_constant_override("margin_left", 80)
 	
 	new_quest_label.text = new_quest_data.name
 	new_quest.name = key
@@ -59,3 +70,11 @@ func set_quest_state(quest_name: String) -> void:
 
 func set_mission_name(new_name: String) -> void:
 	mission_label.text = new_name
+
+
+func _on_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		position.x = position.x + ( size.x - hide_button.size.x )
+	else:
+		position.x = position.x - ( size.x - hide_button.size.x )
+		
