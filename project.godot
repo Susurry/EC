@@ -75,6 +75,7 @@ directories/dtl_directory={
 "pnj_policier": "res://Dialogues/CentreVille/pnj_policier.dtl",
 "pnj_policier2": "res://Dialogues/CentreVille/pnj_policier2.dtl",
 "pnj_postier": "res://Dialogues/CentreVille/pnj_postier.dtl",
+"pnj_qcm": "res://Dialogues/CentreVille/pnj_qcm.dtl",
 "pnj_random1": "res://Dialogues/PeriphOuest/pnj_random1.dtl",
 "pnj_random2": "res://Dialogues/PeriphOuest/pnj_random2.dtl",
 "pnj_random3": "res://Dialogues/PeriphOuest/pnj_random3.dtl",
