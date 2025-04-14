@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=47 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -25,7 +25,6 @@
 [ext_resource type="Script" uid="uid://k3msidbt0ncx" path="res://Scripts/Events/map_transitions.gd" id="21_k5lkh"]
 [ext_resource type="Texture2D" uid="uid://cjil7gvjqdbf1" path="res://Graphics/Characters/Generic/character_generic15.png" id="23_m7kr6"]
 [ext_resource type="Texture2D" uid="uid://chkcuciv1waob" path="res://Graphics/Characters/Generic/character_generic1.png" id="25_whdg5"]
-[ext_resource type="Texture2D" uid="uid://dlb46nuffkm5y" path="res://Graphics/Characters/character_marchand.png" id="26_vn6re"]
 [ext_resource type="Texture2D" uid="uid://dnhbmnrhr0bam" path="res://Graphics/Characters/Generic/character_generic27.png" id="26_whdg5"]
 [ext_resource type="Texture2D" uid="uid://bx4c1ixbp3uvi" path="res://Graphics/Characters/Generic/character_generic28.png" id="27_vn6re"]
 [ext_resource type="Script" uid="uid://b2k14hdfnse31" path="res://Scripts/Events/PeriphOuest/mission_eboueur.gd" id="28_1cwe4"]
@@ -93,12 +92,6 @@ shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_whdg5"]
-resource_local_to_scene = true
-shader = ExtResource("16_6cxdi")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6vih"]
 resource_local_to_scene = true
 shader = ExtResource("16_6cxdi")
 shader_parameter/line_color = Color(1, 1, 1, 1)
@@ -380,15 +373,6 @@ metadata/_edit_group_ = true
 material = SubResource("ShaderMaterial_whdg5")
 texture = ExtResource("29_7f4wu")
 
-[node name="PNJ_marchand" parent="PNJs" instance=ExtResource("13_5c4ie")]
-position = Vector2(768, 208)
-timeline = "pnj_marchand"
-metadata/_edit_group_ = true
-
-[node name="Skin" parent="PNJs/PNJ_marchand" index="1"]
-material = SubResource("ShaderMaterial_i6vih")
-texture = ExtResource("26_vn6re")
-
 [node name="Cutscenes" type="Node2D" parent="."]
 script = ExtResource("20_k5lkh")
 
@@ -427,4 +411,3 @@ camion_eboueur = NodePath("../../Props/CamionPoubelle")
 [editable path="PNJs/PNJ_Random4"]
 [editable path="PNJs/PNJ_Livraison2"]
 [editable path="PNJs/PNJ_reparateur"]
-[editable path="PNJs/PNJ_marchand"]
