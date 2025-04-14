@@ -1,9 +1,11 @@
-extends ColorRect
+extends CanvasLayer
 
 var tween: Tween
 
+@onready var fade: ColorRect = $ColorRect
+
 func trigger_fade(target: float, duration: float, order: int = 1) -> void:
-	z_index = order
+	layer = order
 	if tween: tween.kill()
 	tween = create_tween()
-	tween.tween_property(self, "modulate:a", target, duration)
+	tween.tween_property(fade, "modulate:a", target, duration)
