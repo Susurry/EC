@@ -130,32 +130,38 @@ id_piece_velo = 2
 [node name="Anchors" type="Node2D" parent="WindowSize"]
 
 [node name="Anchor_Chaine" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+visible = false
 position = Vector2(361, 386)
 scale = Vector2(0.1, 0.1)
 is_fixed = true
 
 [node name="Anchor_Boulon_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+visible = false
 position = Vector2(242, 389)
 scale = Vector2(0.1, 0.1)
 anchor_id = 1
 
 [node name="Anchor_Boulon_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+visible = false
 position = Vector2(566, 390)
 scale = Vector2(0.1, 0.1)
 anchor_id = 1
 
 [node name="Anchor_Sonette" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+visible = false
 position = Vector2(506, 210)
 scale = Vector2(0.1, 0.1)
 anchor_id = 2
 
 [node name="Anchor_Pompe_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+visible = false
 position = Vector2(230, 330)
 scale = Vector2(0.1, 0.1)
 anchor_id = 3
 piece_is_on = true
 
 [node name="Anchor_Pompe_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
+visible = false
 position = Vector2(578, 330)
 scale = Vector2(0.1, 0.1)
 anchor_id = 3

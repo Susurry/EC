@@ -31,7 +31,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fleche:visible")
+tracks/0/path = NodePath("FlechePBDroite:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -43,10 +43,34 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Fleche2:visible")
+tracks/1/path = NodePath("FlechePBDroite2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlechePBDroite3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlechePBDroite4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -60,7 +84,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fleche:visible")
+tracks/0/path = NodePath("FlechePBDroite:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,10 +96,34 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Fleche2:visible")
+tracks/1/path = NodePath("FlechePBDroite2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlechePBDroite3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FlechePBDroite4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
@@ -108,9 +156,9 @@ wait_time = 3.0
 
 [node name="Poubelle" parent="WindowSize" instance=ExtResource("4_7cc60")]
 layout_mode = 0
-offset_left = 260.0
+offset_left = 224.0
 offset_top = 500.0
-offset_right = 478.0
+offset_right = 394.0
 offset_bottom = 783.0
 text = ""
 flat = true
@@ -118,14 +166,28 @@ icon_alignment = 1
 expand_icon = true
 select_offset = 15
 
+[node name="PushBackArea" parent="WindowSize/Poubelle" index="0"]
+position = Vector2(110, 142)
+
+[node name="CollisionShape2D" parent="WindowSize/Poubelle/PushBackArea" index="0"]
+position = Vector2(-23, 8.23438)
+
+[node name="Hole" parent="WindowSize/Poubelle" index="1"]
+position = Vector2(86, 10)
+
+[node name="CollisionShape2D" parent="WindowSize/Poubelle/Hole" index="0"]
+position = Vector2(1, 24)
+
 [node name="SpritePoubelle" parent="WindowSize/Poubelle" index="2"]
 material = SubResource("ShaderMaterial_om02x")
+offset_left = 19.0
+offset_right = 32.0
 
 [node name="Poubelle2" parent="WindowSize" instance=ExtResource("4_7cc60")]
 layout_mode = 0
-offset_left = 663.0
+offset_left = 684.0
 offset_top = 500.0
-offset_right = 881.0
+offset_right = 856.0
 offset_bottom = 783.0
 text = ""
 flat = true
@@ -134,8 +196,24 @@ expand_icon = true
 type = 1
 select_offset = 15
 
+[node name="PushBackArea" parent="WindowSize/Poubelle2" index="0"]
+position = Vector2(110, 142)
+
+[node name="CollisionShape2D" parent="WindowSize/Poubelle2/PushBackArea" index="0"]
+position = Vector2(-23.25, 7.46875)
+
+[node name="Hole" parent="WindowSize/Poubelle2" index="1"]
+position = Vector2(86, 10)
+
+[node name="CollisionShape2D" parent="WindowSize/Poubelle2/Hole" index="0"]
+position = Vector2(1, 22)
+
 [node name="SpritePoubelle" parent="WindowSize/Poubelle2" index="2"]
 material = SubResource("ShaderMaterial_26kjq")
+offset_left = 19.0
+offset_top = -5.5
+offset_right = 32.0
+offset_bottom = 14.5
 texture = SubResource("AtlasTexture_26kjq")
 
 [node name="Fleches" type="Control" parent="WindowSize"]
@@ -143,15 +221,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Fleche" type="TextureRect" parent="WindowSize/Fleches"]
+[node name="FlechePBDroite" type="TextureRect" parent="WindowSize/Fleches"]
 z_index = 100
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1025.0
+offset_left = 993.0
 offset_top = 560.0
-offset_right = 1137.0
+offset_right = 1105.0
 offset_bottom = 672.0
 grow_vertical = 2
 rotation = 1.5708
@@ -159,15 +237,48 @@ mouse_filter = 2
 texture = ExtResource("9_om02x")
 expand_mode = 1
 
-[node name="Fleche2" type="TextureRect" parent="WindowSize/Fleches"]
+[node name="FlechePBDroite2" type="TextureRect" parent="WindowSize/Fleches"]
 z_index = 100
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 100.0
+offset_left = 551.0
 offset_top = 670.0
-offset_right = 212.0
+offset_right = 663.0
+offset_bottom = 782.0
+grow_vertical = 2
+rotation = -1.5708
+mouse_filter = 2
+texture = ExtResource("9_om02x")
+expand_mode = 1
+flip_h = true
+
+[node name="FlechePBDroite3" type="TextureRect" parent="WindowSize/Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 525.0
+offset_top = 560.0
+offset_right = 637.0
+offset_bottom = 672.0
+grow_vertical = 2
+rotation = 1.5708
+mouse_filter = 2
+texture = ExtResource("9_om02x")
+expand_mode = 1
+
+[node name="FlechePBDroite4" type="TextureRect" parent="WindowSize/Fleches"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 83.0
+offset_top = 670.0
+offset_right = 195.0
 offset_bottom = 782.0
 grow_vertical = 2
 rotation = -1.5708
