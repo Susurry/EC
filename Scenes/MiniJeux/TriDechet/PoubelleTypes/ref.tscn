@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="2_gbcub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aeplx"]
-size = Vector2(168.5, 250.469)
+size = Vector2(168, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cc60"]
-size = Vector2(169, 18.875)
+size = Vector2(168, 13)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fsei3"]
 resource_local_to_scene = true
@@ -18,30 +18,29 @@ shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0v8tn"]
 atlas = ExtResource("2_gbcub")
-region = Rect2(0, 0, 17, 19)
+region = Rect2(0, 0, 17, 20)
 
 [node name="Poubelle" type="Button"]
-offset_right = 171.0
-offset_bottom = 283.0
+offset_right = 169.0
+offset_bottom = 208.0
 focus_mode = 0
 text = "Recyclé :)"
+flat = true
 script = ExtResource("1_f4ki8")
 
 [node name="PushBackArea" type="Area2D" parent="."]
-position = Vector2(107, 142)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushBackArea"]
-position = Vector2(-23.25, 8.75)
+position = Vector2(84, 104)
 shape = SubResource("RectangleShape2D_aeplx")
 
 [node name="Hole" type="Area2D" parent="."]
-position = Vector2(109, 10)
 collision_layer = 2
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(-25, 25)
+position = Vector2(84, 6.5)
 shape = SubResource("RectangleShape2D_7cc60")
 debug_color = Color(1, 0, 0, 0.419608)
 
@@ -53,10 +52,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 15.5
-offset_top = -9.5
-offset_right = 28.5
-offset_bottom = 10.5
+offset_left = -9.5
+offset_top = -4.0
+offset_right = 7.5
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(13, 13)

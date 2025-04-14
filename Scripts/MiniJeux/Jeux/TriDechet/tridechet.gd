@@ -8,7 +8,6 @@ const ITEM_SPAWN_MARGIN: int = 50
 
 var score: float
 var trash_count: int
-var z_index_tracker: int
 var holding_trash: bool = false
 
 @onready var timer = $Timer

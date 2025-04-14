@@ -15,6 +15,7 @@ func _initialize_anchors() -> void:
 			actions_needed += 1
 		if i.anchor_id == 0:
 			i.visible = true
+			i.get_node("CollisionShape2D").disabled = false
 
 func _initialize_panels() -> void:
 	for i in $PanelPieces.get_children():
@@ -47,5 +48,7 @@ func change_anchor(id: int) -> void:
 	for i in $Anchors.get_children():
 			if i.anchor_id == id:
 				i.visible = false
+				i.get_node("CollisionShape2D").disabled = true
 			if i.anchor_id == id + 1:
 				i.visible = true
+				i.get_node("CollisionShape2D").disabled = false

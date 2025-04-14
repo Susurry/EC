@@ -37,12 +37,11 @@ func _on_interact() -> void:
 	
 	if button_pressed:
 		# Pour que la poubelle sélectionner soit toujours au-dessus
-		minigame_window.z_index_tracker += 1
-		z_index = minigame_window.z_index_tracker
-		get_parent().holding_trash = true
+		minigame_window.holding_trash = true
 		sprite_poubelle.material.set_shader_parameter("width",0.0)
+		move_to_front()
 	else:
-		get_parent().holding_trash = false
+		minigame_window.holding_trash = false
 		if mouse_is_off == true :
 			position.y = curr_pos_y
 			sprite_poubelle.material.set_shader_parameter("width",0.0)
@@ -58,10 +57,6 @@ func _on_collision_other(area: Area2D, inside: bool) -> void:
 			pen_dir = -1
 		else:
 			area.get_parent().pen_dir = -pen_dir # Si les deux poubelles occupes la même position
-	else:
-		# Remet à la valeur de base seulement lorsque les poubelles sont séparées
-		minigame_window.z_index_tracker = 0
-		z_index = 0
 
 func _on_trash_enter(area: Area2D) -> void:
 	area.monitoring = false
@@ -71,10 +66,8 @@ func _on_trash_enter(area: Area2D) -> void:
 		minigame_window.update_score(0.05)
 	area.get_parent().queue_free()
 
-
-
 func _on_mouse_hover_toogled(arg: float) -> void:
-	if !get_parent().holding_trash:
+	if !minigame_window.holding_trash:
 		sprite_poubelle.material.set_shader_parameter("width",arg)
 		if arg == 0.0:
 			position.y = curr_pos_y
