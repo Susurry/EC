@@ -129,8 +129,7 @@ _data = {
 }
 
 [node name="QuestLine" type="HBoxContainer"]
-offset_left = -250.0
-offset_right = 54.0
+offset_right = 304.0
 offset_bottom = 30.0
 theme_override_constants/separation = 0
 

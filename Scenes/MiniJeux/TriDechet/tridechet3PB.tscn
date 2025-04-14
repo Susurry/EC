@@ -184,6 +184,7 @@ sfx_trash = ExtResource("5_76lt3")
 wait_time = 3.0
 
 [node name="Poubelle" parent="WindowSize" instance=ExtResource("6_ff1f2")]
+layout_mode = 0
 offset_left = 115.0
 offset_top = 550.0
 offset_right = 284.0
@@ -191,6 +192,7 @@ offset_bottom = 758.0
 select_offset = 15
 
 [node name="Poubelle2" parent="WindowSize" instance=ExtResource("6_ff1f2")]
+layout_mode = 0
 offset_left = 510.0
 offset_top = 550.0
 offset_right = 679.0
@@ -203,6 +205,7 @@ material = SubResource("ShaderMaterial_7mlrj")
 texture = SubResource("AtlasTexture_h3ye7")
 
 [node name="Poubelle3" parent="WindowSize" instance=ExtResource("6_ff1f2")]
+layout_mode = 0
 offset_left = 895.0
 offset_top = 550.0
 offset_right = 1064.0

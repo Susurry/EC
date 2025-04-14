@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cp4xg7covqurw"]
+[gd_scene load_steps=15 format=3 uid="uid://cp4xg7covqurw"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_aeplx"]
 [ext_resource type="Script" uid="uid://ddcdbgy7hgrmh" path="res://Scripts/MiniJeux/Jeux/TriDechet/tridechet.gd" id="2_ltthm"]
@@ -9,22 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="6_i8t5w"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_eka6x"]
 [ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="9_om02x"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_om02x"]
-resource_local_to_scene = true
-shader = ExtResource("7_eka6x")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_26kjq"]
-resource_local_to_scene = true
-shader = ExtResource("7_eka6x")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_26kjq"]
-atlas = ExtResource("6_i8t5w")
-region = Rect2(17, 0, 17, 20)
 
 [sub_resource type="Animation" id="Animation_7vvsc"]
 length = 0.001
@@ -136,6 +120,16 @@ _data = {
 &"intro": SubResource("Animation_om02x")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_om02x"]
+resource_local_to_scene = true
+shader = ExtResource("7_eka6x")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vvsc"]
+atlas = ExtResource("6_i8t5w")
+region = Rect2(17, 0, 17, 20)
+
 [node name="Tridechet" type="Node2D"]
 script = ExtResource("1_aeplx")
 end_timeline = "quest_poubelles"
@@ -153,68 +147,6 @@ sfx_trash = ExtResource("5_eka6x")
 
 [node name="Timer" type="Timer" parent="WindowSize"]
 wait_time = 3.0
-
-[node name="Poubelle" parent="WindowSize" instance=ExtResource("4_7cc60")]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 500.0
-offset_right = 394.0
-offset_bottom = 783.0
-text = ""
-flat = true
-icon_alignment = 1
-expand_icon = true
-select_offset = 15
-
-[node name="PushBackArea" parent="WindowSize/Poubelle" index="0"]
-position = Vector2(110, 142)
-
-[node name="CollisionShape2D" parent="WindowSize/Poubelle/PushBackArea" index="0"]
-position = Vector2(-23, 8.23438)
-
-[node name="Hole" parent="WindowSize/Poubelle" index="1"]
-position = Vector2(86, 10)
-
-[node name="CollisionShape2D" parent="WindowSize/Poubelle/Hole" index="0"]
-position = Vector2(1, 24)
-
-[node name="SpritePoubelle" parent="WindowSize/Poubelle" index="2"]
-material = SubResource("ShaderMaterial_om02x")
-offset_left = 19.0
-offset_right = 32.0
-
-[node name="Poubelle2" parent="WindowSize" instance=ExtResource("4_7cc60")]
-layout_mode = 0
-offset_left = 684.0
-offset_top = 500.0
-offset_right = 856.0
-offset_bottom = 783.0
-text = ""
-flat = true
-icon_alignment = 1
-expand_icon = true
-type = 1
-select_offset = 15
-
-[node name="PushBackArea" parent="WindowSize/Poubelle2" index="0"]
-position = Vector2(110, 142)
-
-[node name="CollisionShape2D" parent="WindowSize/Poubelle2/PushBackArea" index="0"]
-position = Vector2(-23.25, 7.46875)
-
-[node name="Hole" parent="WindowSize/Poubelle2" index="1"]
-position = Vector2(86, 10)
-
-[node name="CollisionShape2D" parent="WindowSize/Poubelle2/Hole" index="0"]
-position = Vector2(1, 22)
-
-[node name="SpritePoubelle" parent="WindowSize/Poubelle2" index="2"]
-material = SubResource("ShaderMaterial_26kjq")
-offset_left = 19.0
-offset_top = -5.5
-offset_right = 32.0
-offset_bottom = 14.5
-texture = SubResource("AtlasTexture_26kjq")
 
 [node name="Fleches" type="Control" parent="WindowSize"]
 anchors_preset = 0
@@ -293,8 +225,26 @@ libraries = {
 }
 autoplay = "intro"
 
+[node name="Poubelle" parent="WindowSize" instance=ExtResource("4_7cc60")]
+offset_left = 225.0
+offset_top = 550.0
+offset_right = 394.0
+offset_bottom = 758.0
+select_offset = 15
+
+[node name="Poubelle2" parent="WindowSize" instance=ExtResource("4_7cc60")]
+offset_left = 690.0
+offset_top = 550.0
+offset_right = 859.0
+offset_bottom = 758.0
+type = 1
+select_offset = 15
+
+[node name="SpritePoubelle" parent="WindowSize/Poubelle2" index="2"]
+material = SubResource("ShaderMaterial_om02x")
+texture = SubResource("AtlasTexture_7vvsc")
+
 [connection signal="timeout" from="WindowSize/Timer" to="WindowSize" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="WindowSize/Fleches/AnimationPlayer" to="WindowSize" method="_on_animation_player_animation_finished"]
 
-[editable path="WindowSize/Poubelle"]
 [editable path="WindowSize/Poubelle2"]
