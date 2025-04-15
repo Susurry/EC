@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cp1m5aulw3omg"]
+[gd_scene load_steps=35 format=4 uid="uid://cp1m5aulw3omg"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_0m7db"]
 [ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_dnyma"]
@@ -96,6 +96,12 @@ shader_parameter/width = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnyma"]
 size = Vector2(20, 178)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hw0q"]
+resource_local_to_scene = true
+shader = ExtResource("8_wgo81")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
 
 [node name="CentreVille" type="Node2D"]
 script = ExtResource("1_0m7db")
@@ -522,6 +528,13 @@ position = Vector2(10, 490)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition/PeriphOuest"]
 shape = SubResource("RectangleShape2D_dnyma")
 
+[node name="PNJ_QCM1" parent="." instance=ExtResource("7_o70ji")]
+position = Vector2(725, 1350)
+timeline = "pnj_qcm"
+
+[node name="Skin" parent="PNJ_QCM1" index="1"]
+material = SubResource("ShaderMaterial_2hw0q")
+
 [connection signal="body_entered" from="MapTransition/PeriphOuest" to="MapTransition" method="_on_level_transition" binds= ["PeriphOuest", 1, "DebugTrans"]]
 
 [editable path="PNJs/PNJ_Postier"]
@@ -535,3 +548,4 @@ shape = SubResource("RectangleShape2D_dnyma")
 [editable path="PNJs/PNJ_biologiste"]
 [editable path="PNJs/PNJ_Jardinier"]
 [editable path="PNJs/PNJ_Policier2"]
+[editable path="PNJ_QCM1"]
