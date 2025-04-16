@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="160425-10"
+config/version="160425-11"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -69,6 +69,7 @@ directories/dtl_directory={
 "pnj_denis": "res://Dialogues/CentreVille/pnj_denis.dtl",
 "pnj_eboueur": "res://Dialogues/PeriphOuest/pnj_eboueur.dtl",
 "pnj_jardinier": "res://Dialogues/CentreVille/pnj_jardinier.dtl",
+"pnj_jardinier2": "res://Dialogues/CentreVille/pnj_jardinier2.dtl",
 "pnj_livraison1": "res://Dialogues/CentreVille/pnj_livraison1.dtl",
 "pnj_livraison2": "res://Dialogues/PeriphOuest/pnj_livraison2.dtl",
 "pnj_marchand": "res://Dialogues/CentreVille/pnj_marchand.dtl",
@@ -76,6 +77,7 @@ directories/dtl_directory={
 "pnj_policier2": "res://Dialogues/CentreVille/pnj_policier2.dtl",
 "pnj_postier": "res://Dialogues/CentreVille/pnj_postier.dtl",
 "pnj_qcm": "res://Dialogues/CentreVille/pnj_qcm.dtl",
+"pnj_qcm2": "res://Dialogues/CentreVille/pnj_qcm2.dtl",
 "pnj_random1": "res://Dialogues/PeriphOuest/pnj_random1.dtl",
 "pnj_random2": "res://Dialogues/PeriphOuest/pnj_random2.dtl",
 "pnj_random3": "res://Dialogues/PeriphOuest/pnj_random3.dtl",

@@ -266,12 +266,15 @@ script = ExtResource("17_iuw2w")
 
 [node name="Sac_Poubelle" parent="Props/Mission_Poubelle" instance=ExtResource("18_fx4co")]
 position = Vector2(823, 687)
+give_item = "Trash1"
 
 [node name="Sac_Poubelle2" parent="Props/Mission_Poubelle" instance=ExtResource("18_fx4co")]
 position = Vector2(891, 615)
+give_item = "Trash2"
 
 [node name="Sac_Poubelle3" parent="Props/Mission_Poubelle" instance=ExtResource("18_fx4co")]
 position = Vector2(972, 644)
+give_item = "Trash3"
 
 [node name="PanneauCentre" type="Node2D" parent="Props"]
 y_sort_enabled = true
