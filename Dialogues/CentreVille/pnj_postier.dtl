@@ -10,7 +10,7 @@ if SaveManager.getElement("Quests", "S_livraison1") == true:
 	Postier: Le colis est-il livré ?
 	Postier: Parfait, merci du coup de main, c'est chouette de ne pas avoir à dépendre du camion !
 	Postier: Si ça te dérange pas, j'en ai un deuxième à te confier !
-	do EventBus.emit_signal("add_item", "Colis")
+	do EventBus.emit_signal("add_item", "Colis2")
 	Postier: Celui-ci doit être livré dans la Périphérie Ouest de la Ville.
 	Postier: Le client devrait être dans la direction Sud depuis la direction Centre-Ville !
 	do SaveManager.setElement("Quests", {"S_livraison2": false})
@@ -27,7 +27,7 @@ if SaveManager.getElement("Quests", "S_livraison1") == null:
 	- Oui
 		Postier: Chouette, merci !
 		Postier: Tiens, voici un premier colis !
-		do EventBus.emit_signal("add_item", "Colis")
+		do EventBus.emit_signal("add_item", "Colis1")
 		Postier: Il doit être livré à l'Est du Centre-Ville, direction Campus.
 		Postier: Le destinataire devrait t'attendre devant chez lui, les gens sont toujours très ponctuels lors de la distribution !
 		do SaveManager.setElement("Quests", {"S_livraison1": false})

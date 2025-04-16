@@ -226,6 +226,7 @@ libraries = {
 autoplay = "intro"
 
 [node name="Poubelle" parent="WindowSize" instance=ExtResource("4_7cc60")]
+layout_mode = 0
 offset_left = 225.0
 offset_top = 550.0
 offset_right = 394.0
@@ -233,6 +234,7 @@ offset_bottom = 758.0
 select_offset = 15
 
 [node name="Poubelle2" parent="WindowSize" instance=ExtResource("4_7cc60")]
+layout_mode = 0
 offset_left = 690.0
 offset_top = 550.0
 offset_right = 859.0
