@@ -4,5 +4,8 @@
 
 [resource]
 script = ExtResource("1_c5jvs")
-blocks = Dictionary[String, String]({})
+blocks = Dictionary[String, String]({
+"mission_poubelle": "uid://cswda4yvu71xm",
+"mission_test": "uid://8ws8nny3lhik"
+})
 metadata/_custom_type_script = "uid://x4070xccs7ll"
