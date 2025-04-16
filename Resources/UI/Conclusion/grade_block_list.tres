@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GradeBlockList" load_steps=2 format=3 uid="uid://cimgxjc6t8xyr"]
+
+[ext_resource type="Script" uid="uid://x4070xccs7ll" path="res://Scripts/UI/Conclusion/Ressource/grade_block_list.gd" id="1_c5jvs"]
+
+[resource]
+script = ExtResource("1_c5jvs")
+blocks = Dictionary[String, String]({})
+metadata/_custom_type_script = "uid://x4070xccs7ll"
