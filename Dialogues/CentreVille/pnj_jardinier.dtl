@@ -1,16 +1,18 @@
-if SaveManager.getElement("Quests", "S_livraison1") == true:
+if SaveManager.getElement("Quests", "S_jardinier") == true:
 	Grâce à ces arbres, dans quelques années on pourra respirer plus facilement ! C'est important de penser au long terme !
 	[end_timeline]
-if SaveManager.getElement("Quests", "S_livraison1") == false:
+if SaveManager.getElement("Quests", "S_jardinier") == false:
 	Tu trouveras les emplacements pour planter les arbres dans les quatre coins du parc. Profite-en pour admirer notre travail jusque là !
 	[end_timeline]
-if SaveManager.getElement("Quests", "S_livraison1") == null:
+if SaveManager.getElement("Quests", "S_jardinier") == null:
 	Dis, est-ce que ça te dit de nous filer un coup de main à nous les jardiniers ?
 	Aujourd'hui, nous plantons de nouvelles plantes dans le parc.
 	Est-ce que tu pourrai nous aider à planter quelques arbres ?
 	- Oui
-		Merci mon garçon. Je te donne l'item dès que je l'ais.
-		do SaveManager.SetElement("Quests", {"S_jardinier": false})
+		Merci mon garçon. Tiens, voici les arbres à planter.
+		do EventBus.emit_signal("add_item", "Arbre")
+		Tu trouveras des panneaux pour indiquer où il faut planter les arbres. Ils ont dans les 4 coins du parc, profite-en pour admirer le reste de notre travail !
+		do SaveManager.setElement("Quests", {"S_jardinier": false})
 	- Non
 		C'est entendu- il ne faut cependant pas avoir peur de se salir les mains pour l'écologie mon garçon !
 	[end_timeline]
