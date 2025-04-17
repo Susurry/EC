@@ -6,7 +6,8 @@
 [ext_resource type="TileSet" uid="uid://c4cih28217htv" path="res://Graphics/Tilesets/Tileset_Ville.tres" id="3_ipl5a"]
 [ext_resource type="Script" uid="uid://df0d0ft4f664q" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/pnj_mobile_manager.gd" id="4_pmrli"]
 [ext_resource type="Script" uid="uid://k3msidbt0ncx" path="res://Scripts/Events/map_transitions.gd" id="5_ipl5a"]
-[ext_resource type="PackedScene" uid="uid://chv50xmrlkp03" path="res://Scenes/Props/PeriphOuest/sac_poubelle.tscn" id="6_ji1no"]
+[ext_resource type="Script" uid="uid://dme3qosnoeyxt" path="res://Scripts/Events/CentreVille/mission_poubelle_plage.gd" id="6_ji1no"]
+[ext_resource type="PackedScene" uid="uid://eiq3vd31ditj" path="res://Scenes/Props/CentreVille/sac_poubelle_plage.tscn" id="7_ji1no"]
 [ext_resource type="PackedScene" uid="uid://wrsox72avo62" path="res://Scenes/Pawn/PNJ/pnj_immobile.tscn" id="7_o70ji"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="8_wgo81"]
 [ext_resource type="Texture2D" uid="uid://372totexuhnj" path="res://Graphics/Characters/character_journalistef.png" id="9_kspd0"]
@@ -379,25 +380,26 @@ y_sort_enabled = true
 position = Vector2(221, 96)
 timeline = "porte_journal"
 
-[node name="QuestPlage" type="Node2D" parent="Props"]
 
-[node name="Sac_Poubelle" parent="Props/QuestPlage" instance=ExtResource("6_ji1no")]
-position = Vector2(1288, 1546)
+[node name="Mission_Poubelle" type="Node2D" parent="Props"]
+y_sort_enabled = true
+script = ExtResource("6_ji1no")
 
-[node name="Sac_Poubelle2" parent="Props/QuestPlage" instance=ExtResource("6_ji1no")]
-position = Vector2(770, 1518)
+[node name="Sac_Poubelle" parent="Props/Mission_Poubelle" instance=ExtResource("7_ji1no")]
+position = Vector2(750, 1534)
+give_item = "Trash1"
 
-[node name="Sac_Poubelle3" parent="Props/QuestPlage" instance=ExtResource("6_ji1no")]
-position = Vector2(484, 1466)
+[node name="Sac_Poubelle_Plage" parent="Props/Mission_Poubelle" instance=ExtResource("7_ji1no")]
+position = Vector2(814, 1504)
+give_item = "Trash2"
 
-[node name="Sac_Poubelle4" parent="Props/QuestPlage" instance=ExtResource("6_ji1no")]
-position = Vector2(60, 1549)
+[node name="Sac_Poubelle_Plage2" parent="Props/Mission_Poubelle" instance=ExtResource("7_ji1no")]
+position = Vector2(892, 1548)
+give_item = "Trash3"
 
-[node name="PoubellesPlage1" parent="Props/QuestPlage" instance=ExtResource("24_a0ulr")]
-position = Vector2(350, 1457)
-
-[node name="PoubellesPlage2" parent="Props/QuestPlage" instance=ExtResource("24_a0ulr")]
-position = Vector2(991, 1457)
+[node name="Sac_Poubelle_Plage3" parent="Props/Mission_Poubelle" instance=ExtResource("7_ji1no")]
+position = Vector2(968, 1495)
+give_item = "Trash4"
 
 [node name="PNJs" type="Node2D" parent="."]
 y_sort_enabled = true
