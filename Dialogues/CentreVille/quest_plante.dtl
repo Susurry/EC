@@ -1,0 +1,15 @@
+label book1
+Générique
+[end_timeline]
+label book2
+L'arbuste se porte bien !
+[end_timeline]
+label book3
+Vous plantez l'arbre !
+do EventBus.emit_signal("set_empreinte", -0.1)
+[end_timeline]
+label book4
+do EventBus.emit_signal("remove_item", "Arbre")
+Quête terminée, incr
+do SaveManager.setElement("Quests", {"S_jardinier": true})
+[end_timeline]

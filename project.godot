@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="170425-13"
+config/version="170425-16"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -65,6 +65,7 @@ directories/dtl_directory={
 "playercar_periph": "res://Dialogues/PeriphOuest/playercar_periph.dtl",
 "pnj": "res://Dialogues/Appartement/pnj.dtl",
 "pnj_biologiste": "res://Dialogues/CentreVille/pnj_biologiste.dtl",
+"pnj_childqcm": "res://Dialogues/CentreVille/pnj_childqcm.dtl",
 "pnj_claire": "res://Dialogues/CentreVille/pnj_claire.dtl",
 "pnj_denis": "res://Dialogues/CentreVille/pnj_denis.dtl",
 "pnj_eboueur": "res://Dialogues/PeriphOuest/pnj_eboueur.dtl",
@@ -90,6 +91,7 @@ directories/dtl_directory={
 "porte_corpo": "res://Dialogues/PeriphOuest/porte_corpo.dtl",
 "porte_hardware": "res://Dialogues/PeriphOuest/porte_hardware.dtl",
 "porte_journal": "res://Dialogues/CentreVille/porte_journal.dtl",
+"quest_plante": "res://Dialogues/CentreVille/quest_plante.dtl",
 "quest_poubelles": "res://Dialogues/PeriphOuest/quest_poubelles.dtl",
 "quest_poubellesplage": "res://Dialogues/CentreVille/quest_poubellesplage.dtl",
 "quest_trashplage": "res://Dialogues/CentreVille/quest_trashplage.dtl",
