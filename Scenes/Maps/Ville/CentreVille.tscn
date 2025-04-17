@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ca0tw334ms12f" path="res://Graphics/Characters/character_postier.png" id="9_wgo81"]
 [ext_resource type="Texture2D" uid="uid://w148bo611i2e" path="res://Graphics/Characters/character_journalistem.png" id="10_knjd3"]
 [ext_resource type="PackedScene" uid="uid://be5otkrreg5lq" path="res://Scenes/Props/CentreVille/porte_journal.tscn" id="10_t3by6"]
-[ext_resource type="PackedScene" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="11_l2rjx"]
+[ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="11_l2rjx"]
 [ext_resource type="Texture2D" uid="uid://b8pngxsc05lmx" path="res://Graphics/Characters/character_verdure.png" id="13_knjd3"]
 [ext_resource type="Texture2D" uid="uid://bjw1mybkb3tj6" path="res://Graphics/Characters/Generic/character_generic31.png" id="14_noplm"]
 [ext_resource type="Texture2D" uid="uid://cwk71uhfeehfm" path="res://Graphics/Characters/character_policier.png" id="15_71qt0"]
