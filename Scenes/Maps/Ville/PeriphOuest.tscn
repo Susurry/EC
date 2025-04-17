@@ -405,7 +405,7 @@ camion_eboueur = NodePath("../../Props/CamionPoubelle")
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
 [connection signal="animation_finished" from="Cutscenes/AnimationPlayer" to="Cutscenes" method="cutscene_end"]
-[connection signal="body_entered" from="MapTransition/CentreVille" to="MapTransition" method="_on_level_transition" binds= ["CentreVille", 0, "DebugTrans"]]
+[connection signal="body_entered" from="MapTransition/CentreVille" to="MapTransition" method="_on_level_transition" binds= ["CentreVille", 0, ""]]
 
 [editable path="PNJs/PNJ_Velo"]
 [editable path="PNJs/PNJ_Random1"]

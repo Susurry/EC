@@ -3,13 +3,12 @@ extends PropTalk
 @export var sfx_pick_up: AudioStreamWAV
 @export var give_item: String
 
-var id: int
+@onready var id: int = get_index()
 
 func initialize_garbage() -> void:
-	if SaveManager.getElement("Missions", "Poubelle"):
-		var poubelle_data: Array[bool] = SaveManager.getElement("Missions", "Poubelle")
-		if poubelle_data[id] == true:
-			queue_free()
+	var poubelle_data: Array[bool] = SaveManager.getElement("Missions", "Poubelle")
+	if poubelle_data[id] == true:
+		queue_free()
 
 func on_interact(player: Player) -> void:
 	if SaveManager.getElement("Quests", "3-1_ramasser") == null: # Quête inactive (pas de sauvegarde)
@@ -25,4 +24,3 @@ func on_interact(player: Player) -> void:
 		
 		if not poubelle_data.has(false):
 			Dialogic.start("pnj_eboueur", "book2")
-			
