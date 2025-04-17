@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=50 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -29,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://bx4c1ixbp3uvi" path="res://Graphics/Characters/Generic/character_generic28.png" id="27_vn6re"]
 [ext_resource type="Script" uid="uid://b2k14hdfnse31" path="res://Scripts/Events/PeriphOuest/mission_eboueur.gd" id="28_1cwe4"]
 [ext_resource type="Texture2D" uid="uid://2tn8hjie0wpr" path="res://Graphics/Characters/character_reparateur.png" id="29_7f4wu"]
+[ext_resource type="Script" uid="uid://cu5g2d6k8y6fw" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/pnj_car_manager.gd" id="30_whdg5"]
+[ext_resource type="Script" uid="uid://cgr672ti8tt2k" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/targets_car.gd" id="31_vn6re"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
 atlas = ExtResource("4_4y10b")
@@ -154,6 +156,11 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yn25f"]
 size = Vector2(20, 178)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_whdg5"]
+vertices = PackedVector2Array(852, 1014, 794, 1014, 794, 991.75, 852, 990.258, 437.242, 376.898, 438.742, 437, 357.883, 437, 357.117, 376.102, 850.383, 433.867, 789.383, 433.109, 785.672, 376, 852.609, 376, 420, -1.11719, 420, 10, 363, 10, 363, -1.85938)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(353, -12, 353, 20, 430, 20, 430, -11), PackedVector2Array(784, 982, 784, 1024, 862, 1024, 862, 980), PackedVector2Array(347, 366, 348, 447, 449, 447, 447, 367), PackedVector2Array(780, 443, 775, 366, 863, 366, 860, 444)])
 
 [node name="PeriphOuest" type="Node2D"]
 script = ExtResource("1_r1ah8")
@@ -401,6 +408,61 @@ timeline = "intro_periph"
 script = ExtResource("28_1cwe4")
 eboueur = NodePath("../../PNJs/PNJ_Eboueur")
 camion_eboueur = NodePath("../../Props/CamionPoubelle")
+
+[node name="CarManager" type="Node2D" parent="."]
+script = ExtResource("30_whdg5")
+car_quantity = 10
+
+[node name="SpawnTargets" type="Node2D" parent="CarManager"]
+
+[node name="Spawn" type="Marker2D" parent="CarManager/SpawnTargets"]
+position = Vector2(374, 0)
+script = ExtResource("31_vn6re")
+
+[node name="Spawn1" type="Marker2D" parent="CarManager/SpawnTargets"]
+position = Vector2(842, 1009)
+script = ExtResource("31_vn6re")
+id = 1
+
+[node name="EndTargets" type="Node2D" parent="CarManager"]
+
+[node name="End" type="Marker2D" parent="CarManager/EndTargets"]
+position = Vector2(805, 1009)
+script = ExtResource("31_vn6re")
+
+[node name="End1" type="Marker2D" parent="CarManager/EndTargets"]
+position = Vector2(410, 0)
+script = ExtResource("31_vn6re")
+id = 1
+
+[node name="CircuitVoiture" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="CircuitVoiture"]
+navigation_polygon = SubResource("NavigationPolygon_whdg5")
+
+[node name="NavigationLink2D" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+start_position = Vector2(374, 0)
+end_position = Vector2(374, 424)
+
+[node name="NavigationLink2D6" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+start_position = Vector2(410, 0)
+end_position = Vector2(410, 392)
+
+[node name="NavigationLink2D2" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+start_position = Vector2(374, 424)
+end_position = Vector2(805, 424)
+
+[node name="NavigationLink2D5" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+start_position = Vector2(410, 392)
+end_position = Vector2(842, 392)
+
+[node name="NavigationLink2D3" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+start_position = Vector2(805, 424)
+end_position = Vector2(805, 1009)
+
+[node name="NavigationLink2D4" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+start_position = Vector2(842, 391)
+end_position = Vector2(842, 1009)
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
