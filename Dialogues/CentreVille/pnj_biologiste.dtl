@@ -1,6 +1,6 @@
 label book1
 if SaveManager.getElement("Quests", "S_plage3") == true:
-	N'oublie pas : il est interdit de ramasser les coquillages sur la plage.
+	N'oublie pas : il est interdit de ramasser les coquillages sur la plage : ils servent à la régénération du sable et éviter l’érosion.
 	N'hésite pas à en informer les gens d'ici, pour que cette plage puisse être préservée.
 	[end_timeline]
 if SaveManager.getElement("Quests", "S_plage2") == true:
