@@ -167,7 +167,7 @@ _data = {
 
 [node name="Tridechet" type="Node2D"]
 script = ExtResource("1_7mlrj")
-end_timeline = "quest_poubelles"
+end_timeline = "quest_poubellesplage"
 bookmark = 2
 
 [node name="WindowSize" type="Control" parent="."]

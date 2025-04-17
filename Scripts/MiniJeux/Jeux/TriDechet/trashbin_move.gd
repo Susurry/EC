@@ -61,9 +61,9 @@ func _on_collision_other(area: Area2D, inside: bool) -> void:
 func _on_trash_enter(area: Area2D) -> void:
 	area.monitoring = false
 	if type == area.get_parent().type:
-		minigame_window.update_score(-0.1)
+		minigame_window.update_score(-0.05)
 	else:
-		minigame_window.update_score(0.05)
+		minigame_window.update_score(0.1)
 	area.get_parent().queue_free()
 
 func _on_mouse_hover_toogled(arg: float) -> void:

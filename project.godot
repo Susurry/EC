@@ -78,6 +78,7 @@ directories/dtl_directory={
 "pnj_postier": "res://Dialogues/CentreVille/pnj_postier.dtl",
 "pnj_qcm": "res://Dialogues/CentreVille/pnj_qcm.dtl",
 "pnj_qcm2": "res://Dialogues/CentreVille/pnj_qcm2.dtl",
+"pnj_qcm3": "res://Dialogues/CentreVille/pnj_qcm3.dtl",
 "pnj_random1": "res://Dialogues/PeriphOuest/pnj_random1.dtl",
 "pnj_random2": "res://Dialogues/PeriphOuest/pnj_random2.dtl",
 "pnj_random3": "res://Dialogues/PeriphOuest/pnj_random3.dtl",
@@ -90,6 +91,7 @@ directories/dtl_directory={
 "porte_hardware": "res://Dialogues/PeriphOuest/porte_hardware.dtl",
 "porte_journal": "res://Dialogues/CentreVille/porte_journal.dtl",
 "quest_poubelles": "res://Dialogues/PeriphOuest/quest_poubelles.dtl",
+"quest_poubellesplage": "res://Dialogues/CentreVille/quest_poubellesplage.dtl",
 "quest_trashplage": "res://Dialogues/CentreVille/quest_trashplage.dtl",
 "sac_poubelle": "res://Dialogues/PeriphOuest/sac_poubelle.dtl"
 }

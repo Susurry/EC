@@ -25,6 +25,7 @@ func update_trash_count() -> void:
 		EventBus.emit_signal("remove_item", "Trash1")
 		EventBus.emit_signal("remove_item", "Trash2")
 		EventBus.emit_signal("remove_item", "Trash3")
+		EventBus.emit_signal("remove_item", "Trash4")
 		await get_tree().create_timer(2.5).timeout 
 		get_parent().quit_minigame()
 
