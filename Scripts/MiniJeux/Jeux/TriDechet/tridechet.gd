@@ -4,6 +4,7 @@ const ITEM_SPAWN_MARGIN: int = 50
 
 @export var items: Array[PackedScene]
 @export var max_trash_items: int
+@export var item_fall_speed: float
 @export var sfx_trash: AudioStreamWAV
 
 var score: float
@@ -36,6 +37,8 @@ func _on_timer_timeout() -> void:
 	if trash_count < max_trash_items:
 		var trash_load = items[randi_range(0,items.size()-1)]
 		var trash_instance: Node2D = trash_load.instantiate()
+		
+		trash_instance.speed = item_fall_speed
 		
 		trash_instance.position.x = randf_range(ITEM_SPAWN_MARGIN, size.x - ITEM_SPAWN_MARGIN)
 		

@@ -177,7 +177,8 @@ offset_right = 1200.0
 offset_bottom = 750.0
 script = ExtResource("2_h3ye7")
 items = Array[PackedScene]([ExtResource("3_bi8gk"), ExtResource("4_nw36i"), ExtResource("5_h3ye7")])
-max_trash_items = 10
+max_trash_items = 8
+item_fall_speed = 250.0
 sfx_trash = ExtResource("5_76lt3")
 
 [node name="Timer" type="Timer" parent="WindowSize"]
