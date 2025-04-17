@@ -10,7 +10,9 @@
 [ext_resource type="Script" uid="uid://dme3qosnoeyxt" path="res://Scripts/Events/CentreVille/mission_poubelle_plage.gd" id="6_ji1no"]
 [ext_resource type="PackedScene" uid="uid://eiq3vd31ditj" path="res://Scenes/Props/CentreVille/sac_poubelle_plage.tscn" id="7_ji1no"]
 [ext_resource type="PackedScene" uid="uid://wrsox72avo62" path="res://Scenes/Pawn/PNJ/pnj_immobile.tscn" id="7_o70ji"]
+[ext_resource type="Script" uid="uid://crrbh1c846u1c" path="res://Scripts/Events/CentreVille/mission_plante.gd" id="8_cfg0q"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="8_wgo81"]
+[ext_resource type="PackedScene" uid="uid://binfewunpdjqq" path="res://Scenes/Props/CentreVille/zone_de_plante.tscn" id="9_68uwc"]
 [ext_resource type="Texture2D" uid="uid://372totexuhnj" path="res://Graphics/Characters/character_journalistef.png" id="9_kspd0"]
 [ext_resource type="Texture2D" uid="uid://ca0tw334ms12f" path="res://Graphics/Characters/character_postier.png" id="9_wgo81"]
 [ext_resource type="Texture2D" uid="uid://w148bo611i2e" path="res://Graphics/Characters/character_journalistem.png" id="10_knjd3"]
@@ -418,6 +420,17 @@ timeline = "quest_trashplage"
 position = Vector2(482, 1504)
 give_item = "Trash2"
 timeline = "quest_trashplage"
+
+[node name="Mission_Plante" type="Node2D" parent="Props"]
+script = ExtResource("8_cfg0q")
+
+[node name="Zone_De_Plante" parent="Props/Mission_Plante" instance=ExtResource("9_68uwc")]
+position = Vector2(397, 803)
+timeline = "dial_test"
+
+[node name="Zone_De_Plante2" parent="Props/Mission_Plante" instance=ExtResource("9_68uwc")]
+position = Vector2(455, 803)
+timeline = "dial_test"
 
 [node name="PNJs" type="Node2D" parent="."]
 y_sort_enabled = true
