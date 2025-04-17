@@ -29,7 +29,7 @@ shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nw36i"]
 atlas = ExtResource("8_kxl63")
-region = Rect2(111, 27, 17, 20)
+region = Rect2(34, 0, 17, 20)
 
 [sub_resource type="Animation" id="Animation_7vvsc"]
 length = 0.001

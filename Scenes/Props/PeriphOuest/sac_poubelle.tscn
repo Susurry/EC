@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ccces5iri0lt3" path="res://Scripts/Props/Types/prop_sac_poubelle.gd" id="1_p7pmb"]
 [ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="2_b620c"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_iptsd"]
-[ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="3_ko84d"]
+[ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="4_b620c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
 resource_local_to_scene = true
@@ -12,11 +12,11 @@ shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5fih"]
-atlas = ExtResource("3_ko84d")
-region = Rect2(34, 4, 13, 16)
+atlas = ExtResource("4_b620c")
+region = Rect2(136, 41, 15, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
-size = Vector2(23, 24)
+size = Vector2(25, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
 size = Vector2(9, 7)
@@ -37,13 +37,13 @@ offset = Vector2(0, -8)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(6.5, 9)
+position = Vector2(7.5, 9.5)
 shape = SubResource("RectangleShape2D_rxyj1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(6.5, 10.5)
+position = Vector2(7.5, 9.5)
 shape = SubResource("RectangleShape2D_abqwm")
 debug_color = Color(1, 0, 0, 0.419608)
 

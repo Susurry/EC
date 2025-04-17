@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cysq8n807qxk6"]
+[gd_scene load_steps=15 format=3 uid="uid://cysq8n807qxk6"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_fhjup"]
 [ext_resource type="PackedScene" uid="uid://dpetw1dobdtfv" path="res://Scenes/MiniJeux/Velo/pièce_vélo.tscn" id="2_45o1r"]
@@ -13,34 +13,31 @@ region = Rect2(2, 22, 44, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4363w"]
 atlas = ExtResource("4_quksx")
-region = Rect2(56, 0, 16, 7)
+region = Rect2(60, 0, 16, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqmdg"]
 atlas = ExtResource("4_quksx")
-region = Rect2(47, 7, 8, 11)
+region = Rect2(51, 7, 8, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15brd"]
 atlas = ExtResource("4_quksx")
-region = Rect2(47, 7, 8, 11)
+region = Rect2(51, 7, 8, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4tsbv"]
 atlas = ExtResource("4_quksx")
-region = Rect2(55, 7, 11, 10)
+region = Rect2(59, 7, 11, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqi1l"]
 atlas = ExtResource("4_quksx")
-region = Rect2(81, 1, 9, 15)
+region = Rect2(85, 0, 9, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx55q"]
 atlas = ExtResource("4_quksx")
-region = Rect2(72, 0, 9, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lpnpr"]
-atlas = ExtResource("4_quksx")
-region = Rect2(90, 0, 13, 16)
+region = Rect2(76, 0, 9, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sntwy"]
-atlas = SubResource("AtlasTexture_lpnpr")
+atlas = ExtResource("4_quksx")
+region = Rect2(94, 0, 13, 16)
 
 [node name="Velo" type="Node2D"]
 script = ExtResource("1_fhjup")

@@ -151,7 +151,7 @@ music_volume = -5.0
 
 [node name="0_Lit" type="Marker2D" parent="StartPoints"]
 z_index = 50
-position = Vector2(48, 47)
+position = Vector2(56, 47)
 gizmo_extents = 30.0
 
 [node name="1_Sortie" type="Marker2D" parent="StartPoints"]

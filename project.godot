@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="160425-11"
+config/version="170425-09"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -83,12 +83,14 @@ directories/dtl_directory={
 "pnj_random3": "res://Dialogues/PeriphOuest/pnj_random3.dtl",
 "pnj_random4": "res://Dialogues/PeriphOuest/pnj_random4.dtl",
 "pnj_repatateur": "res://Dialogues/PeriphOuest/pnj_repatateur.dtl",
+"pnj_sonia": "res://Dialogues/Amphitheatre/pnj_sonia.dtl",
 "pnj_verdure": "res://Dialogues/CentreVille/pnj_verdure.dtl",
 "porte_appartement": "res://Dialogues/PeriphOuest/porte_appartement.dtl",
 "porte_corpo": "res://Dialogues/PeriphOuest/porte_corpo.dtl",
 "porte_hardware": "res://Dialogues/PeriphOuest/porte_hardware.dtl",
 "porte_journal": "res://Dialogues/CentreVille/porte_journal.dtl",
 "quest_poubelles": "res://Dialogues/PeriphOuest/quest_poubelles.dtl",
+"quest_trashplage": "res://Dialogues/CentreVille/quest_trashplage.dtl",
 "sac_poubelle": "res://Dialogues/PeriphOuest/sac_poubelle.dtl"
 }
 layout/style_list=["res://Dialogues/Styles/Custom_Style.tres"]

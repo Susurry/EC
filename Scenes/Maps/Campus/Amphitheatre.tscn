@@ -215,9 +215,9 @@ vertical_alignment = 1
 clip_text = true
 
 [node name="Label" type="Label" parent="Props/DEBUG"]
-offset_left = 11.0
+offset_left = 500.0
 offset_top = 195.0
-offset_right = 372.0
+offset_right = 861.0
 offset_bottom = 348.0
 text = "Rangées de bureaux d'amphis,
 avec étudiants présents pour présentation
@@ -242,7 +242,7 @@ texture = ExtResource("6_24g13")
 
 [node name="PNJ_sonia" parent="PNJs" instance=ExtResource("4_sdd1d")]
 position = Vector2(225, 110)
-timeline = "dial_test"
+timeline = "pnj_sonia"
 metadata/_edit_group_ = true
 
 [node name="Skin" parent="PNJs/PNJ_sonia" index="1"]
