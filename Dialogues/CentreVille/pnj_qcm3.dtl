@@ -1,0 +1,35 @@
+label book1
+if SaveManager.getElement("Quests", "F_qcm3") == true or SaveManager.getElement("Quests", "F_qcm3") == false:
+	C'est cool le pouvoir trâiner à la plage pendant les fortes chaleurs de l'été !
+else:
+	Elle est magnifique cette plage mais je me demandais... Qu-est-ce qu’on ne devrait pas faire sur une plage pour la préserver ? Je pense ma question est peut-être difficile, tu n'es pas obligé d'y répondre...
+	- Promener son chien
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+		Ah, effectivement, je crois qe c'est interdit de promener son chien en zone surveillée. Surement c'est pour préserver la plage ?
+	- Faire voler un cerf-volant
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+		Ah, il me semble bien que c'est interdit de faire voler un cerf-volant en zone surveillée. Surement pour éviter de le perdre ou de l'emmeler quelque part ?
+	- Pêcher à la ligne
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+		C'est sur, ça serait dangeureux de pêcher là où il y a des baigneurs ! Euh, surement ça doit aussi aider à la préservation de la vie marine ?
+	- Ramasser des coquillages
+		Oh, vraiment... ? Mais, comment ça se fait ? C'est quoi la raison ?
+		- raison 1 (correct)
+			do SaveManager.setElement("Quests", {"F_qcm3": true})
+			do EventBus.emit_signal("add_follower", 1)
+			Succès
+		- raison 2
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+			Fail
+		- raison 3
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+			Fail
+		- raison 4
+		do SaveManager.setElement("Quests", {"F_qcm3": false})
+			Fail
+		- (répondre plus tard)
+	- (répondre plus tard)
+		[end_timeline]
+	Cool
+	[end_timeline]
+[end_timeline]
