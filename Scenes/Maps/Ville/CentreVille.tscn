@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://cp1m5aulw3omg"]
+[gd_scene load_steps=51 format=4 uid="uid://cp1m5aulw3omg"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_0m7db"]
 [ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_dnyma"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="11_l2rjx"]
 [ext_resource type="PackedScene" uid="uid://dlpedsflmqs68" path="res://Scenes/Props/CentreVille/porte_tcc.tscn" id="12_n6k4u"]
 [ext_resource type="Texture2D" uid="uid://b8pngxsc05lmx" path="res://Graphics/Characters/character_verdure.png" id="13_knjd3"]
+[ext_resource type="PackedScene" uid="uid://o2u3rlbw32ku" path="res://Scenes/Props/CentreVille/metro_centre.tscn" id="13_mhy33"]
 [ext_resource type="Texture2D" uid="uid://bjw1mybkb3tj6" path="res://Graphics/Characters/Generic/character_generic31.png" id="14_noplm"]
 [ext_resource type="Texture2D" uid="uid://cwk71uhfeehfm" path="res://Graphics/Characters/character_policier.png" id="15_71qt0"]
 [ext_resource type="Texture2D" uid="uid://dlb46nuffkm5y" path="res://Graphics/Characters/character_marchand.png" id="17_ptl4n"]
@@ -450,6 +451,10 @@ timeline = "quest_plante"
 position = Vector2(996, 601)
 timeline = "quest_plante"
 
+[node name="MetroCentre" parent="Props" instance=ExtResource("13_mhy33")]
+position = Vector2(1035, 290)
+timeline = "metro_centre"
+
 [node name="PNJs" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -603,7 +608,7 @@ pnj_quantity = 30
 position = Vector2(367, 400)
 
 [node name="Target2" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
-position = Vector2(1099, 335)
+position = Vector2(1135, 335)
 
 [node name="Target3" type="Marker2D" parent="PNJ_Manager/Middle_Targets"]
 position = Vector2(304, 1391)
