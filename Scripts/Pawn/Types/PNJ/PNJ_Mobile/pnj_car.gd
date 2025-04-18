@@ -11,12 +11,10 @@ var skin_texture: Texture2D
 var end_target_pos: Vector2
 var end_target_id: int
 
+
+
 func _ready() -> void:
 	super()
-	initialize_skin()
-
-func initialize_skin() -> void:
-	skin.texture = skin_texture
 
 func initialize_pawn() -> void:
 	await get_tree().physics_frame

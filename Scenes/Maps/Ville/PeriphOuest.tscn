@@ -446,22 +446,22 @@ end_position = Vector2(374, 424)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 start_position = Vector2(410, 0)
-end_position = Vector2(410, 392)
+end_position = Vector2(410, 400)
 
 [node name="NavigationLink2D2" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 start_position = Vector2(374, 424)
 end_position = Vector2(805, 424)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
-start_position = Vector2(410, 392)
-end_position = Vector2(842, 392)
+start_position = Vector2(410, 400)
+end_position = Vector2(842, 400)
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 start_position = Vector2(805, 424)
 end_position = Vector2(805, 1009)
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
-start_position = Vector2(842, 391)
+start_position = Vector2(842, 400)
 end_position = Vector2(842, 1009)
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
