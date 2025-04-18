@@ -1,1 +1,21 @@
-C'est ici que vous pourrez récupérer votre titre de transport pour le Métro !
+if {SaveManager.getElement("Player", "inventory").has("Carte")} == false:
+	Bonjour, bienvenue dans l'agence TCC ! En quoi puis-je vous aider ?
+	- Récupérer mon titre de transport
+		Oh, vous souhaitez vous abonner et obtenir votre titre de transport pour le métro ? Très bien.
+		Dans ce cas là, il va nous falloir remlir quelques documents concernant votre type d'abbonnement et vos information personnelles... Cela ne vous dérange pas ?
+		- Pas de problème
+			Parfait ! J'ai donc quelques question à vous poser...
+			do EventBus.emit_signal("change_time", -300)
+			... Et voilà, voici votre titre de transport ! Avec celui-ci, vous avez donc maintenant accès à notre ligne de métro !
+			do EventBus.emit_signal("add_item", "Carte")
+			N'hésitez pas à repasser au moindre problème
+		- Euh...
+			Ah, vous êtes si pressé que ça ? Je suis navré mais nous ne pouvons pas griller les étapes.
+			N'hésitez pas à revenir si vous trouvez plus de temps !
+
+	- Rien du tout
+
+	[end_timeline]
+else:
+	Vous avez déjà votre titre de transport.
+	[end_timeline]

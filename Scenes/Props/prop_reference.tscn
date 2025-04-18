@@ -9,7 +9,7 @@ shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxyj1"]
-size = Vector2(29, 11)
+size = Vector2(22, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
 
