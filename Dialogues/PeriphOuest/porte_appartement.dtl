@@ -1,1 +1,4 @@
-Porte Appartement
+Voulez-vous entrer dans votre appartement ?
+- Oui
+	do ThreadLoad.load_scene("Appartement", 1)
+- Non
