@@ -4,6 +4,8 @@ const INTERACT_COOLDOWN: float = 0.4
 
 var interact_cooldown: float
 
+var is_toggle_sprinting: bool = false
+
 func _ready() -> void:
 	initialize_signals()
 
@@ -20,6 +22,15 @@ func get_direction() -> Vector2:
 	return Vector2(horizontal, vertical)
 
 func is_sprinting() -> bool:
+	if toggleable_sprint:
+		if Input.is_action_just_pressed("sprint"):
+			is_toggle_sprinting = !is_toggle_sprinting
+		
+		if is_toggle_sprinting:
+			return true
+		else:
+			return false
+	
 	return Input.is_action_pressed("sprint")
 
 func is_interacting() -> bool:

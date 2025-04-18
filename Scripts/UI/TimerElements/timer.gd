@@ -42,7 +42,13 @@ func _process(delta: float) -> void:
 		if not is_tweening:
 			timer_bar.value = -time
 	else:
-		pass
+		# TEMPORAIRE À RETIRER DÈS QUE C'EST POSSIBLE
+		# C'est pour activer le scénario "Game Over"
+		if Dialogic.current_timeline:
+			await Dialogic.timeline_ended
+		Dialogic.start("debug_game_over")
+		await Dialogic.timeline_ended
+		get_tree().quit()
 
 func update_grading() -> void:
 	var grading_score: float = carbone_element.empreinte - floor(follower_element.follower/4)

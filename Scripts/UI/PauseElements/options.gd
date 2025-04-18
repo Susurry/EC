@@ -17,3 +17,12 @@ func toggle_pause() -> void:
 
 func _on_quitter_pressed() -> void:
 	get_tree().quit()
+
+func _on_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func _on_sprint_toggled(toggled_on: bool) -> void:
+	Game.inputs.toggleable_sprint = toggled_on
