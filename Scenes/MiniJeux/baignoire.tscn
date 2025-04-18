@@ -176,7 +176,7 @@ shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kvi7"]
 atlas = ExtResource("4_0rf1o")
-region = Rect2(47, 0, 9, 7)
+region = Rect2(51, 0, 9, 7)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kvi7"]
 bg_color = Color(0.275113, 0.630969, 0.890769, 1)
@@ -208,7 +208,7 @@ animation = &"start_shower"
 autoplay = "default"
 
 [node name="ValveGauche" type="Sprite2D" parent="WindowSize/SpriteBaignoire"]
-modulate = Color(0.29219, 0.29219, 0.29219, 1)
+modulate = Color(0.294118, 0.294118, 0.294118, 0.72549)
 position = Vector2(-7, -9)
 texture = SubResource("AtlasTexture_h6tp1")
 
@@ -233,10 +233,10 @@ texture = SubResource("AtlasTexture_6m5wv")
 [node name="BouchonElements" type="Node2D" parent="WindowSize"]
 
 [node name="Bouchon" type="Button" parent="WindowSize/BouchonElements"]
-offset_left = 308.0
-offset_top = 285.0
-offset_right = 358.0
-offset_bottom = 313.0
+offset_left = 315.0
+offset_top = 368.0
+offset_right = 365.0
+offset_bottom = 396.0
 focus_mode = 0
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
@@ -258,7 +258,7 @@ centered = false
 position = Vector2(375, 381)
 
 [node name="PosDeboucher" type="Marker2D" parent="WindowSize/BouchonElements"]
-position = Vector2(308, 285)
+position = Vector2(315, 368)
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
 layout_mode = 0
