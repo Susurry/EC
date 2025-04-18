@@ -753,6 +753,24 @@ action_name = "down"
 layout_mode = 2
 action_name = "interact"
 
+[node name="Options" type="VBoxContainer" parent="UI/PauseElements/TabContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 2
+
+[node name="FullscreenToggle" type="CheckBox" parent="UI/PauseElements/TabContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Plein écran"
+alignment = 1
+
+[node name="SprintToggle" type="CheckBox" parent="UI/PauseElements/TabContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Toggle  Run"
+alignment = 1
+
 [node name="Pointer" type="TextureRect" parent="UI"]
 z_index = 2
 custom_minimum_size = Vector2(50, 0)
@@ -791,3 +809,5 @@ autoplay = "bobbing"
 [connection signal="toggled" from="UI/QuestElements/HidePanel/Button" to="UI/QuestElements" method="_on_button_toggled"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Retour" to="UI/PauseElements" method="toggle_pause"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Quitter" to="UI/PauseElements" method="_on_quitter_pressed"]
+[connection signal="toggled" from="UI/PauseElements/TabContainer/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="UI/PauseElements/TabContainer/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggled"]
