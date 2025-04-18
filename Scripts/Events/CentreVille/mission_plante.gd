@@ -1,9 +1,6 @@
 extends Node2D
 
 func _ready() -> void:
-	# Pour commencer la mission
-	# SaveManager.setElement("Quests", {"S_plante" = false})
-	
 	if SaveManager.getElement("Missions", "Plante_Park") == null: # Si il y a aucune sauvegarde
 		var plant_data: Array[bool]
 		
@@ -11,3 +8,6 @@ func _ready() -> void:
 			plant_data.append(false)
 			
 		SaveManager.setElement("Missions", {"Plante_Park": plant_data})
+	else:
+		for child in get_children():
+			child.initialize_plant()
