@@ -655,7 +655,7 @@ position = Vector2(10, 490)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition/PeriphOuest"]
 shape = SubResource("RectangleShape2D_dnyma")
 
-[connection signal="body_entered" from="MapTransition/PeriphOuest" to="MapTransition" method="_on_level_transition" binds= ["PeriphOuest", 1, "DebugTrans"]]
+[connection signal="body_entered" from="MapTransition/PeriphOuest" to="MapTransition" method="_on_level_transition" binds= ["PeriphOuest", 1, ""]]
 
 [editable path="PNJs/PNJ_Postier"]
 [editable path="PNJs/PNJ_Claire"]
