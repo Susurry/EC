@@ -14,7 +14,6 @@ var end_target_id: int
 var trajet_pause: bool = false
 
 
-
 func _ready() -> void:
 	super()
 

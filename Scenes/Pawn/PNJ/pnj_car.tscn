@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://crwrfx45qslht"]
+[gd_scene load_steps=44 format=3 uid="uid://crwrfx45qslht"]
 
 [ext_resource type="Script" uid="uid://ckmxkfe8t32rh" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car.gd" id="1_6k2ip"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="2_p12b7"]
@@ -7,7 +7,6 @@
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="5_qk2tl"]
 [ext_resource type="Texture2D" uid="uid://n2uciyby3swr" path="res://Graphics/TEMP/car_new.png" id="6_6k2ip"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_4d6qx"]
-[ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_e0pbg"]
 [ext_resource type="Shape2D" uid="uid://uttw2jeb5cji" path="res://detecteur_horizontal.tres" id="8_sfww7"]
 [ext_resource type="Shape2D" uid="uid://8n7miugf85s8" path="res://collision_verticale.tres" id="9_4d6qx"]
 [ext_resource type="Shape2D" uid="uid://cvoudvhjv3dg" path="res://detecteur_vertical.tres" id="9_qk2tl"]
@@ -132,7 +131,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 28)]
+"values": [Vector2(0, 31)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -209,7 +208,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-41, -7)]
+"values": [Vector2(-44, -7)]
 }
 
 [sub_resource type="Animation" id="Animation_7ds6b"]
@@ -250,7 +249,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(41, -8)]
+"values": [Vector2(44, -8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -327,7 +326,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -48)]
+"values": [Vector2(0, -51)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -381,7 +380,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 28)]
+"values": [Vector2(0, 31)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -435,7 +434,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-41, -7)]
+"values": [Vector2(-44, -7)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -513,7 +512,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(41, -8)]
+"values": [Vector2(44, -8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -579,7 +578,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -48)]
+"values": [Vector2(0, -51)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -722,6 +721,7 @@ states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pb38o"]
+graph_offset = Vector2(-472.421, -16.1491)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_t5d6h")
 nodes/TimeScale/position = Vector2(493.333, 160)
 nodes/Transition/node = SubResource("AnimationNodeTransition_2sv47")
@@ -792,12 +792,6 @@ radius = 6.0
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
 radius = 6.0
 avoidance_enabled = false
-
-[node name="Shadow" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.294118)
-z_index = -1
-position = Vector2(0, 4)
-texture = ExtResource("8_e0pbg")
 
 [connection signal="animation_changed" from="Skin/AnimationPlayer" to="Detecteur_Car/CollisionShape2D" method="_on_animation_player_animation_changed"]
 [connection signal="body_entered" from="Detecteur_Car" to="." method="_on_detecteur_car_body_entered"]
