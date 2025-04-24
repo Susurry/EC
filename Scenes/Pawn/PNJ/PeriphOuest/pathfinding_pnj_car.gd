@@ -20,5 +20,6 @@ func animate(pawn: Pawn, _delta: float) -> void:
 	if (pawn.get_real_velocity()):
 		pawn.skin.set_animation_state(PawnSkin.ANIMATION_STATES.walk)
 		pawn.skin.set_animation_direction(pawn.get_real_velocity())
+		pawn.visible = true
 	else:
 		pawn.skin.set_animation_state(PawnSkin.ANIMATION_STATES.idle)

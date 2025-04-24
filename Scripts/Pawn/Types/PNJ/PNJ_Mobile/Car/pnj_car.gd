@@ -8,11 +8,13 @@ var spawn_id: int
 var spawn_point: Vector2
 var targets: Array[Vector2]
 var skin_texture: Texture2D
-var end_target_pos: Vector2
+var target_pos: Vector2
 var target_save: Vector2
 var end_target_id: int
 var trajet_pause: bool = false
+var current_target: int = 1
 
+@onready var animation_player = $Skin/AnimationPlayer
 
 func _ready() -> void:
 	super()
@@ -22,15 +24,36 @@ func initialize_pawn() -> void:
 	randomize()
 	
 	# Pour le spawn du PNJ
-	
-	for i in manager.end_target_array:
-		if i.id == spawn_id:
-			end_target_pos = i.position
-			set_movement_target(end_target_pos)
+	#if i.id == spawn_id:
+	target_pos = manager.target_array[current_target].position
+	set_movement_target(target_pos)
 
 func _on_navigation_agent_2d_navigation_finished() -> void:
-	queue_free()
-	manager.initialize_pnj()
+	current_target += 1
+	if current_target >= manager.target_array.size() - 1:
+		queue_free()
+		manager.initialize_pnj()
+	else :
+		current_target += 1
+		set_movement_target(manager.target_array[current_target].position)
+		visible = false
+		position = manager.target_array[current_target-1].position
+		
+		#match manager.target_array[current_target-1].anim:
+			#"right":
+				#animation_player.play("walk_right")
+				#
+			#"left":
+				#animation_player.play("walk_left")
+				#
+			#"down":
+				#animation_player.play("walk_down")
+				#
+			#"up":
+				#animation_player.play("walk_up")
+				
+		
+		
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity

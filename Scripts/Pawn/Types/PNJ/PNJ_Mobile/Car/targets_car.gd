@@ -1,3 +1,3 @@
 extends Marker2D
 
-@export var id: int
+@export var anim: String

@@ -5,7 +5,8 @@ extends Node2D
 @onready var car_asset: PackedScene = preload("uid://crwrfx45qslht")
 
 var end_target_array: Array[Marker2D]
-var spawn_target_array: Array[Marker2D]
+var path_array: Array[Node2D]
+var target_array : Array
 
 func _ready() -> void:
 	initialize_paths()
@@ -15,20 +16,20 @@ func _ready() -> void:
 		initialize_pnj()
 
 func initialize_paths() -> void:
-	for i in $SpawnTargets.get_children():
-		spawn_target_array.append(i)
-	
-	for i in $EndTargets.get_children():
-		end_target_array.append(i)
+	for i in self.get_children():
+		path_array.append(i)
 
 func initialize_pnj() -> void:
 	randomize()
 	var pnj_instance: CharacterBody2D = car_asset.instantiate()
 	pnj_instance.manager = self
 	
-	var rand_spawn = spawn_target_array[randi_range(0, spawn_target_array.size() - 1)]
-	pnj_instance.position = rand_spawn.position
-	pnj_instance.spawn_id = rand_spawn.id
+	var rand_path = path_array[randi_range(0, path_array.size() - 1)]
+	
+	target_array = rand_path.get_children()
+	print(target_array)
+	pnj_instance.position = target_array[0].position
+	#pnj_instance.spawn_id = rand_path.id
 	pnj_instance.spawn_point = pnj_instance.position
 	#pnj_instance.skin_texture = pnj_instance.skin_car
 	

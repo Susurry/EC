@@ -413,27 +413,37 @@ camion_eboueur = NodePath("../../Props/CamionPoubelle")
 script = ExtResource("30_whdg5")
 car_quantity = 1
 
-[node name="SpawnTargets" type="Node2D" parent="CarManager"]
+[node name="Path0" type="Node2D" parent="CarManager"]
 
-[node name="Spawn" type="Marker2D" parent="CarManager/SpawnTargets"]
+[node name="Spawn" type="Marker2D" parent="CarManager/Path0"]
 position = Vector2(374, 0)
+
+[node name="Target_1" type="Marker2D" parent="CarManager/Path0"]
+position = Vector2(373, 404)
+
+[node name="Target_2" type="Marker2D" parent="CarManager/Path0"]
+position = Vector2(374, 430)
 script = ExtResource("31_vn6re")
+anim = "right"
 
-[node name="Spawn1" type="Marker2D" parent="CarManager/SpawnTargets"]
-position = Vector2(842, 1009)
-script = ExtResource("31_vn6re")
-id = 1
-
-[node name="EndTargets" type="Node2D" parent="CarManager"]
-
-[node name="End" type="Marker2D" parent="CarManager/EndTargets"]
+[node name="End" type="Marker2D" parent="CarManager/Path0"]
 position = Vector2(805, 1009)
-script = ExtResource("31_vn6re")
 
-[node name="End1" type="Marker2D" parent="CarManager/EndTargets"]
-position = Vector2(410, 0)
+[node name="Path1" type="Node2D" parent="CarManager"]
+
+[node name="Spawn1" type="Marker2D" parent="CarManager/Path1"]
+position = Vector2(842, 1009)
+
+[node name="Target1_1" type="Marker2D" parent="CarManager/Path1"]
+position = Vector2(842, 417)
+
+[node name="Target1_2" type="Marker2D" parent="CarManager/Path1"]
+position = Vector2(836, 394)
 script = ExtResource("31_vn6re")
-id = 1
+anim = "left"
+
+[node name="End1" type="Marker2D" parent="CarManager/Path1"]
+position = Vector2(410, 0)
 
 [node name="CircuitVoiture" type="Node2D" parent="."]
 
@@ -443,7 +453,7 @@ navigation_polygon = SubResource("NavigationPolygon_whdg5")
 [node name="NavigationLink2D" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
 start_position = Vector2(374, 0)
-end_position = Vector2(374, 430)
+end_position = Vector2(373, 404)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
@@ -457,7 +467,7 @@ end_position = Vector2(805, 430)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
-start_position = Vector2(842, 394)
+start_position = Vector2(836, 394)
 end_position = Vector2(410, 394)
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
@@ -469,7 +479,7 @@ end_position = Vector2(805, 1009)
 position = Vector2(0, 1)
 bidirectional = false
 start_position = Vector2(842, 1008)
-end_position = Vector2(842, 393)
+end_position = Vector2(842, 416)
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]

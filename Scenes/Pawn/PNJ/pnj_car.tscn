@@ -793,7 +793,6 @@ radius = 6.0
 radius = 6.0
 avoidance_enabled = false
 
-[connection signal="animation_changed" from="Skin/AnimationPlayer" to="Detecteur_Car/CollisionShape2D" method="_on_animation_player_animation_changed"]
 [connection signal="body_entered" from="Detecteur_Car" to="." method="_on_detecteur_car_body_entered"]
 [connection signal="body_exited" from="Detecteur_Car" to="." method="_on_detecteur_car_body_exited"]
 [connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]
