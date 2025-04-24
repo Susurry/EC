@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=49 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -30,7 +30,6 @@
 [ext_resource type="Script" uid="uid://b2k14hdfnse31" path="res://Scripts/Events/PeriphOuest/mission_eboueur.gd" id="28_1cwe4"]
 [ext_resource type="Texture2D" uid="uid://2tn8hjie0wpr" path="res://Graphics/Characters/character_reparateur.png" id="29_7f4wu"]
 [ext_resource type="Script" uid="uid://cu5g2d6k8y6fw" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car_manager.gd" id="30_whdg5"]
-[ext_resource type="Script" uid="uid://cgr672ti8tt2k" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/targets_car.gd" id="31_vn6re"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
 atlas = ExtResource("4_4y10b")
@@ -158,9 +157,9 @@ _data = {
 size = Vector2(20, 178)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_whdg5"]
-vertices = PackedVector2Array(852, 1014, 794, 1014, 794, 991.75, 852, 990.258, 437.242, 376.898, 438.742, 437, 357.883, 437, 357.117, 376.102, 850.383, 435, 786.75, 435, 785.258, 376, 852.617, 376, 420, -1.11719, 420, 10, 363, 10, 363, -1.85938)
+vertices = PackedVector2Array(852, 1014, 794, 1014, 794, 991.75, 852, 990.258, 850.328, 448, 785.891, 448, 785.109, 376, 852.672, 376, 437.242, 376.898, 438.742, 437, 357.883, 437, 357.117, 376.102, 420, -1.11719, 420, 10, 363, 10, 363, -1.85938)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(353, -12, 353, 20, 430, 20, 430, -11), PackedVector2Array(784, 982, 784, 1024, 862, 1024, 862, 980), PackedVector2Array(347, 366, 348, 447, 449, 447, 447, 367), PackedVector2Array(777, 445, 775, 366, 863, 366, 860, 445)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(353, -12, 353, 20, 430, 20, 430, -11), PackedVector2Array(784, 982, 784, 1024, 862, 1024, 862, 980), PackedVector2Array(347, 366, 348, 447, 449, 447, 447, 367), PackedVector2Array(776, 458, 775, 366, 863, 366, 860, 458)])
 
 [node name="PeriphOuest" type="Node2D"]
 script = ExtResource("1_r1ah8")
@@ -419,12 +418,16 @@ car_quantity = 2
 position = Vector2(374, 0)
 
 [node name="Target_1" type="Marker2D" parent="CarManager/Path0"]
-position = Vector2(373, 404)
+position = Vector2(373, 418)
 
 [node name="Target_2" type="Marker2D" parent="CarManager/Path0"]
-position = Vector2(374, 430)
-script = ExtResource("31_vn6re")
-anim = "right"
+position = Vector2(380, 430)
+
+[node name="Target_3" type="Marker2D" parent="CarManager/Path0"]
+position = Vector2(789, 430)
+
+[node name="Target_4" type="Marker2D" parent="CarManager/Path0"]
+position = Vector2(805, 444)
 
 [node name="End" type="Marker2D" parent="CarManager/Path0"]
 position = Vector2(805, 1009)
@@ -439,8 +442,12 @@ position = Vector2(842, 417)
 
 [node name="Target1_2" type="Marker2D" parent="CarManager/Path1"]
 position = Vector2(836, 394)
-script = ExtResource("31_vn6re")
-anim = "left"
+
+[node name="Target1_3" type="Marker2D" parent="CarManager/Path1"]
+position = Vector2(431, 394)
+
+[node name="Target1_4" type="Marker2D" parent="CarManager/Path1"]
+position = Vector2(410, 386)
 
 [node name="End1" type="Marker2D" parent="CarManager/Path1"]
 position = Vector2(410, 0)
@@ -453,26 +460,26 @@ navigation_polygon = SubResource("NavigationPolygon_whdg5")
 [node name="NavigationLink2D" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
 start_position = Vector2(374, 0)
-end_position = Vector2(373, 404)
+end_position = Vector2(373, 418)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
-start_position = Vector2(410, 394)
+start_position = Vector2(410, 386)
 end_position = Vector2(410, 0)
 
 [node name="NavigationLink2D2" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
-start_position = Vector2(374, 430)
-end_position = Vector2(805, 430)
+start_position = Vector2(380, 430)
+end_position = Vector2(789, 430)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
 start_position = Vector2(836, 394)
-end_position = Vector2(410, 394)
+end_position = Vector2(431, 394)
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
-start_position = Vector2(805, 430)
+start_position = Vector2(805, 444)
 end_position = Vector2(805, 1009)
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
