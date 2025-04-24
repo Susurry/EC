@@ -366,7 +366,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_constants/separation = 10
 script = ExtResource("6_6ntbc")
-minute = 30
+heure = 1
 carbone_element = NodePath("../ScoreElements/Carbone")
 follower_element = NodePath("../ScoreElements/Follower")
 
@@ -402,7 +402,7 @@ size_flags_vertical = 1
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tgy6u")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mg4q0")
-min_value = -2400.0
+min_value = -4500.0
 max_value = 0.0
 show_percentage = false
 
@@ -417,7 +417,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_cwurv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vm72l")
-min_value = -2400.0
+min_value = -4500.0
 max_value = 0.0
 show_percentage = false
 

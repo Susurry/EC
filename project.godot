@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="180425-15"
+config/version="240425-15"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -53,11 +53,13 @@ directories/dtl_directory={
 "Refrigerateur": "res://Dialogues/Appartement/Refrigerateur.dtl",
 "Television": "res://Dialogues/Appartement/Television.dtl",
 "affiche_tcc": "res://Dialogues/CentreVille/affiche_tcc.dtl",
+"bus_centre": "res://Dialogues/CentreVille/bus_centre.dtl",
 "bus_corpo": "res://Dialogues/PeriphOuest/bus_corpo.dtl",
+"bus_parc": "res://Dialogues/CentreVille/bus_parc.dtl",
 "bus_periph": "res://Dialogues/PeriphOuest/bus_periph.dtl",
+"bus_tcc": "res://Dialogues/CentreVille/bus_tcc.dtl",
 "debug_game_over": "res://Dialogues/Debug/debug_game_over.dtl",
 "debug_tri_dechet": "res://Dialogues/Debug/debug_tri_dechet.dtl",
-"debug_velo": "res://Dialogues/Debug/debug_velo.dtl",
 "dial_test": "res://Dialogues/Debug/dial_test.dtl",
 "dial_test2": "res://Dialogues/Debug/dial_test2.dtl",
 "init": "res://Dialogues/init.dtl",
@@ -65,6 +67,7 @@ directories/dtl_directory={
 "metro_centre": "res://Dialogues/CentreVille/metro_centre.dtl",
 "metro_periph": "res://Dialogues/PeriphOuest/metro_periph.dtl",
 "panneau_centre": "res://Dialogues/PeriphOuest/panneau_centre.dtl",
+"playercar_centre": "res://Dialogues/CentreVille/playercar_centre.dtl",
 "playercar_periph": "res://Dialogues/PeriphOuest/playercar_periph.dtl",
 "pnj": "res://Dialogues/Appartement/pnj.dtl",
 "pnj_biologiste": "res://Dialogues/CentreVille/pnj_biologiste.dtl",
@@ -72,6 +75,7 @@ directories/dtl_directory={
 "pnj_claire": "res://Dialogues/CentreVille/pnj_claire.dtl",
 "pnj_denis": "res://Dialogues/CentreVille/pnj_denis.dtl",
 "pnj_eboueur": "res://Dialogues/PeriphOuest/pnj_eboueur.dtl",
+"pnj_enfant": "res://Dialogues/PeriphOuest/pnj_enfant.dtl",
 "pnj_jardinier": "res://Dialogues/CentreVille/pnj_jardinier.dtl",
 "pnj_jardinier2": "res://Dialogues/CentreVille/pnj_jardinier2.dtl",
 "pnj_livraison1": "res://Dialogues/CentreVille/pnj_livraison1.dtl",
@@ -99,7 +103,8 @@ directories/dtl_directory={
 "quest_poubelles": "res://Dialogues/PeriphOuest/quest_poubelles.dtl",
 "quest_poubellesplage": "res://Dialogues/CentreVille/quest_poubellesplage.dtl",
 "quest_trashplage": "res://Dialogues/CentreVille/quest_trashplage.dtl",
-"sac_poubelle": "res://Dialogues/PeriphOuest/sac_poubelle.dtl"
+"sac_poubelle": "res://Dialogues/PeriphOuest/sac_poubelle.dtl",
+"transition_campus": "res://Dialogues/CentreVille/transition_campus.dtl"
 }
 layout/style_list=["res://Dialogues/Styles/Custom_Style.tres"]
 layout/default_style="res://Dialogues/Styles/Custom_Style.tres"

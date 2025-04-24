@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_blxri"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_fbh47"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_70myv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_770mh"]
 shader = ExtResource("2_fbh47")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1qv3"]
@@ -40,7 +40,7 @@ script = ExtResource("1_2wgxy")
 timeline = "Television"
 
 [node name="PropSprite" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_70myv")
+material = SubResource("ShaderMaterial_770mh")
 position = Vector2(-24, -16)
 sprite_frames = SubResource("SpriteFrames_vc204")
 autoplay = "default"

@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aomuj"]
 resource_local_to_scene = true
 shader = ExtResource("2_q7wy2")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ri4ma"]

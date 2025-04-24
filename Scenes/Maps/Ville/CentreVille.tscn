@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://cp1m5aulw3omg"]
+[gd_scene load_steps=57 format=4 uid="uid://cp1m5aulw3omg"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_0m7db"]
 [ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_dnyma"]
@@ -18,12 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://ca0tw334ms12f" path="res://Graphics/Characters/character_postier.png" id="9_wgo81"]
 [ext_resource type="Texture2D" uid="uid://w148bo611i2e" path="res://Graphics/Characters/character_journalistem.png" id="10_knjd3"]
 [ext_resource type="PackedScene" uid="uid://be5otkrreg5lq" path="res://Scenes/Props/CentreVille/porte_journal.tscn" id="10_t3by6"]
-[ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="11_l2rjx"]
+[ext_resource type="PackedScene" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="11_l2rjx"]
 [ext_resource type="PackedScene" uid="uid://dlpedsflmqs68" path="res://Scenes/Props/CentreVille/porte_tcc.tscn" id="12_n6k4u"]
 [ext_resource type="Texture2D" uid="uid://b8pngxsc05lmx" path="res://Graphics/Characters/character_verdure.png" id="13_knjd3"]
 [ext_resource type="PackedScene" uid="uid://o2u3rlbw32ku" path="res://Scenes/Props/CentreVille/metro_centre.tscn" id="13_mhy33"]
+[ext_resource type="PackedScene" uid="uid://jjlgvqcnswwj" path="res://Scenes/Props/CentreVille/bus_centre.tscn" id="14_e2c1t"]
 [ext_resource type="Texture2D" uid="uid://bjw1mybkb3tj6" path="res://Graphics/Characters/Generic/character_generic31.png" id="14_noplm"]
+[ext_resource type="PackedScene" uid="uid://phgl8nrnbvrj" path="res://Scenes/Props/CentreVille/bus_tcc.tscn" id="15_2rebe"]
 [ext_resource type="Texture2D" uid="uid://cwk71uhfeehfm" path="res://Graphics/Characters/character_policier.png" id="15_71qt0"]
+[ext_resource type="PackedScene" uid="uid://q7k2ie6235gy" path="res://Scenes/Props/CentreVille/bus_plage.tscn" id="16_e2c1t"]
+[ext_resource type="PackedScene" uid="uid://bdhi2j2qmykbq" path="res://Scenes/Props/CentreVille/player_car_centre.tscn" id="17_2rebe"]
 [ext_resource type="Texture2D" uid="uid://dlb46nuffkm5y" path="res://Graphics/Characters/character_marchand.png" id="17_ptl4n"]
 [ext_resource type="Texture2D" uid="uid://wuw3agcitme2" path="res://Graphics/Characters/character_infirmier.png" id="18_4l7ga"]
 [ext_resource type="Texture2D" uid="uid://b232ufy5rlw6r" path="res://Graphics/Characters/character_biologiste.png" id="18_mlxks"]
@@ -44,7 +48,7 @@ agent_radius = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t3by6"]
 resource_local_to_scene = true
 shader = ExtResource("8_wgo81")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_noplm"]
@@ -68,7 +72,7 @@ shader_parameter/width = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jhj40"]
 resource_local_to_scene = true
 shader = ExtResource("8_wgo81")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptl4n"]
@@ -98,7 +102,7 @@ shader_parameter/width = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a0ulr"]
 resource_local_to_scene = true
 shader = ExtResource("8_wgo81")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ji1no"]
@@ -131,8 +135,17 @@ shader = ExtResource("8_wgo81")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rebe"]
+resource_local_to_scene = true
+shader = ExtResource("8_wgo81")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnyma"]
 size = Vector2(20, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rebe"]
+size = Vector2(20, 207)
 
 [node name="CentreVille" type="Node2D"]
 script = ExtResource("1_0m7db")
@@ -144,9 +157,39 @@ music_volume = -5.0
 
 [node name="StartPoints" type="Node2D" parent="."]
 
-[node name="0_Debug" type="Marker2D" parent="StartPoints"]
+[node name="0_Periph" type="Marker2D" parent="StartPoints"]
 z_index = 50
 position = Vector2(47, 416)
+gizmo_extents = 30.0
+
+[node name="1_Campus" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(1615, 767)
+gizmo_extents = 30.0
+
+[node name="2_Metro" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(1103, 335)
+gizmo_extents = 30.0
+
+[node name="3_Bus1" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(639, 401)
+gizmo_extents = 30.0
+
+[node name="4_Bus2" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(1199, 991)
+gizmo_extents = 30.0
+
+[node name="5_Bus3" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(383, 1213)
+gizmo_extents = 30.0
+
+[node name="6_Car" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(1346, 426)
 gizmo_extents = 30.0
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -455,6 +498,19 @@ timeline = "quest_plante"
 position = Vector2(1035, 290)
 timeline = "metro_centre"
 
+[node name="BusCentre" parent="Props" instance=ExtResource("14_e2c1t")]
+position = Vector2(638, 370)
+
+[node name="BusTCC" parent="Props" instance=ExtResource("15_2rebe")]
+position = Vector2(1188, 940)
+
+[node name="BusPlage" parent="Props" instance=ExtResource("16_e2c1t")]
+position = Vector2(444, 1178)
+timeline = "bus_parc"
+
+[node name="PlayerCar" parent="Props" instance=ExtResource("17_2rebe")]
+position = Vector2(1310, 424)
+
 [node name="PNJs" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -597,6 +653,10 @@ texture = ExtResource("25_cfg0q")
 [node name="PNJ_Child_Immobile" parent="PNJs" instance=ExtResource("11_l2rjx")]
 position = Vector2(567, 304)
 timeline = "pnj_childqcm"
+metadata/_edit_group_ = true
+
+[node name="Skin" parent="PNJs/PNJ_Child_Immobile" index="1"]
+material = SubResource("ShaderMaterial_2rebe")
 
 [node name="PNJ_Manager" type="Node2D" parent="."]
 script = ExtResource("4_pmrli")
@@ -655,12 +715,20 @@ position = Vector2(1664, 911)
 script = ExtResource("5_ipl5a")
 
 [node name="PeriphOuest" type="Area2D" parent="MapTransition"]
-position = Vector2(10, 490)
+position = Vector2(10, 488)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition/PeriphOuest"]
 shape = SubResource("RectangleShape2D_dnyma")
 
+[node name="Campus" type="Area2D" parent="MapTransition"]
+position = Vector2(1654, 825)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition/Campus"]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_2rebe")
+
 [connection signal="body_entered" from="MapTransition/PeriphOuest" to="MapTransition" method="_on_level_transition" binds= ["PeriphOuest", 1, ""]]
+[connection signal="body_entered" from="MapTransition/Campus" to="MapTransition" method="_on_dialogue_level_transition" binds= ["transition_campus"]]
 
 [editable path="PNJs/PNJ_Postier"]
 [editable path="PNJs/PNJ_Claire"]
@@ -677,3 +745,4 @@ shape = SubResource("RectangleShape2D_dnyma")
 [editable path="PNJs/PNJ_QCM2"]
 [editable path="PNJs/PNJ_Jardinier2"]
 [editable path="PNJs/PNJ_QCM3"]
+[editable path="PNJs/PNJ_Child_Immobile"]

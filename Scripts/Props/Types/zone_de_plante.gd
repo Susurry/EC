@@ -20,11 +20,11 @@ func on_interact(player: Player) -> void:
 	elif SaveManager.getElement("Quests", "S_jardinier") == false: # Quête active
 		print("A plant has been planted")
 		Dialogic.start("quest_plante", "book3")
+		await Dialogic.timeline_ended
 		plant_data[id] = true
 		sprite.texture.region = plant_sprite_region
 		
 		SaveManager.setElement("Missions", {"Plante_Park": plant_data})
 		
 		if not plant_data.has(false):
-			await Dialogic.timeline_ended
 			Dialogic.start("quest_plante", "book4")
