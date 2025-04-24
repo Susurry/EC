@@ -31,6 +31,7 @@ func initialize_pnj() -> void:
 	pnj_instance.position = target_array[0].position
 	#pnj_instance.spawn_id = rand_path.id
 	pnj_instance.spawn_point = pnj_instance.position
+	pnj_instance.target_array = target_array
 	#pnj_instance.skin_texture = pnj_instance.skin_car
 	
 	get_parent().call_deferred("add_child", pnj_instance)

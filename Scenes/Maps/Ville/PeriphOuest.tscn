@@ -411,7 +411,7 @@ camion_eboueur = NodePath("../../Props/CamionPoubelle")
 
 [node name="CarManager" type="Node2D" parent="."]
 script = ExtResource("30_whdg5")
-car_quantity = 1
+car_quantity = 2
 
 [node name="Path0" type="Node2D" parent="CarManager"]
 
