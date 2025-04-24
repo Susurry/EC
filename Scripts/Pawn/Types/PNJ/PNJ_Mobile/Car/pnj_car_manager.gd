@@ -11,8 +11,8 @@ func _ready() -> void:
 	initialize_paths()
 	for i in car_quantity:
 		# Crée un PNJ toutes les secondes, jusqu'au nombre de PNJ shouaité
+		await get_tree().create_timer(2.5).timeout 
 		initialize_pnj()
-		await get_tree().create_timer(1.5).timeout 
 
 func initialize_paths() -> void:
 	for i in $SpawnTargets.get_children():

@@ -9,7 +9,9 @@ var spawn_point: Vector2
 var targets: Array[Vector2]
 var skin_texture: Texture2D
 var end_target_pos: Vector2
+var target_save: Vector2
 var end_target_id: int
+var trajet_pause: bool = false
 
 
 
@@ -26,13 +28,25 @@ func initialize_pawn() -> void:
 		if i.id == spawn_id:
 			end_target_pos = i.position
 			set_movement_target(end_target_pos)
-	#$NavigationAgent2D.avoidance_enabled = false
 
 func _on_navigation_agent_2d_navigation_finished() -> void:
 	queue_free()
 	manager.initialize_pnj()
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
-	print("car")
 	velocity = safe_velocity
 	move_and_slide()
+
+func _on_detecteur_car_body_entered(body: Node2D) -> void:
+	if body is PNJCar:
+		return
+	
+	if body is Pawn:
+		state_machine.change_state("Regular")
+
+func _on_detecteur_car_body_exited(body: Node2D) -> void:
+	if body is PNJCar:
+		return
+	
+	if body is Pawn:
+		state_machine.change_state("Pathfinding")
