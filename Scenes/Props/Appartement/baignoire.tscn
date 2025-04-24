@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_vcscp"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="3_jus2a"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8syqh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l534c"]
 shader = ExtResource("2_vcscp")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
@@ -113,7 +113,7 @@ script = ExtResource("1_roojc")
 timeline = "Baignoire"
 
 [node name="PropSprite" type="AnimatedSprite2D" parent="."]
-material = SubResource("ShaderMaterial_8syqh")
+material = SubResource("ShaderMaterial_l534c")
 position = Vector2(-16, -32)
 sprite_frames = SubResource("SpriteFrames_te7gt")
 centered = false

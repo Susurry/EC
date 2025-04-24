@@ -1,11 +1,15 @@
 if {SaveManager.getElement("Player", "inventory").has("Carte")} == true:
 	Où souhaitez-vous vous rendre ?
 	- Périphérie Ouest
-		Pas de chance, la ligne est en panne.
+		do ThreadLoad.load_scene("PeriphOuest", 2)
+		do EventBus.emit_signal("change_time", -60)
 	- Centre-Ville | [if {1} == 0.0] [else="disable"]
 		Vous êtes déjà à cet arrêt !
 	- Campus Universitaire
-		Pas de chance, la ligne est en panne.
+		do ThreadLoad.load_scene("Amphithéatre", 0)
+		do EventBus.emit_signal("change_time", -600)
+		do EventBus.emit_signal("set_quest_state", "2_transport")
+		do EventBus.emit_signal("set_quest_state", "2-2_transports")
 	[end_timeline]
 else:
 	Vous ne pouvez pas prendre le métro \: vous n'avez pas votre titre de transport !

@@ -12,7 +12,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x2a3f"]
 resource_local_to_scene = true
 shader = ExtResource("4_xybwu")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="Animation" id="Animation_l2uah"]

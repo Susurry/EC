@@ -1,7 +1,0 @@
-label book1
-Veux-tu jouer au mini-jeu du vélo ?
-- Oui
-	Ok, le voilà !
-	do EventBus.emit_signal("setup_minigame", "velo")
-- Non
-[end_timeline]
