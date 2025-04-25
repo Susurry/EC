@@ -157,9 +157,9 @@ _data = {
 size = Vector2(20, 178)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_whdg5"]
-vertices = PackedVector2Array(852.797, 1024.74, 852.203, 1055, 794, 1055, 794, 1023.25, 364.609, 1054, 292, 1054, 292, 1022.89, 363.383, 1022.1, 370, 753.102, 292, 753.891, 292, 681, 370, 681, 855, 751.102, 783, 751.891, 783, 673, 855, 673, -37.8438, 463, -78, 463, -78, 363, -36.1719, 363, 850.328, 448, 785.891, 448, 785.109, 376, 852.672, 376, 437.242, 376.898, 438.742, 437, 357.883, 437, 357.117, 376.102, 421, -28, 362, -28, 362, -40, 421, -40)
+vertices = PackedVector2Array(852.797, 1024.74, 852.203, 1055, 794, 1055, 794, 1023.25, 364.609, 1054, 292, 1054, 292, 1022.89, 363.383, 1022.1, 855.906, 766.102, 783.906, 766.891, 783.094, 673, 855.094, 673, 370, 753.102, 292, 753.891, 292, 681, 370, 681, -37.8438, 463, -78, 463, -78, 363, -36.1719, 363, 850.328, 448, 785.891, 448, 785.109, 376, 852.672, 376, 437.242, 376.898, 438.742, 437, 357.883, 437, 357.117, 376.102, 421, -28, 362, -28, 362, -40, 421, -40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(28, 29, 30, 31)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(352, -50, 352, -18, 431, -18, 431, -50), PackedVector2Array(784, 1013, 784, 1065, 862, 1065, 863, 1015), PackedVector2Array(347, 366, 348, 447, 449, 447, 447, 367), PackedVector2Array(776, 458, 775, 366, 863, 366, 860, 458), PackedVector2Array(773, 762, 773, 663, 865, 663, 865, 761), PackedVector2Array(282, 671, 380, 671, 380, 763, 282, 764), PackedVector2Array(282, 1064, 282, 1013, 373, 1012, 375, 1064), PackedVector2Array(-26, 353, -88, 353, -88, 473, -28, 473)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(352, -50, 352, -18, 431, -18, 431, -50), PackedVector2Array(784, 1013, 784, 1065, 862, 1065, 863, 1015), PackedVector2Array(347, 366, 348, 447, 449, 447, 447, 367), PackedVector2Array(776, 458, 775, 366, 863, 366, 860, 458), PackedVector2Array(774, 777, 773, 663, 865, 663, 866, 776), PackedVector2Array(282, 671, 380, 671, 380, 763, 282, 764), PackedVector2Array(282, 1064, 282, 1013, 373, 1012, 375, 1064), PackedVector2Array(-26, 353, -88, 353, -88, 473, -28, 473)])
 
 [node name="PeriphOuest" type="Node2D"]
 script = ExtResource("1_r1ah8")
@@ -498,6 +498,40 @@ position = Vector2(311, 718)
 [node name="End" type="Marker2D" parent="CarManager/Path3"]
 position = Vector2(311, 1050)
 
+[node name="Path4" type="Node2D" parent="CarManager"]
+
+[node name="Spawn4" type="Marker2D" parent="CarManager/Path4"]
+position = Vector2(-64, 430)
+
+[node name="Target4_1" type="Marker2D" parent="CarManager/Path4"]
+position = Vector2(789, 430)
+
+[node name="Target4_2" type="Marker2D" parent="CarManager/Path4"]
+position = Vector2(805, 444)
+
+[node name="End2" type="Marker2D" parent="CarManager/Path4"]
+position = Vector2(805, 1052)
+
+[node name="Path5" type="Node2D" parent="CarManager"]
+
+[node name="Spawn5" type="Marker2D" parent="CarManager/Path5"]
+position = Vector2(346, 1050)
+
+[node name="Target5_1" type="Marker2D" parent="CarManager/Path5"]
+position = Vector2(346, 745)
+
+[node name="Target5_2" type="Marker2D" parent="CarManager/Path5"]
+position = Vector2(365, 735)
+
+[node name="Target5_3" type="Marker2D" parent="CarManager/Path5"]
+position = Vector2(787, 735)
+
+[node name="Target5_4" type="Marker2D" parent="CarManager/Path5"]
+position = Vector2(805, 750)
+
+[node name="End5" type="Marker2D" parent="CarManager/Path5"]
+position = Vector2(805, 1052)
+
 [node name="CircuitVoiture" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="CircuitVoiture"]
@@ -518,17 +552,34 @@ bidirectional = false
 start_position = Vector2(380, 430)
 end_position = Vector2(789, 430)
 
+[node name="NavigationLink2D10" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+bidirectional = false
+start_position = Vector2(-64, 430)
+end_position = Vector2(789, 430)
+
 [node name="NavigationLink2D8" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 position = Vector2(3, -3)
 bidirectional = false
 start_position = Vector2(784, 702)
 end_position = Vector2(323, 702)
 
+[node name="NavigationLink2D13" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+position = Vector2(3, -3)
+bidirectional = false
+start_position = Vector2(362, 738)
+end_position = Vector2(784, 738)
+
 [node name="NavigationLink2D9" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 position = Vector2(3, -3)
 bidirectional = false
 start_position = Vector2(308, 721)
 end_position = Vector2(308, 1053)
+
+[node name="NavigationLink2D12" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+position = Vector2(3, -3)
+bidirectional = false
+start_position = Vector2(343, 1053)
+end_position = Vector2(343, 748)
 
 [node name="NavigationLink2D7" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
@@ -543,6 +594,11 @@ end_position = Vector2(431, 394)
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 bidirectional = false
 start_position = Vector2(805, 444)
+end_position = Vector2(805, 1052)
+
+[node name="NavigationLink2D11" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
+bidirectional = false
+start_position = Vector2(805, 750)
 end_position = Vector2(805, 1052)
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
