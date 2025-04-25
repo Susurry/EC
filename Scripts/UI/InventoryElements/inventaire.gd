@@ -3,7 +3,7 @@ extends PanelContainer
 @export var item_display: PackedScene 
 @export var list_item: Resource
 
-var item_list: Array[String] = []
+var item_list: Array = []
 
 @onready var item_column: VBoxContainer = $MarginContainer/VBoxContainer
 
@@ -17,8 +17,15 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("clear_items", clear_items)
 
 func _initialize_inventaire() -> void:
+	if SaveManager.hasSave():
+		var item_list_load: Array = SaveManager.getElement("Player", "inventory")
+		
+		for i in item_list_load:
+			add_item(i)
+	else:
+		_save_inventory() # Sauvegarde inventaire vide pour qu'il y ai quelque chose à vérifier
+	
 	visible = check_amount()
-	_save_inventory() # Sauvegarde inventaire vide pour qu'il y ai quelque chose à vérifier
 
 func add_item(item_name: String) -> void:
 	var item_load: Control = item_display.instantiate()
@@ -26,7 +33,6 @@ func add_item(item_name: String) -> void:
 	item_load.get_node("MarginContainer/TextureRect").texture = load(list_item.dictionnaire[item_name])
 	
 	item_column.add_child(item_load)
-	
 	item_list.append(item_name)
 	visible = check_amount()
 	

@@ -10,20 +10,31 @@ extends Control
 @export var sfx_new_quest: AudioStreamWAV
 @export var sfx_quest_done: AudioStreamWAV
 
+var tween: Tween
+var quest_list: Array = []
+
 @onready var target: BoxContainer = $QuestContainer/MarginContainer/Columns/QuestList
 @onready var mission_label: Label = $QuestContainer/MarginContainer/Columns/MissionName/Label
 @onready var hide_button: MarginContainer = $HidePanel
 
-var tween: Tween
-
 func _ready() -> void:
 	_initialize_signals()
+	_initialize_quests()
 
 func _initialize_signals() -> void:
 	EventBus.add_signal("add_quest", add_quest)
 	EventBus.add_signal("clean_quests", clean_quests)
 	EventBus.add_signal("set_quest_state", set_quest_state)
 	EventBus.add_signal("set_mission_name", set_mission_name)
+
+func _initialize_quests() -> void:
+	if SaveManager.hasSave():
+		var quest_list_load: Array = SaveManager.getElement("Player", "curr_quests")
+		
+		for i in quest_list_load:
+			add_quest(i)
+	else:
+		_save_current_quests() # Sauvegarde la liste vide pour qu'il y ai quelque chose à vérifier
 
 func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	AudioManager.stop_sfx()
@@ -52,14 +63,24 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	new_quest_label.text = new_quest_data.name
 	new_quest.name = key
 	
-	SaveManager.setElement("Quests", {key: false})
+	if SaveManager.getElement("Quests", key) == true:
+		new_quest_label.modulate = Color.GREEN
+	else:
+		SaveManager.setElement("Quests", {key: false})
 	
+	quest_list.append(key)
 	target.add_child(new_quest)
 	target.move_child(target.get_child(target.get_child_count()-1), quest_pos) # Pour deplacer la quête dans une autre position
+	
+	_save_current_quests() 
 
 func clean_quests() -> void:
 	for i in target.get_children():
 		i.queue_free()
+	
+	quest_list.clear()
+	
+	_save_current_quests() 
 
 func set_quest_state(quest_name: String) -> void:
 	AudioManager.stop_sfx()
@@ -71,6 +92,8 @@ func set_quest_state(quest_name: String) -> void:
 func set_mission_name(new_name: String) -> void:
 	mission_label.text = new_name
 
+func _save_current_quests() -> void:
+	SaveManager.setElement("Player", {"curr_quests": quest_list})
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:

@@ -6,7 +6,7 @@ extends PropTalk
 @onready var id: int = get_index()
 
 func initialize_garbage() -> void:
-	var poubelle_data: Array[bool] = SaveManager.getElement("Missions", "Poubelle")
+	var poubelle_data: Array = SaveManager.getElement("Missions", "Poubelle")
 	if poubelle_data[id] == true:
 		queue_free()
 
@@ -17,7 +17,7 @@ func on_interact(player: Player) -> void:
 		AudioManager.play_sfx(sfx_pick_up, -5.0)
 		EventBus.emit_signal("add_item", give_item)
 		
-		var poubelle_data: Array[bool] = SaveManager.getElement("Missions", "Poubelle")
+		var poubelle_data: Array = SaveManager.getElement("Missions", "Poubelle")
 		poubelle_data[id] = true
 		SaveManager.setElement("Missions", {"Poubelle": poubelle_data})
 		queue_free()
