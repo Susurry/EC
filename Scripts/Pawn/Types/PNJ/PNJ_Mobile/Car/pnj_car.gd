@@ -16,7 +16,13 @@ var current_target: int = 1
 var target_array: Array
 var exited_spawn: bool = false
 
+
+
 @onready var animation_player = $Skin/AnimationPlayer
+@onready var collision = $CollisionShape2D
+@onready var detecteur = $Detecteur_Car/CollisionShape2D
+@onready var collision_shape: RectangleShape2D = load("uid://dqvrvmpna3vjc")
+@onready var detecteur_shape: RectangleShape2D = load("uid://bs7umie8pm1ec")
 
 func _ready() -> void:
 	super()
@@ -34,13 +40,19 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 	current_target += 1
 	if current_target >= target_array.size() - 1:
 		queue_free()
-		#await get_tree().create_timer(0.5).timeout 
 		manager.initialize_pnj()
+		
 	else :
 		current_target += 1
 		set_movement_target(target_array[current_target].position)
 		visible = false
+		collision.shape = collision_shape
+		detecteur.shape = detecteur_shape
 		position = target_array[current_target-1].position
+		
+		
+		
+		
 		
 		
 
