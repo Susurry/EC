@@ -854,10 +854,10 @@ shape = ExtResource("8_sfww7")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 4.0
 path_postprocessing = 1
-radius = 6.0
+radius = 2.0
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
-radius = 6.0
+radius = 4.0
 avoidance_enabled = false
 
 [connection signal="body_entered" from="Detecteur_Car" to="." method="_on_detecteur_car_body_entered"]
