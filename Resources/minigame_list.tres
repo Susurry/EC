@@ -8,5 +8,6 @@ dictionnary_minigame = Dictionary[String, String]({
 "baignoire": "uid://dgpu4hmb3vlfw",
 "television": "uid://bsnubr52gfqvq",
 "tridechet": "uid://cp4xg7covqurw",
+"tridechet3PB": "uid://3fypm3dg8d42",
 "velo": "uid://cysq8n807qxk6"
 })

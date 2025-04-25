@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="3_udijt"]
+[ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="3_vn6re"]
 [ext_resource type="TileSet" uid="uid://c4cih28217htv" path="res://Graphics/Tilesets/Tileset_Ville.tres" id="3_vtu41"]
 [ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="4_4y10b"]
 [ext_resource type="PackedScene" uid="uid://7vbx36dyp2ky" path="res://Scenes/Props/PeriphOuest/metro_periph.tscn" id="4_vtu41"]
+[ext_resource type="Texture2D" uid="uid://bhd73rqimc5kq" path="res://Graphics/Characters/Child/character_enfant4.png" id="5_m7kr6"]
 [ext_resource type="PackedScene" uid="uid://cxjdpgf3jknyw" path="res://Scenes/Props/PeriphOuest/bus_periph.tscn" id="5_vtu41"]
 [ext_resource type="PackedScene" uid="uid://cfcouisq7sial" path="res://Scenes/Props/PeriphOuest/bus_corpo.tscn" id="6_n0grg"]
 [ext_resource type="PackedScene" uid="uid://cmsoouxypvra2" path="res://Scenes/Props/PeriphOuest/porte_appartement.tscn" id="7_4dhbb"]
@@ -18,7 +20,6 @@
 [ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="16_1cwe4"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="16_6cxdi"]
 [ext_resource type="Script" uid="uid://b6r412c6n5w0u" path="res://Scripts/Events/PeriphOuest/mission_poubelle.gd" id="17_iuw2w"]
-[ext_resource type="Texture2D" uid="uid://rg600cb81l8y" path="res://Graphics/Characters/Generic/character_baptiste.png" id="17_ydjjt"]
 [ext_resource type="PackedScene" uid="uid://chv50xmrlkp03" path="res://Scenes/Props/PeriphOuest/sac_poubelle.tscn" id="18_fx4co"]
 [ext_resource type="PackedScene" uid="uid://ds7lj8f48m20p" path="res://Scenes/Props/PeriphOuest/poubelles.tscn" id="19_yn25f"]
 [ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="20_k5lkh"]
@@ -56,12 +57,6 @@ size = Vector2(23, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abqwm"]
 size = Vector2(7, 6)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx4co"]
-resource_local_to_scene = true
-shader = ExtResource("16_6cxdi")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0ba6"]
 resource_local_to_scene = true
 shader = ExtResource("16_6cxdi")
@@ -89,10 +84,16 @@ shader_parameter/width = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c4beq"]
 resource_local_to_scene = true
 shader = ExtResource("16_6cxdi")
-shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_color = Color(1, 1, 0.196078, 1)
 shader_parameter/width = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_whdg5"]
+resource_local_to_scene = true
+shader = ExtResource("16_6cxdi")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6vih"]
 resource_local_to_scene = true
 shader = ExtResource("16_6cxdi")
 shader_parameter/line_color = Color(1, 1, 1, 1)
@@ -179,6 +180,26 @@ gizmo_extents = 30.0
 [node name="1_Centre" type="Marker2D" parent="StartPoints"]
 z_index = 50
 position = Vector2(1178, 577)
+gizmo_extents = 30.0
+
+[node name="2_Metro" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(339, 318)
+gizmo_extents = 30.0
+
+[node name="3_Bus1" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(582, 359)
+gizmo_extents = 30.0
+
+[node name="4_Bus2" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(384, 861)
+gizmo_extents = 30.0
+
+[node name="5_Car" type="Marker2D" parent="StartPoints"]
+z_index = 50
+position = Vector2(1042, 378)
 gizmo_extents = 30.0
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -318,15 +339,6 @@ y_sort_enabled = true
 position = Vector2(1042, 632)
 direction = Vector2(-1, 0)
 
-[node name="PNJ_Velo" parent="PNJs" instance=ExtResource("13_5c4ie")]
-position = Vector2(801, 144)
-timeline = "debug_velo"
-metadata/_edit_group_ = true
-
-[node name="Skin" parent="PNJs/PNJ_Velo" index="1"]
-material = SubResource("ShaderMaterial_fx4co")
-texture = ExtResource("17_ydjjt")
-
 [node name="PNJ_Random1" parent="PNJs" instance=ExtResource("13_5c4ie")]
 position = Vector2(628, 651)
 timeline = "pnj_random1"
@@ -381,6 +393,14 @@ metadata/_edit_group_ = true
 [node name="Skin" parent="PNJs/PNJ_reparateur" index="1"]
 material = SubResource("ShaderMaterial_whdg5")
 texture = ExtResource("29_7f4wu")
+
+[node name="PNJ_Child_Immobile" parent="PNJs" instance=ExtResource("3_vn6re")]
+position = Vector2(640, 239)
+timeline = "pnj_enfant"
+
+[node name="Skin" parent="PNJs/PNJ_Child_Immobile" index="1"]
+material = SubResource("ShaderMaterial_i6vih")
+texture = ExtResource("5_m7kr6")
 
 [node name="Cutscenes" type="Node2D" parent="."]
 script = ExtResource("20_k5lkh")
@@ -610,12 +630,12 @@ end_position = Vector2(844, 416)
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
 [connection signal="animation_finished" from="Cutscenes/AnimationPlayer" to="Cutscenes" method="cutscene_end"]
-[connection signal="body_entered" from="MapTransition/CentreVille" to="MapTransition" method="_on_level_transition" binds= ["CentreVille", 0, "DebugTrans"]]
+[connection signal="body_entered" from="MapTransition/CentreVille" to="MapTransition" method="_on_level_transition" binds= ["CentreVille", 0, ""]]
 
-[editable path="PNJs/PNJ_Velo"]
 [editable path="PNJs/PNJ_Random1"]
 [editable path="PNJs/PNJ_Random2"]
 [editable path="PNJs/PNJ_Random3"]
 [editable path="PNJs/PNJ_Random4"]
 [editable path="PNJs/PNJ_Livraison2"]
 [editable path="PNJs/PNJ_reparateur"]
+[editable path="PNJs/PNJ_Child_Immobile"]

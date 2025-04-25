@@ -18,7 +18,7 @@ func _initialize_empreinte() -> void:
 
 func on_update_empreinte(arg: float) -> void:
 	play_feedback(arg)
-	empreinte += arg
+	empreinte += arg  * 2 # LE "* 2" EST POUR LES BESOINS DE LA VERTICAL SLICE- À RETIRER DANS LA VERSION FINALE !!!
 	empreinte_label.text = str(empreinte)
 	time_element.update_grading()
 

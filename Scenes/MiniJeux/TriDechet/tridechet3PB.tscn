@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="8_kxl63"]
 [ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="9_6jsu8"]
 
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7mlrj"]
 resource_local_to_scene = true
 shader = ExtResource("7_q7g7p")
@@ -167,7 +168,7 @@ _data = {
 
 [node name="Tridechet" type="Node2D"]
 script = ExtResource("1_7mlrj")
-end_timeline = "quest_poubelles"
+end_timeline = "quest_poubellesplage"
 bookmark = 2
 
 [node name="WindowSize" type="Control" parent="."]
@@ -178,6 +179,7 @@ offset_bottom = 750.0
 script = ExtResource("2_h3ye7")
 items = Array[PackedScene]([ExtResource("3_bi8gk"), ExtResource("4_nw36i"), ExtResource("5_h3ye7")])
 max_trash_items = 8
+item_fall_speed = 250.0
 sfx_trash = ExtResource("5_76lt3")
 
 [node name="Timer" type="Timer" parent="WindowSize"]

@@ -1,7 +1,12 @@
+label book1
+if SaveManager.getElement("Quests", "S_vélo2") == true:
+	Je garde ton vélo !
+	[end_timeline]
 if SaveManager.getElement("Quests", "S_vélo2") == false:
 	Est-ce que t'es prêt à réparer ton vélo ?
 	- Oui
-		Nickel, je te confie le mini-jeu dès que voilà !
+		Super \: les pièces de vélo seront à ta gauche, et les outils seront à ta droite. Répare ton vélo étape par étape !
+		do EventBus.emit_signal("setup_minigame", "velo")
 	- Non
 		Pas grave, de toute façon le mini-jeu n'est pas encore prêt !
 	[end_timeline]
@@ -27,7 +32,12 @@ if SaveManager.getElement("Quests", "S_vélo1") == true:
 	Parfait, je vois que tu as les pièces qu'ils manquent.
 	Mon atelier réparation vélo est en libre service, je t'invite à le réparer toi-même !
 	- Oui
-		Nickel, je te confie le mini-jeu dès que voilà !
+		Super \: les pièces de vélo seront à ta gauche, et les outils seront à ta droite. Répare ton vélo étape par étape !
+		do EventBus.emit_signal("setup_minigame", "velo")
 	- Non
 		Pas grave, de toute façon le mini-jeu n'est pas encore prêt !
 	[end_timeline]
+label book2
+do SaveManager.setElement("Quests", {"S_vélo2": true})
+Et voilà, ton vélo est tout réparé ! Cependant il va rester dans le garage le temps que les devs ils ajoutent les pakings pour vélo ! :)
+[end_timeline]

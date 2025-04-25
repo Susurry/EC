@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=61 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -9,13 +9,14 @@
 [ext_resource type="Script" uid="uid://bj4mgipt463b8" path="res://Scripts/UI/TimerElements/timer.gd" id="6_6ntbc"]
 [ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="6_j0fp3"]
 [ext_resource type="Script" uid="uid://cfxk5hxbgtty8" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
-[ext_resource type="AudioStream" uid="uid://bsmgjdcm3c66l" path="res://Audio/SFX/Temp/FB_Bad.wav" id="7_81klo"]
 [ext_resource type="LabelSettings" uid="uid://bjqrdqohjhs6g" path="res://Graphics/UI/Themes/Label_UI.tres" id="7_qvet4"]
 [ext_resource type="Script" uid="uid://c85sqtcabmrmb" path="res://Scripts/UI/ScoreElements/follower.gd" id="7_r175c"]
+[ext_resource type="AudioStream" uid="uid://3x75w3tp350c" path="res://Audio/SFX/score_bonus.wav" id="8_cwurv"]
 [ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
 [ext_resource type="Resource" uid="uid://bq5ri1v65mysg" path="res://Resources/UI/item_list.tres" id="9_cwurv"]
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
-[ext_resource type="AudioStream" uid="uid://b0jen6c4xqxv7" path="res://Audio/SFX/Temp/FB_Good.wav" id="10_fkdbe"]
+[ext_resource type="AudioStream" uid="uid://d2d3yu1yjlbw8" path="res://Audio/SFX/score_malus.wav" id="9_mucmn"]
+[ext_resource type="AudioStream" uid="uid://b4wcn2c027cbq" path="res://Audio/SFX/follower_bonus.wav" id="12_cwurv"]
 [ext_resource type="Script" uid="uid://bgnif2jqnff2x" path="res://Scripts/UI/InventoryElements/inventaire.gd" id="12_dga6m"]
 [ext_resource type="Texture2D" uid="uid://bb68t0hcbbrne" path="res://Graphics/TEMP/WIP_Thermomètre.png" id="13_tgy6u"]
 [ext_resource type="PackedScene" uid="uid://dbah8ylvfp1o0" path="res://Scenes/UI/InventoryElements/item.tscn" id="14_81klo"]
@@ -264,6 +265,42 @@ _data = {
 &"bobbing": SubResource("Animation_22asu")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucmn"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="LabelSettings" id="LabelSettings_8m3t6"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_ese38"]
+font_size = 32
+
+[sub_resource type="FontVariation" id="FontVariation_oeip8"]
+variation_embolden = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_xe308"]
+font = SubResource("FontVariation_oeip8")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3cha"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_i26dy"]
+font_size = 28
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmoi6"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_ym3tv"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_bwj6o"]
+font_size = 64
+
 [node name="Game" type="Node2D" node_paths=PackedStringArray("viewport")]
 script = ExtResource("1_0b8yu")
 first_map = "Appartement"
@@ -366,7 +403,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_constants/separation = 10
 script = ExtResource("6_6ntbc")
-heure = 2
+heure = 1
 carbone_element = NodePath("../ScoreElements/Carbone")
 follower_element = NodePath("../ScoreElements/Follower")
 
@@ -386,7 +423,7 @@ vertical_alignment = 1
 
 [node name="TimerBarIndicateur" type="Label" parent="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels"]
 layout_mode = 2
-text = "> > >"
+text = ">>>"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 
@@ -402,9 +439,8 @@ size_flags_vertical = 1
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_tgy6u")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mg4q0")
-min_value = -9000.0
+min_value = -4500.0
 max_value = 0.0
-value = -3000.0
 show_percentage = false
 
 [node name="ChangeTimeBar" type="ProgressBar" parent="UI/InfoElements/MarginContainer/Columns/TimeElements/Bars/TimeBar"]
@@ -418,9 +454,8 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_cwurv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vm72l")
-min_value = -9000.0
+min_value = -4500.0
 max_value = 0.0
-value = -2000.0
 show_percentage = false
 
 [node name="ScoreElements" type="HBoxContainer" parent="UI/InfoElements/MarginContainer/Columns"]
@@ -436,8 +471,8 @@ theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("3_nnnuy")
 time_element = NodePath("../../TimeElements")
-sfx_good_score = ExtResource("10_fkdbe")
-sfx_bad_score = ExtResource("7_81klo")
+sfx_good_score = ExtResource("8_cwurv")
+sfx_bad_score = ExtResource("9_mucmn")
 
 [node name="TextureRect" type="TextureRect" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Carbone"]
 custom_minimum_size = Vector2(47, 47)
@@ -464,7 +499,7 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("7_r175c")
-sfx_follow = ExtResource("10_fkdbe")
+sfx_follow = ExtResource("12_cwurv")
 time_element = NodePath("../../TimeElements")
 
 [node name="TextureRect" type="TextureRect" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Follower"]
@@ -755,6 +790,24 @@ action_name = "down"
 layout_mode = 2
 action_name = "interact"
 
+[node name="Options" type="VBoxContainer" parent="UI/PauseElements/TabContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+metadata/_tab_index = 2
+
+[node name="FullscreenToggle" type="CheckBox" parent="UI/PauseElements/TabContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Plein écran"
+alignment = 1
+
+[node name="SprintToggle" type="CheckBox" parent="UI/PauseElements/TabContainer/Options"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Toggle  Run"
+alignment = 1
+
 [node name="Pointer" type="TextureRect" parent="UI"]
 z_index = 2
 custom_minimum_size = Vector2(50, 0)
@@ -781,6 +834,180 @@ libraries = {
 }
 autoplay = "bobbing"
 
+[node name="ConclusionPanel" type="PanelContainer" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(960, 1000)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mucmn")
+
+[node name="Margin" type="MarginContainer" parent="UI/ConclusionPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConclusionPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitlePanel" type="PanelContainer" parent="UI/ConclusionPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/TitlePanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ChapterLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/TitlePanel/VBox"]
+layout_mode = 2
+text = "Fin du Chapitre 1 !"
+label_settings = SubResource("LabelSettings_8m3t6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SummaryLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/TitlePanel/VBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Résumé de vos actions :"
+label_settings = SubResource("LabelSettings_ese38")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SummaryPanel" type="ScrollContainer" parent="UI/ConclusionPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CategoryPanel" type="PanelContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox"]
+layout_mode = 2
+text = "     Alimentation"
+label_settings = SubResource("LabelSettings_xe308")
+
+[node name="InfoPannel" type="PanelContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TopicHBox" type="HBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TopicLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox/TopicHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Prendre le petit déjeuner : toast, oeuf et bacon"
+label_settings = SubResource("LabelSettings_d3cha")
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox/TopicHBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "+ 0,6"
+label_settings = SubResource("LabelSettings_i26dy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TypeLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox/TopicHBox"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "IC"
+label_settings = SubResource("LabelSettings_lmoi6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescPannel" type="PanelContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox/DescPannel"]
+layout_mode = 2
+
+[node name="DescLabel" type="RichTextLabel" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox/DescPannel/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true
+
+[node name="SourceLabel" type="RichTextLabel" parent="UI/ConclusionPanel/Margin/VBox/SummaryPanel/VBox/CategoryPanel/Margin/VBox/InfoPannel/Margin/VBox/DescPannel/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Source : Trust me bro"
+fit_content = true
+
+[node name="EndPanel" type="MarginContainer" parent="UI/ConclusionPanel/Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/EndPanel"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="NoteHBox" type="HBoxContainer" parent="UI/ConclusionPanel/Margin/VBox/EndPanel/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="NoteLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/EndPanel/VBox/NoteHBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Note Finale : "
+label_settings = SubResource("LabelSettings_ym3tv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GradeLabel" type="Label" parent="UI/ConclusionPanel/Margin/VBox/EndPanel/VBox/NoteHBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A+"
+label_settings = SubResource("LabelSettings_bwj6o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="UI/ConclusionPanel/Margin/VBox/EndPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Terminer le jeu"
+
 [connection signal="pressed" from="Viewports/MinigameElements/Button" to="Viewports/MinigameElements" method="erase_minigame"]
 [connection signal="mouse_entered" from="UI/InfoElements/MarginContainer/Columns/TimeElements" to="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels/Time" method="set_visible" binds= [true]]
 [connection signal="mouse_entered" from="UI/InfoElements/MarginContainer/Columns/TimeElements" to="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels/TimerBarIndicateur" method="set_visible" binds= [false]]
@@ -793,3 +1020,5 @@ autoplay = "bobbing"
 [connection signal="toggled" from="UI/QuestElements/HidePanel/Button" to="UI/QuestElements" method="_on_button_toggled"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Retour" to="UI/PauseElements" method="toggle_pause"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Quitter" to="UI/PauseElements" method="_on_quitter_pressed"]
+[connection signal="toggled" from="UI/PauseElements/TabContainer/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="UI/PauseElements/TabContainer/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggled"]

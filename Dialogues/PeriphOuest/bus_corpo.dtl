@@ -1,1 +1,20 @@
-Bus Corporation
+label book1
+if SaveManager.getElement("Quests", "3_eboueur") == true:
+	Où souhaitez-vous vous rendre ?
+	- Périphérie Ouest
+		do ThreadLoad.load_scene("PeriphOuest", 3)
+	- Périph - Corporation
+		Vous êtes déjà à cet arrêt !
+	- Centre-Ville
+		do ThreadLoad.load_scene("CentreVille", 3)
+		do EventBus.emit_signal("change_time", -60)
+	- Centre - TCC
+		do ThreadLoad.load_scene("CentreVille", 4)
+		do EventBus.emit_signal("change_time", -60)
+	- Centre - Plage
+		do ThreadLoad.load_scene("CentreVille", 5)
+		do EventBus.emit_signal("change_time", -60)
+	[end_timeline]
+else:
+	Il n'y a aucun bus prochain... Est-ce qu'il y a un problème sur la ligne ?
+	[end_timeline]

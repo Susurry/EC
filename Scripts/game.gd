@@ -10,6 +10,7 @@ static var inputs: InputManager
 func _ready() -> void:
 	_initialize_signals()
 	_initialize_viewport()
+	_initialize_save()
 	_initialize_inputs()
 	#_initialize_dialogic()
 
@@ -18,7 +19,14 @@ func _initialize_signals() -> void:
 
 func _initialize_viewport() -> void:
 	ThreadLoad.initialize_viewport(viewport)
-	ThreadLoad.load_scene(first_map)
+
+func _initialize_save() -> void:
+	if SaveManager.hasSave():
+		var load_scene: String = SaveManager.getElement("Player", "scene")
+		var load_pos: int = SaveManager.getElement("Player", "pos")
+		ThreadLoad.load_scene(load_scene, load_pos)
+	else:
+		ThreadLoad.load_scene(first_map)
 
 func _initialize_inputs() -> void:
 	match OS.get_name():

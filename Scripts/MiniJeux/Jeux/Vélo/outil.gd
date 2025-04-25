@@ -2,6 +2,7 @@ extends Button
 
 @export var position_item: Vector2
 @export var id_anchor_interactible: Array[int]
+@export var sfx_repair: AudioStreamWAV
 
 var click_offset: Vector2
 var item_above_target: bool = false
@@ -40,6 +41,7 @@ func _on_button_up() -> void:
 	# Quand on relâche l'outil, si il est sur le bon ancre, il s'attache, sinon il revient à sa position d'origine
 	if item_above_target:
 		if area_reference.piece_is_on and area_reference.is_fixed == false:
+			AudioManager.play_sfx(sfx_repair, 5.0)
 			area_reference.is_fixed = true
 			minigame_window.add_action()
 	global_position = position_item
