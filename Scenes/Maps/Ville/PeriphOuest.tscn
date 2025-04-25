@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="3_udijt"]
-[ext_resource type="PackedScene" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="3_vn6re"]
+[ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="3_vn6re"]
 [ext_resource type="TileSet" uid="uid://c4cih28217htv" path="res://Graphics/Tilesets/Tileset_Ville.tres" id="3_vtu41"]
 [ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="4_4y10b"]
 [ext_resource type="PackedScene" uid="uid://7vbx36dyp2ky" path="res://Scenes/Props/PeriphOuest/metro_periph.tscn" id="4_vtu41"]

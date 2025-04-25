@@ -5,12 +5,12 @@ var plant_sprite_region: Rect2 = Rect2(148,58,16,17)
 @onready var id: int = get_index()
 
 func initialize_plant() -> void:
-	var plant_data: Array[bool] = SaveManager.getElement("Missions", "Plante_Park")
+	var plant_data: Array = SaveManager.getElement("Missions", "Plante_Park")
 	if plant_data[id] == true:
 		sprite.texture.region = plant_sprite_region
 
 func on_interact(player: Player) -> void:
-	var plant_data: Array[bool] = SaveManager.getElement("Missions", "Plante_Park")
+	var plant_data: Array = SaveManager.getElement("Missions", "Plante_Park")
 	if plant_data[id] == true:
 		Dialogic.start("quest_plante", "book2")
 		return
