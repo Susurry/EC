@@ -9,13 +9,14 @@
 [ext_resource type="Script" uid="uid://bj4mgipt463b8" path="res://Scripts/UI/TimerElements/timer.gd" id="6_6ntbc"]
 [ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="6_j0fp3"]
 [ext_resource type="Script" uid="uid://cfxk5hxbgtty8" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
-[ext_resource type="AudioStream" uid="uid://bsmgjdcm3c66l" path="res://Audio/SFX/Temp/FB_Bad.wav" id="7_81klo"]
 [ext_resource type="LabelSettings" uid="uid://bjqrdqohjhs6g" path="res://Graphics/UI/Themes/Label_UI.tres" id="7_qvet4"]
 [ext_resource type="Script" uid="uid://c85sqtcabmrmb" path="res://Scripts/UI/ScoreElements/follower.gd" id="7_r175c"]
+[ext_resource type="AudioStream" uid="uid://3x75w3tp350c" path="res://Audio/SFX/score_bonus.wav" id="8_cwurv"]
 [ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
 [ext_resource type="Resource" uid="uid://bq5ri1v65mysg" path="res://Resources/UI/item_list.tres" id="9_cwurv"]
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
-[ext_resource type="AudioStream" uid="uid://b0jen6c4xqxv7" path="res://Audio/SFX/Temp/FB_Good.wav" id="10_fkdbe"]
+[ext_resource type="AudioStream" uid="uid://d2d3yu1yjlbw8" path="res://Audio/SFX/score_malus.wav" id="9_mucmn"]
+[ext_resource type="AudioStream" uid="uid://b4wcn2c027cbq" path="res://Audio/SFX/follower_bonus.wav" id="12_cwurv"]
 [ext_resource type="Script" uid="uid://bgnif2jqnff2x" path="res://Scripts/UI/InventoryElements/inventaire.gd" id="12_dga6m"]
 [ext_resource type="Texture2D" uid="uid://bb68t0hcbbrne" path="res://Graphics/TEMP/WIP_Thermomètre.png" id="13_tgy6u"]
 [ext_resource type="PackedScene" uid="uid://dbah8ylvfp1o0" path="res://Scenes/UI/InventoryElements/item.tscn" id="14_81klo"]
@@ -470,8 +471,8 @@ theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("3_nnnuy")
 time_element = NodePath("../../TimeElements")
-sfx_good_score = ExtResource("10_fkdbe")
-sfx_bad_score = ExtResource("7_81klo")
+sfx_good_score = ExtResource("8_cwurv")
+sfx_bad_score = ExtResource("9_mucmn")
 
 [node name="TextureRect" type="TextureRect" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Carbone"]
 custom_minimum_size = Vector2(47, 47)
@@ -498,7 +499,7 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("7_r175c")
-sfx_follow = ExtResource("10_fkdbe")
+sfx_follow = ExtResource("12_cwurv")
 time_element = NodePath("../../TimeElements")
 
 [node name="TextureRect" type="TextureRect" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Follower"]

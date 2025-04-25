@@ -2,6 +2,7 @@ extends Button
 
 @export var position_item: Vector2
 @export var id_piece_velo: int
+@export var sfx_metal_sound: AudioStreamWAV
 
 var click_offset: Vector2
 var item_above_target: bool = false
@@ -37,6 +38,7 @@ func _on_collision_area_area_exited(_area: Area2D) -> void:
 func _on_button_up() -> void:
 	# Quand on relache la pièce,si elle est sur le bon ancre, elle s'attache, sinon elle revient à sa position d'origine
 	if item_above_target:
+		AudioManager.play_sfx(sfx_metal_sound)
 		position_item = new_position
 		self.disabled = true
 		area_reference.piece_is_on = true
