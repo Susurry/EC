@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://ckmxkfe8t32rh" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car.gd" id="1_6k2ip"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="2_p12b7"]
 [ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="3_s7el4"]
-[ext_resource type="Script" uid="uid://c4yrsrt0ks3p4" path="res://Scenes/Pawn/PNJ/PeriphOuest/pathfinding_pnj_car.gd" id="4_6k2ip"]
+[ext_resource type="Script" uid="uid://c4yrsrt0ks3p4" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pathfinding_pnj_car.gd" id="4_6k2ip"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="5_qk2tl"]
 [ext_resource type="Texture2D" uid="uid://n2uciyby3swr" path="res://Graphics/TEMP/car_new.png" id="6_6k2ip"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_4d6qx"]
-[ext_resource type="Shape2D" uid="uid://uttw2jeb5cji" path="res://detecteur_horizontal.tres" id="8_sfww7"]
-[ext_resource type="Shape2D" uid="uid://8n7miugf85s8" path="res://collision_verticale.tres" id="9_4d6qx"]
-[ext_resource type="Shape2D" uid="uid://cvoudvhjv3dg" path="res://detecteur_vertical.tres" id="9_qk2tl"]
-[ext_resource type="Shape2D" uid="uid://cphdc5q6vv14x" path="res://collision_horizontal.tres" id="11_e0pbg"]
-[ext_resource type="Shape2D" uid="uid://dqvrvmpna3vjc" path="res://collision_transition.tres" id="12_qk2tl"]
-[ext_resource type="Shape2D" uid="uid://bs7umie8pm1ec" path="res://detecteur_transition.tres" id="13_q6yjv"]
+[ext_resource type="Shape2D" uid="uid://uttw2jeb5cji" path="res://Misc/Collision/detecteur_horizontal.tres" id="8_sfww7"]
+[ext_resource type="Shape2D" uid="uid://8n7miugf85s8" path="res://Misc/Collision/collision_verticale.tres" id="9_4d6qx"]
+[ext_resource type="Shape2D" uid="uid://cvoudvhjv3dg" path="res://Misc/Collision/detecteur_vertical.tres" id="9_qk2tl"]
+[ext_resource type="Shape2D" uid="uid://cphdc5q6vv14x" path="res://Misc/Collision/collision_horizontal.tres" id="11_e0pbg"]
+[ext_resource type="Shape2D" uid="uid://dqvrvmpna3vjc" path="res://Misc/Collision/collision_transition.tres" id="12_qk2tl"]
+[ext_resource type="Shape2D" uid="uid://bs7umie8pm1ec" path="res://Misc/Collision/detecteur_transition.tres" id="13_q6yjv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_utgjr"]
 resource_local_to_scene = true
@@ -355,6 +355,57 @@ tracks/4/keys = {
 "values": [Vector2(0, -10)]
 }
 
+[sub_resource type="Animation" id="Animation_sfww7"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_qk2tl")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Detecteur_Car/CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_q6yjv")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Detecteur_Car/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_lxcha"]
 resource_name = "walk_down"
 length = 1.2
@@ -617,57 +668,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -10)]
-}
-
-[sub_resource type="Animation" id="Animation_sfww7"]
-resource_name = "transition"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:shape")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("12_qk2tl")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Detecteur_Car/CollisionShape2D:shape")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("13_q6yjv")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Detecteur_Car/CollisionShape2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtfkf"]

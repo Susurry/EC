@@ -435,10 +435,10 @@ position = Vector2(805, 1052)
 [node name="Path1" type="Node2D" parent="CarManager"]
 
 [node name="Spawn1" type="Marker2D" parent="CarManager/Path1"]
-position = Vector2(842, 1052)
+position = Vector2(844, 1052)
 
 [node name="Target1_1" type="Marker2D" parent="CarManager/Path1"]
-position = Vector2(842, 417)
+position = Vector2(844, 417)
 
 [node name="Target1_2" type="Marker2D" parent="CarManager/Path1"]
 position = Vector2(825, 394)
@@ -604,8 +604,8 @@ end_position = Vector2(805, 1052)
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="CircuitVoiture/NavigationRegion2D"]
 position = Vector2(0, 1)
 bidirectional = false
-start_position = Vector2(842, 1051)
-end_position = Vector2(842, 416)
+start_position = Vector2(844, 1051)
+end_position = Vector2(844, 416)
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
