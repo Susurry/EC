@@ -14,6 +14,7 @@ var end_target_id: int
 var trajet_pause: bool = false
 var current_target: int = 1
 var target_array: Array
+var exited_spawn: bool = false
 
 @onready var animation_player = $Skin/AnimationPlayer
 
@@ -33,26 +34,13 @@ func _on_navigation_agent_2d_navigation_finished() -> void:
 	current_target += 1
 	if current_target >= target_array.size() - 1:
 		queue_free()
+		#await get_tree().create_timer(0.5).timeout 
 		manager.initialize_pnj()
 	else :
 		current_target += 1
 		set_movement_target(target_array[current_target].position)
 		visible = false
 		position = target_array[current_target-1].position
-		
-		#match manager.target_array[current_target-1].anim:
-			#"right":
-				#animation_player.play("walk_right")
-				#
-			#"left":
-				#animation_player.play("walk_left")
-				#
-			#"down":
-				#animation_player.play("walk_down")
-				#
-			#"up":
-				#animation_player.play("walk_up")
-				
 		
 		
 

@@ -721,7 +721,6 @@ states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pb38o"]
-graph_offset = Vector2(-472.421, -16.1491)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_t5d6h")
 nodes/TimeScale/position = Vector2(493.333, 160)
 nodes/Transition/node = SubResource("AnimationNodeTransition_2sv47")
@@ -735,6 +734,8 @@ node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &
 
 [node name="PNJ_Car" type="CharacterBody2D"]
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_6k2ip")
 path_size = 1

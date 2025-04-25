@@ -8,11 +8,12 @@ var end_target_array: Array[Marker2D]
 var path_array: Array[Node2D]
 var target_array : Array
 
+
 func _ready() -> void:
 	initialize_paths()
 	for i in car_quantity:
 		# Crée un PNJ toutes les secondes, jusqu'au nombre de PNJ shouaité
-		await get_tree().create_timer(2.5).timeout 
+		await get_tree().create_timer(3.0).timeout 
 		initialize_pnj()
 
 func initialize_paths() -> void:
@@ -29,10 +30,8 @@ func initialize_pnj() -> void:
 	target_array = rand_path.get_children()
 	print(target_array)
 	pnj_instance.position = target_array[0].position
-	#pnj_instance.spawn_id = rand_path.id
 	pnj_instance.spawn_point = pnj_instance.position
 	pnj_instance.target_array = target_array
 	#pnj_instance.skin_texture = pnj_instance.skin_car
 	
 	get_parent().call_deferred("add_child", pnj_instance)
-	
