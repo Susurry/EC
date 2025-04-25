@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://chv50xmrlkp03"]
 
 [ext_resource type="Script" uid="uid://ccces5iri0lt3" path="res://Scripts/Props/Types/prop_sac_poubelle.gd" id="1_p7pmb"]
-[ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="2_b620c"]
+[ext_resource type="AudioStream" uid="uid://b7myfrryvtf3d" path="res://Audio/SFX/pickup_sac_poubelle.wav" id="2_b620c"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_iptsd"]
 [ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="4_b620c"]
 
