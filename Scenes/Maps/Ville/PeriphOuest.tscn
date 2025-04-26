@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=50 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]

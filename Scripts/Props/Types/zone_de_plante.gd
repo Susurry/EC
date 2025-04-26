@@ -18,7 +18,6 @@ func on_interact(player: Player) -> void:
 	if SaveManager.getElement("Quests", "S_jardinier") == null: # Quête inactive (pas de sauvegarde)
 		super(player)
 	elif SaveManager.getElement("Quests", "S_jardinier") == false: # Quête active
-		print("A plant has been planted")
 		Dialogic.start("quest_plante", "book3")
 		await Dialogic.timeline_ended
 		plant_data[id] = true
@@ -28,3 +27,5 @@ func on_interact(player: Player) -> void:
 		
 		if not plant_data.has(false):
 			Dialogic.start("quest_plante", "book4")
+			await Dialogic.timeline_ended
+			SaveManager.save()

@@ -28,7 +28,6 @@ func initialize_pnj() -> void:
 	var rand_path = path_array[randi_range(0, path_array.size() - 1)]
 	
 	target_array = rand_path.get_children()
-	print(target_array)
 	pnj_instance.position = target_array[0].position
 	pnj_instance.spawn_point = pnj_instance.position
 	pnj_instance.target_array = target_array
