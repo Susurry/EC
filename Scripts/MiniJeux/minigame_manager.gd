@@ -37,5 +37,8 @@ func erase_minigame(timeline: String = "", bookmark: int = 0) -> void:
 		Dialogic.start(timeline, "book" + str(bookmark))
 		await Dialogic.timeline_started
 	
-	
 	EventBus.emit_signal("in_game_event_active", false)
+	
+	if timeline:
+		await Dialogic.timeline_ended
+	SaveManager.save()
