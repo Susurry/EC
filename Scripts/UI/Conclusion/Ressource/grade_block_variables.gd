@@ -3,6 +3,8 @@ class_name GradeBlockVariables
 
 @export var title: String
 
+@export var category: String
+
 @export_multiline var description: String
 @export_multiline var description_scientifique: String
 

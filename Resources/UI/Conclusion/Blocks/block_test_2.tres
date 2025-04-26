@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_0mi3o")
-title = "Test3"
-description = "Boyo"
+title = "Lorem"
+category = "Alimentation"
+description = "Ipsum"
 description_scientifique = "Danam"
 mission_key_1 = "Mission"
 mission_key_2 = "exist_test2"
