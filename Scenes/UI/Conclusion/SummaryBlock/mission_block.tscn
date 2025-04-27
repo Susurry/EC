@@ -6,8 +6,9 @@
 font_size = 28
 
 [sub_resource type="LabelSettings" id="LabelSettings_i26dy"]
+resource_local_to_scene = true
 font_size = 28
-font_color = Color(1, 0, 0, 1)
+font_color = Color(0.427493, 0.427493, 0.427493, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lmoi6"]
 font_size = 28
@@ -62,7 +63,7 @@ vertical_alignment = 1
 [node name="ScoreLabel" type="Label" parent="Margin/VBox/InfoPannel/Margin/VBox/TopicHBox"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-text = "+ 0,6"
+text = "+ 0,0"
 label_settings = SubResource("LabelSettings_i26dy")
 horizontal_alignment = 1
 vertical_alignment = 1

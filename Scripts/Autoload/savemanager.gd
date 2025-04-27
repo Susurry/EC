@@ -28,6 +28,8 @@ func getElement(category:String,element:String,onlyCategory:bool=false)->Variant
 		return null
 
 func save() -> void:
+	EventBus.emit_signal("save_time")
+	
 	if dontSave:
 		return
 	var timeDict = Time.get_datetime_dict_from_system()
