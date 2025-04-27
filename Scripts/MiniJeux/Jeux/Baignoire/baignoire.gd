@@ -19,7 +19,7 @@ func shower_start() -> void:
 		bouchon_button.visible = false
 		valve_button.visible = false
 	
-	animated_sprite.play("start_shower")
+	animated_sprite.play("shower_start")
 	await animated_sprite.animation_finished
 	timer.start()
 

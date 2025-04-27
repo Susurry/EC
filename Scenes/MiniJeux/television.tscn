@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsnubr52gfqvq"]
+[gd_scene load_steps=11 format=3 uid="uid://bsnubr52gfqvq"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_304nj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="1_fetsl"]
@@ -11,38 +11,34 @@
 atlas = ExtResource("3_s81gx")
 region = Rect2(80, 16, 35, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_itwrx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b3ll"]
 atlas = ExtResource("1_fetsl")
-region = Rect2(134, 64, 38, 32)
+region = Rect2(336, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_41u7f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5caps"]
 atlas = ExtResource("1_fetsl")
-region = Rect2(182, 64, 38, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dkvd2"]
-atlas = ExtResource("1_fetsl")
-region = Rect2(137, 70, 32, 20)
+region = Rect2(288, 0, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_86k7g"]
 animations = [{
 "frames": [{
-"duration": 5.0,
-"texture": SubResource("AtlasTexture_itwrx")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b3ll")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_41u7f")
+"texture": SubResource("AtlasTexture_5caps")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dkvd2")
+"texture": SubResource("AtlasTexture_5caps")
 }],
 "loop": true,
 "name": &"stop",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="Television" type="Node2D"]
@@ -75,11 +71,11 @@ texture = SubResource("AtlasTexture_8dpru")
 
 [node name="SpriteTV" type="AnimatedSprite2D" parent="WindowSize/Meuble"]
 z_index = 1
-position = Vector2(501, 165)
+position = Vector2(296, 14)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_86k7g")
-animation = &"stop"
 autoplay = "default"
+centered = false
 
 [node name="BoutonTV" type="Button" parent="WindowSize/Meuble"]
 offset_left = 556.0
@@ -90,9 +86,10 @@ focus_mode = 0
 flat = true
 
 [node name="SpriteMeuble" type="Sprite2D" parent="WindowSize/Meuble"]
-position = Vector2(497, 259)
-scale = Vector2(7.5651, 5.85399)
+position = Vector2(391, 176)
+scale = Vector2(8, 8)
 texture = ExtResource("3_kqpfy")
+centered = false
 region_enabled = true
 region_rect = Rect2(1.93495, 40.8983, 24.9948, 17.1227)
 
