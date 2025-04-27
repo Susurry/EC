@@ -18,9 +18,17 @@ func shower_start() -> void:
 		progress_bar.max_value = 9
 		bouchon_button.visible = false
 		valve_button.visible = false
+		animated_sprite.play("bath_start")
+	else:
+		animated_sprite.play("shower_start")
 	
-	animated_sprite.play("shower_start")
 	await animated_sprite.animation_finished
+	
+	if is_bath_mode:
+		animated_sprite.play("bath")
+	else:
+		animated_sprite.play("shower")
+	
 	timer.start()
 
 func shower():
@@ -51,7 +59,12 @@ func shower():
 func shower_end() -> void: # Vide la baignoire puis finis le mini jeu -> valide le score
 	valve_button.visible = false
 	timer.stop()
-	animated_sprite.play("shower_end")
+	
+	if is_bath_mode:
+		animated_sprite.play("bath_end")
+	else:
+		animated_sprite.play("shower_end")
+	
 	await get_tree().create_timer(2.0).timeout
 	get_parent().quit_minigame()
 
