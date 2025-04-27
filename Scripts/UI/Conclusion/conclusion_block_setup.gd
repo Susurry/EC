@@ -2,17 +2,13 @@ extends Control
 
 @export var category_label: PackedScene
 @export var mission_block: PackedScene
+@export var empty_block: PackedScene
 @export var block_data: GradeBlockList
 @export var target: Control
 
 var summary_content: Dictionary[String,Array]
 
 func _ready() -> void:
-	SaveManager.setElement("Mission", {"exist_test": true})
-	SaveManager.setElement("Mission", {"exist_test2": true})
-	SaveManager.setElement("Points", {"test": 1})
-	SaveManager.setElement("Points", {"test2": 50})
-	
 	_initialize_categories()
 	_initialize_content()
 
@@ -33,12 +29,14 @@ func _initialize_categories() -> void:
 
 func _initialize_content() -> void:
 	for category in summary_content:
+		var category_size: int = 0
 		var new_category: Label = category_label.instantiate()
 		new_category.text = category
+		
 		target.add_child(new_category)
 		
 		for summary in summary_content[category]:
-			var save_mission: Variant = SaveManager.getElement(summary.mission_key_1, summary.mission_key_2)	
+			var save_mission: Variant = SaveManager.getElement(summary.mission_key_1, summary.mission_key_2)
 			if not save_mission:
 				continue # Si la mission n'est pas faite skip
 			
@@ -55,6 +53,24 @@ func _initialize_content() -> void:
 			summary_label.text = summary.title
 			desc_text.text = summary.description
 			source_text.text = summary.description_scientifique
+			
 			score_text.text = str(save_score)
+			if category == "Follower":
+				# score positif vert, negatif rouge
+				if save_score > 0:
+					score_text.label_settings.font_color = Color.GREEN
+				else:
+					score_text.label_settings.font_color = Color.RED
+			else:
+				# score positif rouge, negatif vert (EcoScore réduire empreinte)
+				if save_score > 0:
+					score_text.label_settings.font_color = Color.RED
+				elif save_score < 0:
+					score_text.label_settings.font_color = Color.GREEN
 			
 			target.add_child(new_summary)
+			category_size += 1
+		
+		if category_size == 0:
+			var new_empty: PanelContainer = empty_block.instantiate()
+			target.add_child(new_empty)

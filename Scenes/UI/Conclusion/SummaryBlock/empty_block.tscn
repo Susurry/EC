@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6kvwb2oslbg1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3cha"]
+font_size = 28
+font_color = Color(0.427493, 0.427493, 0.427493, 1)
+
+[node name="CategoryPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 60)
+metadata/topic_path = NodePath("Margin/InfoPannel/TopicLabel")
+metadata/desc_path = NodePath("")
+metadata/source_path = NodePath("")
+metadata/score_path = NodePath("")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="InfoPannel" type="PanelContainer" parent="Margin"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="TopicLabel" type="Label" parent="Margin/InfoPannel"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rien : explorez d'avantage le jeu pour découvrir ce que vous pouvez faire !"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://8ws8nny3lhik"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_m747i"]
+
+[resource]
+script = ExtResource("1_m747i")
+title = "Se laver"
+category = "Hygiène"
+description = "Lorem Ipsum"
+description_scientifique = "Insert Source"
+mission_key_1 = "Quests"
+mission_key_2 = "1-2_shower"
+point_key_1 = "Points"
+point_key_2 = "1-2_shower"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -367,7 +367,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_constants/separation = 10
 script = ExtResource("6_6ntbc")
-heure = 1
+start_heure = 1
 carbone_element = NodePath("../ScoreElements/Carbone")
 follower_element = NodePath("../ScoreElements/Follower")
 
@@ -408,6 +408,7 @@ max_value = 0.0
 show_percentage = false
 
 [node name="ChangeTimeBar" type="ProgressBar" parent="UI/InfoElements/MarginContainer/Columns/TimeElements/Bars/TimeBar"]
+visible = false
 z_index = -1
 layout_mode = 1
 anchors_preset = 15

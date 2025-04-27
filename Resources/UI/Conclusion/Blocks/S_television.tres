@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://c1ireytxohkao"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_fjw3f"]
+
+[resource]
+script = ExtResource("1_fjw3f")
+title = "Éteindre la télévision"
+category = "Logement"
+description = "Lorem Ipsum"
+description_scientifique = "Insert Source"
+mission_key_1 = "Quests"
+mission_key_2 = "S_television"
+point_key_1 = "Points"
+point_key_2 = "S_television"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

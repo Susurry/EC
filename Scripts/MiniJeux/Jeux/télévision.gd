@@ -25,3 +25,4 @@ func _on_pousser_meuble_pressed() -> void:
 
 func _on_update_score(score: float):
 	EventBus.emit_signal("set_empreinte", score)
+	SaveManager.setElement("Points", {"S_television": score})
