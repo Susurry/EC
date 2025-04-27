@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b1vb7txwbkq24"]
+[gd_scene load_steps=9 format=3 uid="uid://b1vb7txwbkq24"]
 
 [ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="1_roojc"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_vcscp"]
@@ -9,92 +9,15 @@ shader = ExtResource("2_vcscp")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cbtrl"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(96, 64, 32, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ishj"]
 atlas = ExtResource("3_jus2a")
 region = Rect2(0, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nhmw4"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_guioi"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(64, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebtnp"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(96, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nst3y"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(128, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_is5q6"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(160, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tdkrs"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(192, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5n2g"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(224, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mq8k2"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(0, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2r8h7"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(32, 64, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mj7ef"]
-atlas = ExtResource("3_jus2a")
-region = Rect2(64, 64, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_te7gt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cbtrl")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_8ishj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nhmw4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_guioi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebtnp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nst3y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_is5q6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tdkrs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g5n2g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mq8k2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2r8h7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mj7ef")
 }],
 "loop": true,
 "name": &"default",
