@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=51 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://b2k14hdfnse31" path="res://Scripts/Events/PeriphOuest/mission_eboueur.gd" id="28_1cwe4"]
 [ext_resource type="Texture2D" uid="uid://2tn8hjie0wpr" path="res://Graphics/Characters/character_reparateur.png" id="29_7f4wu"]
 [ext_resource type="Script" uid="uid://cu5g2d6k8y6fw" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car_manager.gd" id="30_whdg5"]
+[ext_resource type="PackedScene" uid="uid://tt8v0dphgipk" path="res://Scenes/Props/PeriphOuest/affiche_recycle.tscn" id="32_m7kr6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
 atlas = ExtResource("4_4y10b")
@@ -626,6 +627,9 @@ position = Vector2(0, 1)
 bidirectional = false
 start_position = Vector2(844, 1051)
 end_position = Vector2(844, 416)
+
+[node name="affiche_recycle" parent="." instance=ExtResource("32_m7kr6")]
+position = Vector2(732, 592)
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
