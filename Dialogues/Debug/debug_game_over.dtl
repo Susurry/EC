@@ -1,1 +1,2 @@
 Game Over
+do ThreadLoad.load_scene("ConclusionScreen", 0)

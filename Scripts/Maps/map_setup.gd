@@ -20,7 +20,6 @@ var start_id: int = 0
 @onready var camera_resource: PackedScene = preload("uid://cfutd05my7baa")
 @onready var pause_ressource: PackedScene = preload("uid://bfwcj54nwr3on")
 
-
 func _ready() -> void:
 	initialize_scene()
 	initialize_player()
@@ -30,6 +29,7 @@ func _ready() -> void:
 	initialize_music()
 
 func initialize_player() -> void:
+	EventBus.emit_signal("pause_time", false)
 	EventBus.emit_signal("set_ui_visibility", true)
 	player = player_resource.instantiate()
 	player.position = $StartPoints.get_child(start_id).position # Ordre du child important

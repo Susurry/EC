@@ -5,8 +5,11 @@
 [resource]
 script = ExtResource("1_c5jvs")
 blocks = Dictionary[String, String]({
-"mission_poubelle": "uid://cswda4yvu71xm",
-"mission_test": "uid://8ws8nny3lhik",
-"mission_test_2": "uid://bwotjxbutiovs"
+"1-1_breakfast_boiss": "uid://b3d2tni0da86f",
+"1-1_breakfast_dej": "uid://cswda4yvu71xm",
+"1-2_shower": "uid://8ws8nny3lhik",
+"3-2_trier": "uid://bwotjxbutiovs",
+"3-3_parler": "uid://bue0qem4uij6m",
+"S_television": "uid://c1ireytxohkao"
 })
 metadata/_custom_type_script = "uid://x4070xccs7ll"

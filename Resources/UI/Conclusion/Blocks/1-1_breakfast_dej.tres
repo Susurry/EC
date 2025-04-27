@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradeBlockVariables" load_steps=2 format=3 uid="uid://cswda4yvu71xm"]
+
+[ext_resource type="Script" uid="uid://d3dcgs02tcqyt" path="res://Scripts/UI/Conclusion/Ressource/grade_block_variables.gd" id="1_taaw2"]
+
+[resource]
+script = ExtResource("1_taaw2")
+title = "Prendre le petit déjeuner"
+category = "Alimentation"
+description = "Lorem Ipsum"
+description_scientifique = "Insert Source"
+mission_key_1 = "Quests"
+mission_key_2 = "1-1_breakfast"
+point_key_1 = "Points"
+point_key_2 = "1-1_breakfast_dej"
+metadata/_custom_type_script = "uid://d3dcgs02tcqyt"

@@ -22,6 +22,7 @@ func update_trash_count() -> void:
 	trash_count += 1
 	if trash_count == max_trash_items:
 		EventBus.emit_signal("set_empreinte", score)
+		SaveManager.setElement("Points", {"3-2_trier": score})
 		EventBus.emit_signal("remove_item", "Trash1")
 		EventBus.emit_signal("remove_item", "Trash2")
 		EventBus.emit_signal("remove_item", "Trash3")

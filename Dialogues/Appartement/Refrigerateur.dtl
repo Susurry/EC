@@ -5,23 +5,31 @@ if SaveManager.getElement("Quests", "1-1_breakfast") == false:
 	Votre frigo est bien rempli ! Quel petit-déjeuner prendre ?
 	- Porridge et fruits
 		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": 0.1})
 	- Céréales et lait de vache
 		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": 0.1})
 	- Tartines et viennoiseries
 	- Céréales et lait de soja
 		do EventBus.emit_signal("set_empreinte", -0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": -0.1})
 	- Toast, œufs et bacon
 		do EventBus.emit_signal("set_empreinte", 0.3)
+		do SaveManager.setElement("Points", {"1-1_breakfast_dej": 0.3})
 	Et la boisson ?
 	- Thé
 		do EventBus.emit_signal("set_empreinte", -0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": -0.1})
 	- Café
 		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": 0.1})
 	- Eau en bouteille
 	- Soda
 		do EventBus.emit_signal("set_empreinte", 0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": 0.1})
 	- Eau du robinet
 		do EventBus.emit_signal("set_empreinte", -0.1)
+		do SaveManager.setElement("Points", {"1-1_breakfast_boiss": -0.1})
 	Vous êtes repus !
 	do EventBus.emit_signal("set_quest_state", "1-1_breakfast")
 	if SaveManager.getElement("Quests", "0_tutoriel") == false:

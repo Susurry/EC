@@ -10,9 +10,6 @@ func initialize_viewport(game_viewport: SubViewport) -> void:
 
 func load_scene(next_scene: String, pos_id: int = 0, loading_screen_type: String = "") -> void:
 	Dialogic.end_timeline()
-	SaveManager.setElement("Player", {"scene": next_scene})
-	SaveManager.setElement("Player", {"pos": pos_id})
-	SaveManager.save()
 	
 	FadeManager.trigger_fade(1, 0.25, 3)
 	AudioManager.fade_music(-80, 0.5)
@@ -39,6 +36,9 @@ func load_scene(next_scene: String, pos_id: int = 0, loading_screen_type: String
 				# Pour éviter les problèmes si on crée une scène sans joueur (ex: menu, leaderboard)
 				if scene is Map:
 					scene.start_id = pos_id
+					SaveManager.setElement("Player", {"scene": next_scene})
+					SaveManager.setElement("Player", {"pos": pos_id})
+					SaveManager.save()
 				
 				loading_instance.next_scene = scene
 				return

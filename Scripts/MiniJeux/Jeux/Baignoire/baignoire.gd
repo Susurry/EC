@@ -36,6 +36,7 @@ func shower():
 			# Placez le signal de sauvegarde ici
 			if progress_bar.value == 12:
 				EventBus.emit_signal("set_empreinte", -0.2)
+				SaveManager.setElement("Points", {"1-2_shower": -0.2})
 				EventBus.emit_signal("set_quest_state", "1-2_shower")
 		elif progress_bar.value < 12 and progress_bar.value >= 6:
 			if progress_bar.value == 6:
