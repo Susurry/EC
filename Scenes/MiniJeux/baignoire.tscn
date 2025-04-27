@@ -194,33 +194,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dokue")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddhfh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_carrn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lq03p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddhfh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_carrn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lq03p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ddhfh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_carrn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lq03p")
 }],
 "loop": false,
 "name": &"bath_start",
@@ -343,7 +316,7 @@ pos_debouch = NodePath("BouchonElements/PosDeboucher")
 position = Vector2(400, 325)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_mbos1")
-animation = &"bath"
+animation = &"bath_start"
 autoplay = "off_default"
 
 [node name="ValveGauche" type="Sprite2D" parent="WindowSize/SpriteBaignoire"]

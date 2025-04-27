@@ -78,10 +78,10 @@ autoplay = "default"
 centered = false
 
 [node name="BoutonTV" type="Button" parent="WindowSize/Meuble"]
-offset_left = 556.0
-offset_top = 195.0
-offset_right = 597.0
-offset_bottom = 221.0
+offset_left = 551.0
+offset_top = 172.0
+offset_right = 592.0
+offset_bottom = 198.0
 focus_mode = 0
 flat = true
 
@@ -94,10 +94,10 @@ region_enabled = true
 region_rect = Rect2(1.93495, 40.8983, 24.9948, 17.1227)
 
 [node name="Pousser_meuble" type="Button" parent="WindowSize/Meuble"]
-offset_left = 403.0
-offset_top = 221.0
+offset_left = 392.0
+offset_top = 206.0
 offset_right = 591.0
-offset_bottom = 309.0
+offset_bottom = 312.0
 focus_mode = 0
 flat = true
 

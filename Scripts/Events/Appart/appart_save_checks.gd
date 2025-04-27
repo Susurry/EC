@@ -15,3 +15,5 @@ func initialize() -> void:
 		
 	if SaveManager.getElement("Quests", "0-2_chaise") == true:
 		$MissionChairCheck.queue_free()
+	
+	$MissionTeleCheck.initialize_quest()
