@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=63 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -22,6 +22,7 @@
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="16_6cxdi"]
 [ext_resource type="Script" uid="uid://b6r412c6n5w0u" path="res://Scripts/Events/PeriphOuest/mission_poubelle.gd" id="17_iuw2w"]
 [ext_resource type="PackedScene" uid="uid://chv50xmrlkp03" path="res://Scenes/Props/PeriphOuest/sac_poubelle.tscn" id="18_fx4co"]
+[ext_resource type="PackedScene" uid="uid://dyf3pjl7jp7jd" path="res://Scenes/Props/PeriphOuest/player_bicycle.tscn" id="19_c4beq"]
 [ext_resource type="PackedScene" uid="uid://ds7lj8f48m20p" path="res://Scenes/Props/PeriphOuest/poubelles.tscn" id="19_yn25f"]
 [ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="20_k5lkh"]
 [ext_resource type="Script" uid="uid://k3msidbt0ncx" path="res://Scripts/Events/map_transitions.gd" id="21_k5lkh"]
@@ -34,6 +35,7 @@
 [ext_resource type="Script" uid="uid://cu5g2d6k8y6fw" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car_manager.gd" id="30_whdg5"]
 [ext_resource type="PackedScene" uid="uid://tt8v0dphgipk" path="res://Scenes/Props/PeriphOuest/affiche_recycle.tscn" id="32_m7kr6"]
 [ext_resource type="Script" uid="uid://ccdy0c2fkd3rn" path="res://Scripts/Events/Shared/player_car_check.gd" id="34_d0ba6"]
+[ext_resource type="Script" uid="uid://c17fr8kqxgo6u" path="res://Scripts/Events/PeriphOuest/mission_velo.gd" id="36_1c0dv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0ba6"]
 atlas = ExtResource("4_4y10b")
@@ -452,6 +454,9 @@ debug_color = Color(1, 0, 0, 0.419608)
 [node name="FacingDirection" type="Marker2D" parent="Props/PanneauCentre"]
 position = Vector2(9, 31)
 
+[node name="Player_Bicycle" parent="Props" instance=ExtResource("19_c4beq")]
+position = Vector2(779, 111)
+
 [node name="PNJs" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -754,6 +759,10 @@ camion_eboueur = NodePath("../../Props/CamionPoubelle")
 script = ExtResource("34_d0ba6")
 current_location = "PeriphOuest"
 car_object = NodePath("../../Props/PlayerCar")
+
+[node name="MissionVelo" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("velo_object")]
+script = ExtResource("36_1c0dv")
+velo_object = NodePath("../../Props/Player_Bicycle")
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
