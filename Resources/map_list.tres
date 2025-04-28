@@ -11,5 +11,6 @@ locations = Dictionary[String, String]({
 "ConclusionScreen": "uid://cug2nd2hq41jk",
 "Debug": "uid://bv7jahf4uj8v0",
 "Debug2": "uid://qmadlfp31trp",
+"Journalistes": "uid://c8tg6jq4nrmeh",
 "PeriphOuest": "uid://dlgvxdfciokt4"
 })
