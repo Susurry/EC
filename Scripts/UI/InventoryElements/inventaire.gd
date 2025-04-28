@@ -39,15 +39,13 @@ func add_item(item_name: String) -> void:
 	_save_inventory()
 
 func remove_item(item_name: String) -> void:
-	for i in item_list.size():
-		if item_list[i] == item_name:
-			item_column.get_node(item_name).queue_free()
-			
-			item_list.remove_at(i)
-			visible = check_amount()
-			
-			_save_inventory()
-			return
+	var item_del: PanelContainer = item_column.get_node_or_null(item_name)
+	var item_del_id: int = item_list.find(item_name)
+	
+	if item_del:
+		item_del.queue_free()
+		item_list.remove_at(item_del_id)
+		visible = check_amount()
 
 func check_amount() -> bool:
 	if item_list.size() == 0:
