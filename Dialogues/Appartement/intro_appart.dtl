@@ -34,6 +34,9 @@ do EventBus.emit_signal("add_quest", "0-2_chaise")
 label book5
 do EventBus.emit_signal("set_quest_state", "0-2_chaise")
 Confortable, n'est-ce pas ? Vous pourrez descendre dès que vous le voudrez en interagissant de nouveau (Espace, E, ou sur mobile à droite de l'écran).
+[end_timeline]
+label book11
+[wait time="0.6"]
 Il est maintenant l'heure de vous préparer pour se rendre à la fac !
 do EventBus.emit_signal("add_quest", "1_appart")
 do EventBus.emit_signal("add_quest", "1-1_breakfast")
@@ -93,3 +96,6 @@ Des indices ce cachent dans le jeu pour chacunes des questions, à vous d'explor
 do EventBus.emit_signal("point_cursor", 4000, 0.0, 0.0)
 [wait time="0.6"]
 jump pnj_eboueur/book3
+label book12
+[Appel Sonia]
+jump pnj_eboueur/book11
