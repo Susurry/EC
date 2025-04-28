@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func _initialize_signals() -> void:
 	EventBus.add_signal("add_quest", add_quest)
+	EventBus.add_signal("remove_quest", remove_quest)
 	EventBus.add_signal("clean_quests", clean_quests)
 	EventBus.add_signal("set_quest_state", set_quest_state)
 	EventBus.add_signal("set_mission_name", set_mission_name)
@@ -81,6 +82,14 @@ func clean_quests() -> void:
 	quest_list.clear()
 	
 	_save_current_quests() 
+
+func remove_quest(quest_name: String) -> void:
+	var quest_del: BoxContainer = target.get_node_or_null(quest_name)
+	var quest_del_id: int = quest_list.find(quest_name)
+	
+	if quest_del:
+		quest_del.queue_free()
+		quest_list.remove_at(quest_del_id)
 
 func set_quest_state(quest_name: String) -> void:
 	AudioManager.stop_sfx()

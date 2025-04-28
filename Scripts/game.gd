@@ -12,7 +12,7 @@ func _ready() -> void:
 	_initialize_viewport()
 	_initialize_save()
 	_initialize_inputs()
-	#_initialize_dialogic()
+	_initialize_dialogic()
 
 func _initialize_signals() -> void:
 	EventBus.add_signal("set_ui_visibility", $UI.set_visible)
