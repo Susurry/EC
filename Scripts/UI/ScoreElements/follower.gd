@@ -9,7 +9,12 @@ var follower: int = 0
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	_initialize_save()
 	_initialize_follower()
+
+func _initialize_save() -> void:
+	if SaveManager.getElement("Stats", "follower"):
+		follower = SaveManager.getElement("Stats", "follower")
 
 func _initialize_follower() -> void:
 	follower_label.text = str(follower)
