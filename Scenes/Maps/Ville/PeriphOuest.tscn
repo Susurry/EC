@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=61 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://2tn8hjie0wpr" path="res://Graphics/Characters/character_reparateur.png" id="29_7f4wu"]
 [ext_resource type="Script" uid="uid://cu5g2d6k8y6fw" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car_manager.gd" id="30_whdg5"]
 [ext_resource type="PackedScene" uid="uid://tt8v0dphgipk" path="res://Scenes/Props/PeriphOuest/affiche_recycle.tscn" id="32_m7kr6"]
+[ext_resource type="Script" uid="uid://ccdy0c2fkd3rn" path="res://Scripts/Events/Shared/player_car_check.gd" id="34_d0ba6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0ba6"]
 atlas = ExtResource("4_4y10b")
@@ -538,15 +539,6 @@ position = Vector2(1206, 647)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition/CentreVille"]
 shape = SubResource("RectangleShape2D_yn25f")
 
-[node name="SceneSaveChecks" type="Node2D" parent="."]
-script = ExtResource("15_5c4ie")
-timeline = "intro_periph"
-
-[node name="MissionEboueur" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("eboueur", "camion_eboueur")]
-script = ExtResource("28_1cwe4")
-eboueur = NodePath("../../PNJs/PNJ_Eboueur")
-camion_eboueur = NodePath("../../Props/CamionPoubelle")
-
 [node name="CarManager" type="Node2D" parent="."]
 script = ExtResource("30_whdg5")
 car_quantity = 3
@@ -748,6 +740,18 @@ end_position = Vector2(844, 416)
 
 [node name="affiche_recycle" parent="." instance=ExtResource("32_m7kr6")]
 position = Vector2(726, 592)
+
+[node name="SceneSaveChecks" type="Node2D" parent="."]
+script = ExtResource("15_5c4ie")
+timeline = "intro_periph"
+
+[node name="MissionEboueur" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("eboueur", "camion_eboueur")]
+script = ExtResource("28_1cwe4")
+eboueur = NodePath("../../PNJs/PNJ_Eboueur")
+camion_eboueur = NodePath("../../Props/CamionPoubelle")
+
+[node name="PlayerCarCheck" type="Node2D" parent="SceneSaveChecks"]
+script = ExtResource("34_d0ba6")
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
