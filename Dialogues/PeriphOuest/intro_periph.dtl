@@ -1,4 +1,13 @@
-Il est l'heure de se rendre à la fac ! Plusieurs options s'offrent à vous donc n'hésitez pas d'explorer ;)
+label book1
+[wait time="1"]
+[i]Dring, dring...[/i]
+Sonia: Coucou ! Ça y est, tu es sorti de chez toi ?
+Sonia: On vient d'apprendre que les amphithéâtres de l'université sont libres aujourd'hui ! On va donc pouvoir faire un discours pour sensibiliser les étudiants !
+Sonia: On se donne donc rendez-vous au Bureau Des Étudiants au [b]Campus Universitaire[/b], il me semble que c'est à l'[b]Est[/b] depuis chez toi, direction le [b]Centre-Ville[/b].
+Sonia: Prend ton temps pour venir, profite-en pour parler aux gens que tu croises, peut-être que tu pourras en sensibiliser certains sur le chemin ?
+Sonia: On se dit à tout à l'heure, chiao !
+[wait time="1"]
+... Il est temps de se rendre au Campus Universitaire, à l'Est du Centre-Ville !
 do EventBus.emit_signal("clean_quests")
 do EventBus.emit_signal("add_quest", "2_transport")
 do EventBus.emit_signal("add_quest", "2-1_voiture")
@@ -6,3 +15,4 @@ do EventBus.emit_signal("add_quest", "2-2_transports")
 do EventBus.emit_signal("add_quest", "2-3_pieds")
 do EventBus.emit_signal("add_quest", "2-4_velo")
 do SaveManager.save()
+[end_timeline]
