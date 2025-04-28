@@ -16,7 +16,7 @@ if {SaveManager.getElement("Player", "inventory").has("Carte")} == false:
 			Ah, vous êtes si pressé que ça ? Je suis navré mais nous ne pouvons pas griller les étapes.
 			N'hésitez pas à revenir si vous trouvez plus de temps !
 	- Rien du tout
-	D'accord ! Et bien, n'hésitez pas à revenir si vous avez besoin de nos services !
+		D'accord ! Et bien, n'hésitez pas à revenir si vous avez besoin de nos services !
 	[end_timeline]
 else:
 	Bonjour, bienvenue dans l'agence TCC !
