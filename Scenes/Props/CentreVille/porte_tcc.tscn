@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dlpedsflmqs68"]
 
-[ext_resource type="Script" uid="uid://2pg4i3168q1p" path="res://Scripts/Props/Types/prop_talk.gd" id="1_ahwrj"]
+[ext_resource type="Script" uid="uid://buytnavax2atl" path="res://Scripts/Props/Types/prop_porte_tcc.gd" id="1_ahwrj"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="2_rxnfy"]
 [ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="3_ac8ei"]
 

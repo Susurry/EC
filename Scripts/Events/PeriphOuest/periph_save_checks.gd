@@ -9,3 +9,4 @@ func initialize() -> void:
 	
 	$MissionEboueur.check_mission_done()
 	$PlayerCarCheck.check_state()
+	$MissionVelo.check_mission_done()
