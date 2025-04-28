@@ -2,20 +2,24 @@ if {SaveManager.getElement("Player", "inventory").has("Carte")} == false:
 	Bonjour, bienvenue dans l'agence TCC ! En quoi puis-je vous aider ?
 	- Récupérer mon titre de transport
 		Oh, vous souhaitez vous abonner et obtenir votre titre de transport pour le métro ? Très bien.
-		Dans ce cas là, il va nous falloir remlir quelques documents concernant votre type d'abbonnement et vos information personnelles... Cela ne vous dérange pas ?
+		Dans ce cas là, il va nous falloir remlir quelques documents concernant votre type d'abbonnement et vos information personnelles... Cela ne prendra pas plus de 5 minutes, cela ne vous dérange pas ?
 		- Pas de problème
-			Parfait ! J'ai donc quelques question à vous poser...
+			do FadeManager.trigger_fade(1,1.5,1)
+			Parfait ![pause=1] Donc, j'ai quelques question à vous poser...
 			do EventBus.emit_signal("change_time", -300)
-			... Et voilà, voici votre titre de transport ! Avec celui-ci, vous avez donc maintenant accès à notre ligne de métro !
+			do FadeManager.trigger_fade(0,1.5,1)
+			... Et voilà, pas plus de 5 minutes comme promis !
+			Voici votre titre de transport : Avec celui-ci, vous avez donc maintenant accès à notre ligne de métro.
 			do EventBus.emit_signal("add_item", "Carte")
-			N'hésitez pas à repasser au moindre problème !
+			Voilà pour vous ! N'hésitez pas à repasser au moindre problème !
 		- Euh...
 			Ah, vous êtes si pressé que ça ? Je suis navré mais nous ne pouvons pas griller les étapes.
 			N'hésitez pas à revenir si vous trouvez plus de temps !
-
 	- Rien du tout
-
+	D'accord ! Et bien, n'hésitez pas à revenir si vous avez besoin de nos services !
 	[end_timeline]
 else:
-	Vous avez déjà votre titre de transport.
+	Bonjour, bienvenue dans l'agence TCC !
+	Oh, re-bonjour ! Vous avez déjà récupéré votre titre de transport : c'est tout bon de notre coté !
+	N'hésitez pas à repasser au moindre problème !
 	[end_timeline]
