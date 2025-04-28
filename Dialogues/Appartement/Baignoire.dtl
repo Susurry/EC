@@ -6,12 +6,12 @@ if SaveManager.getElement("Quests", "1-2_shower") == false:
 	Il est l'heure de se laver ! Est-ce que ça sera un bain ou une douche ?
 	do EventBus.emit_signal("setup_minigame", "baignoire")
 	if SaveManager.getElement("Quests", "0_tutoriel") == false:
-		jump Introduction/book7
+		jump intro_appart/book7
 else:
 	Vous vous êtes déjà lavé.
 [end_timeline]
 label book2
 Vous êtes tout propre !
 if SaveManager.getElement("Quests", "1-1_breakfast") == true:
-	do Dialogic.start_timeline("Introduction", "book2")
+	jump intro_appart/book2
 [end_timeline]

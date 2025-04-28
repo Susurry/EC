@@ -33,8 +33,8 @@ if SaveManager.getElement("Quests", "1-1_breakfast") == false:
 	Vous êtes repus !
 	do EventBus.emit_signal("set_quest_state", "1-1_breakfast")
 	if SaveManager.getElement("Quests", "0_tutoriel") == false:
-		jump Introduction/book6
+		jump intro_appart/book6
 	if SaveManager.getElement("Quests", "1-2_shower") == true:
-		do Dialogic.start_timeline("Introduction", "book2")
+		jump intro_appart/book2
 else:
-	Vous êtes rassasié.e, pas besoin de plus !
+	Vous êtes rassasié, pas besoin de plus !

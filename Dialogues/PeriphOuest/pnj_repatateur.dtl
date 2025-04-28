@@ -30,6 +30,7 @@ if SaveManager.getElement("Quests", "S_vélo1") == false:
 if SaveManager.getElement("Quests", "S_vélo1") == true:
 	do SaveManager.setElement("Quests", {"S_vélo2": false})
 	Parfait, je vois que tu as les pièces qu'ils manquent.
+	do EventBus.emit_signal("remove_item", "Pieces")
 	Mon atelier réparation vélo est en libre service, je t'invite à le réparer toi-même !
 	- Oui
 		Super \: les pièces de vélo seront à ta gauche, et les outils seront à ta droite. Répare ton vélo étape par étape !
