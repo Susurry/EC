@@ -1,0 +1,9 @@
+label book1
+Et vous voilà au Centre-Ville, chouette ! Il y a beaucoup de choses à découvrir ici, prenez bien le temps d'explorer--vous en faites pas, vous n'êtes pas si pressé que ça ;)
+do EventBus.emit_signal("clean_quests")
+do EventBus.emit_signal("add_quest", "2_transport")
+do EventBus.emit_signal("add_quest", "2-1_voiture")
+do EventBus.emit_signal("add_quest", "2-2_transports")
+do EventBus.emit_signal("add_quest", "2-3_pieds")
+do EventBus.emit_signal("add_quest", "2-4_velo")
+[end_timeline]
