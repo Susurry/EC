@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="270425-16"
+config/version="280425-09"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -44,7 +44,6 @@ directories/dtl_directory={
 "Baignoire": "res://Dialogues/Appartement/Baignoire.dtl",
 "Bibliotheque": "res://Dialogues/Appartement/Bibliotheque.dtl",
 "ChaiseBureau": "res://Dialogues/Appartement/ChaiseBureau.dtl",
-"Introduction": "res://Dialogues/Appartement/Introduction.dtl",
 "Lit": "res://Dialogues/Appartement/Lit.dtl",
 "Livre": "res://Dialogues/Appartement/Livre.dtl",
 "MeubleSDB": "res://Dialogues/Appartement/MeubleSDB.dtl",
@@ -60,16 +59,23 @@ directories/dtl_directory={
 "bus_parc": "res://Dialogues/CentreVille/bus_parc.dtl",
 "bus_periph": "res://Dialogues/PeriphOuest/bus_periph.dtl",
 "bus_tcc": "res://Dialogues/CentreVille/bus_tcc.dtl",
+"concl_chap1": "res://Dialogues/concl_chap1.dtl",
 "debug_game_over": "res://Dialogues/Debug/debug_game_over.dtl",
 "debug_tri_dechet": "res://Dialogues/Debug/debug_tri_dechet.dtl",
 "dial_test": "res://Dialogues/Debug/dial_test.dtl",
 "dial_test2": "res://Dialogues/Debug/dial_test2.dtl",
 "init": "res://Dialogues/init.dtl",
+"intro_appart": "res://Dialogues/Appartement/intro_appart.dtl",
+"intro_centre": "res://Dialogues/CentreVille/intro_centre.dtl",
+"intro_game": "res://Dialogues/intro_game.dtl",
 "intro_periph": "res://Dialogues/PeriphOuest/intro_periph.dtl",
 "metro_centre": "res://Dialogues/CentreVille/metro_centre.dtl",
 "metro_periph": "res://Dialogues/PeriphOuest/metro_periph.dtl",
+"npc_random": "res://Dialogues/npc_random.dtl",
+"panneau_campus": "res://Dialogues/CentreVille/panneau_campus.dtl",
 "panneau_centre": "res://Dialogues/PeriphOuest/panneau_centre.dtl",
 "panneau_parc": "res://Dialogues/CentreVille/panneau_parc.dtl",
+"panneau_periph": "res://Dialogues/CentreVille/panneau_periph.dtl",
 "playercar_centre": "res://Dialogues/CentreVille/playercar_centre.dtl",
 "playercar_periph": "res://Dialogues/PeriphOuest/playercar_periph.dtl",
 "pnj": "res://Dialogues/Appartement/pnj.dtl",

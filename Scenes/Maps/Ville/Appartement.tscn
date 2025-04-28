@@ -422,7 +422,7 @@ position = Vector2(227, 138)
 
 [node name="SceneSaveChecks" type="Node2D" parent="."]
 script = ExtResource("15_01gxp")
-timeline = "Introduction"
+timeline = "intro_appart"
 
 [node name="MissionMoveCheck" type="Node2D" parent="SceneSaveChecks"]
 script = ExtResource("16_7f2nx")
