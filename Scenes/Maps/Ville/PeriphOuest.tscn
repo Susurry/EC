@@ -750,8 +750,10 @@ script = ExtResource("28_1cwe4")
 eboueur = NodePath("../../PNJs/PNJ_Eboueur")
 camion_eboueur = NodePath("../../Props/CamionPoubelle")
 
-[node name="PlayerCarCheck" type="Node2D" parent="SceneSaveChecks"]
+[node name="PlayerCarCheck" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("car_object")]
 script = ExtResource("34_d0ba6")
+current_location = "PeriphOuest"
+car_object = NodePath("../../Props/PlayerCar")
 
 [connection signal="body_entered" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Props/PanneauCentre/Area2D" to="Props/PanneauCentre" method="_on_area_2d_body_exited"]
