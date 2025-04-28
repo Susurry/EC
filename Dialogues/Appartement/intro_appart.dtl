@@ -98,4 +98,4 @@ do EventBus.emit_signal("point_cursor", 4000, 0.0, 0.0)
 jump pnj_eboueur/book3
 label book12
 [Appel Sonia]
-jump pnj_eboueur/book11
+jump intro_appart/book11

@@ -236,18 +236,6 @@ size = Vector2(3, 178)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rebe"]
 size = Vector2(3, 547)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3q651"]
-resource_local_to_scene = true
-shader = ExtResource("8_wgo81")
-shader_parameter/line_color = Color(1, 1, 0.196078, 1)
-shader_parameter/width = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fwgu"]
-resource_local_to_scene = true
-shader = ExtResource("8_wgo81")
-shader_parameter/line_color = Color(1, 1, 0.196078, 1)
-shader_parameter/width = 0.0
-
 [node name="CentreVille" type="Node2D"]
 script = ExtResource("1_0m7db")
 background_color = Color(0.745098, 0.882353, 0.972549, 1)
@@ -798,7 +786,7 @@ texture = ExtResource("9_wgo81")
 
 [node name="PNJ_Claire" parent="PNJs" instance=ExtResource("7_o70ji")]
 position = Vector2(279, 140)
-timeline = "pnj_claire"
+timeline = "intro_game"
 direction = Vector2(1, 0)
 metadata/_edit_group_ = true
 
@@ -808,7 +796,7 @@ texture = ExtResource("9_kspd0")
 
 [node name="PNJ_Denis" parent="PNJs" instance=ExtResource("7_o70ji")]
 position = Vector2(308, 140)
-timeline = "pnj_denis"
+timeline = "concl_chap1"
 direction = Vector2(-1, 0)
 metadata/_edit_group_ = true
 
@@ -1002,20 +990,6 @@ position = Vector2(1654, 825)
 position = Vector2(8.5, -155.5)
 shape = SubResource("RectangleShape2D_2rebe")
 
-[node name="PNJ_Immobile" parent="." instance=ExtResource("7_o70ji")]
-position = Vector2(144, 405)
-timeline = "intro_game"
-
-[node name="Skin" parent="PNJ_Immobile" index="1"]
-material = SubResource("ShaderMaterial_3q651")
-
-[node name="PNJ_Immobile2" parent="." instance=ExtResource("7_o70ji")]
-position = Vector2(208, 405)
-timeline = "concl_chap1"
-
-[node name="Skin" parent="PNJ_Immobile2" index="1"]
-material = SubResource("ShaderMaterial_6fwgu")
-
 [node name="SceneSaveChecks" type="Node2D" parent="."]
 script = ExtResource("42_6fwgu")
 timeline = "intro_centre"
@@ -1048,5 +1022,3 @@ car_object = NodePath("../../Props/PlayerCar")
 [editable path="PNJs/PNJ_Jardinier2"]
 [editable path="PNJs/PNJ_QCM3"]
 [editable path="PNJs/PNJ_Child_Immobile"]
-[editable path="PNJ_Immobile"]
-[editable path="PNJ_Immobile2"]

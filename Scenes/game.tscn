@@ -267,7 +267,7 @@ _data = {
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("viewport")]
 script = ExtResource("1_0b8yu")
-first_map = "Appartement"
+first_map = "Journalistes"
 controls = ExtResource("2_0tg3l")
 viewport = NodePath("Viewports/GameSVC/SubViewport")
 
