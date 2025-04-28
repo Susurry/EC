@@ -1,2 +1,2 @@
-Game Over
+Les fortes chaleurs sont arrivés... Vous êtes à court de temps, vous n'avez pas réussi à sensibiliser Campus-Ville avant la canicule ![br][br][br][pulse]Game Over !
 do ThreadLoad.load_scene("ConclusionScreen", 0)

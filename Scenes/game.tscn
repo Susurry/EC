@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=52 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -35,6 +35,13 @@ resource_local_to_scene = true
 shader = ExtResource("3_pspsg")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/width = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucmn"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl602"]
 bg_color = Color(0, 0, 0, 0)
@@ -342,7 +349,7 @@ text = "X"
 layer = 2
 
 [node name="InfoElements" type="PanelContainer" parent="UI"]
-custom_minimum_size = Vector2(640, 100)
+custom_minimum_size = Vector2(500, 100)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -352,11 +359,14 @@ offset_right = 95.0
 offset_bottom = 81.0
 grow_horizontal = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mucmn")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/InfoElements"]
 layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
 
 [node name="Columns" type="VBoxContainer" parent="UI/InfoElements/MarginContainer"]
 layout_mode = 2
@@ -489,12 +499,14 @@ libraries = {
 [node name="Icons" type="MarginContainer" parent="UI/InfoElements"]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 10
 
 [node name="Icons" type="HBoxContainer" parent="UI/InfoElements/Icons"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 466
+theme_override_constants/separation = 320
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI/InfoElements/Icons/Icons"]
@@ -578,11 +590,6 @@ allow_reselect = true
 layout_mode = 2
 focus_mode = 0
 text = "DDMMYY-HH"
-
-[node name="Button" type="Button" parent="UI/DebugElements/Rows"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Enlever 1000 s"
 
 [node name="QuestElements" type="HBoxContainer" parent="UI"]
 custom_minimum_size = Vector2(452, 400)

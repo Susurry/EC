@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PNJSpriteList" load_steps=38 format=3 uid="uid://c0i52vuytjc3a"]
+[gd_resource type="Resource" script_class="PNJSpriteList" load_steps=39 format=3 uid="uid://c0i52vuytjc3a"]
 
 [ext_resource type="Script" uid="uid://o23w42s1n523" path="res://Scripts/Pawn/Types/PNJ/Resources/pnj_sprite_list.gd" id="1_2hp45"]
 [ext_resource type="Texture2D" uid="uid://chkcuciv1waob" path="res://Graphics/Characters/Generic/character_generic1.png" id="1_kr3o5"]
@@ -37,8 +37,9 @@
 [ext_resource type="Texture2D" uid="uid://rg600cb81l8y" path="res://Graphics/Characters/Generic/character_baptiste.png" id="34_iq0gr"]
 [ext_resource type="Texture2D" uid="uid://0ssub3vqug30" path="res://Graphics/Characters/Generic/character_enzo.png" id="35_r4u22"]
 [ext_resource type="Texture2D" uid="uid://d31nssdwdriif" path="res://Graphics/Characters/Generic/character_felipe.png" id="36_xim2g"]
+[ext_resource type="Texture2D" uid="uid://ctsif11e55myt" path="res://Graphics/Characters/Generic/character_bob.png" id="38_kampo"]
 
 [resource]
 script = ExtResource("1_2hp45")
-sprites = Array[Texture2D]([ExtResource("1_kr3o5"), ExtResource("2_kampo"), ExtResource("3_o5cuj"), ExtResource("4_26tqg"), ExtResource("5_pmeet"), ExtResource("6_0866d"), ExtResource("7_oj0i2"), ExtResource("8_sf6ot"), ExtResource("9_llkig"), ExtResource("10_7oqtt"), ExtResource("11_imq28"), ExtResource("12_v6s1f"), ExtResource("13_jxpkr"), ExtResource("14_1pl6k"), ExtResource("15_3mnjc"), ExtResource("16_ypquw"), ExtResource("17_tca0p"), ExtResource("18_euk8m"), ExtResource("19_5stco"), ExtResource("20_mijk5"), ExtResource("21_wguwi"), ExtResource("22_vakmi"), ExtResource("23_wkw4j"), ExtResource("24_bx54b"), ExtResource("25_hhsu7"), ExtResource("26_u1agr"), ExtResource("27_g7fnw"), ExtResource("28_w06ex"), ExtResource("29_h6ksx"), ExtResource("30_c1wrb"), ExtResource("31_678kd"), ExtResource("32_qduqi"), ExtResource("33_k6hfg"), ExtResource("34_iq0gr"), ExtResource("35_r4u22"), ExtResource("36_xim2g")])
+sprites = Array[Texture2D]([ExtResource("1_kr3o5"), ExtResource("2_kampo"), ExtResource("3_o5cuj"), ExtResource("4_26tqg"), ExtResource("5_pmeet"), ExtResource("6_0866d"), ExtResource("7_oj0i2"), ExtResource("8_sf6ot"), ExtResource("9_llkig"), ExtResource("10_7oqtt"), ExtResource("11_imq28"), ExtResource("12_v6s1f"), ExtResource("13_jxpkr"), ExtResource("14_1pl6k"), ExtResource("15_3mnjc"), ExtResource("16_ypquw"), ExtResource("17_tca0p"), ExtResource("18_euk8m"), ExtResource("19_5stco"), ExtResource("20_mijk5"), ExtResource("21_wguwi"), ExtResource("22_vakmi"), ExtResource("23_wkw4j"), ExtResource("24_bx54b"), ExtResource("25_hhsu7"), ExtResource("26_u1agr"), ExtResource("27_g7fnw"), ExtResource("28_w06ex"), ExtResource("29_h6ksx"), ExtResource("30_c1wrb"), ExtResource("31_678kd"), ExtResource("32_qduqi"), ExtResource("33_k6hfg"), ExtResource("34_iq0gr"), ExtResource("35_r4u22"), ExtResource("36_xim2g"), ExtResource("38_kampo")])
 metadata/_custom_type_script = "uid://o23w42s1n523"

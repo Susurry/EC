@@ -188,7 +188,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yn25f"]
-size = Vector2(20, 178)
+size = Vector2(3, 178)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_whdg5"]
 vertices = PackedVector2Array(852.797, 1024.74, 852.203, 1055, 794, 1055, 794, 1023.25, 364.609, 1054, 292, 1054, 292, 1022.89, 363.383, 1022.1, 855.906, 766.102, 783.906, 766.891, 783.094, 673, 855.094, 673, 370, 753.102, 292, 753.891, 292, 681, 370, 681, -37.8438, 463, -78, 463, -78, 363, -36.1719, 363, 850.328, 448, 785.891, 448, 785.109, 376, 852.672, 376, 437.242, 376.898, 438.742, 437, 357.883, 437, 357.117, 376.102, 421, -28, 362, -28, 362, -40, 421, -40)
@@ -212,7 +212,7 @@ gizmo_extents = 30.0
 
 [node name="1_Centre" type="Marker2D" parent="StartPoints"]
 z_index = 50
-position = Vector2(1178, 577)
+position = Vector2(1199, 576)
 gizmo_extents = 30.0
 
 [node name="2_Metro" type="Marker2D" parent="StartPoints"]
@@ -484,7 +484,7 @@ material = SubResource("ShaderMaterial_1c0dv")
 texture = ExtResource("26_whdg5")
 
 [node name="PNJ_Random3" parent="PNJs" instance=ExtResource("13_5c4ie")]
-position = Vector2(548, 349)
+position = Vector2(548, 354)
 timeline = "pnj_random3"
 metadata/_edit_group_ = true
 
@@ -542,6 +542,7 @@ script = ExtResource("21_k5lkh")
 position = Vector2(1206, 647)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition/CentreVille"]
+position = Vector2(8.5, 0)
 shape = SubResource("RectangleShape2D_yn25f")
 
 [node name="CarManager" type="Node2D" parent="."]
