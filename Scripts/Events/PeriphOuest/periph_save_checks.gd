@@ -8,3 +8,4 @@ func initialize() -> void:
 		Dialogic.start(timeline)
 	
 	$MissionEboueur.check_mission_done()
+	$PlayerCarCheck.check_state()
