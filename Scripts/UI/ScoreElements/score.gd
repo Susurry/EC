@@ -10,7 +10,12 @@ var empreinte: float = 10
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	_initialize_save()
 	_initialize_empreinte()
+
+func _initialize_save() -> void:
+	if SaveManager.getElement("Stats", "score"):
+		empreinte = SaveManager.getElement("Stats", "score")
 
 func _initialize_empreinte() -> void:
 	empreinte_label.text = str(empreinte)
