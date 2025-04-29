@@ -296,10 +296,10 @@ shader_parameter/width = 0.0
 script = ExtResource("1_snbtm")
 background_color = Color(0.745098, 0.882353, 0.972549, 1)
 camera_zoom = 9
-limit_left = -2000
-limit_right = 2000
-limit_top = -2000
-limit_bottom = 2000
+limit_left = -24
+limit_right = 200
+limit_top = -8
+limit_bottom = 168
 music = ExtResource("2_0ncs7")
 
 [node name="StartPoints" type="Node2D" parent="."]
