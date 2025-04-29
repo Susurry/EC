@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://6eecifybnu8r"]
+[gd_scene load_steps=55 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Graphics/Tilesets/Tileset_Appartement.tres" id="2_2g8ls"]
@@ -17,19 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://63sg83rysf7b" path="res://Scenes/Props/Appartement/porte_sortie_app.tscn" id="14_kt3ce"]
 [ext_resource type="Script" uid="uid://bb0bkalml0vnx" path="res://Scripts/Events/Appart/appart_save_checks.gd" id="15_01gxp"]
 [ext_resource type="Script" uid="uid://dkabrshrgo5vt" path="res://Scripts/Events/Appart/move_mission_check.gd" id="16_7f2nx"]
+[ext_resource type="PackedScene" uid="uid://0koboi4igpxo" path="res://Scenes/Props/Appartement/toilettes.tscn" id="16_rwpnd"]
 [ext_resource type="Script" uid="uid://b4yoqkl1ue1uh" path="res://Scripts/Events/Appart/mission_chair_check.gd" id="17_0hnt7"]
 [ext_resource type="Script" uid="uid://37faje2org61" path="res://Scripts/Events/Appart/mission_tele_check.gd" id="19_mxecm"]
+[ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="21_kqdyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
 region = Rect2(56, 105, 20, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhilq"]
-atlas = ExtResource("6_dxfoh")
-region = Rect2(160, 0, 18, 19)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_klsvt"]
-size = Vector2(12, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgkqb"]
 atlas = ExtResource("6_dxfoh")
@@ -136,6 +131,49 @@ size = Vector2(16, 49)
 atlas = ExtResource("6_dxfoh")
 region = Rect2(227, 16, 15, 18)
 
+[sub_resource type="Animation" id="Animation_uagkx"]
+resource_name = "phone_end"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["PhoneEnd"],
+"method": &"change_player_state"
+}, {
+"args": ["intro_appart", 13],
+"method": &"cutscene_dialogue"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_kqdyn"]
+resource_name = "phone_start"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["PhoneStart"],
+"method": &"change_player_state"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qifx"]
+_data = {
+&"phone_end": SubResource("Animation_uagkx"),
+&"phone_start": SubResource("Animation_kqdyn")
+}
+
 [node name="Appartement" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_8h08n")
@@ -182,20 +220,6 @@ y_sort_enabled = true
 [node name="Couverture" type="Sprite2D" parent="Props/Generic"]
 position = Vector2(24, 43)
 texture = SubResource("AtlasTexture_jggg6")
-
-[node name="Toilette" type="Sprite2D" parent="Props/Generic"]
-position = Vector2(206, 80)
-texture = SubResource("AtlasTexture_jhilq")
-centered = false
-offset = Vector2(0, -12)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Props/Generic/Toilette"]
-position = Vector2(0, -12)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generic/Toilette/StaticBody2D"]
-position = Vector2(9, 15.5)
-shape = SubResource("RectangleShape2D_klsvt")
-debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Etagere1" type="Sprite2D" parent="Props/Generic"]
 position = Vector2(191, 80)
@@ -420,6 +444,9 @@ position = Vector2(37, 80)
 [node name="PorteSortie" parent="Props" instance=ExtResource("14_kt3ce")]
 position = Vector2(227, 138)
 
+[node name="Toilettes" parent="Props" instance=ExtResource("16_rwpnd")]
+position = Vector2(206, 68)
+
 [node name="SceneSaveChecks" type="Node2D" parent="."]
 script = ExtResource("15_01gxp")
 timeline = "intro_appart"
@@ -434,3 +461,13 @@ chair_obj = NodePath("../../Props/ChaiseBureau")
 [node name="MissionTeleCheck" type="Node2D" parent="SceneSaveChecks" node_paths=PackedStringArray("tele_node")]
 script = ExtResource("19_mxecm")
 tele_node = NodePath("../../Props/Television")
+
+[node name="Cutscenes" type="Node2D" parent="."]
+script = ExtResource("21_kqdyn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes"]
+libraries = {
+&"": SubResource("AnimationLibrary_8qifx")
+}
+
+[connection signal="animation_finished" from="Cutscenes/AnimationPlayer" to="Cutscenes" method="cutscene_end"]
