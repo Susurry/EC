@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_rvass"]
 [ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_j34d2"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_utgjr"]
 resource_local_to_scene = true
 shader = ExtResource("5_iwcx3")
@@ -351,6 +350,8 @@ shape = SubResource("RectangleShape2D_wq3u7")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_6xwsv")
