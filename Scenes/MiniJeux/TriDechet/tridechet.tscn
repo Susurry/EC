@@ -141,6 +141,7 @@ anchors_preset = 0
 offset_right = 1200.0
 offset_bottom = 750.0
 script = ExtResource("2_ltthm")
+quest_comp = "3-2_trier"
 items = Array[PackedScene]([ExtResource("3_7cc60"), ExtResource("4_ltthm")])
 max_trash_items = 8
 item_fall_speed = 200.0

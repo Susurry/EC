@@ -4,10 +4,12 @@
 
 [resource]
 script = ExtResource("1_uw5fl")
-title = "Parler à l'éboueur"
-category = "Follower"
-description = "Lorem Ipsum"
-description_scientifique = "Insert Source"
+title = "Eboueur - Tri des déchets"
+category = "Followers"
+description = "Comme mentionné plus haut, le tri des déchets diffère en fonction des communes. Par exemple, certaines communes utilisent la poubelle bleue pour le tri des déchets carton et papier. Les règles sont cependant généralement les mêmes : les bouteilles en verre doivent être jetés dans des bacs dédiés en ville, généralement verts.
+"
+description_scientifique = "Source : [url={https://www.ecologie.gouv.fr/politiques-publiques/tri-dechets}]Ecologie.gouv[/url]
+"
 mission_key_1 = "Quests"
 mission_key_2 = "3-3_parler"
 point_key_1 = "Points"

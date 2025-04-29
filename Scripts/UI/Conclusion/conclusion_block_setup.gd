@@ -5,6 +5,7 @@ extends Control
 @export var empty_block: PackedScene
 @export var block_data: GradeBlockList
 @export var target: Control
+@export var category_order: Array[String]
 
 var summary_content: Dictionary[String,Array]
 
@@ -28,7 +29,7 @@ func _initialize_categories() -> void:
 				summary_content[category].append(block)
 
 func _initialize_content() -> void:
-	for category in summary_content:
+	for category in category_order:
 		var category_size: int = 0
 		var new_category: Label = category_label.instantiate()
 		new_category.text = category
@@ -37,7 +38,7 @@ func _initialize_content() -> void:
 		
 		for summary in summary_content[category]:
 			var save_mission: Variant = SaveManager.getElement(summary.mission_key_1, summary.mission_key_2)
-			if not save_mission:
+			if save_mission == null:
 				continue # Si la mission n'est pas faite skip
 			
 			var save_score: float = 0.0
@@ -54,16 +55,22 @@ func _initialize_content() -> void:
 			desc_text.text = summary.description
 			source_text.text = summary.description_scientifique
 			
-			score_text.text = str(save_score)
-			if category == "Follower":
+			if category == "Followers":
+				var type_text: Label = new_summary.get_node(new_summary.get_meta("type_path"))
+				type_text.text = "F"
+				
+				score_text.text = str(int(save_score))
 				# score positif vert, negatif rouge
 				if save_score > 0:
+					score_text.text = "+" + score_text.text
 					score_text.label_settings.font_color = Color.GREEN
 				else:
-					score_text.label_settings.font_color = Color.RED
+					score_text.label_settings.font_color = Color(0.427,0.427,0.427)
 			else:
+				score_text.text = str(save_score)
 				# score positif rouge, negatif vert (EcoScore réduire empreinte)
 				if save_score > 0:
+					score_text.text = "+" + score_text.text
 					score_text.label_settings.font_color = Color.RED
 				elif save_score < 0:
 					score_text.label_settings.font_color = Color.GREEN

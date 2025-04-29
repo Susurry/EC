@@ -22,6 +22,7 @@ else:
 		Habitant: Oh, vraiment... ? Mais, comment ça se fait ? En quoi ça aide à préserver la plage ?
 		- Pour éviter l'érosion
 			do SaveManager.setElement("Quests", {"F_qcm3": true})
+			do SaveManager.setElement("Points", {"F_qcm3": 1})
 			do EventBus.emit_signal("add_follower", 1)
 			Habitant: Parce qu'avec le temps les coquillages se transforment en sable... ? Je crois que je comprends ce que tu veux dire !
 			Habitant: Ok, tu m'as convaincu ! Je vais dans ce cas faire attention aux coquillage de la plage, pour que celle-ci puisse rester magnifique ! Merci de ton bon conseil !

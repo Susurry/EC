@@ -34,6 +34,7 @@ else:
 			Enfant: T'es rigolo ! Je vais continuer de leur donner à manger sinon ils vont avoir faim !
 		- parce que ça peut les rendre malade
 			do SaveManager.setElement("Quests", {"F_childqcm": true})
+			do SaveManager.setElement("Points", {"F_childqcm": 1})
 			do EventBus.emit_signal("add_follower", 1)
 			Enfant: Ah bon, ça les rend malade ? Après aussi si ils viennent tous le temps me voir pour manger, ils pourront plus manger tout seul !
 			Enfant: T'as raison ! Je vais les laisser tranquille ! Ça veut dire aussi que je dois aussi arrêter de courir derrière eux ?

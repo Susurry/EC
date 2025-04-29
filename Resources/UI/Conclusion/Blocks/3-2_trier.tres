@@ -5,9 +5,11 @@
 [resource]
 script = ExtResource("1_pxrrg")
 title = "Trier les déchets"
-category = "Recyclage"
-description = "Lorem Ipsum"
-description_scientifique = "Insert Source"
+category = "Déchets"
+description = "Un français moyen produit environ 1 kg de déchets par jour. Trier ses déchets est un geste simple et à la portée de tous, qui évite l'incinération de déchets, pouvant alors avoir une seconde vie. Les règles sont différentes en fonction des communes mais, depuis 2023, en France, TOUS les emballages en métal, plastique, carton et papiers vont dans la poubelle jaune.
+ville, généralement verts."
+description_scientifique = "Source : [url={https://www.fnh.org/tri-selectif-un-geste-individuel-des-benefices-collectifs/}]Fondation pour la Nature et l'Homme[/url]
+"
 mission_key_1 = "Quests"
 mission_key_2 = "3-2_trier"
 point_key_1 = "Points"

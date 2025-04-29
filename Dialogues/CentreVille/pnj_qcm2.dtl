@@ -6,6 +6,7 @@ else:
 	Habitant: L'arrosage doit être assez délicat... Je me demande d'ailleurs quel est la meilleure période pour arroser ses plantes ? Tu le sais toi ?
 	- Le matin
 		do SaveManager.setElement("Quests", {"F_qcm2": true})
+		do SaveManager.setElement("Points", {"F_qcm2": 1})
 		do EventBus.emit_signal("add_follower", 1)
 		Habitant: Ah oui, je pense savoir pourquoi : c'est pour éviter d'évaporation en journée et la stagnation de l'eau la nuit, c'est ça ?
 	- L'après-midi
