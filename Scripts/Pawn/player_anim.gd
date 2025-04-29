@@ -5,6 +5,9 @@ const ANIMATION_STATES: Dictionary[String,int] = {
 	"idle": 0,
 	"walk": 1,
 	"sit": 2,
+	"phone_start": 3,
+	"phone_idle": 4,
+	"phone_end": 5,
 }
 
 @onready var animation_tree: AnimationTree = $AnimationTree

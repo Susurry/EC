@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cma8bt0crjux0"]
+[gd_scene load_steps=53 format=3 uid="uid://cma8bt0crjux0"]
 
 [ext_resource type="Script" uid="uid://cek8g1ywmqwc7" path="res://Scripts/Pawn/Types/Player/player.gd" id="1_e7tqf"]
 [ext_resource type="Script" uid="uid://bxfl65rn1pqqw" path="res://Scripts/Pawn/state_machine.gd" id="2_td7cf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cql4rov5cfgy4" path="res://Scripts/Pawn/Types/Player/States/state_sitting.gd" id="5_1jcui"]
 [ext_resource type="Texture2D" uid="uid://b1w62earwl7un" path="res://Graphics/Characters/character_player.png" id="5_6t4at"]
 [ext_resource type="Script" uid="uid://dduy3rp133is8" path="res://Scripts/Pawn/state_pathfinding.gd" id="5_td7cf"]
+[ext_resource type="Script" uid="uid://2vtan4ag3ob4" path="res://Scripts/Pawn/Types/Player/States/state_animate.gd" id="6_temcv"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="6_tk42l"]
 [ext_resource type="Texture2D" uid="uid://d0u7jqiyj23cm" path="res://Graphics/Other/char_shadow.png" id="8_1jcui"]
 
@@ -200,6 +201,85 @@ tracks/0/keys = {
 "values": [118, 119, 120, 121, 122, 123]
 }
 
+[sub_resource type="Animation" id="Animation_temcv"]
+resource_name = "phone_idle"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [340, 341, 342, 343, 344]
+}
+
+[sub_resource type="Animation" id="Animation_6t4at"]
+resource_name = "phone_start"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [336, 337, 338, 339]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../StateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["PhoneIdle"],
+"method": &"change_state"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tk42l"]
+resource_name = "phone_end"
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [344, 345, 346, 347]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../StateMachine")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["Regular"],
+"method": &"change_state"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtfkf"]
 _data = {
 &"RESET": SubResource("Animation_l2uah"),
@@ -207,6 +287,9 @@ _data = {
 &"idle_left": SubResource("Animation_m726e"),
 &"idle_right": SubResource("Animation_7ds6b"),
 &"idle_up": SubResource("Animation_udx5w"),
+&"phone_end": SubResource("Animation_tk42l"),
+&"phone_idle": SubResource("Animation_temcv"),
+&"phone_start": SubResource("Animation_6t4at"),
 &"sit_left": SubResource("Animation_td7cf"),
 &"sit_right": SubResource("Animation_1jcui"),
 &"walk_down": SubResource("Animation_lxcha"),
@@ -230,6 +313,18 @@ input_2/name = "2"
 input_2/auto_advance = false
 input_2/break_loop_at_end = false
 input_2/reset = true
+input_3/name = "3"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
+input_4/name = "4"
+input_4/auto_advance = false
+input_4/break_loop_at_end = false
+input_4/reset = true
+input_5/name = "5"
+input_5/auto_advance = false
+input_5/break_loop_at_end = false
+input_5/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4glrl"]
 animation = &"idle_down"
@@ -264,6 +359,15 @@ states/Idle/position = Vector2(326, 152)
 states/Start/position = Vector2(167.333, 176.222)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ffmqm")]
 graph_offset = Vector2(-432, -26)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tk42l"]
+animation = &"phone_end"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ni3ra"]
+animation = &"phone_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p8858"]
+animation = &"phone_start"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_td7cf"]
 animation = &"sit_right"
@@ -331,18 +435,25 @@ states/Walk/position = Vector2(515.333, 118)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_hyw4k")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_faol6"]
+graph_offset = Vector2(-496.16, 25.7781)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_t5d6h")
 nodes/TimeScale/position = Vector2(493.333, 160)
 nodes/Transition/node = SubResource("AnimationNodeTransition_2sv47")
 nodes/Transition/position = Vector2(306.667, 120)
 nodes/idle/node = SubResource("AnimationNodeStateMachine_vnvqt")
-nodes/idle/position = Vector2(26.6667, 26.6667)
+nodes/idle/position = Vector2(-20, -140)
 nodes/output/position = Vector2(680, 133.333)
+nodes/phone_end/node = SubResource("AnimationNodeAnimation_tk42l")
+nodes/phone_end/position = Vector2(20, 840)
+nodes/phone_idle/node = SubResource("AnimationNodeAnimation_ni3ra")
+nodes/phone_idle/position = Vector2(20, 640)
+nodes/phone_start/node = SubResource("AnimationNodeAnimation_p8858")
+nodes/phone_start/position = Vector2(20, 460)
 nodes/sit/node = SubResource("AnimationNodeStateMachine_td7cf")
-nodes/sit/position = Vector2(13.3333, 426.667)
+nodes/sit/position = Vector2(-20, 260)
 nodes/walk/node = SubResource("AnimationNodeStateMachine_4tgdh")
-nodes/walk/position = Vector2(13.3333, 226.667)
-node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &"Transition", 1, &"walk", &"Transition", 2, &"sit", &"output", 0, &"TimeScale"]
+nodes/walk/position = Vector2(-20, 60)
+node_connections = [&"TimeScale", 0, &"Transition", &"Transition", 0, &"idle", &"Transition", 1, &"walk", &"Transition", 2, &"sit", &"Transition", 3, &"phone_start", &"Transition", 4, &"phone_idle", &"Transition", 5, &"phone_end", &"output", 0, &"TimeScale"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6pu"]
 size = Vector2(12, 9)
@@ -365,6 +476,18 @@ script = ExtResource("5_td7cf")
 
 [node name="Sitting" type="Node2D" parent="StateMachine"]
 script = ExtResource("5_1jcui")
+
+[node name="PhoneStart" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_temcv")
+anim_state = 3
+
+[node name="PhoneIdle" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_temcv")
+anim_state = 4
+
+[node name="PhoneEnd" type="Node2D" parent="StateMachine"]
+script = ExtResource("6_temcv")
+anim_state = 5
 
 [node name="Skin" type="Sprite2D" parent="."]
 texture = ExtResource("5_6t4at")
