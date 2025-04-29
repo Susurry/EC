@@ -88,8 +88,10 @@ do EventBus.emit_signal("point_cursor", 4000, 0.0, 0.0)
 [wait time="0.6"]
 jump pnj_eboueur/book3
 label book12
-[wait time="1"]
+[wait time="0.6"]
 [i]Dring, dring...[/i]
+do EventBus.emit_signal("play_cutscene", "phone_start")
+[wait time="1"]
 Sonia: Salut, c'est [b]Sonia[/b], ton amie de toujours ! T'as bien dormi ?
 Sonia: Je n'arrête pas de repenser au flash news de CVN d'hier soir à la télé...
 Sonia: C'est inquiétant de se dire que les gens ne sont pas au courant de l'urgence écologique qui nous attend !
@@ -98,7 +100,9 @@ Sonia: On ne pourra peut-être pas sensibiliser toute la ville d'un coup, mais n
 Sonia: On se donne [b]rendez-vous au Campus Universitaire[/b] avec les autres membres du BDE pour organiser quelque chose.
 Sonia: Ça serait chouette que tu te joignes à nous, on aura besoin de toi !
 Sonia: Bref, le temps presse, mais prends le temps de te préparer tranquillement. À tout à l'heure !
-[wait time="0.8"]
+do EventBus.emit_signal("play_cutscene", "phone_end")
+[end_timeline]
+label book13
 Il est l'heure de se rendre à la fac !
 do EventBus.emit_signal("set_mission_name", "Sensibiliser les étudiants")
 do EventBus.emit_signal("add_quest", "1_appart")

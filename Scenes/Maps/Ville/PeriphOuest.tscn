@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=63 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
@@ -180,9 +180,50 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_d0ba6"]
+resource_name = "phone_start"
+step = 0.25
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["PhoneStart"],
+"method": &"change_player_state"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_c4beq"]
+resource_name = "phone_end"
+step = 0.25
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["PhoneEnd"],
+"method": &"change_player_state"
+}, {
+"args": ["intro_periph", 2],
+"method": &"cutscene_dialogue"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k5lkh"]
 _data = {
-&"cutscene_eboueur_done": SubResource("Animation_yn25f")
+&"cutscene_eboueur_done": SubResource("Animation_yn25f"),
+&"phone_end": SubResource("Animation_c4beq"),
+&"phone_start": SubResource("Animation_d0ba6")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yn25f"]
