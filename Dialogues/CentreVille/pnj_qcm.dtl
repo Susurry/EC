@@ -8,6 +8,7 @@ else:
 		Hmmmm ? Pourquoi pas, mais ça risque d'être difficile de s'en fournir hors saison...
 	- Melon, Figue, Pêche, Mirabelle, Pastèque
 		do SaveManager.setElement("Quests", {"F_qcm": true})
+		do SaveManager.setElement("Points", {"F_qcm": 1})
 		do EventBus.emit_signal("add_follower", 1)
 		Oh, des fruits de saisons, bonne idée ! Ça sera plus facile à trouver, et aussi je pourrai soutenir les producteurs locaux !
 	- Raisin, Prune, Kiwi, Noix, Grenade

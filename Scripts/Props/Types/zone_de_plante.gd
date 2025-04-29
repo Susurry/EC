@@ -25,6 +25,8 @@ func on_interact(player: Player) -> void:
 		
 		SaveManager.setElement("Missions", {"Plante_Park": plant_data})
 		
+		SaveManager.setElement("Points", {"S_jardinier": -0.1 * plant_data.count(true)})
+		
 		if not plant_data.has(false):
 			Dialogic.start("quest_plante", "book4")
 			await Dialogic.timeline_ended
