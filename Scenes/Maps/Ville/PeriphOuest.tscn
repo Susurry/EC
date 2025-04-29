@@ -180,24 +180,6 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_d0ba6"]
-resource_name = "phone_start"
-step = 0.25
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["PhoneStart"],
-"method": &"change_player_state"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_c4beq"]
 resource_name = "phone_end"
 step = 0.25
@@ -216,6 +198,24 @@ tracks/0/keys = {
 }, {
 "args": ["intro_periph", 2],
 "method": &"cutscene_dialogue"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d0ba6"]
+resource_name = "phone_start"
+step = 0.25
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["PhoneStart"],
+"method": &"change_player_state"
 }]
 }
 
