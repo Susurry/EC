@@ -3,6 +3,7 @@ extends Node2D
 @export var car_quantity: int = 0
 
 @onready var car_asset: PackedScene = preload("uid://crwrfx45qslht")
+@onready var car_skins: Resource = preload("uid://cc1gmfwqkcxxn")
 
 var end_target_array: Array[Marker2D]
 var path_array: Array[Node2D]
@@ -31,6 +32,6 @@ func initialize_pnj() -> void:
 	pnj_instance.position = target_array[0].position
 	pnj_instance.spawn_point = pnj_instance.position
 	pnj_instance.target_array = target_array
-	#pnj_instance.skin_texture = pnj_instance.skin_car
+	pnj_instance.skin_texture = car_skins.sprites[randi_range(0, car_skins.sprites.size() - 1)]
 	
 	get_parent().call_deferred("add_child", pnj_instance)

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://7vbx36dyp2ky" path="res://Scenes/Props/PeriphOuest/metro_periph.tscn" id="4_vtu41"]
 [ext_resource type="Texture2D" uid="uid://bhd73rqimc5kq" path="res://Graphics/Characters/Child/character_enfant4.png" id="5_m7kr6"]
 [ext_resource type="PackedScene" uid="uid://cxjdpgf3jknyw" path="res://Scenes/Props/PeriphOuest/bus_periph.tscn" id="5_vtu41"]
-[ext_resource type="Texture2D" uid="uid://n2uciyby3swr" path="res://Graphics/TEMP/car_new.png" id="6_i6vih"]
+[ext_resource type="Texture2D" uid="uid://n2uciyby3swr" path="res://Graphics/TEMP/car_light_blue.png" id="6_i6vih"]
 [ext_resource type="PackedScene" uid="uid://cfcouisq7sial" path="res://Scenes/Props/PeriphOuest/bus_corpo.tscn" id="6_n0grg"]
 [ext_resource type="PackedScene" uid="uid://cmsoouxypvra2" path="res://Scenes/Props/PeriphOuest/porte_appartement.tscn" id="7_4dhbb"]
 [ext_resource type="PackedScene" uid="uid://dfr2s44y31igt" path="res://Scenes/Props/PeriphOuest/player_car.tscn" id="10_sh6pw"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://tt8v0dphgipk" path="res://Scenes/Props/PeriphOuest/affiche_recycle.tscn" id="32_m7kr6"]
 [ext_resource type="Script" uid="uid://ccdy0c2fkd3rn" path="res://Scripts/Events/Shared/player_car_check.gd" id="34_d0ba6"]
 [ext_resource type="Script" uid="uid://c17fr8kqxgo6u" path="res://Scripts/Events/PeriphOuest/mission_velo.gd" id="36_1c0dv"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0ba6"]
 atlas = ExtResource("4_4y10b")

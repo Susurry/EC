@@ -26,6 +26,10 @@ var exited_spawn: bool = false
 
 func _ready() -> void:
 	super()
+	initialize_skin()
+
+func initialize_skin() -> void:
+	skin.texture = skin_texture
 
 func initialize_pawn() -> void:
 	await get_tree().physics_frame
