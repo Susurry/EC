@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="EcoCampus"
-config/version="280425-17"
+config/version="290425-11"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -32,7 +32,14 @@ directories/dch_directory={
 "Commercant": "res://Dialogues/Styles/Characters/Commercant.dch",
 "Denis": "res://Dialogues/Styles/Characters/Denis.dch",
 "Eboueur": "res://Dialogues/Styles/Characters/Eboueur.dch",
+"Employé": "res://Dialogues/Styles/Characters/Employé.dch",
+"Enfant": "res://Dialogues/Styles/Characters/Enfant.dch",
+"Habitant": "res://Dialogues/Styles/Characters/Habitant.dch",
 "Infirmier": "res://Dialogues/Styles/Characters/Infirmier.dch",
+"Jardinier": "res://Dialogues/Styles/Characters/Jardinier.dch",
+"Jardinière": "res://Dialogues/Styles/Characters/Jardinière.dch",
+"Marchand": "res://Dialogues/Styles/Characters/Marchand.dch",
+"Passante": "res://Dialogues/Styles/Characters/Passante.dch",
 "Policier": "res://Dialogues/Styles/Characters/Policier.dch",
 "Postier": "res://Dialogues/Styles/Characters/Postier.dch",
 "Reparateur": "res://Dialogues/Styles/Characters/Reparateur.dch",
@@ -51,6 +58,7 @@ directories/dtl_directory={
 "Rangement": "res://Dialogues/Appartement/Rangement.dtl",
 "Refrigerateur": "res://Dialogues/Appartement/Refrigerateur.dtl",
 "Television": "res://Dialogues/Appartement/Television.dtl",
+"Toilettes": "res://Dialogues/Appartement/Toilettes.dtl",
 "affiche_recycle": "res://Dialogues/PeriphOuest/affiche_recycle.dtl",
 "affiche_tcc": "res://Dialogues/CentreVille/affiche_tcc.dtl",
 "amphi_door": "res://Dialogues/Amphitheatre/amphi_door.dtl",
@@ -85,6 +93,7 @@ directories/dtl_directory={
 "pnj_denis": "res://Dialogues/CentreVille/pnj_denis.dtl",
 "pnj_eboueur": "res://Dialogues/PeriphOuest/pnj_eboueur.dtl",
 "pnj_enfant": "res://Dialogues/PeriphOuest/pnj_enfant.dtl",
+"pnj_infirmier": "res://Dialogues/CentreVille/pnj_infirmier.dtl",
 "pnj_jardinier": "res://Dialogues/CentreVille/pnj_jardinier.dtl",
 "pnj_jardinier2": "res://Dialogues/CentreVille/pnj_jardinier2.dtl",
 "pnj_livraison1": "res://Dialogues/CentreVille/pnj_livraison1.dtl",
@@ -118,7 +127,9 @@ directories/dtl_directory={
 }
 layout/style_list=["res://Dialogues/Styles/Custom_Style.tres"]
 layout/default_style="res://Dialogues/Styles/Custom_Style.tres"
-variables={}
+variables={
+"Toilet": 0
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.02
 text/initial_text_reveal_skippable=true

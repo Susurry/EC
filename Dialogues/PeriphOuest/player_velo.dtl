@@ -1,3 +1,11 @@
 label book1
-Why are you green ?
+Votre vélo est réparé ! L'utiliser pour se rendre à la fac ?
+- Oui
+	do EventBus.emit_signal("set_empreinte", -0.3)
+	do EventBus.emit_signal("change_time", -300)
+	do EventBus.emit_signal("set_quest_state", "2_transport")
+	do EventBus.emit_signal("set_quest_state", "2-4_velo")
+	#do SaveManager.setElement("Misc", {"Velo": "Campus"}) Pas en place dans la VS, même logique que pour PlayerCar
+	do ThreadLoad.load_scene("Amphithéatre", 0)
+- Non
 [end_timeline]

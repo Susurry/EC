@@ -899,7 +899,7 @@ material = SubResource("ShaderMaterial_2hw0q")
 texture = ExtResource("21_cvo30")
 
 [node name="PNJ_QCM2" parent="PNJs" instance=ExtResource("7_o70ji")]
-position = Vector2(953, 876)
+position = Vector2(954, 766)
 timeline = "pnj_qcm2"
 direction = Vector2(-1, 0)
 metadata/_edit_group_ = true
@@ -909,7 +909,7 @@ material = SubResource("ShaderMaterial_7ehdw")
 texture = ExtResource("22_2hw0q")
 
 [node name="PNJ_Jardinier2" parent="PNJs" instance=ExtResource("7_o70ji")]
-position = Vector2(542, 914)
+position = Vector2(489, 982)
 timeline = "pnj_jardinier2"
 metadata/_edit_group_ = true
 

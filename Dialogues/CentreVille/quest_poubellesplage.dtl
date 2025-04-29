@@ -1,5 +1,5 @@
 if SaveManager.getElement("Quests", "S_plage2") == true:
-	La plage est maintenant toute propre grâce à vos durs efforts !
+	La plage est maintenant toute propre grâce à vos durs efforts : vous vous sentez comme un héros !
 	[end_timeline]
 if SaveManager.getElement("Quests", "S_plage2") == false:
 	Voulez-vous trier les déchets ?
@@ -14,6 +14,6 @@ if SaveManager.getElement("Quests", "S_plage") == null:
 	Des poubelles sur la plage ! Et manifestement, les gens ne les utilisent pas... !
 	[end_timeline]
 label book2
-	Good.
+	Et voilà, une très bonne chose de faite !
 	do SaveManager.setElement("Quests", {"S_plage2": true})
 	[end_timeline]
