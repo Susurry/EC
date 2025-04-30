@@ -10,7 +10,7 @@ if SaveManager.getElement("Quests", "3_eboueur") == false:
 		Eboueur: Super, est-ce que tu peux maintenant les jeter dans les conteneurs ? Je les ramasserai avec le camion tous de suite après.
 		[end_timeline]
 	if SaveManager.getElement("Quests", "3-3_parler") == false:
-		Eboueur: Merci beaucoup pour le coup de main, jeunne homme. J'avais besoin de cette petite pause pour reprendre mes esprits.
+		Eboueur: Merci beaucoup pour le coup de main, jeune homme. J'avais besoin de cette petite pause pour reprendre mes esprits.
 		Eboueur: Avant que je ne parte cependant, j'ai une petite question à te poser concernant le recyclage, est-ce que tu es prêt ?
 		jump Question
 else:
