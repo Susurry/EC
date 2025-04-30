@@ -12,3 +12,6 @@ func _input(event):
 
 func _on_mouse_toggle(arg: bool) -> void:
 	mouse_on_title = arg
+
+func _on_source_label_clicked(meta: Variant) -> void:
+	OS.shell_open(meta)

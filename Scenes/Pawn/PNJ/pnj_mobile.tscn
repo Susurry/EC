@@ -309,7 +309,7 @@ y_sort_enabled = true
 motion_mode = 1
 script = ExtResource("1_mqls6")
 path_size = 3
-timeline = "dial_test"
+timeline = "npc_random"
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("2_6q7pp")

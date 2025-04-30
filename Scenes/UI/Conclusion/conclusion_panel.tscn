@@ -1,10 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8ttmemewih6u"]
+[gd_scene load_steps=8 format=3 uid="uid://c8ttmemewih6u"]
 
 [ext_resource type="Script" uid="uid://cikaethue8u6i" path="res://Scripts/UI/Conclusion/conclusion_block_setup.gd" id="1_vpwob"]
-[ext_resource type="PackedScene" uid="uid://c568qfvjhr3hp" path="res://Scenes/UI/Conclusion/SummaryBlock/category_label.tscn" id="2_vxfiv"]
-[ext_resource type="PackedScene" uid="uid://b1c44utdyam2d" path="res://Scenes/UI/Conclusion/SummaryBlock/mission_block.tscn" id="3_533il"]
 [ext_resource type="Resource" uid="uid://cimgxjc6t8xyr" path="res://Resources/UI/Conclusion/grade_block_list.tres" id="4_533il"]
-[ext_resource type="PackedScene" uid="uid://c6kvwb2oslbg1" path="res://Scenes/UI/Conclusion/SummaryBlock/empty_block.tscn" id="4_otvit"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucmn"]
 bg_color = Color(0.145098, 0.145098, 0.145098, 1)
@@ -36,12 +33,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mucmn")
 script = ExtResource("1_vpwob")
-category_label = ExtResource("2_vxfiv")
-mission_block = ExtResource("3_533il")
-empty_block = ExtResource("4_otvit")
-block_data = ExtResource("4_533il")
 target = NodePath("Margin/VBox/SummaryPanel/Contents")
 category_order = Array[String](["Alimentation", "Transports", "Logement", "Déchets", "Divers", "Followers"])
+block_data = ExtResource("4_533il")
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -124,3 +118,5 @@ layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 28
 text = "Terminer le jeu"
+
+[connection signal="pressed" from="Margin/VBox/EndPanel/VBox/QuitButton" to="." method="_on_quit_button_pressed"]

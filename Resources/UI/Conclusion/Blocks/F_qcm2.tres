@@ -7,7 +7,7 @@ script = ExtResource("1_y3u44")
 title = "Parc - Arrosage des plantes"
 category = "Followers"
 description = "L'arrosage des plantes, notamment en été, est la tâche principale dans le jardin. Plusieurs bonnes pratiques sont à considérer comme si possible ne pas mouiller les feuilles, mais la plus importante en été est de bien arroser tôt le matin."
-description_scientifique = "Source : [url={https://www.hauert.com/ch-fr/offre/particuliers/guide/detail/larrosage-des-plantes-en-ete-les-regles-les-plus-importantes}]Hauert[/url]"
+description_scientifique = "[color=#6d6d6d]Source :[/color] [color=#007dff][url=https://www.hauert.com/ch-fr/offre/particuliers/guide/detail/larrosage-des-plantes-en-ete-les-regles-les-plus-importantes]Hauert[/url][/color]"
 mission_key_1 = "Quests"
 mission_key_2 = "F_qcm2"
 point_key_1 = "Points"

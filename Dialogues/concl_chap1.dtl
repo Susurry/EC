@@ -14,5 +14,5 @@ Sonia: [aa=4]Wouah, tout ça ? [Insérer ce que le joueur a fait -- une sorte de
 Sonia: [aa=4]Voici donc pour vous quelques petits gestes à appliquer, afin de pouvoir agir contre l'urgence climatique !
 Sonia: [aa=4]Grâce à nos efforts à tous, nous pouvons limiter le réchauffement climatique et ainsi garantir une meilleure Terre à tous !
 Sonia: [aa=6]Merci de votre attention, et n'oubliez pas de le dire à vos proches ! Merci à vous !
-do ThreadLoad.load_scene("ConclusionScreen")
+do ThreadLoad.load_scene("ConclusionScreen",1)
 [end_timeline]

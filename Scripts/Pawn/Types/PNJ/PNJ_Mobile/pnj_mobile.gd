@@ -8,6 +8,7 @@ var target_id: int = 0
 var spawn_point: Vector2
 var targets: Array[Vector2]
 var skin_texture: Texture2D
+var dial_id: int = 1
 
 func _ready() -> void:
 	super()
@@ -41,7 +42,7 @@ func initialize_pawn() -> void:
 func on_interact(player: Player) -> void:
 	erase_outline()
 	state_machine.change_state("Regular")
-	Dialogic.start(timeline, "book1")
+	Dialogic.start(timeline, "book" + str(dial_id))
 	
 	await Dialogic.timeline_started
 	

@@ -99,3 +99,4 @@ fit_content = true
 
 [connection signal="mouse_entered" from="Margin/VBox/InfoPannel/Margin/VBox/TopicHBox" to="Margin/VBox/InfoPannel/Margin/VBox" method="_on_mouse_toggle" binds= [true]]
 [connection signal="mouse_exited" from="Margin/VBox/InfoPannel/Margin/VBox/TopicHBox" to="Margin/VBox/InfoPannel/Margin/VBox" method="_on_mouse_toggle" binds= [false]]
+[connection signal="meta_clicked" from="Margin/VBox/InfoPannel/Margin/VBox/DescPannel/VBox/SourceLabel" to="Margin/VBox/InfoPannel/Margin/VBox" method="_on_source_label_clicked"]
