@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_5f748")
 type = 1
-name = "Se déplacer (↑←↓→)"
+name = "•    Se déplacer (↑←↓→)"
 desc = ""
 metadata/_custom_type_script = "uid://b33ppoek3j2kg"

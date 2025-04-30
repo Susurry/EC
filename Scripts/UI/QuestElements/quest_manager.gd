@@ -44,22 +44,22 @@ func add_quest(key: String, quest_pos: int = target.get_child_count()) -> void:
 	var new_quest_data: Resource = load(quest_data.quests[key])
 	var new_quest: BoxContainer = quest_prefab.instantiate()
 	
-	var new_quest_label: Label = new_quest.get_node("Panel/Label")
-	var new_quest_panel: PanelContainer = new_quest.get_node("Panel")
+	var new_quest_label: Label = new_quest.get_node("Margin/Panel/Label")
+	var new_quest_panel: PanelContainer = new_quest.get_node("Margin/Panel")
 	var new_quest_margin: MarginContainer = new_quest.get_node("Margin")
 	
 	match (new_quest_data.type): # Ajoute un style différent en fonction du type de quête
+		# Note : À refaire au propre à un moment--on a eu le temps de s'améliorer entre temps ! - Emilien
 		0:
 			new_quest_label.label_settings = label_medium_settings
 			
-			new_quest_margin.add_theme_constant_override("margin_top", 35)
-			new_quest_margin.add_theme_constant_override("margin_left", 40)
+			new_quest_margin.add_theme_constant_override("margin_left", 10)
 		1:
+			new_quest_margin.add_theme_constant_override("margin_left", 25)
+			new_quest_margin.add_theme_constant_override("margin_right", 10)
 			new_quest_label.label_settings = label_small_settings
 			new_quest_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 			new_quest_panel.self_modulate = 0
-			
-			new_quest_margin.add_theme_constant_override("margin_left", 80)
 	
 	new_quest_label.text = new_quest_data.name
 	new_quest.name = key
@@ -104,7 +104,7 @@ func set_mission_name(new_name: String) -> void:
 func _save_current_quests() -> void:
 	SaveManager.setElement("Player", {"curr_quests": quest_list})
 
-func _on_button_toggled(toggled_on: bool) -> void:
+func _on_texture_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		position.x = position.x + ( size.x - hide_button.size.x )
 	else:
