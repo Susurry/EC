@@ -4,13 +4,19 @@ extends Control
 @export var category_order: Array[String]
 @export var block_data: GradeBlockList
 
+var follower_count: float = 0
+var score: float = 0
+
 @onready var title_panel: Label = $Margin/VBox/TitlePanel/VBox/ChapterLabel
 @onready var category_label: PackedScene = preload("uid://c568qfvjhr3hp")
 @onready var mission_block: PackedScene = preload("uid://b1c44utdyam2d")
 @onready var empty_block: PackedScene = preload("uid://c6kvwb2oslbg1")
+@onready var note_label: Label = $Margin/VBox/EndPanel/VBox/NoteHBox/GradeLabel
+@onready var fol_img: CompressedTexture2D = preload("uid://bxlgsb6fsifr8")
 
 func _ready() -> void:
 	_initialize_content()
+	_initialize_score()
 
 func _initialize_categories() -> Dictionary[String,Array]:
 	var summary_content: Dictionary[String,Array]
@@ -60,8 +66,8 @@ func _initialize_content() -> void:
 			source_text.text = summary.description_scientifique
 			
 			if category == "Followers":
-				var type_text: Label = new_summary.get_node(new_summary.get_meta("type_path"))
-				type_text.text = "F"
+				var type_img: TextureRect = new_summary.get_node(new_summary.get_meta("type_path"))
+				type_img.texture = fol_img
 				
 				score_text.text = str(int(save_score))
 				# score positif vert, negatif rouge
@@ -70,7 +76,10 @@ func _initialize_content() -> void:
 					score_text.label_settings.font_color = Color.GREEN
 				else:
 					score_text.label_settings.font_color = Color(0.427,0.427,0.427)
+				
+				follower_count += save_score
 			else:
+				save_score = save_score * 2 # TEMPORARIRE POUR GGS
 				score_text.text = str(save_score)
 				# score positif rouge, negatif vert (EcoScore réduire empreinte)
 				if save_score > 0:
@@ -78,6 +87,8 @@ func _initialize_content() -> void:
 					score_text.label_settings.font_color = Color.RED
 				elif save_score < 0:
 					score_text.label_settings.font_color = Color.GREEN
+				
+				score += save_score
 			
 			target.add_child(new_summary)
 			category_size += 1
@@ -85,6 +96,35 @@ func _initialize_content() -> void:
 		if category_size == 0:
 			var new_empty: PanelContainer = empty_block.instantiate()
 			target.add_child(new_empty)
+
+func _initialize_score() -> void:
+	var total_score: float = score - (follower_count / 4)
+	var final_score: int = 0
+	
+	if total_score < 0:
+		final_score= ceil((score / -0.77) - floor(follower_count/4))
+	else:
+		final_score= floor((score / -0.65) - floor(follower_count/4))
+	
+	match final_score:
+		-8: note_label.text = "F"
+		-7: note_label.text = "E-"
+		-6: note_label.text = "E"
+		-5: note_label.text = "E+"
+		-4: note_label.text = "D-"
+		-3: note_label.text = "D"
+		-2: note_label.text = "D+"
+		-1: note_label.text = "C-"
+		0: note_label.text = "C"
+		1: note_label.text = "C+"
+		2: note_label.text = "B-"
+		3: note_label.text = "B"
+		4: note_label.text = "B+"
+		5: note_label.text = "A-"
+		6: note_label.text = "A"
+		7: note_label.text = "A+"
+		8: note_label.text = "S"
+		_: note_label.text = "F"
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

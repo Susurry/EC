@@ -13,4 +13,4 @@ func initialize_scene() -> void:
 	FadeManager.trigger_fade(0, 0.25, 3)
 	
 	if start_id == 0:
-		conclusion_panel.title_panel.text = "Game Over"
+		conclusion_panel.title_panel.text = "Fin de la partie"
