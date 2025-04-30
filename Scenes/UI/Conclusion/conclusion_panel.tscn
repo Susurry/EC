@@ -1,14 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8ttmemewih6u"]
+[gd_scene load_steps=9 format=3 uid="uid://c8ttmemewih6u"]
 
 [ext_resource type="Script" uid="uid://cikaethue8u6i" path="res://Scripts/UI/Conclusion/conclusion_block_setup.gd" id="1_vpwob"]
 [ext_resource type="Resource" uid="uid://cimgxjc6t8xyr" path="res://Resources/UI/Conclusion/grade_block_list.tres" id="4_533il"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucmn"]
-bg_color = Color(0.145098, 0.145098, 0.145098, 1)
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
+bg_color = Color(0.0196078, 0.0196078, 0.0196078, 0.882353)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phx7v"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="LabelSettings" id="LabelSettings_8m3t6"]
 font_size = 64
@@ -51,6 +58,7 @@ theme_override_constants/separation = 10
 [node name="TitlePanel" type="PanelContainer" parent="Margin/VBox"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_phx7v")
 
 [node name="VBox" type="VBoxContainer" parent="Margin/VBox/TitlePanel"]
 layout_mode = 2
@@ -66,7 +74,7 @@ vertical_alignment = 1
 [node name="SummaryLabel" type="Label" parent="Margin/VBox/TitlePanel/VBox"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "Résumé de vos actions :"
+text = "Résumé de vos actions (cliquez pour détails) :"
 label_settings = SubResource("LabelSettings_ese38")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -80,6 +88,7 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 
 [node name="EndPanel" type="MarginContainer" parent="Margin/VBox"]
 layout_mode = 2
