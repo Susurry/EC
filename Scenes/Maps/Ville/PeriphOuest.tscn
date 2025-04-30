@@ -35,13 +35,12 @@
 [ext_resource type="Script" uid="uid://ccdy0c2fkd3rn" path="res://Scripts/Events/Shared/player_car_check.gd" id="34_d0ba6"]
 [ext_resource type="Script" uid="uid://c17fr8kqxgo6u" path="res://Scripts/Events/PeriphOuest/mission_velo.gd" id="36_1c0dv"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0ba6"]
 atlas = ExtResource("4_4y10b")
 region = Rect2(67, 115, 37, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4beq"]
-size = Vector2(29, 68)
+size = Vector2(29, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1c0dv"]
 atlas = ExtResource("6_i6vih")
@@ -55,7 +54,7 @@ atlas = SubResource("CompressedTexture2D_6qbes")
 region = Rect2(2, 22, 77, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20a16"]
-size = Vector2(74, 26)
+size = Vector2(71, 23)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_82jj0"]
 load_path = "res://.godot/imported/car_new.png-5b3514e2a56acd50bc4031430c8542a1.ctex"
@@ -368,31 +367,33 @@ centered = false
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generique/GenericCar"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generique/GenericCar/StaticBody2D"]
-position = Vector2(16, 36)
+position = Vector2(16, 35.5)
 shape = SubResource("RectangleShape2D_c4beq")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="GenericCar2" type="Sprite2D" parent="Props/Generique"]
-position = Vector2(1001, 315)
+position = Vector2(999, 323)
 texture = SubResource("AtlasTexture_txfdo")
 centered = false
+offset = Vector2(0, -8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generique/GenericCar2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generique/GenericCar2/StaticBody2D"]
-position = Vector2(38, 21)
+position = Vector2(38, 12.5)
 shape = SubResource("RectangleShape2D_20a16")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="GenericCar3" type="Sprite2D" parent="Props/Generique"]
-position = Vector2(887, 347)
+position = Vector2(893, 355)
 texture = SubResource("AtlasTexture_guvjv")
 centered = false
+offset = Vector2(0, -8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generique/GenericCar3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Props/Generique/GenericCar3/StaticBody2D"]
-position = Vector2(38, 21)
+position = Vector2(39.5, 12.5)
 shape = SubResource("RectangleShape2D_20a16")
 debug_color = Color(1, 0, 0, 0.419608)
 

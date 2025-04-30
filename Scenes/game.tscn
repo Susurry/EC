@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=57 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -9,26 +9,30 @@
 [ext_resource type="Script" uid="uid://bj4mgipt463b8" path="res://Scripts/UI/TimerElements/timer.gd" id="6_6ntbc"]
 [ext_resource type="Texture2D" uid="uid://b6vb3d6w3p8cw" path="res://Graphics/UI/Footprint.svg" id="6_j0fp3"]
 [ext_resource type="Script" uid="uid://cfxk5hxbgtty8" path="res://Scripts/UI/PauseElements/options.gd" id="7_2fcg4"]
+[ext_resource type="Texture2D" uid="uid://dkv22kxbpyqvy" path="res://Graphics/UI/Thermometer/Thermometer00.png" id="7_8m3t6"]
 [ext_resource type="LabelSettings" uid="uid://bjqrdqohjhs6g" path="res://Graphics/UI/Themes/Label_UI.tres" id="7_qvet4"]
 [ext_resource type="Script" uid="uid://c85sqtcabmrmb" path="res://Scripts/UI/ScoreElements/follower.gd" id="7_r175c"]
 [ext_resource type="AudioStream" uid="uid://3x75w3tp350c" path="res://Audio/SFX/score_bonus.wav" id="8_cwurv"]
+[ext_resource type="Texture2D" uid="uid://d37tt74xskvan" path="res://Graphics/UI/Thermometer/Thermometer01.png" id="8_ese38"]
 [ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
 [ext_resource type="Resource" uid="uid://bq5ri1v65mysg" path="res://Resources/UI/item_list.tres" id="9_cwurv"]
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
 [ext_resource type="AudioStream" uid="uid://d2d3yu1yjlbw8" path="res://Audio/SFX/score_malus.wav" id="9_mucmn"]
 [ext_resource type="AudioStream" uid="uid://b4wcn2c027cbq" path="res://Audio/SFX/follower_bonus.wav" id="12_cwurv"]
 [ext_resource type="Script" uid="uid://bgnif2jqnff2x" path="res://Scripts/UI/InventoryElements/inventaire.gd" id="12_dga6m"]
-[ext_resource type="Texture2D" uid="uid://bb68t0hcbbrne" path="res://Graphics/TEMP/WIP_Thermomètre.png" id="13_tgy6u"]
 [ext_resource type="PackedScene" uid="uid://dbah8ylvfp1o0" path="res://Scenes/UI/InventoryElements/item.tscn" id="14_81klo"]
 [ext_resource type="Texture2D" uid="uid://bipu7qfamijwp" path="res://Graphics/TEMP/WIP_SUn.png" id="14_cwurv"]
 [ext_resource type="Script" uid="uid://nafy3vv6urjt" path="res://Scripts/UI/QuestElements/quest_manager.gd" id="15_kmh8j"]
+[ext_resource type="Texture2D" uid="uid://bph7hhum253lf" path="res://Graphics/UI/Thermometer/ThermometerStart0.png" id="16_8m3t6"]
 [ext_resource type="Resource" uid="uid://bnvvnakxw6yl5" path="res://Resources/UI/quest_list.tres" id="16_r4mnh"]
 [ext_resource type="PackedScene" uid="uid://c584eglnuab88" path="res://Scenes/UI/QuestElements/quest_line.tscn" id="17_1aw0d"]
 [ext_resource type="Script" uid="uid://chi1tpicbea82" path="res://Scripts/MiniJeux/minigame_manager.gd" id="21_68r2r"]
 [ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="24_vm72l"]
 [ext_resource type="Script" uid="uid://pgfwtff66dch" path="res://Scripts/UI/pointer.gd" id="25_22asu"]
 [ext_resource type="AudioStream" uid="uid://bjhtvd1epxpd" path="res://Audio/SFX/Temp/FB_QuestNew.wav" id="26_cwurv"]
+[ext_resource type="Texture2D" uid="uid://bilxh1ndfy4i2" path="res://Graphics/UI/Bookmark.png" id="27_ese38"]
 [ext_resource type="AudioStream" uid="uid://dcqkt8mbujfqy" path="res://Audio/SFX/Temp/FB_QuestDone.wav" id="27_mucmn"]
+[ext_resource type="Texture2D" uid="uid://pu8brk7jdv6u" path="res://Graphics/UI/BookmarkHover.png" id="28_oeip8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gghaa"]
 resource_local_to_scene = true
@@ -37,7 +41,7 @@ shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/width = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mucmn"]
-bg_color = Color(0, 0, 0, 0.490196)
+bg_color = Color(0, 0, 0, 0.588235)
 corner_radius_top_left = 40
 corner_radius_top_right = 40
 corner_radius_bottom_right = 40
@@ -52,11 +56,13 @@ corner_radius_bottom_left = 7
 corner_detail = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgy6u"]
-bg_color = Color(0, 0, 0, 0.588235)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeip8"]
+texture = ExtResource("7_8m3t6")
+axis_stretch_horizontal = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg4q0"]
-bg_color = Color(0.885351, 0.479543, 3.85046e-07, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xe308"]
+texture = ExtResource("8_ese38")
+axis_stretch_horizontal = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwurv"]
 bg_color = Color(0, 0, 0, 1)
@@ -69,7 +75,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Carbone/TextureRect:modulate")
+tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -81,7 +87,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Carbone/Label:modulate")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -98,7 +104,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Carbone/TextureRect:modulate")
+tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -110,7 +116,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Carbone/Label:modulate")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -127,7 +133,7 @@ step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Carbone/TextureRect:modulate")
+tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -139,7 +145,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Carbone/Label:modulate")
+tracks/1/path = NodePath("Label:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -226,6 +232,13 @@ font_size = 18
 
 [sub_resource type="LabelSettings" id="LabelSettings_tgy6u"]
 font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8m3t6"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="FontVariation" id="FontVariation_tgy6u"]
 variation_embolden = 1.0
@@ -361,19 +374,19 @@ grow_horizontal = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mucmn")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/InfoElements"]
+[node name="Infos" type="MarginContainer" parent="UI/InfoElements"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Columns" type="VBoxContainer" parent="UI/InfoElements/MarginContainer"]
+[node name="Columns" type="VBoxContainer" parent="UI/InfoElements/Infos"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 10
 
-[node name="TimeElements" type="VBoxContainer" parent="UI/InfoElements/MarginContainer/Columns" node_paths=PackedStringArray("carbone_element", "follower_element")]
+[node name="TimeElements" type="VBoxContainer" parent="UI/InfoElements/Infos/Columns" node_paths=PackedStringArray("carbone_element", "follower_element")]
 layout_mode = 2
 theme_override_constants/separation = 10
 script = ExtResource("6_6ntbc")
@@ -381,13 +394,13 @@ start_heure = 1
 carbone_element = NodePath("../ScoreElements/Carbone")
 follower_element = NodePath("../ScoreElements/Follower")
 
-[node name="Labels" type="PanelContainer" parent="UI/InfoElements/MarginContainer/Columns/TimeElements"]
+[node name="Labels" type="PanelContainer" parent="UI/InfoElements/Infos/Columns/TimeElements"]
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bl602")
 
-[node name="Time" type="Label" parent="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels"]
+[node name="Time" type="Label" parent="UI/InfoElements/Infos/Columns/TimeElements/Labels"]
 visible = false
 layout_mode = 2
 text = "00 : 00 : 00"
@@ -395,29 +408,29 @@ label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TimerBarIndicateur" type="Label" parent="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels"]
+[node name="TimerBarIndicateur" type="Label" parent="UI/InfoElements/Infos/Columns/TimeElements/Labels"]
 layout_mode = 2
 text = ">>>"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 
-[node name="Bars" type="MarginContainer" parent="UI/InfoElements/MarginContainer/Columns/TimeElements"]
-custom_minimum_size = Vector2(0, 37)
+[node name="Bars" type="MarginContainer" parent="UI/InfoElements/Infos/Columns/TimeElements"]
+custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
-theme_override_constants/margin_left = 46
-theme_override_constants/margin_right = 46
+theme_override_constants/margin_left = 84
+theme_override_constants/margin_right = 78
 
-[node name="TimeBar" type="ProgressBar" parent="UI/InfoElements/MarginContainer/Columns/TimeElements/Bars"]
+[node name="TimeBar" type="ProgressBar" parent="UI/InfoElements/Infos/Columns/TimeElements/Bars"]
 layout_mode = 2
 size_flags_vertical = 1
 mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_tgy6u")
-theme_override_styles/fill = SubResource("StyleBoxFlat_mg4q0")
+theme_override_styles/background = SubResource("StyleBoxTexture_oeip8")
+theme_override_styles/fill = SubResource("StyleBoxTexture_xe308")
 min_value = -4500.0
 max_value = 0.0
 show_percentage = false
 
-[node name="ChangeTimeBar" type="ProgressBar" parent="UI/InfoElements/MarginContainer/Columns/TimeElements/Bars/TimeBar"]
+[node name="ChangeTimeBar" type="ProgressBar" parent="UI/InfoElements/Infos/Columns/TimeElements/Bars/TimeBar"]
 visible = false
 z_index = -1
 layout_mode = 1
@@ -433,13 +446,13 @@ min_value = -4500.0
 max_value = 0.0
 show_percentage = false
 
-[node name="ScoreElements" type="HBoxContainer" parent="UI/InfoElements/MarginContainer/Columns"]
+[node name="ScoreElements" type="HBoxContainer" parent="UI/InfoElements/Infos/Columns"]
 custom_minimum_size = Vector2(0, 37)
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Carbone" type="HBoxContainer" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements" node_paths=PackedStringArray("time_element")]
+[node name="Carbone" type="HBoxContainer" parent="UI/InfoElements/Infos/Columns/ScoreElements" node_paths=PackedStringArray("time_element")]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
@@ -449,26 +462,26 @@ time_element = NodePath("../../TimeElements")
 sfx_good_score = ExtResource("8_cwurv")
 sfx_bad_score = ExtResource("9_mucmn")
 
-[node name="TextureRect" type="TextureRect" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Carbone"]
+[node name="TextureRect" type="TextureRect" parent="UI/InfoElements/Infos/Columns/ScoreElements/Carbone"]
 custom_minimum_size = Vector2(47, 47)
 layout_mode = 2
 texture = ExtResource("6_j0fp3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Carbone"]
+[node name="Label" type="Label" parent="UI/InfoElements/Infos/Columns/ScoreElements/Carbone"]
 layout_mode = 2
 text = "10.0"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Carbone"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InfoElements/Infos/Columns/ScoreElements/Carbone"]
 libraries = {
 &"": SubResource("AnimationLibrary_mucmn")
 }
 
-[node name="Follower" type="HBoxContainer" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements" node_paths=PackedStringArray("time_element")]
+[node name="Follower" type="HBoxContainer" parent="UI/InfoElements/Infos/Columns/ScoreElements" node_paths=PackedStringArray("time_element")]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
@@ -477,21 +490,21 @@ script = ExtResource("7_r175c")
 sfx_follow = ExtResource("12_cwurv")
 time_element = NodePath("../../TimeElements")
 
-[node name="TextureRect" type="TextureRect" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Follower"]
+[node name="TextureRect" type="TextureRect" parent="UI/InfoElements/Infos/Columns/ScoreElements/Follower"]
 custom_minimum_size = Vector2(47, 47)
 layout_mode = 2
 texture = ExtResource("9_hu01s")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Follower"]
+[node name="Label" type="Label" parent="UI/InfoElements/Infos/Columns/ScoreElements/Follower"]
 layout_mode = 2
 text = "10.0"
 label_settings = ExtResource("7_qvet4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InfoElements/MarginContainer/Columns/ScoreElements/Follower"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InfoElements/Infos/Columns/ScoreElements/Follower"]
 libraries = {
 &"": SubResource("AnimationLibrary_oeip8")
 }
@@ -499,26 +512,25 @@ libraries = {
 [node name="Icons" type="MarginContainer" parent="UI/InfoElements"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_right = 15
+theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
 [node name="Icons" type="HBoxContainer" parent="UI/InfoElements/Icons"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 320
-alignment = 1
+theme_override_constants/separation = 290
+alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="UI/InfoElements/Icons/Icons"]
-custom_minimum_size = Vector2(81, 81)
+custom_minimum_size = Vector2(68, 68)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("13_tgy6u")
+texture = ExtResource("16_8m3t6")
 
 [node name="TextureRect2" type="TextureRect" parent="UI/InfoElements/Icons/Icons"]
-custom_minimum_size = Vector2(81, 81)
+custom_minimum_size = Vector2(68, 68)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -592,13 +604,13 @@ focus_mode = 0
 text = "DDMMYY-HH"
 
 [node name="QuestElements" type="HBoxContainer" parent="UI"]
-custom_minimum_size = Vector2(452, 400)
+custom_minimum_size = Vector2(0, 400)
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -452.0
+offset_left = -53.0
 offset_top = -200.0
 offset_bottom = 200.0
 grow_horizontal = 0
@@ -616,38 +628,38 @@ sfx_quest_done = ExtResource("27_mucmn")
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_top = 15
 
-[node name="Button" type="Button" parent="UI/QuestElements/HidePanel"]
-custom_minimum_size = Vector2(37, 37)
+[node name="TextureButton" type="TextureButton" parent="UI/QuestElements/HidePanel"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-focus_mode = 0
 toggle_mode = true
-text = ">"
+texture_normal = ExtResource("27_ese38")
+texture_pressed = ExtResource("27_ese38")
+texture_hover = ExtResource("28_oeip8")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="QuestContainer" type="PanelContainer" parent="UI/QuestElements"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8m3t6")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/QuestElements/QuestContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
 
 [node name="Columns" type="VBoxContainer" parent="UI/QuestElements/QuestContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 5
 
 [node name="MissionName" type="PanelContainer" parent="UI/QuestElements/QuestContainer/MarginContainer/Columns"]
-custom_minimum_size = Vector2(400, 37)
+custom_minimum_size = Vector2(350, 37)
 layout_mode = 2
 theme = ExtResource("5_hijog")
 
@@ -807,15 +819,15 @@ libraries = {
 autoplay = "bobbing"
 
 [connection signal="pressed" from="Viewports/MinigameElements/Button" to="Viewports/MinigameElements" method="erase_minigame"]
-[connection signal="mouse_entered" from="UI/InfoElements/MarginContainer/Columns/TimeElements" to="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels/Time" method="set_visible" binds= [true]]
-[connection signal="mouse_entered" from="UI/InfoElements/MarginContainer/Columns/TimeElements" to="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels/TimerBarIndicateur" method="set_visible" binds= [false]]
-[connection signal="mouse_exited" from="UI/InfoElements/MarginContainer/Columns/TimeElements" to="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels/Time" method="set_visible" binds= [false]]
-[connection signal="mouse_exited" from="UI/InfoElements/MarginContainer/Columns/TimeElements" to="UI/InfoElements/MarginContainer/Columns/TimeElements/Labels/TimerBarIndicateur" method="set_visible" binds= [true]]
+[connection signal="mouse_entered" from="UI/InfoElements/Infos/Columns/TimeElements" to="UI/InfoElements/Infos/Columns/TimeElements/Labels/Time" method="set_visible" binds= [true]]
+[connection signal="mouse_entered" from="UI/InfoElements/Infos/Columns/TimeElements" to="UI/InfoElements/Infos/Columns/TimeElements/Labels/TimerBarIndicateur" method="set_visible" binds= [false]]
+[connection signal="mouse_exited" from="UI/InfoElements/Infos/Columns/TimeElements" to="UI/InfoElements/Infos/Columns/TimeElements/Labels/Time" method="set_visible" binds= [false]]
+[connection signal="mouse_exited" from="UI/InfoElements/Infos/Columns/TimeElements" to="UI/InfoElements/Infos/Columns/TimeElements/Labels/TimerBarIndicateur" method="set_visible" binds= [true]]
 [connection signal="text_submitted" from="UI/DebugElements/Rows/LineEdit" to="UI/DebugElements" method="_on_line_edit_text_submitted"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/RespawnDebug" to="UI/DebugElements" method="_on_respawn_debug_item_selected"]
 [connection signal="item_selected" from="UI/DebugElements/Rows/MapDebug" to="UI/DebugElements" method="_on_option_button_item_selected"]
 [connection signal="pressed" from="UI/DebugElements/Rows/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
-[connection signal="toggled" from="UI/QuestElements/HidePanel/Button" to="UI/QuestElements" method="_on_button_toggled"]
+[connection signal="toggled" from="UI/QuestElements/HidePanel/TextureButton" to="UI/QuestElements" method="_on_texture_button_toggled"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Retour" to="UI/PauseElements" method="toggle_pause"]
 [connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Quitter" to="UI/PauseElements" method="_on_quitter_pressed"]
 [connection signal="toggled" from="UI/PauseElements/TabContainer/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggled"]

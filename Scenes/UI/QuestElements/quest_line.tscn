@@ -7,7 +7,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Label:modulate")
+tracks/0/path = NodePath("Margin/Panel/Label:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -47,7 +47,7 @@ step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Label:modulate")
+tracks/0/path = NodePath("Margin/Panel/Label:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -119,19 +119,21 @@ _data = {
 [node name="QuestLine" type="HBoxContainer"]
 offset_right = 304.0
 offset_bottom = 30.0
+size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="Panel" type="PanelContainer" parent="."]
+[node name="Panel" type="PanelContainer" parent="Margin"]
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme = ExtResource("1_4c8dg")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Margin/Panel"]
 layout_mode = 2
 text = "Temp Text"
 horizontal_alignment = 1
