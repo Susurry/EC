@@ -943,6 +943,7 @@ material = SubResource("ShaderMaterial_2rebe")
 [node name="PNJ_Manager" type="Node2D" parent="."]
 script = ExtResource("4_pmrli")
 pnj_quantity = 30
+max_dial_id = 6
 
 [node name="Middle_Targets" type="Node2D" parent="PNJ_Manager"]
 

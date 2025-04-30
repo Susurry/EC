@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var pnj_quantity: int = 0
+@export var max_dial_id: int
 
 @onready var pnj_asset: PackedScene = preload("uid://bcny5exc06a15")
 @onready var pnj_skins: Resource = preload("uid://c0i52vuytjc3a")
@@ -30,6 +31,7 @@ func initialize_pnj() -> void:
 	pnj_instance.position = spawn_target_array[randi_range(0, spawn_target_array.size() - 1)]
 	pnj_instance.spawn_point = pnj_instance.position
 	pnj_instance.skin_texture = pnj_skins.sprites[randi_range(0, pnj_skins.sprites.size() - 1)]
+	pnj_instance.dial_id = randi_range(1,max_dial_id)
 	
 	get_parent().call_deferred("add_child", pnj_instance)
 	

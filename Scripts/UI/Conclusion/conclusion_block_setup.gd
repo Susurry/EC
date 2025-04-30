@@ -1,19 +1,19 @@
 extends Control
 
-@export var category_label: PackedScene
-@export var mission_block: PackedScene
-@export var empty_block: PackedScene
-@export var block_data: GradeBlockList
 @export var target: Control
 @export var category_order: Array[String]
+@export var block_data: GradeBlockList
 
-var summary_content: Dictionary[String,Array]
+@onready var title_panel: Label = $Margin/VBox/TitlePanel/VBox/ChapterLabel
+@onready var category_label: PackedScene = preload("uid://c568qfvjhr3hp")
+@onready var mission_block: PackedScene = preload("uid://b1c44utdyam2d")
+@onready var empty_block: PackedScene = preload("uid://c6kvwb2oslbg1")
 
 func _ready() -> void:
-	_initialize_categories()
 	_initialize_content()
 
-func _initialize_categories() -> void:
+func _initialize_categories() -> Dictionary[String,Array]:
+	var summary_content: Dictionary[String,Array]
 	var block_data_list: Array
 	for data in block_data.blocks:
 		block_data_list.append(load(block_data.blocks[data]))
@@ -27,8 +27,12 @@ func _initialize_categories() -> void:
 		for category in summary_content:
 			if block.category == category:
 				summary_content[category].append(block)
+	
+	return summary_content
 
 func _initialize_content() -> void:
+	var summary_content: Dictionary[String,Array] = _initialize_categories()
+	
 	for category in category_order:
 		var category_size: int = 0
 		var new_category: Label = category_label.instantiate()
@@ -81,3 +85,6 @@ func _initialize_content() -> void:
 		if category_size == 0:
 			var new_empty: PanelContainer = empty_block.instantiate()
 			target.add_child(new_empty)
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

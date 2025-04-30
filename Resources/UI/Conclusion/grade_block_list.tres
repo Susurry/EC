@@ -8,6 +8,7 @@ blocks = Dictionary[String, String]({
 "1-1_breakfast_boiss": "uid://b3d2tni0da86f",
 "1-1_breakfast_dej": "uid://cswda4yvu71xm",
 "1-2_shower": "uid://8ws8nny3lhik",
+"2_transport": "uid://c26u6t814r24q",
 "3-2_trier": "uid://bwotjxbutiovs",
 "3-3_parler": "uid://bue0qem4uij6m",
 "F_childqcm": "uid://b1vi1l4vfiq1f",

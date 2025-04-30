@@ -9,6 +9,7 @@ Où souhaitez-vous vous rendre ?
 	Vous êtes déjà sur place !
 - Campus Universitaire
 	do EventBus.emit_signal("set_empreinte", 0.6)
+	do SaveManager.setElement("Points", {"2_transport": 0.6})
 	do EventBus.emit_signal("change_time", -300)
 	do EventBus.emit_signal("set_quest_state", "2_transport")
 	do EventBus.emit_signal("set_quest_state", "2-1_voiture")
