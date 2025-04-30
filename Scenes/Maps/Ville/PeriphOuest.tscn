@@ -545,7 +545,7 @@ texture = ExtResource("25_whdg5")
 
 [node name="PNJ_reparateur" parent="PNJs" instance=ExtResource("13_5c4ie")]
 position = Vector2(719, 153)
-timeline = "pnj_repatateur"
+timeline = "pnj_reparateur"
 metadata/_edit_group_ = true
 
 [node name="Skin" parent="PNJs/PNJ_reparateur" index="1"]
