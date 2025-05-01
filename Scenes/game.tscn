@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=67 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -20,11 +20,11 @@
 [ext_resource type="AudioStream" uid="uid://b4wcn2c027cbq" path="res://Audio/SFX/follower_bonus.wav" id="12_cwurv"]
 [ext_resource type="Script" uid="uid://bgnif2jqnff2x" path="res://Scripts/UI/InventoryElements/inventaire.gd" id="12_dga6m"]
 [ext_resource type="PackedScene" uid="uid://dbah8ylvfp1o0" path="res://Scenes/UI/InventoryElements/item.tscn" id="14_81klo"]
-[ext_resource type="Texture2D" uid="uid://bipu7qfamijwp" path="res://Graphics/TEMP/WIP_SUn.png" id="14_cwurv"]
 [ext_resource type="Script" uid="uid://nafy3vv6urjt" path="res://Scripts/UI/QuestElements/quest_manager.gd" id="15_kmh8j"]
 [ext_resource type="Texture2D" uid="uid://bph7hhum253lf" path="res://Graphics/UI/Thermometer/ThermometerStart0.png" id="16_8m3t6"]
 [ext_resource type="Resource" uid="uid://bnvvnakxw6yl5" path="res://Resources/UI/quest_list.tres" id="16_r4mnh"]
 [ext_resource type="PackedScene" uid="uid://c584eglnuab88" path="res://Scenes/UI/QuestElements/quest_line.tscn" id="17_1aw0d"]
+[ext_resource type="Texture2D" uid="uid://djgg6v1adqoa1" path="res://Graphics/UI/sun.svg" id="17_d3cha"]
 [ext_resource type="Script" uid="uid://chi1tpicbea82" path="res://Scripts/MiniJeux/minigame_manager.gd" id="21_68r2r"]
 [ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="24_vm72l"]
 [ext_resource type="Script" uid="uid://pgfwtff66dch" path="res://Scripts/UI/pointer.gd" id="25_22asu"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://pu8brk7jdv6u" path="res://Graphics/UI/BookmarkHover.png" id="28_oeip8"]
 [ext_resource type="Texture2D" uid="uid://u8vbn8hg24kp" path="res://Graphics/UI/EClogo.png" id="30_xe308"]
 [ext_resource type="PackedScene" uid="uid://b1gqn6grydsaf" path="res://Scenes/UI/PauseElements/rebind_panel.tscn" id="31_xe308"]
+[ext_resource type="Texture2D" uid="uid://kc7nw05mwail" path="res://Graphics/UI/IcomLyon2.png" id="33_d3cha"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gghaa"]
 resource_local_to_scene = true
@@ -287,6 +288,10 @@ corner_radius_top_right = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_6uxt2"]
 font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3cha"]
+font_size = 20
+font_color = Color(0, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uxt2"]
 bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
@@ -566,7 +571,7 @@ theme_override_constants/margin_bottom = 10
 [node name="Icons" type="HBoxContainer" parent="UI/InfoElements/Icons"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 290
+theme_override_constants/separation = 283
 alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="UI/InfoElements/Icons/Icons"]
@@ -578,12 +583,13 @@ mouse_filter = 2
 texture = ExtResource("16_8m3t6")
 
 [node name="TextureRect2" type="TextureRect" parent="UI/InfoElements/Icons/Icons"]
-custom_minimum_size = Vector2(68, 68)
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("14_cwurv")
+texture = ExtResource("17_d3cha")
+expand_mode = 1
 
 [node name="InvElements" type="PanelContainer" parent="UI"]
 anchors_preset = 4
@@ -766,10 +772,11 @@ theme_override_styles/tab_selected = SubResource("StyleBoxFlat_xe308")
 theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_ym3tv")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_lmoi6")
 tab_alignment = 1
-current_tab = 0
+current_tab = 3
 tab_focus_mode = 0
 
 [node name="Menu" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 75
 theme_override_constants/margin_top = 0
@@ -779,14 +786,16 @@ metadata/_tab_index = 0
 
 [node name="VBox" type="VBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="PauseLabel" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Le jeu est en pause !"
 label_settings = SubResource("LabelSettings_6uxt2")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Unpause" type="Button" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
 layout_mode = 2
@@ -907,13 +916,528 @@ layout_mode = 2
 action_name = "interact"
 
 [node name="Crédits" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer"]
-visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 metadata/_tab_index = 3
 
-[node name="Label" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits"]
 layout_mode = 2
-text = "I did this :)"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+texture = ExtResource("33_d3cha")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Équipe Gamagora 2025"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lead Projet"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Emilien Lemosquet"
+fit_content = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lead programmeur"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Arthur Cottreaux"
+fit_content = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Programmeur"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Arthur Perret"
+fit_content = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Testeur QA"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mathias Lipko"
+fit_content = true
+
+[node name="Label2" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Équipe Gamagora 2024"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lead Projet"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Baptiste Clochard"
+fit_content = true
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Programmeur"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reyane Redjem"
+fit_content = true
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Programmeur"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enzo Cortinovis"
+fit_content = true
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Programmeur"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Arthur Perret"
+fit_content = true
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level Designer"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Andy Rakotoniaina"
+fit_content = true
+
+[node name="Label3" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Équipe Gamagora Temps Partiel"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer14" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level Designer"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Loup Cassar"
+fit_content = true
+
+[node name="HBoxContainer17" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level Designer"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gabrielle Sienko"
+fit_content = true
+
+[node name="HBoxContainer15" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level Designer"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Adrien Paul"
+fit_content = true
+
+[node name="HBoxContainer16" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer16"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level Designer"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer16"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mateo Ramet"
+fit_content = true
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Infographiste"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Emma Darchen"
+fit_content = true
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Infographiste"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gauthier B. A."
+fit_content = true
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Infographiste"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Emma Das Neves"
+fit_content = true
+
+[node name="HBoxContainer18" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer18"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Testeur QA"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer18"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Adrien Cirade"
+fit_content = true
+
+[node name="Label6" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Équipe MAAAV"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sound Designer"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Edward Philippe"
+fit_content = true
+
+[node name="HBoxContainer21" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer21"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sound Designer"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer21"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dorian Feduk"
+fit_content = true
+
+[node name="Label4" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Intervenants Extérieurs"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer19" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Infographiste"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Romain Darras"
+fit_content = true
+
+[node name="HBoxContainer20" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer20"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Stagiaire / Graphiste"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer20"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cléa Langlais"
+fit_content = true
+
+[node name="Label8" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Assets Pixel Art"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer22" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer/HBoxContainer22"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "LimeZu [url=https://limezu.itch.io/]([color=#007dff]Itch.io[/color])[/url]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Remerciements Spéciaux"
+label_settings = SubResource("LabelSettings_d3cha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Emmanuel Regis"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Didier Puzenat"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bertrand Kerautret"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sonia Caritu Arfaras"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gaëtan Saura"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Solenne Marty"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Laila Bouchara"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Noureddine Ghachi"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mayane Odou"
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1005,8 +1529,8 @@ autoplay = "bobbing"
 [connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SFXslider/Slider" to="UI/PauseElements" method="_on_slider_sfx_value_changed"]
 [connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VFXslider/Slider" to="UI/PauseElements" method="_on_slider_music_value_changed"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggle_toggled"]
-[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_v_sync_toggle_toggled"]
+[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/NewGame" to="UI/PauseElements" method="_on_new_game_pressed"]
 [connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/Retour" to="UI/ConfirmationPanel" method="set_visible" binds= [false]]
