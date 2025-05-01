@@ -3,9 +3,10 @@ if {SaveManager.getElement("Player", "inventory").has("Carte")} == true:
 	- Périphérie Ouest
 		do ThreadLoad.load_scene("PeriphOuest", 2)
 		do EventBus.emit_signal("change_time", -60)
-	- Centre-Ville | [if {1} == 0.0] [else="disable"]
+	- Centre-Ville
 		Vous êtes déjà à cet arrêt !
 	- Campus Universitaire
+		do SaveManager.setElement("Choice", {"Transport": 2})
 		do EventBus.emit_signal("change_time", -600)
 		do EventBus.emit_signal("set_quest_state", "2_transport")
 		do EventBus.emit_signal("set_quest_state", "2-2_transports")

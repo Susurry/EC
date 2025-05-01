@@ -1,8 +1,9 @@
 if {SaveManager.getElement("Player", "inventory").has("Carte")} == true:
 	Où souhaitez-vous vous rendre ?
-	- Périphérie Ouest | [if {1} == 0.0] [else="disable"]
+	- Périphérie Ouest
 		Vous êtes déjà à cet arrêt !
 	- Centre-Ville
+		do SaveManager.setElement("Choice", {"Transport": 2})
 		do EventBus.emit_signal("change_time", -60)
 		do ThreadLoad.load_scene("CentreVille", 2)
 	- Campus Universitaire

@@ -9,6 +9,7 @@ if SaveManager.getElement("Quests", "3_eboueur") == true:
 		do SaveManager.setElement("Misc", {"Car": "CentreVille"})
 		do ThreadLoad.load_scene("CentreVille", 6)
 	- Campus Universitaire
+		do SaveManager.setElement("Choice", {"Transport": 1})
 		do EventBus.emit_signal("set_empreinte", 0.6)
 		do SaveManager.setElement("Points", {"2_transport": 0.6})
 		do EventBus.emit_signal("change_time", -300)

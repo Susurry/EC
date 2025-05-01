@@ -8,6 +8,7 @@ Où souhaitez-vous vous rendre ?
 - Centre-Ville
 	Vous êtes déjà sur place !
 - Campus Universitaire
+	do SaveManager.setElement("Choice", {"Transport": 1})
 	do EventBus.emit_signal("set_empreinte", 0.6)
 	do SaveManager.setElement("Points", {"2_transport": 0.6})
 	do EventBus.emit_signal("change_time", -300)
