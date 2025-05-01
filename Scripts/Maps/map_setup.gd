@@ -60,3 +60,4 @@ func initialize_save_checks() -> void:
 func initialize_music() -> void:
 	AudioManager.fade_music(music_volume, 0)
 	AudioManager.play_music(music)
+	EventBus.emit_signal("update_music")

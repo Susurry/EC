@@ -50,6 +50,7 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("pause_time", pause_time)
 	EventBus.add_signal("change_time", change_time)
 	EventBus.add_signal("reset_time", initialize_timer)
+	EventBus.add_signal("update_music", update_music)
 
 func _process(delta: float) -> void:
 	if time > 0:
@@ -91,6 +92,22 @@ func update_grading() -> void:
 		var x when x <= 2:
 			time_multi =  0.75
 			time_multi_label.text = ">"
+	update_music()
+
+func update_music() -> void:
+	if time_multi > 1:
+		AudioManager.set_channel_volume(0,0)
+		AudioManager.set_channel_volume(1,-60)
+		AudioManager.set_channel_volume(2,-60)
+	elif time_multi == 1:
+		AudioManager.set_channel_volume(0,-60)
+		AudioManager.set_channel_volume(1,0)
+		AudioManager.set_channel_volume(2,-60)
+	elif time_multi < 1:
+		AudioManager.set_channel_volume(0,-60)
+		AudioManager.set_channel_volume(1,-60)
+		AudioManager.set_channel_volume(2,0)
+		
 
 func save_time() -> void:
 	SaveManager.setElement("Stats", {"heure": heure})
