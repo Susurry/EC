@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://jkjt5tbai10j"]
+[gd_scene load_steps=65 format=3 uid="uid://jkjt5tbai10j"]
 
 [ext_resource type="Script" uid="uid://bu4hyaaikmsv1" path="res://Scripts/game.gd" id="1_0b8yu"]
 [ext_resource type="Resource" uid="uid://r2ryuhyjpqtn" path="res://Resources/input_type_list.tres" id="2_0tg3l"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://c85sqtcabmrmb" path="res://Scripts/UI/ScoreElements/follower.gd" id="7_r175c"]
 [ext_resource type="AudioStream" uid="uid://3x75w3tp350c" path="res://Audio/SFX/score_bonus.wav" id="8_cwurv"]
 [ext_resource type="Texture2D" uid="uid://d37tt74xskvan" path="res://Graphics/UI/Thermometer/Thermometer01.png" id="8_ese38"]
-[ext_resource type="PackedScene" uid="uid://buustbd8v505r" path="res://Scenes/UI/PauseElements/key_rebind.tscn" id="8_v1kba"]
 [ext_resource type="Resource" uid="uid://bq5ri1v65mysg" path="res://Resources/UI/item_list.tres" id="9_cwurv"]
 [ext_resource type="Texture2D" uid="uid://bxlgsb6fsifr8" path="res://Graphics/UI/Community.svg" id="9_hu01s"]
 [ext_resource type="AudioStream" uid="uid://d2d3yu1yjlbw8" path="res://Audio/SFX/score_malus.wav" id="9_mucmn"]
@@ -33,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://bilxh1ndfy4i2" path="res://Graphics/UI/Bookmark.png" id="27_ese38"]
 [ext_resource type="AudioStream" uid="uid://dcqkt8mbujfqy" path="res://Audio/SFX/Temp/FB_QuestDone.wav" id="27_mucmn"]
 [ext_resource type="Texture2D" uid="uid://pu8brk7jdv6u" path="res://Graphics/UI/BookmarkHover.png" id="28_oeip8"]
+[ext_resource type="Texture2D" uid="uid://u8vbn8hg24kp" path="res://Graphics/UI/EClogo.png" id="30_xe308"]
+[ext_resource type="PackedScene" uid="uid://b1gqn6grydsaf" path="res://Scenes/UI/PauseElements/rebind_panel.tscn" id="31_xe308"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gghaa"]
 resource_local_to_scene = true
@@ -246,6 +247,53 @@ variation_embolden = 1.0
 [sub_resource type="LabelSettings" id="LabelSettings_cwurv"]
 font = SubResource("FontVariation_tgy6u")
 font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3cha"]
+bg_color = Color(0, 0, 0, 0.196078)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i26dy"]
+bg_color = Color(0, 0, 0, 0.784314)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xe308"]
+content_margin_left = 15.0
+content_margin_top = 0.0
+content_margin_right = 15.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.686275)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym3tv"]
+content_margin_left = 15.0
+content_margin_top = 0.0
+content_margin_right = 15.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.686275)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmoi6"]
+content_margin_left = 15.0
+content_margin_top = 0.0
+content_margin_right = 15.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_6uxt2"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6uxt2"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [sub_resource type="Animation" id="Animation_fkdbe"]
 length = 0.001
@@ -674,123 +722,237 @@ text_overrun_behavior = 1
 [node name="QuestList" type="VBoxContainer" parent="UI/QuestElements/QuestContainer/MarginContainer/Columns"]
 layout_mode = 2
 
-[node name="PauseElements" type="Control" parent="UI"]
+[node name="PauseElements" type="PanelContainer" parent="UI"]
 process_mode = 3
-z_index = 2
-layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3cha")
 script = ExtResource("7_2fcg4")
 
-[node name="Label" type="Label" parent="UI/PauseElements"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -218.0
-offset_right = 63.0
-offset_bottom = -163.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "PAUSE"
+[node name="Margin" type="MarginContainer" parent="UI/PauseElements"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 290
 
-[node name="TabContainer" type="TabContainer" parent="UI/PauseElements"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -170.5
-offset_top = -145.0
-offset_right = 170.5
-offset_bottom = 145.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBox" type="VBoxContainer" parent="UI/PauseElements/Margin"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="GameLogo" type="TextureRect" parent="UI/PauseElements/Margin/VBox"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("30_xe308")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TabContainer" type="TabContainer" parent="UI/PauseElements/Margin/VBox"]
+custom_minimum_size = Vector2(400, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_i26dy")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_xe308")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_ym3tv")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_lmoi6")
+tab_alignment = 1
 current_tab = 0
 
-[node name="Menu" type="Control" parent="UI/PauseElements/TabContainer"]
+[node name="Menu" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 0
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseElements/TabContainer/Menu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -37.0
-offset_right = 32.0
-offset_bottom = 37.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Retour" type="Button" parent="UI/PauseElements/TabContainer/Menu/VBoxContainer"]
+[node name="VBox" type="VBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu"]
 layout_mode = 2
-text = "Retour"
+theme_override_constants/separation = 15
+alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="UI/PauseElements/TabContainer/Menu/VBoxContainer"]
+[node name="PauseLabel" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
 layout_mode = 2
-size_flags_vertical = 3
+text = "Le jeu est en pause !"
+label_settings = SubResource("LabelSettings_6uxt2")
+horizontal_alignment = 1
 
-[node name="Quitter" type="Button" parent="UI/PauseElements/TabContainer/Menu/VBoxContainer"]
+[node name="Unpause" type="Button" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
 layout_mode = 2
-text = "Quitter"
+text = "Reprendre le jeu"
 
-[node name="Controls" type="VBoxContainer" parent="UI/PauseElements/TabContainer"]
+[node name="NewGame" type="Button" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
+layout_mode = 2
+text = "Nouvelle partie"
+
+[node name="QuitGame" type="Button" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
+layout_mode = 2
+text = "Quitter le jeu
+"
+
+[node name="Options" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 40
-alignment = 1
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
 metadata/_tab_index = 1
 
-[node name="Key_Rebind" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+[node name="Options" type="VBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Options"]
+layout_mode = 2
+alignment = 1
+
+[node name="SFXslider" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SFXslider"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bruitages"
+horizontal_alignment = 1
+
+[node name="Slider" type="HSlider" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SFXslider"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+value = 100.0
+
+[node name="VFXslider" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VFXslider"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Musique"
+horizontal_alignment = 1
+
+[node name="Slider" type="HSlider" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VFXslider"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+value = 100.0
+
+[node name="SprintToggle" type="CheckBox" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Basculer pour Sprinter"
+alignment = 1
+
+[node name="VSyncToggle" type="CheckBox" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Synchronisation Verticale"
+alignment = 1
+
+[node name="FullscreenToggle" type="CheckBox" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Plein Écran"
+alignment = 1
+
+[node name="Contrôles" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+metadata/_tab_index = 2
+
+[node name="Contrôles" type="VBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Contrôles"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="RebindPanel" parent="UI/PauseElements/Margin/VBox/TabContainer/Contrôles/Contrôles" instance=ExtResource("31_xe308")]
 layout_mode = 2
 
-[node name="Key_Rebind2" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+[node name="RebindPanel2" parent="UI/PauseElements/Margin/VBox/TabContainer/Contrôles/Contrôles" instance=ExtResource("31_xe308")]
 layout_mode = 2
 action_name = "right"
 
-[node name="Key_Rebind3" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+[node name="RebindPanel3" parent="UI/PauseElements/Margin/VBox/TabContainer/Contrôles/Contrôles" instance=ExtResource("31_xe308")]
 layout_mode = 2
 action_name = "up"
 
-[node name="Key_Rebind4" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+[node name="RebindPanel4" parent="UI/PauseElements/Margin/VBox/TabContainer/Contrôles/Contrôles" instance=ExtResource("31_xe308")]
 layout_mode = 2
 action_name = "down"
 
-[node name="Key_Rebind5" parent="UI/PauseElements/TabContainer/Controls" instance=ExtResource("8_v1kba")]
+[node name="RebindPanel5" parent="UI/PauseElements/Margin/VBox/TabContainer/Contrôles/Contrôles" instance=ExtResource("31_xe308")]
 layout_mode = 2
 action_name = "interact"
 
-[node name="Options" type="VBoxContainer" parent="UI/PauseElements/TabContainer"]
+[node name="Crédits" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer"]
 visible = false
 layout_mode = 2
-alignment = 1
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
-[node name="FullscreenToggle" type="CheckBox" parent="UI/PauseElements/TabContainer/Options"]
+[node name="Label" type="Label" parent="UI/PauseElements/Margin/VBox/TabContainer/Crédits"]
 layout_mode = 2
+text = "I did this :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmationPanel" type="PanelContainer" parent="UI"]
+visible = false
+custom_minimum_size = Vector2(270, 170)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -60.0
+offset_right = 80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
-text = "Plein écran"
+theme_override_styles/panel = SubResource("StyleBoxFlat_6uxt2")
+
+[node name="Menu" type="MarginContainer" parent="UI/ConfirmationPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 0
+
+[node name="VBox" type="VBoxContainer" parent="UI/ConfirmationPanel/Menu"]
+layout_mode = 2
+theme_override_constants/separation = 10
 alignment = 1
 
-[node name="SprintToggle" type="CheckBox" parent="UI/PauseElements/TabContainer/Options"]
+[node name="PauseLabel" type="Label" parent="UI/ConfirmationPanel/Menu/VBox"]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "Toggle  Run"
-alignment = 1
+text = "Êtes-vous sûr.e ?"
+label_settings = SubResource("LabelSettings_6uxt2")
+horizontal_alignment = 1
+
+[node name="NewGame" type="Button" parent="UI/ConfirmationPanel/Menu/VBox"]
+layout_mode = 2
+text = "Nouvelle partie"
+
+[node name="Retour" type="Button" parent="UI/ConfirmationPanel/Menu/VBox"]
+layout_mode = 2
+text = "Retour
+"
 
 [node name="Pointer" type="TextureRect" parent="UI"]
 z_index = 2
@@ -828,7 +990,9 @@ autoplay = "bobbing"
 [connection signal="item_selected" from="UI/DebugElements/Rows/MapDebug" to="UI/DebugElements" method="_on_option_button_item_selected"]
 [connection signal="pressed" from="UI/DebugElements/Rows/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
 [connection signal="toggled" from="UI/QuestElements/HidePanel/TextureButton" to="UI/QuestElements" method="_on_texture_button_toggled"]
-[connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Retour" to="UI/PauseElements" method="toggle_pause"]
-[connection signal="pressed" from="UI/PauseElements/TabContainer/Menu/VBoxContainer/Quitter" to="UI/PauseElements" method="_on_quitter_pressed"]
-[connection signal="toggled" from="UI/PauseElements/TabContainer/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggled"]
-[connection signal="toggled" from="UI/PauseElements/TabContainer/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggled"]
+[connection signal="pressed" from="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox/Unpause" to="UI/PauseElements" method="_on_unpause_pressed"]
+[connection signal="pressed" from="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox/QuitGame" to="UI/PauseElements" method="_on_quit_game_pressed"]
+[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggle_toggled"]
+[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
+[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
+[connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/Retour" to="UI/PauseElements" method="_on_quit_game_pressed"]

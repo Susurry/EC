@@ -1,17 +1,17 @@
-extends Control
+extends PanelContainer
 
 @onready var label : Label = $HBoxContainer/Label
-@onready var button : Button = $HBoxContainer/Button
+@onready var button : Button = $HBoxContainer/ButtonPanel/Button
  
 var binds : Array 
 
 @export var action_name : String = "left"
 
 var inputlist: Dictionary [String, String] = {
-	"left" : "Move Left",
-	"right" : "Move Right",
-	"up" : "Move Up",
-	"down" : "Move Down",
+	"left" : "Gauche",
+	"right" : "Droite",
+	"up" : "Haut",
+	"down" : "Bas",
 	"interact" : "Interagir",
 } 
 
@@ -24,7 +24,7 @@ func set_action_name() -> void:
 	if action_name:
 		label.text = inputlist[action_name]
 	else:
-		label.text = "Unassigned"
+		label.text = "Non assigné"
 
 
 func set_text_for_key() -> void:
@@ -37,7 +37,7 @@ func set_text_for_key() -> void:
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on == true:
-		button.text = "Press any key"
+		button.text = "(Appuyer sur une touche)"
 		set_process_unhandled_key_input(toggled_on)
 		
 		for i in get_parent().get_children():
