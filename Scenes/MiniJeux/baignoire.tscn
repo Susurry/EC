@@ -315,7 +315,7 @@ shader_parameter/width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kvi7"]
 atlas = ExtResource("4_0rf1o")
-region = Rect2(51, 0, 9, 7)
+region = Rect2(51, 0, 10, 10)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kvi7"]
 bg_color = Color(0.275113, 0.630969, 0.890769, 1)
@@ -390,7 +390,7 @@ script = ExtResource("6_ot1v4")
 
 [node name="Sprite2D" type="Sprite2D" parent="WindowSize/BouchonElements/Bouchon"]
 material = SubResource("ShaderMaterial_dj4r4")
-position = Vector2(0, -3.75)
+position = Vector2(1, -4)
 scale = Vector2(5.55, 5.55)
 texture = SubResource("AtlasTexture_1kvi7")
 centered = false

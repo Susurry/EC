@@ -9,35 +9,35 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_quksx"]
 atlas = ExtResource("4_quksx")
-region = Rect2(2, 22, 44, 25)
+region = Rect2(4, 22, 40, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4363w"]
 atlas = ExtResource("4_quksx")
-region = Rect2(60, 0, 16, 7)
+region = Rect2(63, 5, 16, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqmdg"]
 atlas = ExtResource("4_quksx")
-region = Rect2(51, 7, 8, 11)
+region = Rect2(82, 2, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15brd"]
 atlas = ExtResource("4_quksx")
-region = Rect2(51, 7, 8, 11)
+region = Rect2(82, 2, 10, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4tsbv"]
 atlas = ExtResource("4_quksx")
-region = Rect2(59, 7, 11, 10)
+region = Rect2(96, 2, 15, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqi1l"]
 atlas = ExtResource("4_quksx")
-region = Rect2(85, 0, 9, 16)
+region = Rect2(81, 30, 14, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx55q"]
 atlas = ExtResource("4_quksx")
-region = Rect2(76, 0, 9, 16)
+region = Rect2(98, 31, 13, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sntwy"]
 atlas = ExtResource("4_quksx")
-region = Rect2(94, 0, 13, 16)
+region = Rect2(2, 54, 14, 14)
 
 [node name="Velo" type="Node2D"]
 script = ExtResource("1_fhjup")
@@ -63,8 +63,8 @@ offset_bottom = 60.0
 
 [node name="VSeparator" type="VSeparator" parent="WindowSize"]
 layout_mode = 0
-offset_left = 395.0
-offset_right = 399.0
+offset_left = 397.0
+offset_right = 401.0
 offset_bottom = 59.0
 
 [node name="Container_Outils" type="PanelContainer" parent="WindowSize"]
@@ -130,38 +130,38 @@ id_piece_velo = 2
 
 [node name="Anchor_Chaine" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 visible = false
-position = Vector2(361, 386)
+position = Vector2(362, 432)
 scale = Vector2(0.1, 0.1)
 is_fixed = true
 
 [node name="Anchor_Boulon_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 visible = false
-position = Vector2(242, 389)
+position = Vector2(243, 431)
 scale = Vector2(0.1, 0.1)
 anchor_id = 1
 
 [node name="Anchor_Boulon_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 visible = false
-position = Vector2(566, 390)
+position = Vector2(567, 432)
 scale = Vector2(0.1, 0.1)
 anchor_id = 1
 
 [node name="Anchor_Sonette" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 visible = false
-position = Vector2(506, 210)
+position = Vector2(537, 247)
 scale = Vector2(0.1, 0.1)
 anchor_id = 2
 
 [node name="Anchor_Pompe_1" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 visible = false
-position = Vector2(230, 330)
+position = Vector2(230, 360)
 scale = Vector2(0.1, 0.1)
 anchor_id = 3
 piece_is_on = true
 
 [node name="Anchor_Pompe_2" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 visible = false
-position = Vector2(578, 330)
+position = Vector2(578, 360)
 scale = Vector2(0.1, 0.1)
 anchor_id = 3
 piece_is_on = true
