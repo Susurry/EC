@@ -29,7 +29,7 @@ func _ready() -> void:
 
 func initialize_timer() -> void:
 	pause_time(true)
-	if SaveManager.hasSave():
+	if SaveManager.getElement("Stats", "heure") != null:
 		heure = SaveManager.getElement("Stats", "heure")
 		minute = SaveManager.getElement("Stats", "minute")
 		seconde = SaveManager.getElement("Stats", "seconde")

@@ -37,7 +37,11 @@ size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_6uxt2")
 
 [node name="Button" type="Button" parent="HBoxContainer/ButtonPanel"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 toggle_mode = true
 text = "Action_key"
+
+[connection signal="toggled" from="HBoxContainer/ButtonPanel/Button" to="." method="_on_button_toggled"]

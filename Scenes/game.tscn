@@ -722,7 +722,7 @@ text_overrun_behavior = 1
 [node name="QuestList" type="VBoxContainer" parent="UI/QuestElements/QuestContainer/MarginContainer/Columns"]
 layout_mode = 2
 
-[node name="PauseElements" type="PanelContainer" parent="UI"]
+[node name="PauseElements" type="PanelContainer" parent="UI" node_paths=PackedStringArray("new_game_panel")]
 process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -732,6 +732,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d3cha")
 script = ExtResource("7_2fcg4")
+new_game_panel = NodePath("../ConfirmationPanel")
 
 [node name="Margin" type="MarginContainer" parent="UI/PauseElements"]
 layout_mode = 2
@@ -766,6 +767,7 @@ theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_ym3tv")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_lmoi6")
 tab_alignment = 1
 current_tab = 0
+tab_focus_mode = 0
 
 [node name="Menu" type="MarginContainer" parent="UI/PauseElements/Margin/VBox/TabContainer"]
 layout_mode = 2
@@ -788,14 +790,17 @@ horizontal_alignment = 1
 
 [node name="Unpause" type="Button" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
 layout_mode = 2
+focus_mode = 0
 text = "Reprendre le jeu"
 
 [node name="NewGame" type="Button" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
 layout_mode = 2
+focus_mode = 0
 text = "Nouvelle partie"
 
 [node name="QuitGame" type="Button" parent="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox"]
 layout_mode = 2
+focus_mode = 0
 text = "Quitter le jeu
 "
 
@@ -826,7 +831,8 @@ custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
-value = 100.0
+min_value = -60.0
+max_value = 15.0
 
 [node name="VFXslider" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
 custom_minimum_size = Vector2(0, 31)
@@ -844,7 +850,8 @@ custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
-value = 100.0
+min_value = -60.0
+max_value = 15.0
 
 [node name="SprintToggle" type="CheckBox" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
 custom_minimum_size = Vector2(0, 31)
@@ -857,6 +864,7 @@ alignment = 1
 custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 size_flags_horizontal = 0
+button_pressed = true
 text = "Synchronisation Verticale"
 alignment = 1
 
@@ -910,6 +918,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ConfirmationPanel" type="PanelContainer" parent="UI"]
+process_mode = 3
 visible = false
 custom_minimum_size = Vector2(270, 170)
 anchors_preset = 8
@@ -991,8 +1000,13 @@ autoplay = "bobbing"
 [connection signal="pressed" from="UI/DebugElements/Rows/Versioning" to="UI/DebugElements" method="_on_button_pressed"]
 [connection signal="toggled" from="UI/QuestElements/HidePanel/TextureButton" to="UI/QuestElements" method="_on_texture_button_toggled"]
 [connection signal="pressed" from="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox/Unpause" to="UI/PauseElements" method="_on_unpause_pressed"]
+[connection signal="pressed" from="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox/NewGame" to="UI/ConfirmationPanel" method="set_visible" binds= [true]]
 [connection signal="pressed" from="UI/PauseElements/Margin/VBox/TabContainer/Menu/VBox/QuitGame" to="UI/PauseElements" method="_on_quit_game_pressed"]
+[connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SFXslider/Slider" to="UI/PauseElements" method="_on_slider_sfx_value_changed"]
+[connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VFXslider/Slider" to="UI/PauseElements" method="_on_slider_music_value_changed"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
+[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_v_sync_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
-[connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/Retour" to="UI/PauseElements" method="_on_quit_game_pressed"]
+[connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/NewGame" to="UI/PauseElements" method="_on_new_game_pressed"]
+[connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/Retour" to="UI/ConfirmationPanel" method="set_visible" binds= [false]]

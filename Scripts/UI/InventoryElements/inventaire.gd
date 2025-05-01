@@ -17,7 +17,7 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("clear_items", clear_items)
 
 func _initialize_inventaire() -> void:
-	if SaveManager.hasSave():
+	if SaveManager.getElement("Player", "inventory") != null:
 		var item_list_load: Array = SaveManager.getElement("Player", "inventory")
 		
 		for i in item_list_load:

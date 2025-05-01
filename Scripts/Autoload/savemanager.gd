@@ -4,8 +4,6 @@ const SAVE_FILE_PATH = "user://EcoCampus.sav"
 var saveDict := {}
 var scorm := Scorm.new()
 
-var dontSave := false
-
 func _ready() -> void:
 	if hasSave():
 		self.load()
@@ -30,8 +28,6 @@ func getElement(category:String,element:String,onlyCategory:bool=false)->Variant
 func save() -> void:
 	EventBus.emit_signal("save_time")
 	
-	if dontSave:
-		return
 	var timeDict = Time.get_datetime_dict_from_system()
 	timeDict.erase("dst")
 	timeDict.erase("weekday")
@@ -97,4 +93,3 @@ func deleteSave() -> void:
 	saveDict = {}
 	if scorm.isGameOnMoodle():
 		scorm._setScormValue('cmi.suspend_data', "")
-	dontSave = true
