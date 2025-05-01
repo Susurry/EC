@@ -29,7 +29,7 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("set_mission_name", set_mission_name)
 
 func _initialize_quests() -> void:
-	if SaveManager.hasSave():
+	if SaveManager.getElement("Player", "curr_quests") != null:
 		var quest_list_load: Array = SaveManager.getElement("Player", "curr_quests")
 		
 		for i in quest_list_load:

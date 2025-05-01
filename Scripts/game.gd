@@ -15,13 +15,14 @@ func _ready() -> void:
 	_initialize_dialogic()
 
 func _initialize_signals() -> void:
-	EventBus.add_signal("set_ui_visibility", $UI.set_visible)
+	EventBus.add_signal("set_ui_visibility", $UI/InfoElements.set_visible)
+	EventBus.add_signal("set_ui_visibility", $UI/QuestElements.set_visible)
 
 func _initialize_viewport() -> void:
 	ThreadLoad.initialize_viewport(viewport)
 
 func _initialize_save() -> void:
-	if SaveManager.hasSave():
+	if SaveManager.getElement("Player", "scene") != null:
 		var load_scene: String = SaveManager.getElement("Player", "scene")
 		var load_pos: int = SaveManager.getElement("Player", "pos")
 		ThreadLoad.load_scene(load_scene, load_pos)

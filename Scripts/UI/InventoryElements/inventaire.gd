@@ -17,7 +17,7 @@ func _initialize_signals() -> void:
 	EventBus.add_signal("clear_items", clear_items)
 
 func _initialize_inventaire() -> void:
-	if SaveManager.hasSave():
+	if SaveManager.getElement("Player", "inventory") != null:
 		var item_list_load: Array = SaveManager.getElement("Player", "inventory")
 		
 		for i in item_list_load:
@@ -31,6 +31,12 @@ func add_item(item_name: String) -> void:
 	var item_load: Control = item_display.instantiate()
 	item_load.name = item_name
 	item_load.get_node("MarginContainer/TextureRect").texture = load(list_item.dictionnaire[item_name])
+	
+	if SaveManager.getElement("Misc", "first_time_added") == null:
+		SaveManager.setElement("Misc", {"first_time_added": true})
+		if Dialogic.current_timeline:
+			await Dialogic.timeline_ended
+		Dialogic.start("intro_appart", "book14")
 	
 	item_column.add_child(item_load)
 	item_list.append(item_name)

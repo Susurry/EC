@@ -37,7 +37,7 @@ func set_text_for_key() -> void:
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	if toggled_on == true:
-		button.text = "(Appuyer sur une touche)"
+		button.text = "(...)"
 		set_process_unhandled_key_input(toggled_on)
 		
 		for i in get_parent().get_children():
