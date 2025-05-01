@@ -53,6 +53,9 @@ func remove_item(item_name: String) -> void:
 		item_list.remove_at(item_del_id)
 		visible = check_amount()
 
+func set_visibility(_arg: bool):
+	visible = false if visible else check_amount()
+
 func check_amount() -> bool:
 	if item_list.size() == 0:
 		return false
