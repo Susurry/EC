@@ -33,11 +33,12 @@ Confortable, n'est-ce pas ? Vous pourrez descendre dès que vous le voudrez en [
 [end_timeline]
 label book11
 [wait time="1.2"]
-do EventBus.emit_signal("point_cursor", 1550.0, 350.0, 90.0)
+do EventBus.emit_signal("point_cursor", 1490.0.0, 446.0, 90.0)
 Un [b]Objectif[/b] vient de s'ajouter à votre liste de quête !
 Les [b]Objectifs[/b] sont la plupart du temps divisés en [b]Sous-Objectifs[/b], que vous devez accomplir afin de progresser dans votre mission.
-do EventBus.emit_signal("point_cursor", 940.0, 150.0, 0.0)
-Gardez en tête que vous devez accomplir ces objectifs ainsi que votre mission [b]avant la fin du chronomètre \: si celui-ci touche à sa fin, c'est perdu ![/b]
+do EventBus.emit_signal("point_cursor", 927.0, 132.0, 0.0)
+Gardez en tête que vous devez accomplir ces objectifs ainsi que votre mission [b]avant que le Thermomètre ne se remplisse \: si celui-ci est au max, c'est perdu ![/b]
+Note \: survoler l'interface permet de révéler le temps qu'il vous reste exactement !
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Commençons par le petit-déjeuner ! Rendez-vous à votre [b]réfrigérateur[/b] et interagissez avec !
 do EventBus.emit_signal("add_quest", "0-3_frigo", 3)
@@ -46,12 +47,11 @@ label book6
 [wait time="0.6"]
 do EventBus.emit_signal("set_quest_state", "0-3_frigo")
 Dans [color=green]Éco-Campus[/color], les choix que vous faites ont des conséquences sur votre environnement.
-do EventBus.emit_signal("point_cursor", 1500.0, 50.0, 90.0)
+do EventBus.emit_signal("point_cursor", 889.0, 182.0, 0.0)
 Vous voyez ce nombre ? Il s'agit de votre [b]Impact Environemental[/b].
 Votre [b]Impact Environnemental[/b] démarre à une moyenne de 10 \: si vos actions ont des [color=green]conséquences positives[/color], votre [color=green]impact diminuera[/color] \: si vos actions ont des [color=red]conséquences négatives[/color], votre [color=red]impact augmentera[/color].
 Votre objectif est donc essayer de [color=green]diminer le plus possible votre Impact Environnemental[/color] !
-do EventBus.emit_signal("point_cursor", 940.0, 150.0, 0.0)
-Si votre Impact Environnemental évolue au delà d'un certain seuil, la [b]Vitesse du Chronomètre[/b] évoluera en conséquent.
+Si votre Impact Environnemental évolue au delà d'un certain seuil, la [b]Vitesse du Thermomètre[/b] évoluera en conséquent.
 Un [color=green]meilleur Impact[/color] environnemental [color=green]ralentit la vitesse[/color] de découlement du chronomètre, tandis qu'un [color=red]mauvais Impact l'accélère[/color] !
 do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
 Passons maintenant au prochain sous-objectif ! Rendez-vous dans votre [b]salle de bain[/b] pour la suite de l'aventure !
@@ -68,6 +68,7 @@ label book8
 do EventBus.emit_signal("set_quest_state", "0-4_baignoire")
 Vous êtes maintenant fin prêt à découvrir le monde d'[color=green]Éco-Campus[/color] \: vous pouvez désormais sortir de chez vous !
 Cependant n'hésitez pas à prendre le temps d'explorer, et de potentiellement découvrir des [color=yellow]Objectifs Secrets[/color], qui [b]amélioreront[/b] davantage votre Impact Environnemental.
+Dernières informations : vous pouvez mettre le jeu en [b]pause[/b] et accéder aux [b]options[/b] en appuyant sur [b]Échap[/b] ou, sur mobile, le [b]bouton à haut à gauche de l'écran[/b]. Notez aussi que le jeu [b]sauvegarde votre progression automatiquement[/b] !
 Amusez-vous bien sur [color=green]Éco-Campus[/color] !
 do EventBus.emit_signal("change_time", 300)
 do EventBus.emit_signal("set_quest_state", "0_tutoriel")
@@ -78,7 +79,7 @@ Bravo, vous venez de trouver un [color=yellow]Objectif Secret[/color] ! Il s'agi
 Les Objectifs Secrets vous apportent un [color=green]bonus à l'Impact Environnemental[/color], qui peut être plus élevé en fonction de votre initiative ! Essayez de trouver la meilleure action possible !
 [end_timeline]
 label book10
-do EventBus.emit_signal("point_cursor", 1500.0, 150.0, 90.0)
+do EventBus.emit_signal("point_cursor", 1020.0, 182.0, 0.0)
 [wait time="0.6"]
 Note \: vous venez d'obtenir votre premier [b]Follower[/b] !
 Les Followers vous apportent immédiatement du [color=green]temps supplémentaire[/color] sur le Chronomètre quand sensibilisés, et [b]plus tard à la fin du chapitre[/b] !

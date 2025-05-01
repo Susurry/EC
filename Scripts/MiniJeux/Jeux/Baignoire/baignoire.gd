@@ -61,8 +61,10 @@ func shower_end() -> void: # Vide la baignoire puis finis le mini jeu -> valide 
 	timer.stop()
 	
 	if is_bath_mode:
+		SaveManager.setElement("Choice", {"Lavage": 2}) #sauvegarde du choix pour Dialogic
 		animated_sprite.play("bath_end")
 	else:
+		SaveManager.setElement("Choice", {"Lavage": 1}) #sauvegarde du choix pour Dialogic
 		animated_sprite.play("shower_end")
 	
 	await get_tree().create_timer(2.0).timeout

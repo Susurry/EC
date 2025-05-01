@@ -1,6 +1,7 @@
 label book1
 Voulez-vous vous rendre au Campus à pieds ? Ce n'est pas la porte à coté, vous en aurez pour [b]30 minutes[/b].
 - Oui
+	do SaveManager.setElement("Choice", {"Transport": 3})
 	do EventBus.emit_signal("set_empreinte", -0.3)
 	do SaveManager.setElement("Points", {"2_transport": -0.3})
 	do EventBus.emit_signal("change_time", -1800)
