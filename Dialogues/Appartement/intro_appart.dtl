@@ -89,6 +89,7 @@ do EventBus.emit_signal("point_cursor", 4000, 0.0, 0.0)
 [wait time="0.6"]
 jump pnj_eboueur/book3
 label book12
+do AudioManager.play_sfx(load("[uid]"),0)
 [wait time="0.6"]
 [i]Dring, dring...[/i]
 do EventBus.emit_signal("play_cutscene", "phone_start")
@@ -111,3 +112,10 @@ do EventBus.emit_signal("add_quest", "1-1_breakfast")
 do EventBus.emit_signal("add_quest", "1-2_shower")
 if SaveManager.getElement("Quests", "0_tutoriel") != null:
 	jump intro_appart/book11
+[end_timeline]
+label book14
+do EventBus.emit_signal("point_cursor", 87.0, 526.0, 270.0)
+Note \: vous venez d'ajouter un objet à votre [b]inventaire[/b] !
+Les objets dans votre inventaire vous offrent des options supplémentaires lors de choix, ou peuvent vous indiquer où vous en êtes dans une quête. Votre inventaire n'est qu'à titre indicatif : pas besoin de cliquer dessus !
+do EventBus.emit_signal("point_cursor", 4000.0, 0.0, 0.0)
+[end_timeline]

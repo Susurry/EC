@@ -32,7 +32,7 @@ func add_item(item_name: String) -> void:
 	item_load.name = item_name
 	item_load.get_node("MarginContainer/TextureRect").texture = load(list_item.dictionnaire[item_name])
 	
-	if SaveManager.getElement("Misc", "first_time_added") == null:
+	if SaveManager.getElement("Quests", "0_tutoriel") != null and SaveManager.getElement("Misc", "first_time_added") == null:
 		SaveManager.setElement("Misc", {"first_time_added": true})
 		if Dialogic.current_timeline:
 			await Dialogic.timeline_ended
