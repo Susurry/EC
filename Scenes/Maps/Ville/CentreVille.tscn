@@ -985,7 +985,7 @@ texture = ExtResource("42_bk04d")
 [node name="PNJ_Manager" type="Node2D" parent="."]
 script = ExtResource("4_pmrli")
 pnj_quantity = 30
-max_dial_id = 6
+max_dial_id = 10
 
 [node name="Middle_Targets" type="Node2D" parent="PNJ_Manager"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsnubr52gfqvq"]
+[gd_scene load_steps=12 format=3 uid="uid://bsnubr52gfqvq"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_304nj"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="1_fetsl"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dxcl7n4ldj2i" path="res://Audio/SFX/tv_debranche.wav" id="3_8dpru"]
 [ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="3_kqpfy"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="3_s81gx"]
+[ext_resource type="Texture2D" uid="uid://ck26glf5dyy2c" path="res://Graphics/Other/bg_tel.png" id="4_5caps"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dpru"]
 atlas = ExtResource("3_s81gx")
@@ -51,6 +52,16 @@ offset_right = 1000.0
 offset_bottom = 400.0
 script = ExtResource("2_dkvd2")
 sfx_bouton = ExtResource("3_8dpru")
+
+[node name="TextureRect" type="TextureRect" parent="WindowSize"]
+modulate = Color(0.490196, 0.490196, 0.490196, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5caps")
 
 [node name="Prise" type="Button" parent="WindowSize"]
 layout_mode = 0
