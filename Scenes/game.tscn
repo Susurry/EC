@@ -28,9 +28,9 @@
 [ext_resource type="Script" uid="uid://chi1tpicbea82" path="res://Scripts/MiniJeux/minigame_manager.gd" id="21_68r2r"]
 [ext_resource type="Texture2D" uid="uid://d111wqta8chq3" path="res://Graphics/UI/hand_cursor.svg" id="24_vm72l"]
 [ext_resource type="Script" uid="uid://pgfwtff66dch" path="res://Scripts/UI/pointer.gd" id="25_22asu"]
-[ext_resource type="AudioStream" uid="uid://bjhtvd1epxpd" path="res://Audio/SFX/Temp/FB_QuestNew.wav" id="26_cwurv"]
+[ext_resource type="AudioStream" uid="uid://c64s4dbvnyvj7" path="res://Audio/SFX/quete_ajoute.wav" id="25_xe308"]
+[ext_resource type="AudioStream" uid="uid://c82ntiuivevlk" path="res://Audio/SFX/quete_done.wav" id="26_xe308"]
 [ext_resource type="Texture2D" uid="uid://bilxh1ndfy4i2" path="res://Graphics/UI/Bookmark.png" id="27_ese38"]
-[ext_resource type="AudioStream" uid="uid://dcqkt8mbujfqy" path="res://Audio/SFX/Temp/FB_QuestDone.wav" id="27_mucmn"]
 [ext_resource type="Texture2D" uid="uid://pu8brk7jdv6u" path="res://Graphics/UI/BookmarkHover.png" id="28_oeip8"]
 [ext_resource type="Texture2D" uid="uid://u8vbn8hg24kp" path="res://Graphics/UI/EClogo.png" id="30_xe308"]
 [ext_resource type="PackedScene" uid="uid://b1gqn6grydsaf" path="res://Scenes/UI/PauseElements/rebind_panel.tscn" id="31_xe308"]
@@ -669,8 +669,8 @@ quest_data = ExtResource("16_r4mnh")
 quest_prefab = ExtResource("17_1aw0d")
 label_medium_settings = SubResource("LabelSettings_mucmn")
 label_small_settings = SubResource("LabelSettings_tgy6u")
-sfx_new_quest = ExtResource("26_cwurv")
-sfx_quest_done = ExtResource("27_mucmn")
+sfx_new_quest = ExtResource("25_xe308")
+sfx_quest_done = ExtResource("26_xe308")
 
 [node name="HidePanel" type="MarginContainer" parent="UI/QuestElements"]
 layout_mode = 2
@@ -1005,8 +1005,8 @@ autoplay = "bobbing"
 [connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SFXslider/Slider" to="UI/PauseElements" method="_on_slider_sfx_value_changed"]
 [connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VFXslider/Slider" to="UI/PauseElements" method="_on_slider_music_value_changed"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggle_toggled"]
-[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_v_sync_toggle_toggled"]
+[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/NewGame" to="UI/PauseElements" method="_on_new_game_pressed"]
 [connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/Retour" to="UI/ConfirmationPanel" method="set_visible" binds= [false]]
