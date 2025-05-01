@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
-[ext_resource type="AudioStream" uid="uid://cpn32hail8dmj" path="res://Audio/Streams/Loop_ville.tres" id="2_uymh2"]
+[ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_d0ba6"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="3_udijt"]
 [ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="3_vn6re"]
 [ext_resource type="TileSet" uid="uid://c4cih28217htv" path="res://Graphics/Tilesets/Tileset_Ville.tres" id="3_vtu41"]
@@ -239,7 +239,7 @@ script = ExtResource("1_r1ah8")
 background_color = Color(0.745098, 0.882353, 0.972549, 1)
 limit_right = 1216
 limit_bottom = 1008
-music = ExtResource("2_uymh2")
+music = ExtResource("2_d0ba6")
 music_volume = -10.0
 
 [node name="StartPoints" type="Node2D" parent="."]
