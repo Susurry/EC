@@ -17,6 +17,7 @@ func _ready() -> void:
 func _initialize_signals() -> void:
 	EventBus.add_signal("set_ui_visibility", $UI/InfoElements.set_visible)
 	EventBus.add_signal("set_ui_visibility", $UI/QuestElements.set_visible)
+	EventBus.add_signal("set_ui_visibility", $UI/InvElements.set_visibility)
 
 func _initialize_viewport() -> void:
 	ThreadLoad.initialize_viewport(viewport)
