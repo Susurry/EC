@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ca0tw334ms12f" path="res://Graphics/Characters/character_postier.png" id="9_wgo81"]
 [ext_resource type="Texture2D" uid="uid://w148bo611i2e" path="res://Graphics/Characters/character_journalistem.png" id="10_knjd3"]
 [ext_resource type="PackedScene" uid="uid://be5otkrreg5lq" path="res://Scenes/Props/CentreVille/porte_journal.tscn" id="10_t3by6"]
-[ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="11_l2rjx"]
+[ext_resource type="PackedScene" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="11_l2rjx"]
 [ext_resource type="PackedScene" uid="uid://dlpedsflmqs68" path="res://Scenes/Props/CentreVille/porte_tcc.tscn" id="12_n6k4u"]
 [ext_resource type="Texture2D" uid="uid://b8pngxsc05lmx" path="res://Graphics/Characters/character_verdure.png" id="13_knjd3"]
 [ext_resource type="PackedScene" uid="uid://o2u3rlbw32ku" path="res://Scenes/Props/CentreVille/metro_centre.tscn" id="13_mhy33"]
