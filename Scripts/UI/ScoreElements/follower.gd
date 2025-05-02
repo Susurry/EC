@@ -15,6 +15,7 @@ func _ready() -> void:
 func _initialize_save() -> void:
 	if SaveManager.getElement("Stats", "follower"):
 		follower = SaveManager.getElement("Stats", "follower")
+		time_element.update_grading()
 
 func _initialize_follower() -> void:
 	follower_label.text = str(follower)
@@ -26,6 +27,6 @@ func add_follower(arg: int = 1) -> void:
 	anim_player.play("feedback_good")
 	follower += arg
 	follower_label.text = str(follower)
-	time_element.update_grading()
+	time_element.update_grading(true)
 	time_element.change_time(180)
 	SaveManager.setElement("Stats",{"follower":follower})

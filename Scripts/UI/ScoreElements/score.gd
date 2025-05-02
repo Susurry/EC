@@ -16,6 +16,7 @@ func _ready() -> void:
 func _initialize_save() -> void:
 	if SaveManager.getElement("Stats", "score"):
 		empreinte = SaveManager.getElement("Stats", "score")
+		time_element.update_grading()
 
 func _initialize_empreinte() -> void:
 	empreinte_label.text = str(empreinte)
@@ -25,7 +26,7 @@ func on_update_empreinte(arg: float) -> void:
 	play_feedback(arg)
 	empreinte += arg  * 2 # LE "* 2" EST POUR LES BESOINS DE LA VERTICAL SLICE- À RETIRER DANS LA VERSION FINALE !!!
 	empreinte_label.text = str(empreinte)
-	time_element.update_grading()
+	time_element.update_grading(true)
 	SaveManager.setElement("Stats",{"score":empreinte})
 
 func play_feedback(score: float) -> void:
