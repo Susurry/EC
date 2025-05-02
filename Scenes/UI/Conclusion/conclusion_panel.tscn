@@ -126,6 +126,6 @@ vertical_alignment = 1
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 28
-text = "Terminer le jeu"
+text = "Nouvelle Partie"
 
 [connection signal="pressed" from="Margin/VBox/EndPanel/VBox/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -127,4 +127,7 @@ func _initialize_score() -> void:
 		_: note_label.text = "F"
 
 func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+	SaveManager.deleteSave()
+	EventBus.emit_signal("clear_items")
+	EventBus.emit_signal("clean_quests")
+	ThreadLoad.load_scene("Journalistes")

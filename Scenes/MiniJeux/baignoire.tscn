@@ -11,7 +11,6 @@
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_6m5wv"]
 [ext_resource type="Texture2D" uid="uid://c2ykvd3x4lh6a" path="res://Graphics/UI/water_drop.png" id="9_6m5wv"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dj4r4"]
 atlas = ExtResource("2_3ua7n")
 region = Rect2(288, 64, 32, 64)
@@ -386,10 +385,10 @@ texture = SubResource("AtlasTexture_6m5wv")
 [node name="BouchonElements" type="Node2D" parent="WindowSize"]
 
 [node name="Bouchon" type="Button" parent="WindowSize/BouchonElements"]
-offset_left = 315.0
-offset_top = 368.0
-offset_right = 365.0
-offset_bottom = 396.0
+offset_left = 323.0
+offset_top = 355.0
+offset_right = 373.0
+offset_bottom = 383.0
 focus_mode = 0
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
@@ -408,10 +407,10 @@ texture = SubResource("AtlasTexture_1kvi7")
 centered = false
 
 [node name="PosBoucher" type="Marker2D" parent="WindowSize/BouchonElements"]
-position = Vector2(375, 381)
+position = Vector2(375, 371)
 
 [node name="PosDeboucher" type="Marker2D" parent="WindowSize/BouchonElements"]
-position = Vector2(315, 368)
+position = Vector2(323, 355)
 
 [node name="ProgressBar" type="ProgressBar" parent="WindowSize"]
 layout_mode = 0

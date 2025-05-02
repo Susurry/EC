@@ -159,7 +159,7 @@ anchor_id = 1
 
 [node name="Anchor_Sonette" parent="WindowSize/Anchors" instance=ExtResource("3_tgnvy")]
 visible = false
-position = Vector2(537, 247)
+position = Vector2(519, 191)
 scale = Vector2(0.1, 0.1)
 anchor_id = 2
 
