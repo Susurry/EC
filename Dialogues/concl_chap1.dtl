@@ -30,9 +30,9 @@ if {PetitDej} == 5:
 Sonia: Et pour la boisson ?
 
 if {PetitDejB} == 1:
-	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Du [b]thé[/b] au petit déjeuner ! [if {PetitDej} Un petit déjeuner typiquement anglais on dirait bien ! if == 5/Une boisson chaude pour bien se réveiller !]
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Du [b]thé[/b] au petit déjeuner ! Une boisson chaude pour bien se réveiller !
 if {PetitDejB} == 2:
-	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Du [b]café[/b] au petit déjeuner ! Les amateurs vont adorer !
+	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] Du [b]café[/b] au petit déjeuner ! Une boisson chaude que les amateurs vont adorer !
 if {PetitDejB} == 3:
 	Sonia: .[pause=0,3].[pause=0,3].[pause=0,4] De [b]l'eau en bouteille[/b] ! Pas besoin de plus !
 if {PetitDejB} == 4:
