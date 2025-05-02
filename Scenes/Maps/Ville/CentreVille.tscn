@@ -96,7 +96,6 @@ region = Rect2(2, 208, 77, 40)
 size = Vector2(70, 31)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bk04d"]
-load_path = "res://.godot/imported/car_new.png-5b3514e2a56acd50bc4031430c8542a1.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6r3ra"]
 atlas = SubResource("CompressedTexture2D_bk04d")
@@ -106,7 +105,6 @@ region = Rect2(161, 22, 77, 36)
 size = Vector2(70, 26)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ytwbq"]
-load_path = "res://.godot/imported/car_new.png-5b3514e2a56acd50bc4031430c8542a1.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3bks"]
 atlas = SubResource("CompressedTexture2D_ytwbq")
@@ -1486,6 +1484,12 @@ position = Vector2(425, 485)
 
 [node name="target2_4" type="Marker2D" parent="CarManager/Path2"]
 position = Vector2(438, 495)
+
+[node name="target2_5" type="Marker2D" parent="CarManager/Path2"]
+position = Vector2(955, 495)
+
+[node name="target2_6" type="Marker2D" parent="CarManager/Path2"]
+position = Vector2(973, 480)
 
 [node name="end2" type="Marker2D" parent="CarManager/Path2"]
 position = Vector2(973, -47)
