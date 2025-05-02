@@ -1529,7 +1529,6 @@ autoplay = "bobbing"
 [connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SFXslider/Slider" to="UI/PauseElements" method="_on_slider_sfx_value_changed"]
 [connection signal="value_changed" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VFXslider/Slider" to="UI/PauseElements" method="_on_slider_music_value_changed"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/SprintToggle" to="UI/PauseElements" method="_on_sprint_toggle_toggled"]
-[connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/VSyncToggle" to="UI/PauseElements" method="_on_v_sync_toggle_toggled"]
 [connection signal="toggled" from="UI/PauseElements/Margin/VBox/TabContainer/Options/Options/FullscreenToggle" to="UI/PauseElements" method="_on_fullscreen_toggle_toggled"]
 [connection signal="pressed" from="UI/ConfirmationPanel/Menu/VBox/NewGame" to="UI/PauseElements" method="_on_new_game_pressed"]
