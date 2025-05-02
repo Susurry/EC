@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cysq8n807qxk6"]
+[gd_scene load_steps=16 format=3 uid="uid://cysq8n807qxk6"]
 
 [ext_resource type="Script" uid="uid://dia0ley3to101" path="res://Scripts/MiniJeux/minigame_setup.gd" id="1_fhjup"]
 [ext_resource type="PackedScene" uid="uid://dpetw1dobdtfv" path="res://Scenes/MiniJeux/Velo/pièce_vélo.tscn" id="2_45o1r"]
 [ext_resource type="Script" uid="uid://b81ew5onrw8io" path="res://Scripts/MiniJeux/Jeux/Vélo/velo.gd" id="2_djmmm"]
+[ext_resource type="Texture2D" uid="uid://dfsp0je4k6vhf" path="res://Graphics/Other/bg_velo.png" id="3_4363w"]
 [ext_resource type="PackedScene" uid="uid://bob0ru5rubcc1" path="res://Scenes/MiniJeux/Velo/anchor.tscn" id="3_tgnvy"]
 [ext_resource type="Texture2D" uid="uid://sm0i5714jmm7" path="res://Graphics/TEMP/TEMP_Trash.png" id="4_quksx"]
 [ext_resource type="PackedScene" uid="uid://b1dbx3flwo4jg" path="res://Scenes/MiniJeux/Velo/outil.tscn" id="5_djmmm"]
@@ -50,6 +51,16 @@ anchors_preset = 0
 offset_right = 800.0
 offset_bottom = 600.0
 script = ExtResource("2_djmmm")
+
+[node name="TextureRect" type="TextureRect" parent="WindowSize"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4363w")
 
 [node name="Sprite2D" type="Sprite2D" parent="WindowSize"]
 position = Vector2(404, 342)

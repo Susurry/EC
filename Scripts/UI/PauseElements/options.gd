@@ -46,6 +46,8 @@ func _on_slider_music_value_changed(value: float) -> void:
 
 func _on_new_game_pressed() -> void:
 	SaveManager.deleteSave()
+	EventBus.emit_signal("clear_items")
+	EventBus.emit_signal("clean_quests")
 	ThreadLoad.load_scene("Journalistes")
 	new_game_panel.visible = false
 	_on_unpause_pressed()
