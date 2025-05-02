@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://6eecifybnu8r"]
+[gd_scene load_steps=56 format=4 uid="uid://6eecifybnu8r"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_8h08n"]
 [ext_resource type="TileSet" uid="uid://k2cs28yqpjqg" path="res://Graphics/Tilesets/Tileset_Appartement.tres" id="2_2g8ls"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://b4yoqkl1ue1uh" path="res://Scripts/Events/Appart/mission_chair_check.gd" id="17_0hnt7"]
 [ext_resource type="Script" uid="uid://37faje2org61" path="res://Scripts/Events/Appart/mission_tele_check.gd" id="19_mxecm"]
 [ext_resource type="Script" uid="uid://blsvncors5gad" path="res://Scripts/Events/cutscenes.gd" id="21_kqdyn"]
+[ext_resource type="AudioStream" uid="uid://bw06al8pi8pco" path="res://Audio/SFX/cell_phone.wav" id="22_uagkx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jggg6"]
 atlas = ExtResource("6_dxfoh")
@@ -153,6 +154,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_kqdyn"]
 resource_name = "phone_start"
+length = 2.0
+step = 0.5
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -160,9 +163,12 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [ExtResource("22_uagkx"), 0.0],
+"method": &"play_audio"
+}, {
 "args": ["PhoneStart"],
 "method": &"change_player_state"
 }]

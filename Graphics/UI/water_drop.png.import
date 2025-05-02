@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bipu7qfamijwp"
-path="res://.godot/imported/WIP_SUn.png-0a32fa41e89382d3c4d6f4db78262f81.ctex"
+uid="uid://c2ykvd3x4lh6a"
+path="res://.godot/imported/water_drop.png-6355da0365f8188ff3b48e43861fd48c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/TEMP/WIP_SUn.png"
-dest_files=["res://.godot/imported/WIP_SUn.png-0a32fa41e89382d3c4d6f4db78262f81.ctex"]
+source_file="res://Graphics/UI/water_drop.png"
+dest_files=["res://.godot/imported/water_drop.png-6355da0365f8188ff3b48e43861fd48c.ctex"]
 
 [params]
 
