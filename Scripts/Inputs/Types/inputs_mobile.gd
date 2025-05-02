@@ -11,12 +11,14 @@ const INTERACT_COOLDOWN: float = 1
 var touched: bool = false
 var interact_pressed: bool
 var interact_cooldown: float
+var in_event: bool = false
 
 func _ready() -> void:
 	initialize_signals()
 
 func initialize_signals() -> void:
 	Dialogic.timeline_ended.connect(onTimelineEnded)
+	EventBus.add_signal("in_game_event_active", set_in_event)
 
 func _process(delta: float) -> void:
 	if touched:
@@ -64,3 +66,10 @@ func _on_interact_button_pressed() -> void:
 		interact_pressed = true
 	else:
 		interact_pressed = false
+
+func _on_button_pressed() -> void:
+	if !Dialogic.current_timeline and not in_event:
+		EventBus.emit_signal("set_pause")
+
+func set_in_event(arg: bool):
+	in_event = arg
