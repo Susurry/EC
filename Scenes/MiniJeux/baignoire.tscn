@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://drn703q5tni2a" path="res://Graphics/Props/AppartementSolo.png" id="5_1kvi7"]
 [ext_resource type="Script" uid="uid://bu6mobch8a4to" path="res://Scripts/MiniJeux/Jeux/Baignoire/hover.gd" id="6_ot1v4"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="7_6m5wv"]
-[ext_resource type="Texture2D" uid="uid://c2ykvd3x4lh6a" path="res://Graphics/TEMP/850785.png" id="9_6m5wv"]
+[ext_resource type="Texture2D" uid="uid://c2ykvd3x4lh6a" path="res://Graphics/UI/water_drop.png" id="9_6m5wv"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dj4r4"]
 atlas = ExtResource("2_3ua7n")

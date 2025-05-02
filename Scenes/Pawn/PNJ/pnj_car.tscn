@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cntkcubtfb3kf" path="res://Scripts/Pawn/Types/PNJ/state_regular.gd" id="3_s7el4"]
 [ext_resource type="Script" uid="uid://c4yrsrt0ks3p4" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pathfinding_pnj_car.gd" id="4_6k2ip"]
 [ext_resource type="Shader" uid="uid://c2ug5tlxurkwa" path="res://Shaders/outline.gdshader" id="5_qk2tl"]
-[ext_resource type="Texture2D" uid="uid://n2uciyby3swr" path="res://Graphics/TEMP/car_light_blue.png" id="6_6k2ip"]
+[ext_resource type="Texture2D" uid="uid://n2uciyby3swr" path="res://Graphics/Props/car_light_blue.png" id="6_6k2ip"]
 [ext_resource type="Script" uid="uid://b3126vbix628p" path="res://Scripts/Pawn/player_anim.gd" id="7_4d6qx"]
 [ext_resource type="Shape2D" uid="uid://uttw2jeb5cji" path="res://Misc/Collision/detecteur_horizontal.tres" id="8_sfww7"]
 [ext_resource type="Shape2D" uid="uid://8n7miugf85s8" path="res://Misc/Collision/collision_verticale.tres" id="9_4d6qx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Shape2D" uid="uid://cphdc5q6vv14x" path="res://Misc/Collision/collision_horizontal.tres" id="11_e0pbg"]
 [ext_resource type="Shape2D" uid="uid://dqvrvmpna3vjc" path="res://Misc/Collision/collision_transition.tres" id="12_qk2tl"]
 [ext_resource type="Shape2D" uid="uid://bs7umie8pm1ec" path="res://Misc/Collision/detecteur_transition.tres" id="13_q6yjv"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_utgjr"]
 resource_local_to_scene = true
