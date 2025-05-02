@@ -1488,6 +1488,12 @@ position = Vector2(425, 485)
 [node name="target2_4" type="Marker2D" parent="CarManager/Path2"]
 position = Vector2(438, 495)
 
+[node name="target2_5" type="Marker2D" parent="CarManager/Path2"]
+position = Vector2(955, 495)
+
+[node name="target2_6" type="Marker2D" parent="CarManager/Path2"]
+position = Vector2(973, 480)
+
 [node name="end2" type="Marker2D" parent="CarManager/Path2"]
 position = Vector2(973, -47)
 
