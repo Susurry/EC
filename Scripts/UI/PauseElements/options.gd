@@ -51,3 +51,7 @@ func _on_new_game_pressed() -> void:
 	ThreadLoad.load_scene("Journalistes")
 	new_game_panel.visible = false
 	_on_unpause_pressed()
+
+
+func _on_rich_text_label_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(meta)

@@ -15,6 +15,7 @@ func _ready() -> void:
 func _initialize_save() -> void:
 	if SaveManager.getElement("Stats", "follower"):
 		follower = SaveManager.getElement("Stats", "follower")
+		time_element.update_grading()
 
 func _initialize_follower() -> void:
 	follower_label.text = str(follower)

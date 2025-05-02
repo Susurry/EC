@@ -36,7 +36,6 @@ func initialize_timer() -> void:
 		time_multi =SaveManager.getElement("Stats", "time_multi")
 		time_label.text = format_string % [heure, minute, seconde]
 		time = (heure * 3600) + (minute * 60) + seconde # Calcul du temps initial en secs
-
 	else:
 		heure = start_heure
 		minute = start_minute
@@ -68,7 +67,7 @@ func _process(delta: float) -> void:
 			await Dialogic.timeline_ended
 		Dialogic.start("debug_game_over")
 
-func update_grading() -> void:
+func update_grading(upd_music: bool = false) -> void:
 	var grading_score: float = carbone_element.empreinte - floor(follower_element.follower/4)
 	match grading_score:
 		var x when x >= 18:
@@ -92,7 +91,9 @@ func update_grading() -> void:
 		var x when x <= 2:
 			time_multi =  0.75
 			time_multi_label.text = ">"
-	update_music()
+	
+	if upd_music:
+		update_music()
 
 func update_music() -> void:
 	if time_multi > 1:

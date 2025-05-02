@@ -16,6 +16,7 @@ func _ready() -> void:
 func _initialize_save() -> void:
 	if SaveManager.getElement("Stats", "score"):
 		empreinte = SaveManager.getElement("Stats", "score")
+		time_element.update_grading()
 
 func _initialize_empreinte() -> void:
 	empreinte_label.text = str(empreinte)
