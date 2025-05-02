@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://dlgvxdfciokt4"]
+[gd_scene load_steps=63 format=4 uid="uid://dlgvxdfciokt4"]
 
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_d0ba6"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dnhbmnrhr0bam" path="res://Graphics/Characters/Generic/character_generic27.png" id="26_whdg5"]
 [ext_resource type="Texture2D" uid="uid://bx4c1ixbp3uvi" path="res://Graphics/Characters/Generic/character_generic28.png" id="27_vn6re"]
 [ext_resource type="Script" uid="uid://b2k14hdfnse31" path="res://Scripts/Events/PeriphOuest/mission_eboueur.gd" id="28_1cwe4"]
+[ext_resource type="AudioStream" uid="uid://bw06al8pi8pco" path="res://Audio/SFX/cell_phone.wav" id="28_d0ba6"]
 [ext_resource type="Texture2D" uid="uid://2tn8hjie0wpr" path="res://Graphics/Characters/character_reparateur.png" id="29_7f4wu"]
 [ext_resource type="Script" uid="uid://cu5g2d6k8y6fw" path="res://Scripts/Pawn/Types/PNJ/PNJ_Mobile/Car/pnj_car_manager.gd" id="30_whdg5"]
 [ext_resource type="Script" uid="uid://ccdy0c2fkd3rn" path="res://Scripts/Events/Shared/player_car_check.gd" id="34_d0ba6"]
@@ -46,7 +47,6 @@ atlas = ExtResource("6_i6vih")
 region = Rect2(24, 164, 32, 72)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6qbes"]
-load_path = "res://.godot/imported/car_new.png-5b3514e2a56acd50bc4031430c8542a1.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txfdo"]
 atlas = SubResource("CompressedTexture2D_6qbes")
@@ -56,7 +56,6 @@ region = Rect2(2, 22, 77, 36)
 size = Vector2(71, 23)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_82jj0"]
-load_path = "res://.godot/imported/car_new.png-5b3514e2a56acd50bc4031430c8542a1.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_guvjv"]
 atlas = SubResource("CompressedTexture2D_82jj0")
@@ -202,6 +201,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_d0ba6"]
 resource_name = "phone_start"
+length = 2.0
 step = 0.25
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -210,9 +210,12 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [ExtResource("28_d0ba6"), 0.0],
+"method": &"play_audio"
+}, {
 "args": ["PhoneStart"],
 "method": &"change_player_state"
 }]

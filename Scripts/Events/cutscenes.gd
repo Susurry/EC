@@ -20,6 +20,9 @@ func cutscene_dialogue(time_cut: String, book_id: int) -> void:
 	cut_anim.pause()
 	Dialogic.start(time_cut, "book" + str(book_id))
 
+func play_audio(sfx: AudioStreamWAV, volume: float) -> void:
+	AudioManager.play_sfx(sfx, volume)
+
 func cutscene_end(_anim_name: StringName) -> void:
 	EventBus.emit_signal("in_game_event_active", false)
 	Dialogic.emit_signal("timeline_ended")
