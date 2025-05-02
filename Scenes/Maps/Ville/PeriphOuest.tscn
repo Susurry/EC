@@ -3,15 +3,16 @@
 [ext_resource type="Script" uid="uid://cf8lmues6tq0y" path="res://Scripts/Maps/map_setup.gd" id="1_r1ah8"]
 [ext_resource type="AudioStream" uid="uid://dtpf1o6owrl73" path="res://Audio/Streams/Campus_full.tres" id="2_d0ba6"]
 [ext_resource type="TileSet" uid="uid://dlg78prnl1nl7" path="res://Graphics/Tilesets/Tileset_Debug.tres" id="3_udijt"]
-[ext_resource type="PackedScene" uid="uid://nyotmwwmt4mu" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="3_vn6re"]
+[ext_resource type="PackedScene" path="res://Scenes/Pawn/PNJ/pnj_child_immobile.tscn" id="3_vn6re"]
 [ext_resource type="TileSet" uid="uid://c4cih28217htv" path="res://Graphics/Tilesets/Tileset_Ville.tres" id="3_vtu41"]
 [ext_resource type="Texture2D" uid="uid://bdukdhad5h1tn" path="res://Graphics/Props/VilleSolo.png" id="4_4y10b"]
 [ext_resource type="PackedScene" uid="uid://7vbx36dyp2ky" path="res://Scenes/Props/PeriphOuest/metro_periph.tscn" id="4_vtu41"]
 [ext_resource type="Texture2D" uid="uid://bhd73rqimc5kq" path="res://Graphics/Characters/Child/character_enfant4.png" id="5_m7kr6"]
 [ext_resource type="PackedScene" uid="uid://cxjdpgf3jknyw" path="res://Scenes/Props/PeriphOuest/bus_periph.tscn" id="5_vtu41"]
-[ext_resource type="Texture2D" uid="uid://n2uciyby3swr" path="res://Graphics/TEMP/car_light_blue.png" id="6_i6vih"]
+[ext_resource type="Texture2D" uid="uid://b2dqjg2p1nol5" path="res://Graphics/Props/car_red.png" id="6_d0ba6"]
 [ext_resource type="PackedScene" uid="uid://cfcouisq7sial" path="res://Scenes/Props/PeriphOuest/bus_corpo.tscn" id="6_n0grg"]
 [ext_resource type="PackedScene" uid="uid://cmsoouxypvra2" path="res://Scenes/Props/PeriphOuest/porte_appartement.tscn" id="7_4dhbb"]
+[ext_resource type="Texture2D" uid="uid://deafam5nom24w" path="res://Graphics/Props/car_black.png" id="7_c4beq"]
 [ext_resource type="PackedScene" uid="uid://dfr2s44y31igt" path="res://Scenes/Props/PeriphOuest/player_car.tscn" id="10_sh6pw"]
 [ext_resource type="PackedScene" uid="uid://dl6y8sa87g672" path="res://Scenes/Pawn/PNJ/PeriphOuest/pnj_eboueur.tscn" id="11_4suwe"]
 [ext_resource type="PackedScene" uid="uid://wrsox72avo62" path="res://Scenes/Pawn/PNJ/pnj_immobile.tscn" id="13_5c4ie"]
@@ -42,25 +43,23 @@ region = Rect2(67, 118, 37, 71)
 size = Vector2(29, 65)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1c0dv"]
-atlas = ExtResource("6_i6vih")
+atlas = ExtResource("6_d0ba6")
 region = Rect2(24, 164, 32, 72)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6qbes"]
-load_path = "res://.godot/imported/car_new.png-5b3514e2a56acd50bc4031430c8542a1.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qbes"]
+atlas = ExtResource("7_c4beq")
+region = Rect2(24, 164, 32, 72)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txfdo"]
-atlas = SubResource("CompressedTexture2D_6qbes")
+atlas = ExtResource("7_c4beq")
 region = Rect2(2, 22, 77, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20a16"]
 size = Vector2(71, 23)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_82jj0"]
-load_path = "res://.godot/imported/car_new.png-5b3514e2a56acd50bc4031430c8542a1.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_guvjv"]
-atlas = SubResource("CompressedTexture2D_82jj0")
-region = Rect2(161, 22, 77, 36)
+[sub_resource type="AtlasTexture" id="AtlasTexture_20a16"]
+atlas = ExtResource("6_d0ba6")
+region = Rect2(1, 262, 77, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtu41"]
 atlas = ExtResource("4_4y10b")
@@ -360,7 +359,7 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="GenericCar" type="Sprite2D" parent="Props/Generique"]
 position = Vector2(112, 896)
-texture = SubResource("AtlasTexture_1c0dv")
+texture = SubResource("AtlasTexture_6qbes")
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Props/Generique/GenericCar"]
@@ -385,7 +384,7 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="GenericCar3" type="Sprite2D" parent="Props/Generique"]
 position = Vector2(893, 355)
-texture = SubResource("AtlasTexture_guvjv")
+texture = SubResource("AtlasTexture_20a16")
 centered = false
 offset = Vector2(0, -8)
 
