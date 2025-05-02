@@ -89,11 +89,10 @@ do EventBus.emit_signal("point_cursor", 4000, 0.0, 0.0)
 [wait time="0.6"]
 jump pnj_eboueur/book3
 label book12
-do AudioManager.play_sfx(load("[uid]"),0)
-[wait time="0.6"]
-[i]Dring, dring...[/i]
+[wait time="0.3"]
 do EventBus.emit_signal("play_cutscene", "phone_start")
 [wait time="1"]
+[i]Dring, dring...[/i]
 Sonia: Salut, c'est [b]Sonia[/b], ton amie de toujours ! T'as bien dormi ?
 Sonia: Je n'arrête pas de repenser au flash news de CVN d'hier soir à la télé...
 Sonia: C'est inquiétant de se dire que les gens ne sont pas au courant de l'urgence écologique qui nous attend !
