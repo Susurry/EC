@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://bng27oilms6jo" path="res://Audio/SFX/Temp/FB_Tap.wav" id="2_hm2ch"]
 [ext_resource type="Texture2D" uid="uid://ckmjnv4tcdhkt" path="res://Graphics/Props/AppartementAnimated.png" id="2_vac3v"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gpq78"]
 shader = ExtResource("2_577e1")
 shader_parameter/line_color = Color(1, 1, 1, 1)
