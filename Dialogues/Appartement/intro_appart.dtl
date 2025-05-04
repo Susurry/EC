@@ -21,10 +21,10 @@ do EventBus.emit_signal("add_quest", "0-1_deplacer")
 [end_timeline]
 label book4
 do EventBus.emit_signal("set_quest_state", "0-1_deplacer")
-Bravo, vous savez maintenant vous déplacer ! Notez que sur ordinateur, vous pouvez vous [b]déplacer plus vite[/b] en maintenant appuyé le bouton [b]Shift[/b] du clavier.
+Bravo, vous savez maintenant vous déplacer ! Notez que sur ordinateur, vous pouvez vous [b]déplacer plus vite[/b] en maintenant appuyé le bouton [b]Shift / Majuscule[/b] du clavier.
 Passons maintenant à la suite !
 Pour [b]interagir[/b] avec votre environnement, utilisez la touche [b]Espace[/b], la touche [b]E[/b] ou, sur mobile, le [b]bouton interaction[/b] à droite de l'écran.
-Les éléments interactifs seront en [b]surbrillance[/b]. Essayez-donc avec votre [b]chaise de bureau[/b] !
+Les éléments interactifs seront en [b]surbrillance[/b]. Essayez-donc avec votre [b]chaise de bureau[/b] : approchez-vous de celle-ci et interagissez avec  !
 do EventBus.emit_signal("add_quest", "0-2_chaise")
 [end_timeline]
 label book5
