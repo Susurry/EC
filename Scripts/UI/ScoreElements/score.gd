@@ -10,8 +10,12 @@ var empreinte: float = 10
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	_initialize_signals()
 	_initialize_save()
 	_initialize_empreinte()
+
+func _initialize_signals() -> void:
+	EventBus.add_signal("reset_time", reset_score)
 
 func _initialize_save() -> void:
 	if SaveManager.getElement("Stats", "score"):
@@ -36,3 +40,7 @@ func play_feedback(score: float) -> void:
 	else:
 		AudioManager.play_sfx(sfx_good_score, -5.0)
 		anim_player.play("feedback_good")
+
+func reset_score() -> void:
+	empreinte = 10
+	empreinte_label.text = str(empreinte)

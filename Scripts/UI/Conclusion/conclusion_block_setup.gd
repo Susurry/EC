@@ -130,4 +130,5 @@ func _on_quit_button_pressed() -> void:
 	SaveManager.deleteSave()
 	EventBus.emit_signal("clear_items")
 	EventBus.emit_signal("clean_quests")
+	EventBus.emit_signal("reset_time")
 	ThreadLoad.load_scene("Journalistes")

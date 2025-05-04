@@ -840,7 +840,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
 min_value = -60.0
-max_value = 15.0
+max_value = 0.0
 
 [node name="VFXslider" type="HBoxContainer" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
 custom_minimum_size = Vector2(0, 31)
@@ -859,7 +859,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
 min_value = -60.0
-max_value = 15.0
+max_value = 0.0
 
 [node name="SprintToggle" type="CheckBox" parent="UI/PauseElements/Margin/VBox/TabContainer/Options/Options"]
 custom_minimum_size = Vector2(0, 31)

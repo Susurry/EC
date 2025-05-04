@@ -9,8 +9,12 @@ var follower: int = 0
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	_initialize_signals()
 	_initialize_save()
 	_initialize_follower()
+
+func _initialize_signals() -> void:
+	EventBus.add_signal("reset_time", reset_follower)
 
 func _initialize_save() -> void:
 	if SaveManager.getElement("Stats", "follower"):
@@ -30,3 +34,7 @@ func add_follower(arg: int = 1) -> void:
 	time_element.update_grading(true)
 	time_element.change_time(180)
 	SaveManager.setElement("Stats",{"follower":follower})
+
+func reset_follower() -> void:
+	follower = 0
+	follower_label.text = str(follower)
