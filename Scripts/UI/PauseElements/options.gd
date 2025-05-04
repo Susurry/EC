@@ -48,10 +48,10 @@ func _on_new_game_pressed() -> void:
 	SaveManager.deleteSave()
 	EventBus.emit_signal("clear_items")
 	EventBus.emit_signal("clean_quests")
+	EventBus.emit_signal("reset_time")
 	ThreadLoad.load_scene("Journalistes")
 	new_game_panel.visible = false
 	_on_unpause_pressed()
-
 
 func _on_rich_text_label_meta_clicked(meta: Variant) -> void:
 	OS.shell_open(meta)
