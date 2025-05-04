@@ -62,6 +62,7 @@ func _process(delta: float) -> void:
 		if not is_tweening:
 			timer_bar.value = -time
 	else:
+		time_label.text = format_string % [0, 0, 0]
 		pause_time(true)
 		if Dialogic.current_timeline:
 			await Dialogic.timeline_ended
