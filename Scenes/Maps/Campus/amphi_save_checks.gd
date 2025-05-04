@@ -5,6 +5,8 @@ extends Node2D
 func initialize() -> void:
 	if SaveManager.getElement("Events", timeline) == null:
 		
+		EventBus.emit_signal("pause_time", true)
+		
 		#Synchronisation entre Var Dialogic et ce qui est dans SaveManager
 		#Redondant en soit, mais évite les potentiels lag spikes pendant les Dialogues
 		
