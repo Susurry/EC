@@ -38,3 +38,4 @@ func add_follower(arg: int = 1) -> void:
 func reset_follower() -> void:
 	follower = 0
 	follower_label.text = str(follower)
+	time_element.update_grading()

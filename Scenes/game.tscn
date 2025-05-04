@@ -615,7 +615,6 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="DebugElements" type="MarginContainer" parent="UI"]
-visible = false
 z_index = 2
 offset_right = 318.0
 offset_bottom = 100.0
