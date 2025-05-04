@@ -45,7 +45,7 @@ Eboueur: Imagine que j'ai une bouteille de verre à jeter. À ton avis, dans que
 	if SaveManager.getElement("Quests", "0_tutoriel") == true:
 		jump intro_appart/book10
 	label book3
-	Eboueur: Bon, bref, je devrai vite repartir, je me sens mieux et j'ai suffisamment bloqué la route comme ça. Encore merci du coup de main, jeune homme !
+	Eboueur: Bon, bref, je devrais vite repartir, je me sens mieux et j'ai suffisamment bloqué la route comme ça. Encore merci du coup de main, jeune homme !
 	do EventBus.emit_signal("set_quest_state", "3_eboueur")
 	do EventBus.emit_signal("play_cutscene", "cutscene_eboueur_done")
 	[end_timeline]
