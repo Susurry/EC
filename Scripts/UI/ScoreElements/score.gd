@@ -44,3 +44,4 @@ func play_feedback(score: float) -> void:
 func reset_score() -> void:
 	empreinte = 10
 	empreinte_label.text = str(empreinte)
+	time_element.update_grading()
