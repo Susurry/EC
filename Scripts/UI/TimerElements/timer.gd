@@ -97,7 +97,7 @@ func update_grading(upd_music: bool = false) -> void:
 		update_music()
 
 func update_music() -> void:
-	if time_multi > 1:
+	if time_multi < 1:
 		AudioManager.set_channel_volume(0,0)
 		AudioManager.set_channel_volume(1,-60)
 		AudioManager.set_channel_volume(2,-60)
@@ -105,7 +105,7 @@ func update_music() -> void:
 		AudioManager.set_channel_volume(0,-60)
 		AudioManager.set_channel_volume(1,0)
 		AudioManager.set_channel_volume(2,-60)
-	elif time_multi < 1:
+	elif time_multi > 1:
 		AudioManager.set_channel_volume(0,-60)
 		AudioManager.set_channel_volume(1,-60)
 		AudioManager.set_channel_volume(2,0)
